@@ -14,10 +14,10 @@ class Rent :Codable{
     var ID : String?
     var renterID : String
     var parkingID : String
-    var dateFrom: String
-    var dateTo: String
+    var dateFrom: Date
+    var dateTo: Date
     
-    init(pID : String , pRenterID: String , pParkingID: String,  dateFrom: String, dateTo: String) {
+    init(pID : String , pRenterID: String , pParkingID: String,  dateFrom: Date, dateTo: Date) {
         
         
         self.dateTo = dateTo
@@ -28,7 +28,7 @@ class Rent :Codable{
         self.dateTo = dateTo
     }
     
-    init( pRenterID: String , pParkingID: String, dateFrom: String, dateTo: String) {
+    init( pRenterID: String , pParkingID: String, dateFrom: Date, dateTo: Date) {
         self.dateFrom = dateFrom
         self.dateTo = dateTo
         self.renterID     = pRenterID

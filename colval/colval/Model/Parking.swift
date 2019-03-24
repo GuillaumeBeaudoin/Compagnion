@@ -14,18 +14,18 @@ import Foundation
 class Parking :Codable{
     
     var id : String?
-    var posX : Int
-    var posY : Int
+    var posX : Double
+    var posY : Double
     var orientation : Bool // horisontal = true  : vertical = false
     
-    init(pID : String , pPosX:Int  , pPosY:Int  , pOrientation:Bool  ) {
+    init(pID : String , pPosX:Double  , pPosY:Double  , pOrientation:Bool  ) {
         self.id           = pID
         self.posX         = pPosX
         self.posY         = pPosY
         self.orientation  = pOrientation
     }
     
-    init( pPosX:Int  , pPosY:Int  , pOrientation:Bool  ) {
+    init( pPosX:Double  , pPosY:Double  , pOrientation:Bool  ) {
         self.posX         = pPosX
         self.posY         = pPosY
         self.orientation  = pOrientation

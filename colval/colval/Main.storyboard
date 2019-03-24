@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ColValCompagnon2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="colval" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,7 +107,7 @@
         <!--Parking View Controller-->
         <scene sceneID="kEi-9Y-tUx">
             <objects>
-                <viewController id="h1F-OA-lkX" customClass="ParkingViewController" customModule="ColValCompagnon2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h1F-OA-lkX" customClass="ParkingViewController" customModule="colval" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6M4-lM-xth">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,10 +154,10 @@
             </objects>
             <point key="canvasLocation" x="775.36231884057975" y="-430.58035714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Reservation Controler-->
         <scene sceneID="JNS-xK-6fX">
             <objects>
-                <viewController id="ANx-IW-Mej" sceneMemberID="viewController">
+                <viewController id="ANx-IW-Mej" customClass="ReservationControler" customModule="colval" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ah8-C0-uY5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -180,6 +180,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Find"/>
                                             </button>
+                                            <connections>
+                                                <action selector="btnFindToutched:" destination="ANx-IW-Mej" id="WX2-mg-smr"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -188,6 +191,9 @@
                                 <rect key="frame" x="364" y="569" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="-&gt;"/>
+                                <connections>
+                                    <action selector="btnChangeSelection:" destination="ANx-IW-Mej" eventType="touchUpInside" id="Bgw-V7-fw7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xlf-q3-axx">
                                 <rect key="frame" x="112" y="192" width="19" height="21"/>
@@ -224,7 +230,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eiP-OY-G7J">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="eiP-OY-G7J">
                                 <rect key="frame" x="-6" y="627" width="414" height="255"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="574086660.71139205">
@@ -235,12 +241,23 @@
                                 <rect key="frame" x="20" y="578" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&lt;-"/>
+                                <connections>
+                                    <action selector="btnChangeSelection:" destination="ANx-IW-Mej" eventType="touchUpInside" id="kcz-la-Cs6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="Gng-q4-hy9"/>
                     </view>
+                    <connections>
+                        <outlet property="btnNext" destination="9Yu-hL-ucw" id="veN-le-gzh"/>
+                        <outlet property="btnPrev" destination="ohW-uv-aMN" id="YwD-qJ-kp4"/>
+                        <outlet property="datePicker" destination="eiP-OY-G7J" id="Eke-Bz-K0R"/>
+                        <outlet property="lblCurrent" destination="SV5-ov-TmU" id="qwA-9R-7Ul"/>
+                        <outlet property="lblFrom" destination="vHv-Q0-ygu" id="Vhf-Qn-z36"/>
+                        <outlet property="lblTo" destination="2qO-gy-toQ" id="pmG-gu-934"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="haW-ck-qVk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -252,4 +269,7 @@
         <image name="ic_floormap-1" width="178" height="133"/>
         <image name="ic_parjing-1" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZTY-Wr-ngY"/>
+    </inferredMetricsTieBreakers>
 </document>

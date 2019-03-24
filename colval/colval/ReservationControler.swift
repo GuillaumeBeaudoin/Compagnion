@@ -57,7 +57,6 @@ class ReservationControler: UIViewController {
     var selected:Bool    = true
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,18 +70,11 @@ class ReservationControler: UIViewController {
         
         datePicker.addTarget(self, action: #selector(datePickerChanged(picker:)), for: .valueChanged)
         
-        //self.dateTo =  self.maxFromDate
         changeSelection()
         updateTimeForLabel(pLabel: lblFrom, pMin: cal.component(.minute, from: minFromDate), pHour: cal.component(.hour, from: minFromDate))
         
         
-        
-        let parkings = dc.getParkings()
-        if let pks = parkings {
-            for p in pks {
-                print(p)
-            }
-        }
+       
         
         
     }
@@ -107,21 +99,22 @@ class ReservationControler: UIViewController {
         
         // set for FROM
         if !self.selected  {
-            self.dateTo   = datePicker.date                  //save
+            self.dateTo   = datePicker.date                  //save TO
             self.datePicker.minimumDate    =  self.minFromDate
-            self.datePicker.maximumDate    =  self.cal.date(byAdding: .minute, value: -15, to: self.dateTo)   //self.maxFromDate
-            self.datePicker.date           =  self.dateFrom //restaure
+            self.datePicker.maximumDate    =  self.cal.date(byAdding: .minute, value: -15, to: self.dateTo) //self.maxFromDate
+            self.datePicker.date           =  self.dateFrom //restaure From
         }// set for TO
         else {
-            self.dateFrom = datePicker.date                 //save
+            self.dateFrom = datePicker.date                 //save FROM
             self.datePicker.minimumDate    =  self.cal.date(byAdding: .minute, value: 15, to: self.dateFrom)
             self.datePicker.maximumDate    =  self.maxToDate
-            self.datePicker.date           =  self.dateTo   //restaure
+            self.datePicker.date           =  self.dateTo   //restaure TO
         }
         
     }
     
     @objc func datePickerChanged(picker: UIDatePicker) {
+        print("Change")
         let hour = cal.component(.hour, from: picker.date)
         let min = cal.component(.minute, from: picker.date)
         updateTimeForLabel(pLabel: (!self.selected ?self.lblFrom:self.lblTo), pMin: min , pHour: hour)

@@ -14,23 +14,21 @@ import Foundation
 
 class DataControler {
     static let sharedInstance = DataControler()
-    
-    //private let baseURL =  "https://colval.restlet.net:443/v1/"
-    private let baseURL =  "https://colval-cbfd.restdb.io/rest/"
+    private let cal:Calendar = Calendar.current
     private let session = URLSession.shared
-    private let b64Auth:String
-    private let xApiKey:String
+    private let baseURL:String  // restdb.io URL
+    private let xApiKey:String // restdb.io authentification
+    private let defaults = UserDefaults.standard
     
+    struct defaultsKeys {
+        static let keyUID = "deviceID"
+    }
     
     private init() {
-        let username = "fvqefvfb"
-        let password = "fvqefvfb"
-        let loginString = String(format: "%@:%@", username, password)
-        let loginData = loginString.data(using: String.Encoding.utf8)!
-        b64Auth = "Basic \(loginData.base64EncodedString())"
-        xApiKey           = "7b29d3c5d1b96232768b7991fcdfd0b1bd571"
-        
+        baseURL = "https://colval-cbfd.restdb.io/rest/"    // restdb.io URL
+        xApiKey = "7b29d3c5d1b96232768b7991fcdfd0b1bd571"
     }
+    
     
     /***************************************************************
      *********************  Object -> JSON   ***********************
@@ -130,8 +128,8 @@ class DataControler {
                     let renterID    = array["renterID"]  as? String ,
                     let parkingID   = array["parkingID"] as? String ,
                     let dateFrom    = array["dateFrom"]  as? String ,
-                    let dateTo      = array["dateTo"]    as? String               {
-                    wRent = Rent(pID: id, pRenterID: renterID, pParkingID: parkingID,dateFrom: dateFrom, dateTo: dateTo)
+                    let dateTo      = array["dateTo"]    as? String {
+                     wRent = Rent(pID: id, pRenterID: renterID, pParkingID: parkingID,dateFrom: strToDate(pDate: dateFrom), dateTo: strToDate(pDate: dateTo) )
                 }
             }
         } catch let error {
@@ -149,12 +147,12 @@ class DataControler {
             if let json = jsonFile as? [[String: Any]] {
                 // parser le json et stocker les données dans le tableau
                 for array in json {
-                    if  let id          = array["id"]        as? String ,
-                        let renterID    = array["renterID"]  as? String ,
-                        let parkingID   = array["parkingID"] as? String ,
+                    if  let id          = array["_id"]       as? String ,
+                        let renterID    = array["renterId"]  as? String ,
+                        let parkingID   = array["parkingId"] as? String ,
                         let dateFrom    = array["dateFrom"]  as? String ,
-                        let dateTo      = array["dateTo"]    as? String     {
-                        let wRent = Rent(pID: id, pRenterID: renterID, pParkingID: parkingID,dateFrom: dateFrom, dateTo: dateTo)
+                        let dateTo      = array["dateTo"]    as? String {
+                        let wRent = Rent(pID: id, pRenterID: renterID, pParkingID: parkingID,dateFrom: strToDate(pDate: dateFrom), dateTo: strToDate(pDate: dateTo) )
                         wRents.append(wRent)
                     }
                 }
@@ -169,12 +167,11 @@ class DataControler {
             let JSON = try JSONSerialization.jsonObject(with: pJsonParking, options: [])
             
             if let array = JSON as? [String: Any] {
-                if  let id          = array["id"]       as? String     ,
-                    let posX        = array["posX"]     as? String     ,
-                    let posY        = array["posY"]     as? String     ,
-                    let orientation = array["orientation"] as? String  {
-                    wParking = Parking(pID: id, pPosX: Int(posX)!, pPosY: Int(posY)!, pOrientation: (orientation == "TRUE"))
-                    
+                if  let id          = array["_id"]         as? String ,
+                    let posX        = array["posX"]        as? Double ,
+                    let posY        = array["posY"]        as? Double ,
+                    let orientation = array["orientation"] as? Bool   {
+                    wParking = Parking(pID: id, pPosX: posX, pPosY: posY, pOrientation: orientation)
                 }
             }
         } catch let error {
@@ -187,17 +184,16 @@ class DataControler {
     
     func jsonToParkings(pJsonParkings : Data!) -> [Parking] {
         var wParkings:[Parking] = []
-        
         if let d = pJsonParkings {
             let jsonFile = try? JSONSerialization.jsonObject(with: d, options: [])
             if let json = jsonFile as? [[String: Any]] {
                 // parser le json et stocker les données dans le tableau
                 for array in json {
-                    if  let id          = array["id"]       as? String     ,
-                        let posX        = array["posX"]     as? String     ,
-                        let posY        = array["posY"]     as? String     ,
-                        let orientation = array["orientation"] as? String  {
-                        let wParking = Parking(pID: id, pPosX: Int(posX)!, pPosY: Int(posY)!, pOrientation: (orientation == "TRUE"))
+                    if  let id          = array["_id"]         as? String ,
+                        let posX        = array["posX"]        as? Double ,
+                        let posY        = array["posY"]        as? Double ,
+                        let orientation = array["orientation"] as? Bool   {
+                       let wParking = Parking(pID: id, pPosX: posX, pPosY: posY, pOrientation: orientation)
                         wParkings.append(wParking)
                     }
                 }
@@ -229,19 +225,17 @@ class DataControler {
         return wParking
     }
     
-    
-    func getParkings() -> [Parking]? {
-        var wParkings:[Parking]?
+    func getParkings(completion: ( ([Parking]?) -> (Void))? ) {
+        
         let wRequest =  prepareRequest(pResource: "parking", pMethod: "GET")
         let task = session.dataTask(with: wRequest){ data, _, error in
+            var wParkings:[Parking]
             if let donnee = data {
-                
                 wParkings = self.jsonToParkings(pJsonParkings: donnee)
+                completion?(wParkings)
             }
         }
         task.resume()
-        return wParkings
-        
     }
     
     func getParking(pID: String) -> Parking? {
@@ -276,30 +270,38 @@ class DataControler {
     //post
     //delete
     
-    func getRentsForTime(pStrat: String , pEnd: String) -> [Rent]? {
+    /*
+     * Return the rents for a dictated range
+     *
+     *    FIXME : this works (2018-12-31T23:45) , seek if full will also
+     *    TODO test if is working
+     */
+    func getRentsForTimeRange(pStart: Date , pEnd: Date , completion: ( ([Rent]?) -> (Void))? ) {
         var wRents:[Rent]?
-        //  +  TODO
-        let wRequest =  prepareRequest(pResource: "parking/"        , pMethod: "GET")
+        //               rents?q={"dateFrom":{ "$gt":{"$date":"2018-12-31T23:45"} }, "dateTo":{ "$lt":{"$date":"2020-12-31T23:45"} }  }
+        //let query =   """rent?q={"dateFrom":{%20"$gt":{"$date":"2018-12-31T23:45:00.000Z"}%20},%20"dateTo":{%20"$lt":{"$date":"2020-01-01T20:45:00.000Z"}%20}%20%20}"""
+                                                      //FIXME
+        let wRequest =  prepareRequest(pResource: "rent" , pMethod: "GET") 
         let task = session.dataTask(with: wRequest){ data, _, error in
             if let donnee = data {
                 wRents = self.jsonToRents(pJsonRents: donnee)
+                completion?(wRents)
             }
         }
         task.resume()
-        return wRents
     }
     
-    func getRentsForParking(pParkingID: String ) -> [Rent]? {
+    func getRentsForParkingForTimeRange(pParkingID: String , pStart: Date , pEnd: Date , completion: ( ([Rent]?) -> (Void))? ) {
         var wRents:[Rent]?
         //  +  TODO
-        let wRequest =  prepareRequest(pResource: "parking/"+pParkingID, pMethod: "GET")
+        let wRequest =  prepareRequest(pResource: "rent/"+pParkingID, pMethod: "GET")
         let task = session.dataTask(with: wRequest){ data, _, error in
             if let donnee = data {
                 wRents = self.jsonToRents(pJsonRents: donnee)
+                completion?(wRents)
             }
         }
         task.resume()
-        return wRents
     }
     
     
@@ -318,16 +320,101 @@ class DataControler {
     }
     
     
-    /**********************  Helper constructor   ***********************/
-    
+    /***************************************************************
+     ********************** Helper method   ************************
+     ***************************************************************/
+    /*
+     * As all request share the same base request setting ,
+     * I created this helper method in order to re-use it
+     * dīvide et imperā
+     */
     func prepareRequest(pResource: String ,pMethod: String ) -> URLRequest {
-        var wRequest = URLRequest(url: URL( string: self.baseURL+pResource )!)
-        wRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        //wRequest.setValue(self.b64Auth, forHTTPHeaderField: "Authorization")
-        wRequest.addValue(self.xApiKey , forHTTPHeaderField: "x-apikey")
-        wRequest.httpMethod = pMethod
+        var wRequest:URLRequest
+        do {
+            let wUrl:URL! = URL( string: self.baseURL+pResource)
+            wRequest = URLRequest(url: wUrl )
+            wRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            wRequest.addValue(self.xApiKey , forHTTPHeaderField: "x-apikey")
+            wRequest.httpMethod = pMethod
+            
+        } catch let error {
+            print("error  : DataControler.prepareRequest()")
+            print( error )
+        }
         return  wRequest
     }
+    
+    /*
+     * Convert a DT to a DB formated String
+     *  YYYY-MM-DDTHH:MM:SS.MLSZ  -> DataBase DateTime formated String
+     *  2017-12-10T16:45:00.000Z  -> result example
+     */
+    func dateToStr(pDate: Date) -> String {
+        let year   = cal.component(.year  , from: pDate)
+        let month  = cal.component(.month , from: pDate)
+        let day    = cal.component(.day   , from: pDate)
+        let hour   = cal.component(.hour  , from: pDate)
+        let minute = cal.component(.minute, from: pDate)
+        
+        let monthStr  = ( month  < 10 ? "0" + String(month)  : String(month) )
+        let dayStr    = ( day    < 10 ? "0" + String(day)    : String(day)   )
+        let hourStr   = ( hour   < 10 ? "0" + String(hour)   : String(hour)  )
+        let minuteStr = ( minute < 10 ? "0" + String(minute) : String(minute))
+        
+        return   String(year) + "-" + monthStr + "-" + dayStr + "T" + hourStr + ":" + minuteStr + ":00.000Z"
+        
+    }
+    
+    /*
+     * Convert a string DateTime representation to a Date()
+     *
+     *  YYYY-MM-DDTHH:MM:SS.MLSZ  -> input format
+     *  2017-12-10T16:45:00.000Z  -> input example
+     *  0  0 00 01 11 11 ignorre  -> substring position (10e1)
+     *  0  4 67 90 23 45 ignorre  -> substring position (10e0)
+     */
+    func strToDate(pDate: String) -> Date {
+        var dateComponents = DateComponents()
+        dateComponents.timeZone = TimeZone(abbreviation: "EST") // Eastern Standard Time
+        dateComponents.year     = Int(pDate[..<pDate.index(pDate.startIndex, offsetBy: 4)]   )
+        dateComponents.month    = Int(pDate[pDate.index(pDate.startIndex, offsetBy: 5)..<pDate.index(pDate.endIndex, offsetBy: -17)])
+        dateComponents.day      = Int(pDate[pDate.index(pDate.startIndex, offsetBy: 8)..<pDate.index(pDate.endIndex, offsetBy: -14)]  )
+        dateComponents.hour     = Int(pDate[pDate.index(pDate.startIndex, offsetBy: 11)..<pDate.index(pDate.endIndex, offsetBy: -11)]  )
+        dateComponents.minute   = Int(pDate[pDate.index(pDate.startIndex, offsetBy: 14)..<pDate.index(pDate.endIndex, offsetBy: -8)]  )
+        let dateDate = cal.date(from: dateComponents) ?? Date()
+        return  dateDate
+    }
+
+    
+    func getUser() -> String {
+        return defaults.string(forKey: defaultsKeys.keyOne)
+    }
+    
+    func setUser(pUID : String){
+        defaults.set(pUID, forKey: defaultsKeys.keyUID)
+    }
+    if let stringOne = defaults.string(forKey: defaultsKeys.keyOne) {
+        print(stringOne) // Some String Value
+    }
+    
+}
+    
+    
+    /*
+            TODO finish request with ult parameters
+ 
+    let bfDate = dc.strToDate(pDate: "2029-01-01T20:45:00.000Z")
+    let afDate = dc.strToDate(pDate: "2029-12-31T23:45:00.000Z")
+    
+    dc.getRentsForTimeRange(pStart: afDate, pEnd: bfDate ) { rents in
+    if rents?.count ?? 0 > 0  {
+    print( String(rents?.count ?? 0 ) + " results have been found" )
+    } else {
+    print("0 result found")
+    }
+    }
+    *\
+    
     
 }
 
