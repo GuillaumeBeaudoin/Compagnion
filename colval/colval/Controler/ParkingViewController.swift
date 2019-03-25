@@ -77,6 +77,8 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
 
         print (view.annotation?.title)
         
+        //self.navigationController?.pushViewController(ReservationControler, animated: true)
+    
     }
     
     
