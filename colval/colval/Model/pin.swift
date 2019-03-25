@@ -14,9 +14,9 @@ class pin : NSObject, MKAnnotation {
     var subTitle: String?
     
     
-     init(pinTitle: String, pinSubtible: String, location: CLLocationCoordinate2D){
+     init(pinTitle: String, pinSubTitle: String, location: CLLocationCoordinate2D){
         self.title = pinTitle
-        self.subTitle = pinSubtible
+        self.subTitle = pinSubTitle
         self.coordinate = location
     }
     

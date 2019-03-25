@@ -385,7 +385,7 @@ class DataControler {
         return  dateDate
     }
 
-    
+    /*
     func getUser() -> String {
         return defaults.string(forKey: defaultsKeys.keyOne)
     }
@@ -396,7 +396,7 @@ class DataControler {
     if let stringOne = defaults.string(forKey: defaultsKeys.keyOne) {
         print(stringOne) // Some String Value
     }
-    
+    */
 }
     
     
@@ -418,4 +418,4 @@ class DataControler {
     
 }
 
-
+ */

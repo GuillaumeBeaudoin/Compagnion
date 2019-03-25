@@ -118,13 +118,15 @@
                                 <items>
                                     <navigationItem title="Parking map and reservation" id="4fs-LY-kYv">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="Etm-nY-XWp">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mB9-Je-ClU">
+                                            <button key="customView" opaque="NO" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mB9-Je-ClU">
                                                 <rect key="frame" x="20" y="7" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Back"/>
+                                                <state key="normal" title="Back">
+                                                    <color key="titleColor" red="1" green="0.0" blue="0.023286350454940319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                             </button>
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="ZTY-Wr-ngY"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="fY8-Ru-Q7s"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -269,7 +271,4 @@
         <image name="ic_floormap-1" width="178" height="133"/>
         <image name="ic_parjing-1" width="512" height="512"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="ZTY-Wr-ngY"/>
-    </inferredMetricsTieBreakers>
 </document>
