@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		720965DE224A790700C4F26E /* LoginViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720965DD224A790700C4F26E /* LoginViewControler.swift */; };
 		724574A42241492A00C26197 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574A32241492A00C26197 /* AppDelegate.swift */; };
 		724574AB2241492D00C26197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 724574AA2241492D00C26197 /* Assets.xcassets */; };
 		724574B92241492D00C26197 /* colvalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574B82241492D00C26197 /* colvalTests.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		720965DD224A790700C4F26E /* LoginViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControler.swift; sourceTree = "<group>"; };
 		724574A02241492A00C26197 /* colval.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = colval.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		724574A32241492A00C26197 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		724574AA2241492D00C26197 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				724574C4224149AA00C26197 /* Main.storyboard */,
 				724574AA2241492D00C26197 /* Assets.xcassets */,
 				724574AF2241492D00C26197 /* Info.plist */,
+				720965DD224A790700C4F26E /* LoginViewControler.swift */,
 			);
 			path = colval;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				724574E0224149DE00C26197 /* stop_times.swift in Sources */,
 				724574E8224149DE00C26197 /* User.swift in Sources */,
 				724574E4224149DE00C26197 /* shapes.swift in Sources */,
+				720965DE224A790700C4F26E /* LoginViewControler.swift in Sources */,
 				724574E1224149DE00C26197 /* trips.swift in Sources */,
 				724574CB224149D100C26197 /* DataControler.swift in Sources */,
 				724574EE224149EC00C26197 /* ViewController.swift in Sources */,

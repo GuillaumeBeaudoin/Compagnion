@@ -13,15 +13,15 @@ import Foundation
 class User :Codable{
     
     var ID : String?
-    var deviceID : String
+    var DA : Int
     
-    init(pID : String , pDeviceID: String  ) {
+    init(pID : String , pDA: Int  ) {
         self.ID   = pID
-        self.deviceID     = pDeviceID
+        self.DA   = pDA
     }
     
-    init( pDeviceID: String  ) {
-        self.deviceID     = pDeviceID
+    init( pDA: Int  ) {
+        self.DA   = pDA
     }
     
     

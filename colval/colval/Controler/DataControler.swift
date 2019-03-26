@@ -54,9 +54,9 @@ class DataControler {
         var  userJson:Data?
         var parm = [String:String]()
         if let wID = pUser.ID {
-            parm["id"] = wID
+            parm["_id"] = wID
         }
-        parm["deviceID"] = String(pUser.deviceID)
+        parm["DA"] = String(pUser.DA)
         do {
             userJson = try JSONSerialization.data(withJSONObject: parm, options: [] )
         } catch {
@@ -85,7 +85,7 @@ class DataControler {
         var  parkingJson:Data?
         var parm = [String:String]()
         if let wID = pParking.id {
-            parm["id"] = wID
+            parm["_id"] = wID
         }
         parm["posX"] = String(pParking.posX)
         parm["posY"] = String(pParking.posY)
@@ -107,9 +107,9 @@ class DataControler {
         do {
             let JSON = try JSONSerialization.jsonObject(with: pJsonUser, options: [])
             if let array = JSON as? [String: AnyObject] {
-                if  let id       = array["ID"]       as? String   ,
-                    let deviceID = array["deviceID"] as? String   {
-                    wUser = User(pID: id, pDeviceID: deviceID)
+                if  let id       = array["ID"] as? String   ,
+                    let da = array["deviceID"] as? Int   {
+                    wUser = User(pID: id, pDA: da)
                 }
             }
             
@@ -129,7 +129,7 @@ class DataControler {
                     let parkingID   = array["parkingID"] as? String ,
                     let dateFrom    = array["dateFrom"]  as? String ,
                     let dateTo      = array["dateTo"]    as? String {
-                     wRent = Rent(pID: id, pRenterID: renterID, pParkingID: parkingID,dateFrom: strToDate(pDate: dateFrom), dateTo: strToDate(pDate: dateTo) )
+                    wRent = Rent(pID: id, pRenterID: renterID, pParkingID: parkingID,dateFrom: strToDate(pDate: dateFrom), dateTo: strToDate(pDate: dateTo) )
                 }
             }
         } catch let error {
@@ -193,7 +193,7 @@ class DataControler {
                         let posX        = array["posX"]        as? Double ,
                         let posY        = array["posY"]        as? Double ,
                         let orientation = array["orientation"] as? Bool   {
-                       let wParking = Parking(pID: id, pPosX: posX, pPosY: posY, pOrientation: orientation)
+                        let wParking = Parking(pID: id, pPosX: posX, pPosY: posY, pOrientation: orientation)
                         wParkings.append(wParking)
                     }
                 }
@@ -261,6 +261,32 @@ class DataControler {
     //post
     //delete
     
+    func getUserFromDA(pDA : String , completion: ( (User?) -> (Void))? ) {
+        var wUser:User?
+        let resource = "user/" + pDA
+        let wRequest =  prepareRequest(pResource: resource, pMethod: "POST")
+        let task = session.dataTask(with: wRequest){ data, _, error in
+            if let donnee = data {
+                wUser = self.jsonToUser(pJsonUser: donnee)
+                completion?(wUser)
+            }
+        }
+        task.resume()
+    }
+    
+    func postUser(pUser : User , completion: ( (User?) -> (Void))? ) {
+        var wUser:User?
+        var wRequest =  prepareRequest(pResource: "user", pMethod: "POST")
+        wRequest.httpBody = userToJson(pUser: pUser);
+        let task = session.dataTask(with: wRequest){ data, _, error in
+            if let donnee = data {
+                wUser = self.jsonToUser(pJsonUser: donnee)
+                completion?(wUser)
+            }
+        }
+        task.resume()
+    }
+    
     
     /***************************************************************
      *************************  Rent API   **************************
@@ -280,8 +306,8 @@ class DataControler {
         var wRents:[Rent]?
         //               rents?q={"dateFrom":{ "$gt":{"$date":"2018-12-31T23:45"} }, "dateTo":{ "$lt":{"$date":"2020-12-31T23:45"} }  }
         //let query =   """rent?q={"dateFrom":{%20"$gt":{"$date":"2018-12-31T23:45:00.000Z"}%20},%20"dateTo":{%20"$lt":{"$date":"2020-01-01T20:45:00.000Z"}%20}%20%20}"""
-                                                      //FIXME
-        let wRequest =  prepareRequest(pResource: "rent" , pMethod: "GET") 
+        //FIXME
+        let wRequest =  prepareRequest(pResource: "rent" , pMethod: "GET")
         let task = session.dataTask(with: wRequest){ data, _, error in
             if let donnee = data {
                 wRents = self.jsonToRents(pJsonRents: donnee)
@@ -384,38 +410,32 @@ class DataControler {
         let dateDate = cal.date(from: dateComponents) ?? Date()
         return  dateDate
     }
-
-    /*
-    func getUser() -> String {
-        return defaults.string(forKey: defaultsKeys.keyOne)
+    
+    
+    func getLocalUser() -> String? {
+        return defaults.string(forKey: defaultsKeys.keyUID)
     }
     
-    func setUser(pUID : String){
+    func setLocalUser(pUID : String){
         defaults.set(pUID, forKey: defaultsKeys.keyUID)
     }
-    if let stringOne = defaults.string(forKey: defaultsKeys.keyOne) {
-        print(stringOne) // Some String Value
-    }
-    */
-}
     
     
     /*
-            TODO finish request with ult parameters
- 
-    let bfDate = dc.strToDate(pDate: "2029-01-01T20:45:00.000Z")
-    let afDate = dc.strToDate(pDate: "2029-12-31T23:45:00.000Z")
-    
-    dc.getRentsForTimeRange(pStart: afDate, pEnd: bfDate ) { rents in
-    if rents?.count ?? 0 > 0  {
-    print( String(rents?.count ?? 0 ) + " results have been found" )
-    } else {
-    print("0 result found")
-    }
-    }
-    *\
+     TODO finish request with ult parameters
+     
+     let bfDate = dc.strToDate(pDate: "2029-01-01T20:45:00.000Z")
+     let afDate = dc.strToDate(pDate: "2029-12-31T23:45:00.000Z")
+     
+     dc.getRentsForTimeRange(pStart: afDate, pEnd: bfDate ) { rents in
+     if rents?.count ?? 0 > 0  {
+     print( String(rents?.count ?? 0 ) + " results have been found" )
+     } else {
+     print("0 result found")
+     }
+     }
+     */
     
     
 }
 
- */

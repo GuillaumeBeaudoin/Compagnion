@@ -12,19 +12,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         let dc  = DataControler.sharedInstance
+        let da = dc.getLocalUser()
         
-        let parking = dc.getParking(pID: "753db5d0-3efc-11e9-844e-2b2f088855a7")
-        print( parking?.orientation ?? "default value" )
-        
-        
-        //let parkings = dc.getParkings()
-        //print( parkings?[0].orientation ?? "default values" )
-        
-        
-        
+        if da != nil  {
+            print("user logged in as : "+da!)
+        } else {
+            let sb = UIStoryboard(name: "Main", bundle: Bundle.main )
+            
+            guard let loginVC = sb.instantiateViewController(withIdentifier: "loginVC") as? LoginViewControler else {
+                print("Error : ViewController : Could not initiate segue")
+                return
+            }
+            
+            navigationController?.pushViewController(loginVC, animated: true)
+        }
         
         
     }
