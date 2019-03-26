@@ -24,8 +24,7 @@ class ViewController: UIViewController {
             guard let loginVC = sb.instantiateViewController(withIdentifier: "loginVC") as? LoginViewControler else {
                 print("Error : ViewController : Could not initiate segue")
                 return
-            }
-            
+            } 
             navigationController?.pushViewController(loginVC, animated: true)
         }
         

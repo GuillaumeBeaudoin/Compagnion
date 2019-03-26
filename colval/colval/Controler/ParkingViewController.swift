@@ -55,39 +55,19 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
             session.dataTask(with: req){
                 (data, response, error) in
                 
-                
-                
-                if let d = data {
-                    let jsonFile = try? JSONSerialization.jsonObject(with: d, options: [])
-                    
-                    
-                    
-                    if var json = jsonFile as? [[String: Any]] {
-                        // parser le json et stocker les données dans le tableau
-                        var pin2:pin
-                        
-                        for item in json {
-
-                            
-                            print(item["_id"] as! String)
-
-                            pin2 =   pin(pinTitle:item["_id"] as! String, pinSubTitle: item["_id"] as! String + "test", location: CLLocationCoordinate2D(latitude: item["posX"] as! Double, longitude: item["posY"] as! Double))
-                            
-                            
-                            print (pin2.coordinate)
-                            self.mapView.addAnnotation(pin2)
-                            
+                dc.getParkings(){ parkings in
+                    if parkings != nil {
+                        for parking in parkings! {
+                            self.mapView.addAnnotation(parking)
                             
                         }
-
+                        
+                    } else {
+                        print("could not loas parkings")
                     }
+                    
+                    
                 }
-                }.resume()
-        
-        
-        
-        
-        
         
         
         

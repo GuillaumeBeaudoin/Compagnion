@@ -29,7 +29,6 @@
 		724574E8224149DE00C26197 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574DA224149DE00C26197 /* User.swift */; };
 		724574E9224149DE00C26197 /* Rent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574DB224149DE00C26197 /* Rent.swift */; };
 		724574EA224149DE00C26197 /* Parking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574DC224149DE00C26197 /* Parking.swift */; };
-		724574EB224149DE00C26197 /* pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574DD224149DE00C26197 /* pin.swift */; };
 		724574EE224149EC00C26197 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574EC224149EC00C26197 /* ViewController.swift */; };
 		724574EF224149EC00C26197 /* ReservationControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574ED224149EC00C26197 /* ReservationControler.swift */; };
 /* End PBXBuildFile section */
@@ -71,7 +70,6 @@
 		724574DA224149DE00C26197 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		724574DB224149DE00C26197 /* Rent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rent.swift; sourceTree = "<group>"; };
 		724574DC224149DE00C26197 /* Parking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parking.swift; sourceTree = "<group>"; };
-		724574DD224149DE00C26197 /* pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pin.swift; sourceTree = "<group>"; };
 		724574EC224149EC00C26197 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		724574ED224149EC00C26197 /* ReservationControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationControler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,13 +116,11 @@
 				724574CE224149DE00C26197 /* Model */,
 				724574C7224149D100C26197 /* Controler */,
 				724574A32241492A00C26197 /* AppDelegate.swift */,
-				724574ED224149EC00C26197 /* ReservationControler.swift */,
 				724574EC224149EC00C26197 /* ViewController.swift */,
 				724574C3224149AA00C26197 /* LaunchScreen.storyboard */,
 				724574C4224149AA00C26197 /* Main.storyboard */,
 				724574AA2241492D00C26197 /* Assets.xcassets */,
 				724574AF2241492D00C26197 /* Info.plist */,
-				720965DD224A790700C4F26E /* LoginViewControler.swift */,
 			);
 			path = colval;
 			sourceTree = "<group>";
@@ -143,6 +139,8 @@
 			children = (
 				724574C8224149D100C26197 /* DataControler.swift */,
 				724574C9224149D100C26197 /* ParkingViewController.swift */,
+				720965DD224A790700C4F26E /* LoginViewControler.swift */,
+				724574ED224149EC00C26197 /* ReservationControler.swift */,
 				724574CA224149D100C26197 /* BusControler.swift */,
 			);
 			path = Controler;
@@ -155,7 +153,6 @@
 				724574DA224149DE00C26197 /* User.swift */,
 				724574DB224149DE00C26197 /* Rent.swift */,
 				724574DC224149DE00C26197 /* Parking.swift */,
-				724574DD224149DE00C26197 /* pin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,7 +290,6 @@
 				724574CD224149D100C26197 /* BusControler.swift in Sources */,
 				724574DF224149DE00C26197 /* stops.swift in Sources */,
 				724574E6224149DE00C26197 /* routes.swift in Sources */,
-				724574EB224149DE00C26197 /* pin.swift in Sources */,
 				724574A42241492A00C26197 /* AppDelegate.swift in Sources */,
 				724574DE224149DE00C26197 /* calendar_dates.swift in Sources */,
 				724574E7224149DE00C26197 /* fare_rules.swift in Sources */,
