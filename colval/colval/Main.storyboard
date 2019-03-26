@@ -150,11 +150,12 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="ANf-mb-YGj" id="SH3-ad-Gb3"/>
+                        <segue destination="ANx-IW-Mej" kind="show" identifier="sendingParkingId" id="56g-Go-xiu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h65-Ys-kJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="775.36231884057975" y="-430.58035714285711"/>
+            <point key="canvasLocation" x="1006" y="-458"/>
         </scene>
         <!--Reservation Controler-->
         <scene sceneID="JNS-xK-6fX">
@@ -263,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="haW-ck-qVk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1693" y="-469"/>
+            <point key="canvasLocation" x="1965" y="-458"/>
         </scene>
     </scenes>
     <resources>
