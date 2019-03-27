@@ -28,7 +28,7 @@ class Parking : NSObject, MKAnnotation{
         self.posY         = pPosY
         self.orientation  = pOrientation
         
-        self.coordinate   = CLLocationCoordinate2D(latitude: posX, longitude: posX)
+        self.coordinate   = CLLocationCoordinate2D(latitude: posX, longitude: posY)
         self.title        = "Parking"
         self.subTitle     = "Parking"
     }
@@ -38,7 +38,7 @@ class Parking : NSObject, MKAnnotation{
         self.posY         = pPosY
         self.orientation  = pOrientation
         
-        self.coordinate   = CLLocationCoordinate2D(latitude: posX, longitude: posX)
+        self.coordinate   = CLLocationCoordinate2D(latitude: posX, longitude: posY)
         self.title        = "Parking"
         self.subTitle     = "Parking"
     }

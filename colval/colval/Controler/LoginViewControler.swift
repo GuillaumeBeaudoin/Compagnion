@@ -26,7 +26,7 @@ class LoginViewControler: UIViewController {
     @IBOutlet weak var btnOk: UIBarButtonItem!
     
     let dc    = DataControler.sharedInstance
-    var txtDa = ""
+    var intDa:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,15 +49,16 @@ class LoginViewControler: UIViewController {
         dc.getUserFromDA(pDA:  txtDA.text! )  { user in
             if user != nil {
                 print( "User exist")
-                self.dc.setLocalUser(pUID: self.txtDa)
+                self.dc.setLocalUser(pUID: String(self.intDa!) )
             } else {
                 self.setErrText(pText: "User NOT exist, now creating ")
                 self.dc.postUser(pUser: User(pDA: Int(self.txtDA.text!)!) ) { user in
                     // FIXME : not safe, no validation
                     // if user != nil {
                     self.setErrText(pText:  "User created" )
-                    self.dc.setLocalUser(pUID: self.txtDa)
-                    self.dismiss()
+                    self.dc.setLocalUser(pUID: String(self.intDa!) )
+                    
+                    self.performSegue (withIdentifier: "loginToMain", sender: self)
                     
                     // }
                     // else {  self.lblError.text =  "Error while trying to login , try again later"   }
@@ -77,10 +78,10 @@ class LoginViewControler: UIViewController {
     
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        let ok = textField.text?.count == 7
-        txtDa = ( ok ? textField.text! : "")
+        let ok = textField.text?.count == 7 
         lblError.text = (ok ? "" : "DA not valid" )
         btnOk.isEnabled = ok
+        intDa =  ( ok ?  Int(  textField.text!  ) : -1 )
     }
     
     

@@ -51,7 +51,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Parking services" image="ic_parjing"/>
                                 <connections>
-                                    <segue destination="h1F-OA-lkX" kind="show" id="umq-MR-ZeI"/>
+                                    <segue destination="h1F-OA-lkX" kind="show" identifier="mainToParking" id="umq-MR-ZeI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxS-xb-212">
@@ -101,7 +101,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="qmR-rw-beX"/>
                     <connections>
-                        <segue destination="Jkq-o0-MCg" kind="show" id="QGR-EC-GC7"/>
+                        <segue destination="Jkq-o0-MCg" kind="show" identifier="mainToLogin" id="QGR-EC-GC7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -154,7 +154,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="ANf-mb-YGj" id="SH3-ad-Gb3"/>
-                        <segue destination="ANx-IW-Mej" kind="show" identifier="sendingParkingId" id="56g-Go-xiu"/>
+                        <segue destination="ANx-IW-Mej" kind="show" identifier="parkingToReservtion" id="56g-Go-xiu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h65-Ys-kJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -344,6 +344,7 @@
                         <outlet property="btnOk" destination="TML-tc-uf0" id="rXX-BT-8hN"/>
                         <outlet property="lblError" destination="oOw-c7-fGy" id="j3e-Jv-81w"/>
                         <outlet property="txtDA" destination="w4Y-9v-fFs" id="o9Q-4P-sON"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginToMain" id="F9X-0V-dBJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n13-QI-pU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -374,4 +375,7 @@
         <image name="ic_floormap" width="178" height="133"/>
         <image name="ic_parjing" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="F9X-0V-dBJ"/>
+    </inferredMetricsTieBreakers>
 </document>
