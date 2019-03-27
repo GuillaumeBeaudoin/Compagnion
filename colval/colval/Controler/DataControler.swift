@@ -21,7 +21,8 @@ class DataControler {
     private let defaults = UserDefaults.standard
     
     struct defaultsKeys {
-        static let keyUID = "deviceID"
+        static let keyID = "userId"
+        static let keyDA = "userDA"
     }
     
     private init() {
@@ -117,6 +118,24 @@ class DataControler {
             print("error  : DataControler.jsonToUser()")
         }
         return wUser
+    }
+    
+    func  jsonToUsers(pJsonUsers: Data!) -> [User]? {
+        var wUsers:[User] = []
+        if let d = pJsonUsers {
+            let jsonFile = try? JSONSerialization.jsonObject(with: d, options: [])
+            if let json = jsonFile as? [[String: Any]] {
+                // parser le json et stocker les données dans le tableau
+                for array in json {
+                    if  let id    = array["_id"]   as? String ,
+                        let da    = array["DA"]    as? Int     {
+                        let wUser = User(pID: id, pDA: da )
+                        wUsers.append(wUser)
+                    }
+                }
+            }
+        }
+        return wUsers
     }
     
     func jsonToRent(pJsonRent : Data) -> Rent? {
@@ -263,8 +282,8 @@ class DataControler {
     
     func getUserFromDA(pDA : String , completion: ( (User?) -> (Void))? ) {
         var wUser:User?
-        let resource = "user/" + pDA
-        let wRequest =  prepareRequest(pResource: resource, pMethod: "POST")
+        //let resource = "user?q={\"DA": "1247948\"}"
+        let wRequest =  prepareRequest(pResource: "user", pMethod: "POST")
         let task = session.dataTask(with: wRequest){ data, _, error in
             if let donnee = data {
                 wUser = self.jsonToUser(pJsonUser: donnee)
@@ -307,6 +326,9 @@ class DataControler {
         //               rents?q={"dateFrom":{ "$gt":{"$date":"2018-12-31T23:45"} }, "dateTo":{ "$lt":{"$date":"2020-12-31T23:45"} }  }
         //let query =   """rent?q={"dateFrom":{%20"$gt":{"$date":"2018-12-31T23:45:00.000Z"}%20},%20"dateTo":{%20"$lt":{"$date":"2020-01-01T20:45:00.000Z"}%20}%20%20}"""
         //FIXME
+        
+        
+        
         let wRequest =  prepareRequest(pResource: "rent" , pMethod: "GET")
         let task = session.dataTask(with: wRequest){ data, _, error in
             if let donnee = data {
@@ -412,12 +434,19 @@ class DataControler {
     }
     
     
-    func getLocalUser() -> String? {
-        return defaults.string(forKey: defaultsKeys.keyUID)
+    func getLocalUser() -> User? { 
+        let ID =  defaults.string(forKey: defaultsKeys.keyID)
+        let DA =  defaults.string(forKey: defaultsKeys.keyDA)
+        var usr:User? = nil
+        if ID != nil && DA != nil {
+            usr = User(pID: ID!, pDA: Int(DA!)! )
+        }
+        return usr
     }
     
-    func setLocalUser(pUID : String){
-        defaults.set(pUID, forKey: defaultsKeys.keyUID)
+    func setLocalUser(pUser : User){
+        defaults.set(pUser.ID, forKey: defaultsKeys.keyID)
+        defaults.set(pUser.DA, forKey: defaultsKeys.keyDA)
     }
     
     

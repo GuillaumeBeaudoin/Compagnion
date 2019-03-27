@@ -49,27 +49,28 @@ class LoginViewControler: UIViewController {
         dc.getUserFromDA(pDA:  txtDA.text! )  { user in
             if user != nil {
                 print( "User exist")
-                self.dc.setLocalUser(pUID: String(self.intDa!) )
+                self.dc.setLocalUser(pUser: user!)
             } else {
                 self.setErrText(pText: "User NOT exist, now creating ")
                 self.dc.postUser(pUser: User(pDA: Int(self.txtDA.text!)!) ) { user in
                     // FIXME : not safe, no validation
-                    // if user != nil {
-                    self.setErrText(pText:  "User created" )
-                    self.dc.setLocalUser(pUID: String(self.intDa!) )
+                    if user != nil {
+                        self.setErrText(pText: "User created" )
+                        self.dc.setLocalUser(pUser: user! )
+                        self.performSegue (withIdentifier: "loginToMain", sender: self)
                     
-                    self.performSegue (withIdentifier: "loginToMain", sender: self)
-                    
-                    // }
-                    // else {  self.lblError.text =  "Error while trying to login , try again later"   }
-                    
+                    } else {
+                        self.setErrText( pText: "Error while trying to login , try again later")
+                    }
                 }
             }
         }
     }
     
     func setErrText(pText : String)  {
-        self.lblError.text = pText
+        DispatchQueue.main.async {
+           self.lblError.text = pText
+        }
     }
     
     func dismiss()  {
@@ -84,6 +85,4 @@ class LoginViewControler: UIViewController {
         intDa =  ( ok ?  Int(  textField.text!  ) : -1 )
     }
     
-    
 }
-

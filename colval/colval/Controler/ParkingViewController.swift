@@ -31,15 +31,6 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
         
        
         
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = location
-        annotation.title = "iOSDevCenter-Kirit Modi"
-        annotation.subtitle = "Ahmedabad"
-        self.mapView.addAnnotation(annotation)
-        self.mapView.register(ParkingViewController.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
- 
-
-        
         let date = Date()
         dc.getRentsForTimeRange(pStart: date, pEnd: date) { rents in
             if rents != nil {

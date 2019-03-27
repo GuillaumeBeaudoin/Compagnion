@@ -60,6 +60,14 @@ class ReservationControler: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        lblFrom.isUserInteractionEnabled = true
+        lblFrom.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ReservationControler.tapLblFrom)))
+        
+        lblTo.isUserInteractionEnabled = true
+        lblTo.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ReservationControler.tapLblTo)))
+        
+        
+        
         self.curHour   = cal.component(.hour, from: curDate)
         self.curMin    = cal.component(.minute, from: curDate)
         
@@ -74,22 +82,35 @@ class ReservationControler: UIViewController {
         updateTimeForLabel(pLabel: lblFrom, pMin: cal.component(.minute, from: minFromDate), pHour: cal.component(.hour, from: minFromDate))
         
         
-       
-        
         
     }
     
+    
+    
+    @objc func tapLblFrom(sender:UITapGestureRecognizer) {
+        print("tapLblFrom")
+    }
+    @objc func tapLblTo(sender:UITapGestureRecognizer) {
+        print("tapLblTo")
+    }
     
     
     @IBAction func btnFindToutched(_ sender: Any) {
-        //var rents =  self.dc.getRents(   )
-        
+        dc.postRent(pRent: Rent( pRenterID: (dc.getLocalUser()?.ID!)! , pParkingID: "TODO", dateFrom: dateFrom, dateTo: dateTo))
     }
     
+    
+    
+    /*
+     * Called by both arrow
+     */
     @IBAction func btnChangeSelection(_ sender: Any) {
         changeSelection()
     }
     
+    /*
+     * Change the self.selected and adjust DatePicker
+     */
     func changeSelection() {
         self.selected = !self.selected
         
@@ -113,13 +134,18 @@ class ReservationControler: UIViewController {
         
     }
     
+    /*
+     * Called every time the DatePicker value has changed
+     */
     @objc func datePickerChanged(picker: UIDatePicker) {
         print("Change")
         let hour = cal.component(.hour, from: picker.date)
         let min = cal.component(.minute, from: picker.date)
         updateTimeForLabel(pLabel: (!self.selected ?self.lblFrom:self.lblTo), pMin: min , pHour: hour)
     }
-    
+    /*
+     *  Set the UILabel
+     */
     func updateTimeForLabel( pLabel :UILabel , pMin:Int , pHour:Int) {
         pLabel.text=(pHour<10 ? "0"+String(pHour): String(pHour))+":"+(pMin==0 ? "00": String(pMin))
     }

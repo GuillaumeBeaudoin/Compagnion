@@ -15,10 +15,10 @@ class ViewController: UIViewController {
         self.navigationItem.hidesBackButton = true;
         
         let dc  = DataControler.sharedInstance
-        let da = dc.getLocalUser()
+        let user = dc.getLocalUser()
         
-        if da != nil  {
-            print("user logged in as : "+da!)
+        if user != nil  {
+            print("user logged in as : \( String(user!.DA) )" )
         } else {
             let sb = UIStoryboard(name: "Main", bundle: Bundle.main )
             
