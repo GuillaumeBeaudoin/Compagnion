@@ -20,7 +20,7 @@ class Parking : NSObject, MKAnnotation{
     
     var coordinate: CLLocationCoordinate2D
     var title:String?
-    var subTitle: String?
+    var subtitle: String?
     
     init(pID : String , pPosX:Double  , pPosY:Double  , pOrientation:Bool  ) {
         self.id           = pID
@@ -30,7 +30,7 @@ class Parking : NSObject, MKAnnotation{
         
         self.coordinate   = CLLocationCoordinate2D(latitude: posX, longitude: posY)
         self.title        = "Parking"
-        self.subTitle     = "Parking"
+        self.subtitle     = id
     }
     
     init( pPosX:Double  , pPosY:Double  , pOrientation:Bool  ) {
@@ -40,7 +40,7 @@ class Parking : NSObject, MKAnnotation{
         
         self.coordinate   = CLLocationCoordinate2D(latitude: posX, longitude: posY)
         self.title        = "Parking"
-        self.subTitle     = "Parking"
+        self.subtitle     = "Parking"
     }
      
 }

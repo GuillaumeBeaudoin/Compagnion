@@ -73,7 +73,7 @@ class ReservationControler: UIViewController {
         changeSelection()
         updateTimeForLabel(pLabel: lblFrom, pMin: cal.component(.minute, from: minFromDate), pHour: cal.component(.hour, from: minFromDate))
         
-        
+        print ("static id : " + ParkingViewController.staticParkingID)
        
         
         

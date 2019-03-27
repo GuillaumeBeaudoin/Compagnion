@@ -12,7 +12,7 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
 
     @IBOutlet weak var mapView: MKMapView!
     var dc:DataControler  = DataControler.sharedInstance
-
+    static var staticParkingID: String = ""
     // true if disponible
     var parkingValue:[String:Bool] = [:]
     
@@ -31,11 +31,7 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
         
        
         
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = location
-        annotation.title = "iOSDevCenter-Kirit Modi"
-        annotation.subtitle = "Ahmedabad"
-        self.mapView.addAnnotation(annotation)
+  
         self.mapView.register(ParkingViewController.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
  
 
@@ -79,8 +75,10 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
      *  On click anotation function
      */
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print("clicked")
-        print (view.annotation?.title)
+        
+        ParkingViewController.staticParkingID = ((view.annotation?.subtitle)!)!
+        
+        print (ParkingViewController.staticParkingID)
         performSegue(withIdentifier: "parkingToReservtion", sender: nil)
     }
     
