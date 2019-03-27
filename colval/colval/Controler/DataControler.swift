@@ -275,19 +275,20 @@ class DataControler {
     /***************************************************************
      *************************  USER API   *************************
      ***************************************************************/
-    //get
     //put
     //post
-    //delete
     
     func getUserFromDA(pDA : String , completion: ( (User?) -> (Void))? ) {
+        var wUsers:[User]?
         var wUser:User?
-        //let resource = "user?q={\"DA": "1247948\"}"
-        let wRequest =  prepareRequest(pResource: "user", pMethod: "POST")
+        let wRequest =  prepareRequest(pResource: "user", pQuerry: "user?q={\"DA\":\"\(pDA)\"}" , pMethod: "POST" )
         let task = session.dataTask(with: wRequest){ data, _, error in
             if let donnee = data {
-                wUser = self.jsonToUser(pJsonUser: donnee)
-                completion?(wUser)
+                wUsers = self.jsonToUsers(pJsonUsers: donnee)
+                if wUsers?.count == 1 {
+                    wUser = wUsers![0]
+                    completion?(wUser)
+                }
             }
         }
         task.resume()
@@ -323,13 +324,13 @@ class DataControler {
      */
     func getRentsForTimeRange(pStart: Date , pEnd: Date , completion: ( ([Rent]?) -> (Void))? ) {
         var wRents:[Rent]?
-        //               rents?q={"dateFrom":{ "$gt":{"$date":"2018-12-31T23:45"} }, "dateTo":{ "$lt":{"$date":"2020-12-31T23:45"} }  }
-        //let query =   """rent?q={"dateFrom":{%20"$gt":{"$date":"2018-12-31T23:45:00.000Z"}%20},%20"dateTo":{%20"$lt":{"$date":"2020-01-01T20:45:00.000Z"}%20}%20%20}"""
-        //FIXME
         
         
         
+        let query = ""
         let wRequest =  prepareRequest(pResource: "rent" , pMethod: "GET")
+        let wRequest =  prepareRequest(pResource: "rent", pQuerry: query , pMethod: "POST" )
+        
         let task = session.dataTask(with: wRequest){ data, _, error in
             if let donnee = data {
                 wRents = self.jsonToRents(pJsonRents: donnee)
@@ -371,26 +372,34 @@ class DataControler {
     /***************************************************************
      ********************** Helper method   ************************
      ***************************************************************/
+    
+    
+    func prepareRequest(pResource: String ,pMethod: String ) -> URLRequest {
+        return prepareRequest(pResource: pResource , pQuerry : nil ,pMethod: pMethod )
+    }
+    
     /*
      * As all request share the same base request setting ,
      * I created this helper method in order to re-use it
      * dīvide et imperā
      */
-    func prepareRequest(pResource: String ,pMethod: String ) -> URLRequest {
+    func prepareRequest(pResource: String , pQuerry : String? ,pMethod: String ) -> URLRequest {
         var wRequest:URLRequest
-        do {
-            let wUrl:URL! = URL( string: self.baseURL+pResource)
-            wRequest = URLRequest(url: wUrl )
-            wRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            wRequest.addValue(self.xApiKey , forHTTPHeaderField: "x-apikey")
-            wRequest.httpMethod = pMethod
-            
-        } catch let error {
-            print("error  : DataControler.prepareRequest()")
-            print( error )
+    
+        var wUrl:URL! = URL( string: self.baseURL+pResource)
+        if pQuerry != nil {
+            wUrl = wUrl.append("q", value: pQuerry)
         }
+        wRequest = URLRequest(url: wUrl )
+        wRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        wRequest.addValue(self.xApiKey , forHTTPHeaderField: "x-apikey")
+        wRequest.httpMethod = pMethod
+            
+        
         return  wRequest
     }
+    
+    
     
     /*
      * Convert a DT to a DB formated String
@@ -448,23 +457,32 @@ class DataControler {
         defaults.set(pUser.ID, forKey: defaultsKeys.keyID)
         defaults.set(pUser.DA, forKey: defaultsKeys.keyDA)
     }
-    
-    
-    /*
-     TODO finish request with ult parameters
-     
-     let bfDate = dc.strToDate(pDate: "2029-01-01T20:45:00.000Z")
-     let afDate = dc.strToDate(pDate: "2029-12-31T23:45:00.000Z")
-     
-     dc.getRentsForTimeRange(pStart: afDate, pEnd: bfDate ) { rents in
-     if rents?.count ?? 0 > 0  {
-     print( String(rents?.count ?? 0 ) + " results have been found" )
-     } else {
-     print("0 result found")
-     }
-     }
-     */
-    
-    
 }
 
+/*
+ *   Redefining method for class URL in order to append
+ *     querry parameters with rigth encription
+ */
+extension URL {
+    @discardableResult
+    func append(_ queryItem: String, value: String?) -> URL {
+        
+        guard var urlComponents = URLComponents(string:  absoluteString) else { return absoluteURL }
+        
+        // create array of existing query items
+        var queryItems: [URLQueryItem] = urlComponents.queryItems ??  []
+        
+        // create query item if value is not nil
+        guard let value = value else { return absoluteURL }
+        let queryItem = URLQueryItem(name: queryItem, value: value)
+        
+        // append the new query item in the existing query items array
+        queryItems.append(queryItem)
+        
+        // append updated query items array in the url component object
+        urlComponents.queryItems = queryItems// queryItems?.append(item)
+        
+        // returns the url from new url components
+        return urlComponents.url!
+    }
+}

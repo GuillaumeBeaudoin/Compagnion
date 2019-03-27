@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 class User :Codable{
     
     var ID : String?
@@ -23,6 +21,5 @@ class User :Codable{
     init( pDA: Int  ) {
         self.DA   = pDA
     }
-    
     
 }
