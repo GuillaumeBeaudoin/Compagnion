@@ -14,7 +14,7 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
     var dc:DataControler  = DataControler.sharedInstance
     static var staticParkingID: String = ""
     // true if disponible
-    var parkingValue:[String:Bool] = [:]
+    var parkingList:[String] = []
     
     
     
@@ -40,7 +40,9 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
         dc.getRentsForTimeRange(pStart: date, pEnd: date) { rents in
             if rents != nil {
                 for rent in rents!{
-                    self.parkingValue[rent.parkingID] = true
+                    print ("rent id : " + rent.parkingID)
+                    self.parkingList.append(rent.parkingID)
+                    
                 }
             } else {
                 print ("Error : could not load getRentsForTimeRange()")
@@ -65,7 +67,17 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: nil, reuseIdentifier: "reuseIdentifier")
         }
+        
+        
+        if   parkingList.contains(annotation.subtitle as! String){
+        annotationView?.image = UIImage(named: "parking-used")
+        }else   {
+        
         annotationView?.image = UIImage(named: "parking-empty")
+        }
+        
+        
+        
         annotationView?.canShowCallout = true
         annotationView?.annotation = annotation
         annotationView?.displayPriority = .required
