@@ -294,9 +294,9 @@
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EWG-f7-znb">
                                                 <rect key="frame" x="311" y="7" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Done"/>
+                                                <state key="normal" title="Login"/>
                                                 <connections>
-                                                    <action selector="okClicked:" destination="Jkq-o0-MCg" eventType="touchUpInside" id="LxW-d3-pTe"/>
+                                                    <action selector="okClick:" destination="Jkq-o0-MCg" eventType="touchUpInside" id="LxW-d3-pTe"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -341,7 +341,7 @@
                         <viewLayoutGuide key="safeArea" id="VXC-bB-ytT"/>
                     </view>
                     <connections>
-                        <outlet property="btnOk" destination="TML-tc-uf0" id="rXX-BT-8hN"/>
+                        <outlet property="btnLogin" destination="TML-tc-uf0" id="rXX-BT-8hN"/>
                         <outlet property="lblError" destination="oOw-c7-fGy" id="j3e-Jv-81w"/>
                         <outlet property="txtDA" destination="w4Y-9v-fFs" id="o9Q-4P-sON"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="loginToMain" id="F9X-0V-dBJ"/>

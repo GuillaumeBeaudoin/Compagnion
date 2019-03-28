@@ -23,7 +23,7 @@ class LoginViewControler: UIViewController {
     
     @IBOutlet weak var txtDA: UITextField!
     @IBOutlet weak var lblError: UILabel!
-    @IBOutlet weak var btnOk: UIBarButtonItem!
+    @IBOutlet weak var btnLogin: UIBarButtonItem!
     
     let dc    = DataControler.sharedInstance
     var intDa:Int?
@@ -32,44 +32,58 @@ class LoginViewControler: UIViewController {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = nil;
         self.navigationItem.hidesBackButton = true;
-        self.navigationItem.setRightBarButton(btnOk, animated: true)
+        self.navigationItem.setRightBarButton(btnLogin, animated: true)
         
-        btnOk.isEnabled = false
-        
+        btnLogin.isEnabled = false
         txtDA.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
+        txtDA.text = "1247948"
+        self.okClick((Any).self)
+        
     }
-    @IBAction func okClicked(_ sender: Any) {
-        doneBtnPressed(sender )
-    }
-    
-    @objc func doneBtnPressed(_ sender: Any) {
-        print( "Done")
+    @IBAction func okClick(_ sender: Any) {
+        
+        self.setErrText(pText: "Login in progress" )
+        btnLogin.isEnabled = false
+        lblError.isEnabled = false
+        let threadSafeDA   = Int(self.txtDA.text!)!
+        
         // verify if exist
-        dc.getUserFromDA(pDA:  txtDA.text! )  { user in
+        dc.getUserFromDA(pDA:  Int(txtDA.text! )! ) { user in
+            print("Login in progress")
+            self.setErrText(pText: "Login in progress" )
             if user != nil {
-                print( "User exist")
+                self.setErrText(pText: "Login Succesful" )
+                print("Login Succesful")
                 self.dc.setLocalUser(pUser: user!)
+                self.performSegue (withIdentifier: "loginToMain", sender: self)
             } else {
                 self.setErrText(pText: "User NOT exist, now creating ")
-                self.dc.postUser(pUser: User(pDA: Int(self.txtDA.text!)!) ) { user in
-                    // FIXME : not safe, no validation
-                    if user != nil {
-                        self.setErrText(pText: "User created" )
-                        self.dc.setLocalUser(pUser: user! )
-                        self.performSegue (withIdentifier: "loginToMain", sender: self)
-                    
-                    } else {
-                        self.setErrText( pText: "Error while trying to login , try again later")
+                self.dc.postUser(pUser: User(pDA: threadSafeDA ) ) { user2 in
+                    self.dc.getUserFromDA(pDA:  threadSafeDA )  { user3 in
+                        // FIXME : not safe, no validation
+                        if user3 != nil {
+                            self.setErrText(pText: "User created" )
+                            self.dc.setLocalUser(pUser: user3! )
+                            self.performSegue (withIdentifier: "loginToMain", sender: self)
+                        } else {
+                            self.setErrText( pText: "Error while trying to login , try again later")
+                            DispatchQueue.main.async {
+                                self.btnLogin.isEnabled = true
+                                self.lblError.isEnabled = true
+                            }
+                            
+                        }
                     }
                 }
             }
-        }
+        } 
     }
     
     func setErrText(pText : String)  {
         DispatchQueue.main.async {
            self.lblError.text = pText
+           //print("setErrText = " + pText)
         }
     }
     
@@ -81,7 +95,7 @@ class LoginViewControler: UIViewController {
     @objc func textFieldDidChange(_ textField: UITextField) {
         let ok = textField.text?.count == 7 
         lblError.text = (ok ? "" : "DA not valid" )
-        btnOk.isEnabled = ok
+        btnLogin.isEnabled = ok
         intDa =  ( ok ?  Int(  textField.text!  ) : -1 )
     }
     

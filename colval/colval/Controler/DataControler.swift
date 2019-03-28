@@ -225,6 +225,43 @@ class DataControler {
     
     
     
+    /***************************************************************
+     *************************  USER API   *************************
+     ***************************************************************/
+    //put
+    //post
+    
+    func getUserFromDA(pDA : Int , completion: ( (User?) -> (Void))? ) {
+        var wUsers:[User]?
+        var wUser:User?
+        let wRequest =  prepareRequest(pResource: "user", pQuerry: "{\"DA\":\(pDA)}" , pMethod: "GET" )
+        let task = session.dataTask(with: wRequest){ data, _, error in
+            if let donnee = data {
+                wUsers = self.jsonToUsers(pJsonUsers: donnee)
+                if wUsers?.count == 1 {
+                    wUser = wUsers![0]
+                    completion?(wUser)
+                }
+            }
+            completion?(wUser)
+        }
+        task.resume()
+    }
+    
+    func postUser(pUser : User , completion: ( (User?) -> (Void))? ) {
+        var wUser:User?
+        var wRequest =  prepareRequest(pResource: "user", pMethod: "POST")
+        wRequest.httpBody = userToJson(pUser: pUser);
+        let task = session.dataTask(with: wRequest){ data, _, error in
+            if let donnee = data {
+                wUser = self.jsonToUser(pJsonUser: donnee)
+                completion?(wUser)
+            }
+        }
+        task.resume()
+    }
+    
+    
     
     
     /***************************************************************
@@ -273,42 +310,6 @@ class DataControler {
     
     
     /***************************************************************
-     *************************  USER API   *************************
-     ***************************************************************/
-    //put
-    //post
-    
-    func getUserFromDA(pDA : String , completion: ( (User?) -> (Void))? ) {
-        var wUsers:[User]?
-        var wUser:User?
-        let wRequest =  prepareRequest(pResource: "user", pQuerry: "user?q={\"DA\":\"\(pDA)\"}" , pMethod: "POST" )
-        let task = session.dataTask(with: wRequest){ data, _, error in
-            if let donnee = data {
-                wUsers = self.jsonToUsers(pJsonUsers: donnee)
-                if wUsers?.count == 1 {
-                    wUser = wUsers![0]
-                    completion?(wUser)
-                }
-            }
-        }
-        task.resume()
-    }
-    
-    func postUser(pUser : User , completion: ( (User?) -> (Void))? ) {
-        var wUser:User?
-        var wRequest =  prepareRequest(pResource: "user", pMethod: "POST")
-        wRequest.httpBody = userToJson(pUser: pUser);
-        let task = session.dataTask(with: wRequest){ data, _, error in
-            if let donnee = data {
-                wUser = self.jsonToUser(pJsonUser: donnee)
-                completion?(wUser)
-            }
-        }
-        task.resume()
-    }
-    
-    
-    /***************************************************************
      *************************  Rent API   **************************
      ***************************************************************/
     //get
@@ -328,8 +329,7 @@ class DataControler {
         
         
         let query = ""
-        let wRequest =  prepareRequest(pResource: "rent" , pMethod: "GET")
-        let wRequest =  prepareRequest(pResource: "rent", pQuerry: query , pMethod: "POST" )
+        let wRequest =  prepareRequest(pResource: "rent", pQuerry: query , pMethod: "GET" )
         
         let task = session.dataTask(with: wRequest){ data, _, error in
             if let donnee = data {
@@ -349,7 +349,9 @@ class DataControler {
                 wRents = self.jsonToRents(pJsonRents: donnee)
                 completion?(wRents)
             }
+            completion?(wRents)
         }
+        
         task.resume()
     }
     
@@ -385,7 +387,7 @@ class DataControler {
      */
     func prepareRequest(pResource: String , pQuerry : String? ,pMethod: String ) -> URLRequest {
         var wRequest:URLRequest
-    
+        
         var wUrl:URL! = URL( string: self.baseURL+pResource)
         if pQuerry != nil {
             wUrl = wUrl.append("q", value: pQuerry)
@@ -394,7 +396,7 @@ class DataControler {
         wRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         wRequest.addValue(self.xApiKey , forHTTPHeaderField: "x-apikey")
         wRequest.httpMethod = pMethod
-            
+        
         
         return  wRequest
     }
@@ -443,7 +445,7 @@ class DataControler {
     }
     
     
-    func getLocalUser() -> User? { 
+    func getLocalUser() -> User? {
         let ID =  defaults.string(forKey: defaultsKeys.keyID)
         let DA =  defaults.string(forKey: defaultsKeys.keyDA)
         var usr:User? = nil

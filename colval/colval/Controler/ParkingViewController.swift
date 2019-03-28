@@ -14,7 +14,12 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
     var dc:DataControler  = DataControler.sharedInstance
     static var staticParkingID: String = ""
     // true if disponible
-    var parkingList:[String] = []
+    var arrayParking:[Parking]                = []
+    var arrayRent: [Rent]                     = []
+    var mapRentParking:[String?: [String?]]  = [:]
+    
+    var parkingLoaded = false
+    var rentLoaded = false
     
     
     
@@ -36,28 +41,56 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
  
 
         
-        let date = Date()
-        dc.getRentsForTimeRange(pStart: date, pEnd: date) { rents in
-            if rents != nil {
-                for rent in rents!{
-                    print ("rent id : " + rent.parkingID)
-                    self.parkingList.append(rent.parkingID)
-                    
-                }
-            } else {
-                print ("Error : could not load getRentsForTimeRange()")
-            }
-        }
+        
         
         self.dc.getParkings(){ parkings in
             if parkings != nil {
-                self.mapView.showAnnotations(parkings!, animated: true)
-                self.mapView.addAnnotations(parkings!)
+                self.arrayParking = parkings!
+                self.parkingLoaded = true
+                self.mapingRentParking()
             } else {
-                print("Error : could not load  getParkings()")
+                print("Error : could not load : getParkings()")
             }
         }
+        
+        let date = Date()
+        let date2 = dc.strToDate(pDate: "2017-01-01T16:45:00.000Z")
+        let date3 = dc.strToDate(pDate: "2019-12-12T16:45:00.000Z")
+        
+        dc.getRentsForTimeRange(pStart: date2, pEnd: date3) { rents in
+            if rents != nil {
+                self.arrayRent = rents!
+                self.rentLoaded = true
+                self.mapingRentParking()
+            } else {
+                print ("Error : could not load : getRentsForTimeRange()")
+            }
+        }
+        
     }
+    
+    /*
+     *  map the rents by parkings                  [    idParking   , [idRent]    ]
+     */
+    func mapingRentParking()   {
+        if rentLoaded && parkingLoaded {
+            print("mapRentParking rent=" + String(arrayRent.count) + " parking=" +  String(arrayParking.count)  )
+            mapRentParking = [String?: [String?]]()
+            for rent in arrayRent {
+                if mapRentParking[rent.parkingID] == nil {
+                    mapRentParking[rent.parkingID] = [rent.ID!]
+                    print("mapingRentParking  new")
+                } else {
+                    mapRentParking[rent.parkingID]! += [rent.ID!]
+                    print("mapingRentParking  append")
+                }
+            }
+            self.mapView.addAnnotations(arrayParking)
+            self.mapView.showAnnotations(arrayParking, animated: true)
+        }
+    }
+    
+    
     
     /*
      *  Create anotation
@@ -68,15 +101,11 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
             annotationView = MKAnnotationView(annotation: nil, reuseIdentifier: "reuseIdentifier")
         }
         
-        
-        if   parkingList.contains(annotation.subtitle as! String){
-        annotationView?.image = UIImage(named: "parking-used")
-        }else   {
-        
-        annotationView?.image = UIImage(named: "parking-empty")
-        }
-        
-        
+                            //fixme  do full validation within that range
+        let isAvailable  = mapRentParking[annotation.subtitle!] == nil
+        print("mapView  " + annotation.subtitle!!   + " : " + String(isAvailable) )
+        annotationView?.image = UIImage(named: (isAvailable ? "parking-empty" : "parking-used") )
+       
         
         annotationView?.canShowCallout = true
         annotationView?.annotation = annotation
