@@ -7,18 +7,23 @@
 //
 
 import Foundation
+import MapKit
 
 
 //return static values fro now until DB is done
 
 
 class DataControler {
+    
     static let sharedInstance = DataControler()
     private let cal:Calendar = Calendar.current
     private let session = URLSession.shared
     private let baseURL:String  // restdb.io URL
     private let xApiKey:String // restdb.io authentification
     private let defaults = UserDefaults.standard
+    
+    
+    final let colValRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 45.2523979, longitude: -74.1324644), span: MKCoordinateSpan(latitudeDelta: 0.0005, longitudeDelta: 0.0005))
     
     struct defaultsKeys {
         static let keyID = "userId"

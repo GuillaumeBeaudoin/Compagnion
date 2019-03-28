@@ -11,8 +11,11 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
 
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var lblAvleSpaces: UILabel!
+    
+    
     var dc:DataControler  = DataControler.sharedInstance
-    static var staticParkingID: String = ""
+    
     // true if disponible
     var arrayParking:[Parking]                = []
     var arrayRent: [Rent]                     = []
@@ -26,22 +29,13 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let location = CLLocationCoordinate2D(latitude: 45.2523979, longitude: -74.1324644)
-        let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.0005, longitudeDelta: 0.0005))
-        
+        lblAvleSpaces.text = "Loading"
         //self.mapView.mapType = MKMapType.standard
         self.mapView.delegate = self
-        self.mapView.setRegion(region,animated: false)
+        self.mapView.setRegion(dc.colValRegion ,animated: false)
         
-       
-        
-  
         self.mapView.register(ParkingViewController.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
- 
-
-        
-        
+  
         
         self.dc.getParkings(){ parkings in
             if parkings != nil {
@@ -70,23 +64,27 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
     }
     
     /*
-     *  map the rents by parkings                  [    idParking   , [idRent]    ]
+     *  compute if a parking is occupied by merging the parking and rents
      */
     func mapingRentParking()   {
         if rentLoaded && parkingLoaded {
-            print("mapRentParking rent=" + String(arrayRent.count) + " parking=" +  String(arrayParking.count)  )
+            print("mapingRentParking rent=" + String(arrayRent.count) + " parking=" +  String(arrayParking.count)  )
             mapRentParking = [String?: [String?]]()
             for rent in arrayRent {
                 if mapRentParking[rent.parkingID] == nil {
                     mapRentParking[rent.parkingID] = [rent.ID!]
-                    print("mapingRentParking  new")
+                    print("mapingRentParking  new" + rent.ID! )
                 } else {
                     mapRentParking[rent.parkingID]! += [rent.ID!]
                     print("mapingRentParking  append")
                 }
             }
-            self.mapView.addAnnotations(arrayParking)
-            self.mapView.showAnnotations(arrayParking, animated: true)
+            
+            DispatchQueue.main.async {
+                self.lblAvleSpaces.text = String(self.arrayParking.count-self.mapRentParking.count) + "/" + String(self.arrayParking.count) + "parking available"
+                self.mapView.addAnnotations(self.arrayParking)
+                self.mapView.showAnnotations(self.arrayParking, animated: true)
+            }
         }
     }
     
@@ -99,13 +97,12 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "reuseIdentifier")
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: nil, reuseIdentifier: "reuseIdentifier")
+            print("mapView null")
         }
         
                             //fixme  do full validation within that range
         let isAvailable  = mapRentParking[annotation.subtitle!] == nil
-        print("mapView  " + annotation.subtitle!!   + " : " + String(isAvailable) )
         annotationView?.image = UIImage(named: (isAvailable ? "parking-empty" : "parking-used") )
-       
         
         annotationView?.canShowCallout = true
         annotationView?.annotation = annotation
@@ -116,11 +113,10 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
      *  On click anotation function
      */
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        
-        ParkingViewController.staticParkingID = ((view.annotation?.subtitle)!)!
-        
-        print (ParkingViewController.staticParkingID)
-        performSegue(withIdentifier: "parkingToReservtion", sender: nil)
+        if let reservCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "rsvCtrl") as? ReservationControler
+        {
+            reservCtrl.parkingID =  ((view.annotation?.subtitle)!)!
+            present(reservCtrl, animated: true, completion: nil)
+        }
     }
-    
 }

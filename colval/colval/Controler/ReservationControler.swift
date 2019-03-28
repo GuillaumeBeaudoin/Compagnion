@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import UIKit
-
+import MapKit
 
 
 
@@ -32,6 +31,8 @@ class ReservationControler: UIViewController {
     @IBOutlet weak var btnPrev: UIButton!
     @IBOutlet weak var btnNext: UIButton!
     
+    @IBOutlet weak var mapView: MKMapView!
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     
     var dc:DataControler  = DataControler.sharedInstance
@@ -52,6 +53,8 @@ class ReservationControler: UIViewController {
     
     var minToDate:Date   = Date()
     var maxToDate:Date   = Date()
+    
+    var parkingID        = ""
     
     // false = From , True = To
     var selected:Bool    = true
