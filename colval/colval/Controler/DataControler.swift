@@ -16,12 +16,13 @@ import MapKit
 class DataControler {
     
     static let sharedInstance = DataControler()
-    private let cal:Calendar = Calendar.current
     private let session = URLSession.shared
     private let baseURL:String  // restdb.io URL
     private let xApiKey:String // restdb.io authentification
     private let defaults = UserDefaults.standard
     
+    
+    final let cal:Calendar = Calendar.current
     
     final let colValRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 45.2523979, longitude: -74.1324644), span: MKCoordinateSpan(latitudeDelta: 0.0005, longitudeDelta: 0.0005))
     
@@ -31,7 +32,7 @@ class DataControler {
     }
     
     private init() {
-        baseURL = "https://colval-cbfd.restdb.io/rest/"    // restdb.io URL
+        baseURL = "https://colval-cbfd.restdb.io/rest/"
         xApiKey = "7b29d3c5d1b96232768b7991fcdfd0b1bd571"
     }
     
@@ -93,9 +94,9 @@ class DataControler {
         if let wID = pParking.id {
             parm["_id"] = wID
         }
-        parm["posX"] = String(pParking.posX)
-        parm["posY"] = String(pParking.posY)
-        parm["orientation"] = String(pParking.orientation)
+        parm["posX"]   = String(pParking.posX)
+        parm["posY"]   = String(pParking.posY)
+        parm["numero"] = String(pParking.numero)
         do {
             parkingJson = try JSONSerialization.data(withJSONObject: parm, options: [] )
         } catch {
@@ -194,8 +195,8 @@ class DataControler {
                 if  let id          = array["_id"]         as? String ,
                     let posX        = array["posX"]        as? Double ,
                     let posY        = array["posY"]        as? Double ,
-                    let orientation = array["orientation"] as? Bool   {
-                    wParking = Parking(pID: id, pPosX: posX, pPosY: posY, pOrientation: orientation)
+                    let numero      = array["numero"]      as? Int    {
+                    wParking = Parking(pID: id, pPosX: posX, pPosY: posY, pNumero: numero)
                 }
             }
         } catch let error {
@@ -216,8 +217,8 @@ class DataControler {
                     if  let id          = array["_id"]         as? String ,
                         let posX        = array["posX"]        as? Double ,
                         let posY        = array["posY"]        as? Double ,
-                        let orientation = array["orientation"] as? Bool   {
-                        let wParking = Parking(pID: id, pPosX: posX, pPosY: posY, pOrientation: orientation)
+                        let numero      = array["numero"]      as? Int    {
+                        let wParking = Parking(pID: id, pPosX: posX, pPosY: posY, pNumero: numero)
                         wParkings.append(wParking)
                     }
                 }
@@ -347,8 +348,11 @@ class DataControler {
     
     func getRentsForParkingForTimeRange(pParkingID: String , pStart: Date , pEnd: Date , completion: ( ([Rent]?) -> (Void))? ) {
         var wRents:[Rent]?
-        //  +  TODO
-        let wRequest =  prepareRequest(pResource: "rent/"+pParkingID, pMethod: "GET")
+        // testme
+        let query = "{\"parkingId\":\"\(pParkingID)\",\"dateFrom\":{\"$gt\":{\"$date\":\"\( self.dateToStr(pDate: pStart) )\"}}}"
+            
+        let wRequest =  prepareRequest(pResource: "rent", pQuerry: query , pMethod: "GET" )
+        
         let task = session.dataTask(with: wRequest){ data, _, error in
             if let donnee = data {
                 wRents = self.jsonToRents(pJsonRents: donnee)
@@ -448,6 +452,25 @@ class DataControler {
         let dateDate = cal.date(from: dateComponents) ?? Date()
         return  dateDate
     }
+    
+    
+    func dateTimeFromDateHourMin(pDate: Date , pHour: Int , pMinute: Int) -> Date {
+        
+        var dateComponents = DateComponents()
+        dateComponents.timeZone = TimeZone(abbreviation: "EST") // Eastern Standard Time
+        dateComponents.year     = cal.component(.year  , from: pDate)
+        dateComponents.month    = cal.component(.month , from: pDate)
+        dateComponents.day      = cal.component(.day  , from: pDate)
+        dateComponents.hour     = pHour
+        dateComponents.minute   = pMinute
+        let dateDate = cal.date(from: dateComponents) ?? Date()
+        return  dateDate
+    }
+    
+    
+            
+            
+    
     
     
     func getLocalUser() -> User? {

@@ -48,38 +48,44 @@ class LoginViewControler: UIViewController {
         btnLogin.isEnabled = false
         lblError.isEnabled = false
         self.txtDA.resignFirstResponder()
-        let threadSafeDA   = Int(self.txtDA.text!)!
+        //let threadSafeDA   = Int(self.txtDA.text!)!
+        //guard let threadSafeDA       = textField.text         else { return }
+        guard let da  = self.txtDA.text else { return }
+        guard let intDa  = Int(da) else { return }
         
-        // verify if exist
+        
+        
+        // Verify if exist
         dc.getUserFromDA(pDA:  Int(txtDA.text! )! ) { user in
             print("Login in progress")
             self.setErrText(pText: "Login in progress" )
+            // Exist
             if user != nil {
                 self.setErrText(pText: "Login Succesful" )
                 print("Login Succesful")
                 self.dc.setLocalUser(pUser: user!)
                 //self.performSegue (withIdentifier: "loginToMain", sender: self)
-                self.present()
+                self.popMain()
                 
-                
+            // Create
             } else {
                 self.setErrText(pText: "User NOT exist, now creating ")
-                self.dc.postUser(pUser: User(pDA: threadSafeDA ) ) { user2 in
-                    self.dc.getUserFromDA(pDA:  threadSafeDA )  { user3 in
-                        // FIXME : not safe, no validation
+                self.dc.postUser(pUser: User(pDA: intDa ) ) { user2 in
+                    self.dc.getUserFromDA(pDA:  intDa )  { user3 in
                         if user3 != nil {
+                            /*guard let user4  = User(from: wdscva) else{
+                                self.setErrText( pText: "Error while trying to login , try again later")
+                                DispatchQueue.main.async {
+                                    self.btnLogin.isEnabled = true
+                                    self.lblError.isEnabled = true
+                                    self.txtDA.becomeFirstResponder()
+                                    return
+                                    }*/
+                             }
                             self.setErrText(pText: "User created" )
                             self.dc.setLocalUser(pUser: user3! )
-                            self.present()
-                        } else {
-                            self.setErrText( pText: "Error while trying to login , try again later")
-                            DispatchQueue.main.async {
-                                self.btnLogin.isEnabled = true
-                                self.lblError.isEnabled = true
-                                self.txtDA.becomeFirstResponder()
-                            }
-                            
-                        }
+                            self.popMain()     // user4 )
+                        //}
                     }
                 }
             }
@@ -89,25 +95,22 @@ class LoginViewControler: UIViewController {
     func setErrText(pText : String)  {
         DispatchQueue.main.async {
            self.lblError.text = pText
-           //print("setErrText = " + pText)
         }
     }
     
-    func present() {
+    func popMain() {
         DispatchQueue.main.async {
-            if let mainCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainCtrl") as? ViewController
-            {
-                self.present(mainCtrl, animated: true, completion: nil)
-            }
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        let ok = textField.text?.count == 7 
-        lblError.text = (ok ? "" : "DA not valid" )
-        btnLogin.isEnabled = ok
-        intDa =  ( ok ?  Int(  textField.text!  ) : -1 )
+        guard let txtCount = textField.text?.count  else { return }
+        DispatchQueue.main.async {
+            self.lblError.text =  (txtCount > 7 ? "DA too long" : "" )
+            self.btnLogin.isEnabled = txtCount == 7
+        }
     }
     
 }

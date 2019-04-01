@@ -16,31 +16,31 @@ class Parking : NSObject, MKAnnotation{
     var id : String?
     var posX : Double
     var posY : Double
-    var orientation : Bool // horisontal = true  : vertical = false
+    var numero : Int
     
     var coordinate: CLLocationCoordinate2D
     var title:String?
     var subtitle: String?
     
-    init(pID : String , pPosX:Double  , pPosY:Double  , pOrientation:Bool  ) {
+    init(pID : String , pPosX:Double  , pPosY:Double  , pNumero:Int  ) {
         self.id           = pID
         self.posX         = pPosX
         self.posY         = pPosY
-        self.orientation  = pOrientation
+        self.numero       = pNumero
         
         self.coordinate   = CLLocationCoordinate2D(latitude: posX, longitude: posY)
-        self.title        = "Parking"
-        self.subtitle     = self.id
+        self.title        = "Parking #\(self.numero)"
+        self.subtitle     = id
     }
     
-    init( pPosX:Double  , pPosY:Double  , pOrientation:Bool  ) {
+    init( pPosX:Double  , pPosY:Double  , pNumero:Int  ) {
         self.posX         = pPosX
         self.posY         = pPosY
-        self.orientation  = pOrientation
+        self.numero       = pNumero
         
         self.coordinate   = CLLocationCoordinate2D(latitude: posX, longitude: posY)
-        self.title        = "Parking"
-        self.subtitle     = self.id
+        self.title        = "Parking #\(self.numero)"
+        self.subtitle     = id
     }
      
 }
