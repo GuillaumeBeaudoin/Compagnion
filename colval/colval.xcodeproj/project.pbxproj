@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		720965DE224A790700C4F26E /* LoginViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720965DD224A790700C4F26E /* LoginViewControler.swift */; };
+		721AF4D82255A23300489053 /* GTSFStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 721AF4D62255A23300489053 /* GTSFStore.xcdatamodeld */; };
 		724574A42241492A00C26197 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574A32241492A00C26197 /* AppDelegate.swift */; };
 		724574AB2241492D00C26197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 724574AA2241492D00C26197 /* Assets.xcassets */; };
 		724574B92241492D00C26197 /* colvalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574B82241492D00C26197 /* colvalTests.swift */; };
@@ -31,6 +32,9 @@
 		724574EA224149DE00C26197 /* Parking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574DC224149DE00C26197 /* Parking.swift */; };
 		724574EE224149EC00C26197 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574EC224149EC00C26197 /* ViewController.swift */; };
 		724574EF224149EC00C26197 /* ReservationControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574ED224149EC00C26197 /* ReservationControler.swift */; };
+		7285BED722562DEA00B454DE /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285BED622562DEA00B454DE /* CoreData.swift */; };
+		7285BED922562E1E00B454DE /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285BED822562E1E00B454DE /* Util.swift */; };
+		7285BEDB22562F1200B454DE /* DefaultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285BEDA22562F1200B454DE /* DefaultData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		720965DD224A790700C4F26E /* LoginViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControler.swift; sourceTree = "<group>"; };
+		721AF4D72255A23300489053 /* GTSFStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GTSFStore.xcdatamodel; sourceTree = "<group>"; };
 		724574A02241492A00C26197 /* colval.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = colval.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		724574A32241492A00C26197 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		724574AA2241492D00C26197 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,6 +77,9 @@
 		724574DC224149DE00C26197 /* Parking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parking.swift; sourceTree = "<group>"; };
 		724574EC224149EC00C26197 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		724574ED224149EC00C26197 /* ReservationControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationControler.swift; sourceTree = "<group>"; };
+		7285BED622562DEA00B454DE /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		7285BED822562E1E00B454DE /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		7285BEDA22562F1200B454DE /* DefaultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		721AF4D52255A1D800489053 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				721AF4D62255A23300489053 /* GTSFStore.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		724574972241492A00C26197 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +129,7 @@
 		724574A22241492A00C26197 /* colval */ = {
 			isa = PBXGroup;
 			children = (
+				7285BED522562DBF00B454DE /* Data */,
 				724574CE224149DE00C26197 /* Model */,
 				724574C7224149D100C26197 /* Controler */,
 				724574A32241492A00C26197 /* AppDelegate.swift */,
@@ -137,7 +154,6 @@
 		724574C7224149D100C26197 /* Controler */ = {
 			isa = PBXGroup;
 			children = (
-				724574C8224149D100C26197 /* DataControler.swift */,
 				724574C9224149D100C26197 /* ParkingViewController.swift */,
 				720965DD224A790700C4F26E /* LoginViewControler.swift */,
 				724574ED224149EC00C26197 /* ReservationControler.swift */,
@@ -149,10 +165,8 @@
 		724574CE224149DE00C26197 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7285BED322562D6D00B454DE /* Parking */,
 				724574CF224149DE00C26197 /* GTSF */,
-				724574DA224149DE00C26197 /* User.swift */,
-				724574DB224149DE00C26197 /* Rent.swift */,
-				724574DC224149DE00C26197 /* Parking.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,6 +174,7 @@
 		724574CF224149DE00C26197 /* GTSF */ = {
 			isa = PBXGroup;
 			children = (
+				721AF4D52255A1D800489053 /* CoreData */,
 				724574D0224149DE00C26197 /* calendar_dates.swift */,
 				724574D1224149DE00C26197 /* stops.swift */,
 				724574D2224149DE00C26197 /* stop_times.swift */,
@@ -172,6 +187,27 @@
 				724574D9224149DE00C26197 /* fare_rules.swift */,
 			);
 			path = GTSF;
+			sourceTree = "<group>";
+		};
+		7285BED322562D6D00B454DE /* Parking */ = {
+			isa = PBXGroup;
+			children = (
+				724574DA224149DE00C26197 /* User.swift */,
+				724574DB224149DE00C26197 /* Rent.swift */,
+				724574DC224149DE00C26197 /* Parking.swift */,
+			);
+			path = Parking;
+			sourceTree = "<group>";
+		};
+		7285BED522562DBF00B454DE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7285BED622562DEA00B454DE /* CoreData.swift */,
+				724574C8224149D100C26197 /* DataControler.swift */,
+				7285BED822562E1E00B454DE /* Util.swift */,
+				7285BEDA22562F1200B454DE /* DefaultData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +314,10 @@
 				724574EF224149EC00C26197 /* ReservationControler.swift in Sources */,
 				724574CC224149D100C26197 /* ParkingViewController.swift in Sources */,
 				724574E5224149DE00C26197 /* fare_attributes.swift in Sources */,
+				7285BEDB22562F1200B454DE /* DefaultData.swift in Sources */,
 				724574E9224149DE00C26197 /* Rent.swift in Sources */,
+				7285BED722562DEA00B454DE /* CoreData.swift in Sources */,
+				721AF4D82255A23300489053 /* GTSFStore.xcdatamodeld in Sources */,
 				724574EA224149DE00C26197 /* Parking.swift in Sources */,
 				724574E0224149DE00C26197 /* stop_times.swift in Sources */,
 				724574E8224149DE00C26197 /* User.swift in Sources */,
@@ -287,6 +326,7 @@
 				724574E1224149DE00C26197 /* trips.swift in Sources */,
 				724574CB224149D100C26197 /* DataControler.swift in Sources */,
 				724574EE224149EC00C26197 /* ViewController.swift in Sources */,
+				7285BED922562E1E00B454DE /* Util.swift in Sources */,
 				724574CD224149D100C26197 /* BusControler.swift in Sources */,
 				724574DF224149DE00C26197 /* stops.swift in Sources */,
 				724574E6224149DE00C26197 /* routes.swift in Sources */,
@@ -542,6 +582,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		721AF4D62255A23300489053 /* GTSFStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				721AF4D72255A23300489053 /* GTSFStore.xcdatamodel */,
+			);
+			currentVersion = 721AF4D72255A23300489053 /* GTSFStore.xcdatamodel */;
+			path = GTSFStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 724574982241492A00C26197 /* Project object */;
 }
