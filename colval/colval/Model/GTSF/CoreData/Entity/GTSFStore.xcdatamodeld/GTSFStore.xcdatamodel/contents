@@ -1,34 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G6030" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Agency" representedClassName="Agency" syncable="YES">
         <attribute name="agency_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="agency_name" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="routes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Route" inverseName="agency" inverseEntity="Route" syncable="YES"/>
+        <relationship name="routes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Routes" inverseName="agency" inverseEntity="Routes" syncable="YES"/>
     </entity>
     <entity name="Calender" representedClassName="Calender" syncable="YES">
         <attribute name="dayInFunction" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="end_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="service_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="start_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="routes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Routes" inverseName="calendars" inverseEntity="Routes" syncable="YES"/>
     </entity>
-    <entity name="FareAttributes" representedClassName="FareAttributes" syncable="YES">
-        <attribute name="fare_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="transfers" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-    </entity>
-    <entity name="FareRules" representedClassName="FareRules" syncable="YES">
-        <attribute name="contains_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="destination_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="fare_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="origin_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="route_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-    </entity>
-    <entity name="Route" representedClassName="Route" syncable="YES">
+    <entity name="Routes" representedClassName="Routes" syncable="YES">
         <attribute name="agency_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="route_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="route_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="route_type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="agency" maxCount="1" deletionRule="Nullify" destinationEntity="Agency" inverseName="routes" inverseEntity="Agency" syncable="YES"/>
+        <relationship name="calendars" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Calender" inverseName="routes" inverseEntity="Calender" syncable="YES"/>
+        <relationship name="trips" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trips" inverseName="routes" inverseEntity="Trips" syncable="YES"/>
     </entity>
     <entity name="Shape" representedClassName="Shape" syncable="YES">
         <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -36,9 +27,9 @@
         <attribute name="sequence" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="shape_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="traveled" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="shapes" inverseEntity="Trip" syncable="YES"/>
+        <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trips" inverseName="shapes" inverseEntity="Trips" syncable="YES"/>
     </entity>
-    <entity name="Stop" representedClassName="Stop" syncable="YES">
+    <entity name="Stops" representedClassName="Stops" syncable="YES">
         <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="stop_code" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -46,7 +37,7 @@
         <attribute name="stop_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wheelchair_boarding" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="zonex" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="stopTimes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StopTimes" inverseName="stop" inverseEntity="StopTimes" syncable="YES"/>
+        <relationship name="stopTimes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StopTimes" inverseName="stop" inverseEntity="StopTimes" syncable="YES"/>
     </entity>
     <entity name="StopTimes" representedClassName="StopTimes" syncable="YES">
         <attribute name="arrival_time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -58,9 +49,10 @@
         <attribute name="timepoint" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="traveled" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="trip_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="stop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stop" inverseName="stopTimes" inverseEntity="Stop" syncable="YES"/>
+        <relationship name="stop" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Stops" inverseName="stopTimes" inverseEntity="Stops" syncable="YES"/>
+        <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trips" inverseName="stoptimes" inverseEntity="Trips" syncable="YES"/>
     </entity>
-    <entity name="Trip" representedClassName="Trip" syncable="YES">
+    <entity name="Trips" representedClassName="Trips" syncable="YES">
         <attribute name="direction_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="route_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="service_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -68,17 +60,17 @@
         <attribute name="trip_headsign" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="trip_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="trip_short_name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="routes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Routes" inverseName="trips" inverseEntity="Routes" syncable="YES"/>
         <relationship name="shapes" toMany="YES" deletionRule="Nullify" destinationEntity="Shape" inverseName="trip" inverseEntity="Shape" syncable="YES"/>
+        <relationship name="stoptimes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StopTimes" inverseName="trip" inverseEntity="StopTimes" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Agency" positionX="-219.15234375" positionY="1.34765625" width="128" height="88"/>
-        <element name="Calender" positionX="-431.4609375" positionY="174.94140625" width="128" height="103"/>
-        <element name="FareAttributes" positionX="12.85546875" positionY="-185.77734375" width="128" height="88"/>
-        <element name="FareRules" positionX="9.109375" positionY="-360.3984375" width="128" height="118"/>
-        <element name="Route" positionX="50" positionY="-29.04296875" width="128" height="118"/>
-        <element name="Shape" positionX="82.1171875" positionY="205.06640625" width="128" height="133"/>
-        <element name="Stop" positionX="-442.6015625" positionY="-208.4375" width="128" height="163"/>
-        <element name="StopTimes" positionX="-198.359375" positionY="-252.203125" width="128" height="193"/>
-        <element name="Trip" positionX="-193.9375" positionY="172.44921875" width="128" height="163"/>
+        <element name="Agency" positionX="-269.15234375" positionY="-338.65234375" width="128" height="88"/>
+        <element name="Calender" positionX="-465.4609375" positionY="-49.05859375" width="128" height="120"/>
+        <element name="Routes" positionX="-270" positionY="-201.04296875" width="128" height="150"/>
+        <element name="Shape" positionX="153.1171875" positionY="110.06640625" width="128" height="135"/>
+        <element name="Stops" positionX="-480.6015625" positionY="357.5625" width="128" height="165"/>
+        <element name="StopTimes" positionX="-266.359375" positionY="142.796875" width="128" height="210"/>
+        <element name="Trips" positionX="-47.9375" positionY="-76.55078125" width="128" height="195"/>
     </elements>
 </model>

@@ -10,7 +10,7 @@ import Foundation
 
 
 
-class Stop{
+class xstop{
     var stop_id             : Int
     var stop_name           : String
     var lat                 : Double

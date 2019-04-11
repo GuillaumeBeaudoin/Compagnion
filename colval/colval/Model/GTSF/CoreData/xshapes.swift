@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class shapes{
+class xshapes{
     
    var shape_id: Int
     var lat: Double

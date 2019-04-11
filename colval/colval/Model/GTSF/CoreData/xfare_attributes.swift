@@ -9,7 +9,7 @@
 import Foundation
 
 
-class fare_attributes {
+class xfare_attributes {
 
     var fare_id: Int
     var  price: Double

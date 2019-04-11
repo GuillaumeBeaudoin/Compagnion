@@ -9,7 +9,7 @@
 import Foundation
 
 
-class StopTimes{
+class xstopTimes{
     
     var trip_id         : Int
     var arrival_time    : Date

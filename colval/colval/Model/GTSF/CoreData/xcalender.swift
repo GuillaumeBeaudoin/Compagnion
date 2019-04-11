@@ -9,7 +9,7 @@
 import Foundation
 
 
-class calender {
+class xcalender {
 public var service_id: Int?
 var dayInFunction = Array(repeating: 0, count: 7)
 var start_date: Date?

@@ -10,7 +10,7 @@ import Foundation
 
 
 
-class SomeClass {
+class xagency {
     
 var agency_id: Int?;
 var agency_name: String?;

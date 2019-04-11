@@ -9,7 +9,7 @@
 import Foundation
 
 
-class routes{
+class xroutes{
     
     var route_id: Int
     var agency_id: Int

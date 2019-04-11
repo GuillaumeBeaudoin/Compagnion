@@ -9,7 +9,7 @@
 import Foundation
 
 
-class calendar_dates {
+class xcalendar_dates {
     
 var service_id: Int?
 var date : Date?

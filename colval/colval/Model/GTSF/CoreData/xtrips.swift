@@ -9,7 +9,7 @@
 import Foundation
 
 
-class trips {
+class xtrips {
     
     var route_id: Int
     var service_id: Int

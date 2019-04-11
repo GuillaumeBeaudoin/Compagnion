@@ -9,7 +9,7 @@
 import Foundation
 
 
-class fare_rules{
+class xfare_rules{
     
    var  fare_id: Int
    var  route_id: Int
