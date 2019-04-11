@@ -11,21 +11,15 @@ import Foundation
  ***************************************************************/
 class Util {
     
-    static let sharedInstance = Util()
     
-    private final let cal:Calendar = Calendar.current
-     
-    private init() {
-    }
-    
-     
+    private static let cal:Calendar = Calendar.current
     
     /*
-     * Convert a DT to a DB formated String
+     * Convert a Date to a DB formated String
      *  YYYY-MM-DDTHH:MM:SS.MLSZ  -> DataBase DateTime formated String
      *  2017-12-10T16:45:00.000Z  -> result example
      */
-    func dateToStr(pDate: Date) -> String {
+    static func dateToStr(pDate: Date) -> String {
         let year   = cal.component(.year  , from: pDate)
         let month  = cal.component(.month , from: pDate)
         let day    = cal.component(.day   , from: pDate)
@@ -42,14 +36,14 @@ class Util {
     }
     
     /*
-     * Convert a string DateTime representation to a Date()
+     * Convert a string DBDateTime representation to a Date
      *
      *  YYYY-MM-DDTHH:MM:SS.MLSZ  -> input format
      *  2017-12-10T16:45:00.000Z  -> input example
      *  0  0 00 01 11 11 ignorre  -> substring position (10e1)
      *  0  4 67 90 23 45 ignorre  -> substring position (10e0)
      */
-    func strToDate(pDate: String) -> Date {
+    static func strToDate(pDate: String) -> Date {
         var dateComponents = DateComponents()
         dateComponents.timeZone = TimeZone(abbreviation: "EST") // Eastern Standard Time
         dateComponents.year     = Int(pDate[..<pDate.index(pDate.startIndex, offsetBy: 4)]   )
@@ -61,8 +55,12 @@ class Util {
         return  dateDate
     }
     
-    
-    func dateTimeFromDateHourMin(pDate: Date , pHour: Int , pMinute: Int) -> Date {
+    /*
+     * Create a Date a.k.a. DateTime
+     * from the time ( pHour & pMinute )
+     * using the current day
+     */
+    static func dateTimeFromDateHourMin(pDate: Date , pHour: Int , pMinute: Int) -> Date {
         
         var dateComponents = DateComponents()
         dateComponents.timeZone = TimeZone(abbreviation: "EST") // Eastern Standard Time
@@ -74,10 +72,5 @@ class Util {
         let dateDate = cal.date(from: dateComponents) ?? Date()
         return  dateDate
     }
-    
-    
-    
-    
-    
     
 }

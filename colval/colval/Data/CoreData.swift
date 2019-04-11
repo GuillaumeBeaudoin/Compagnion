@@ -20,6 +20,8 @@ class CoreData  {
         context = appDelegate.persistentContainer.viewContext
     }
     
+    
+    /*
     /*
      * Stop
      */
@@ -61,15 +63,12 @@ class CoreData  {
     
     func deleteStop(pStop : Stop!) {
         do{
-            //let request  : NSFetchRequest<Student> = Student.fetchRequest()
-            //request.predicate = NSPredicate(format: "id == %a", pStudent.id)
-            //let student = context.fetch(request).
             context.delete(pStop)
-        try context.save()
+            try context.save()
         } catch let error {
             print("deleteStop() Error: \(error)")
         }
      
-    }
+    } */
     
 }

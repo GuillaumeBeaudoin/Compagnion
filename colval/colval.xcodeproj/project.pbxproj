@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7203F334225D76F400DD5618 /* PublicParking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203F333225D76F400DD5618 /* PublicParking.swift */; };
+		7203F336225D7A3100DD5618 /* JSONUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203F335225D7A3100DD5618 /* JSONUtil.swift */; };
 		720965DE224A790700C4F26E /* LoginViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720965DD224A790700C4F26E /* LoginViewControler.swift */; };
 		721AF4D82255A23300489053 /* GTSFStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 721AF4D62255A23300489053 /* GTSFStore.xcdatamodeld */; };
 		724574A42241492A00C26197 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574A32241492A00C26197 /* AppDelegate.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7203F333225D76F400DD5618 /* PublicParking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicParking.swift; sourceTree = "<group>"; };
+		7203F335225D7A3100DD5618 /* JSONUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUtil.swift; sourceTree = "<group>"; };
 		720965DD224A790700C4F26E /* LoginViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControler.swift; sourceTree = "<group>"; };
 		721AF4D72255A23300489053 /* GTSFStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GTSFStore.xcdatamodel; sourceTree = "<group>"; };
 		724574A02241492A00C26197 /* colval.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = colval.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +107,8 @@
 		721AF4D52255A1D800489053 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				721AF4D62255A23300489053 /* GTSFStore.xcdatamodeld */,
+				72AFD61B225CC925002FFB84 /* Class */,
+				72AFD61A225CC910002FFB84 /* Entity */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -175,16 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				721AF4D52255A1D800489053 /* CoreData */,
-				724574D0224149DE00C26197 /* calendar_dates.swift */,
-				724574D1224149DE00C26197 /* stops.swift */,
-				724574D2224149DE00C26197 /* stop_times.swift */,
-				724574D3224149DE00C26197 /* trips.swift */,
-				724574D4224149DE00C26197 /* calender.swift */,
-				724574D5224149DE00C26197 /* agency.swift */,
-				724574D6224149DE00C26197 /* shapes.swift */,
-				724574D7224149DE00C26197 /* fare_attributes.swift */,
-				724574D8224149DE00C26197 /* routes.swift */,
-				724574D9224149DE00C26197 /* fare_rules.swift */,
 			);
 			path = GTSF;
 			sourceTree = "<group>";
@@ -195,6 +190,7 @@
 				724574DA224149DE00C26197 /* User.swift */,
 				724574DB224149DE00C26197 /* Rent.swift */,
 				724574DC224149DE00C26197 /* Parking.swift */,
+				7203F333225D76F400DD5618 /* PublicParking.swift */,
 			);
 			path = Parking;
 			sourceTree = "<group>";
@@ -206,8 +202,34 @@
 				724574C8224149D100C26197 /* DataControler.swift */,
 				7285BED822562E1E00B454DE /* Util.swift */,
 				7285BEDA22562F1200B454DE /* DefaultData.swift */,
+				7203F335225D7A3100DD5618 /* JSONUtil.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		72AFD61A225CC910002FFB84 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				721AF4D62255A23300489053 /* GTSFStore.xcdatamodeld */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		72AFD61B225CC925002FFB84 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				724574D0224149DE00C26197 /* calendar_dates.swift */,
+				724574D1224149DE00C26197 /* stops.swift */,
+				724574D2224149DE00C26197 /* stop_times.swift */,
+				724574D3224149DE00C26197 /* trips.swift */,
+				724574D4224149DE00C26197 /* calender.swift */,
+				724574D5224149DE00C26197 /* agency.swift */,
+				724574D6224149DE00C26197 /* shapes.swift */,
+				724574D7224149DE00C26197 /* fare_attributes.swift */,
+				724574D8224149DE00C26197 /* routes.swift */,
+				724574D9224149DE00C26197 /* fare_rules.swift */,
+			);
+			name = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +341,7 @@
 				7285BED722562DEA00B454DE /* CoreData.swift in Sources */,
 				721AF4D82255A23300489053 /* GTSFStore.xcdatamodeld in Sources */,
 				724574EA224149DE00C26197 /* Parking.swift in Sources */,
+				7203F334225D76F400DD5618 /* PublicParking.swift in Sources */,
 				724574E0224149DE00C26197 /* stop_times.swift in Sources */,
 				724574E8224149DE00C26197 /* User.swift in Sources */,
 				724574E4224149DE00C26197 /* shapes.swift in Sources */,
@@ -333,6 +356,7 @@
 				724574A42241492A00C26197 /* AppDelegate.swift in Sources */,
 				724574DE224149DE00C26197 /* calendar_dates.swift in Sources */,
 				724574E7224149DE00C26197 /* fare_rules.swift in Sources */,
+				7203F336225D7A3100DD5618 /* JSONUtil.swift in Sources */,
 				724574E3224149DE00C26197 /* agency.swift in Sources */,
 				724574E2224149DE00C26197 /* calender.swift in Sources */,
 			);

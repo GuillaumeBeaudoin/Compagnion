@@ -38,200 +38,6 @@ class DataControler {
     
     
     /***************************************************************
-     *********************  Object -> JSON   ***********************
-     ***************************************************************/
-    func objToJson(pObject : Any) -> Data? {
-        var  objectJson:Data?
-        
-        if let wUser = pObject as? User {
-            objectJson = userToJson(pUser: wUser)
-            
-        }
-        if let wRent = pObject as? Rent {
-            objectJson = rentToJson(pRent: wRent)
-        }
-        if let wParking = pObject as? Parking {
-            objectJson = parkingToJson(pParking: wParking)
-        }
-        
-        return   objectJson
-    }
-    
-    func userToJson(pUser : User) -> Data? {
-        var  userJson:Data?
-        var parm = [String:String]()
-        if let wID = pUser.ID {
-            parm["_id"] = wID
-        }
-        parm["DA"] = String(pUser.DA)
-        do {
-            userJson = try JSONSerialization.data(withJSONObject: parm, options: [] )
-        } catch {
-            print("error  : DataControler.userToJson()")
-        }
-        return userJson
-    }
-    
-    func rentToJson(pRent : Rent) -> Data? {
-        var  rentJson:Data?
-        var parm = [String:String]()
-        if let wID = pRent.ID {
-            parm["id"] = wID
-        }
-        parm["parkingID"] = pRent.parkingID
-        parm["renterID"]  = pRent.renterID
-        do {
-            rentJson = try JSONSerialization.data(withJSONObject: parm, options: [] )
-        } catch {
-            print("error  : DataControler.rentToJson()")
-        }
-        return rentJson
-    }
-    
-    func parkingToJson(pParking : Parking) -> Data? {
-        var  parkingJson:Data?
-        var parm = [String:String]()
-        if let wID = pParking.id {
-            parm["_id"] = wID
-        }
-        parm["posX"]   = String(pParking.posX)
-        parm["posY"]   = String(pParking.posY)
-        parm["numero"] = String(pParking.numero)
-        do {
-            parkingJson = try JSONSerialization.data(withJSONObject: parm, options: [] )
-        } catch {
-            print("error  : DataControler.parkingToJson()")
-        }
-        return parkingJson
-    }
-    
-    
-    /***************************************************************
-     *********************  JSON -> Object   ***********************
-     ***************************************************************/
-    func jsonToUser(pJsonUser : Data) -> User? {
-        var wUser:User?
-        do {
-            let JSON = try JSONSerialization.jsonObject(with: pJsonUser, options: [])
-            if let array = JSON as? [String: AnyObject] {
-                if  let id       = array["ID"] as? String   ,
-                    let da = array["deviceID"] as? Int   {
-                    wUser = User(pID: id, pDA: da)
-                }
-            }
-            
-        } catch {
-            print("error  : DataControler.jsonToUser()")
-        }
-        return wUser
-    }
-    
-    func  jsonToUsers(pJsonUsers: Data!) -> [User]? {
-        var wUsers:[User] = []
-        if let d = pJsonUsers {
-            let jsonFile = try? JSONSerialization.jsonObject(with: d, options: [])
-            if let json = jsonFile as? [[String: Any]] {
-                // parser le json et stocker les données dans le tableau
-                for array in json {
-                    if  let id    = array["_id"]   as? String ,
-                        let da    = array["DA"]    as? Int     {
-                        let wUser = User(pID: id, pDA: da )
-                        wUsers.append(wUser)
-                    }
-                }
-            }
-        }
-        return wUsers
-    }
-    
-    func jsonToRent(pJsonRent : Data) -> Rent? {
-        var wRent:Rent?
-        do {
-            let JSON = try JSONSerialization.jsonObject(with: pJsonRent, options: [])
-            if let array = JSON as? [String: AnyObject] {
-                if  let id          = array["id"]        as? String ,
-                    let renterID    = array["renterID"]  as? String ,
-                    let parkingID   = array["parkingID"] as? String ,
-                    let dateFrom    = array["dateFrom"]  as? String ,
-                    let dateTo      = array["dateTo"]    as? String {
-                    wRent = Rent(pID: id, pRenterID: renterID, pParkingID: parkingID,dateFrom: strToDate(pDate: dateFrom), dateTo: strToDate(pDate: dateTo) )
-                }
-            }
-        } catch let error {
-            print("error  : DataControler.jsonToRent()")
-            print(error)
-            
-        }
-        return wRent
-    }
-    
-    func  jsonToRents(pJsonRents: Data!) -> [Rent]? {
-        var wRents:[Rent] = []
-        if let d = pJsonRents {
-            let jsonFile = try? JSONSerialization.jsonObject(with: d, options: [])
-            if let json = jsonFile as? [[String: Any]] {
-                // parser le json et stocker les données dans le tableau
-                for array in json {
-                    if  let id          = array["_id"]       as? String ,
-                        let renterID    = array["renterId"]  as? String ,
-                        let parkingID   = array["parkingId"] as? String ,
-                        let dateFrom    = array["dateFrom"]  as? String ,
-                        let dateTo      = array["dateTo"]    as? String {
-                        let wRent = Rent(pID: id, pRenterID: renterID, pParkingID: parkingID,dateFrom: strToDate(pDate: dateFrom), dateTo: strToDate(pDate: dateTo) )
-                        wRents.append(wRent)
-                    }
-                }
-            }
-        }
-        return wRents
-    }
-    
-    func jsonToParking(pJsonParking : Data!) -> Parking? {
-        var wParking:Parking?
-        do {
-            let JSON = try JSONSerialization.jsonObject(with: pJsonParking, options: [])
-            
-            if let array = JSON as? [String: Any] {
-                if  let id          = array["_id"]         as? String ,
-                    let posX        = array["posX"]        as? Double ,
-                    let posY        = array["posY"]        as? Double ,
-                    let numero      = array["numero"]      as? Int    {
-                    wParking = Parking(pID: id, pPosX: posX, pPosY: posY, pNumero: numero)
-                }
-            }
-        } catch let error {
-            print("error  : DataControler.jsonToParking()")
-            print(error)
-            
-        }
-        return wParking
-    }
-    
-    func jsonToParkings(pJsonParkings : Data!) -> [Parking] {
-        var wParkings:[Parking] = []
-        if let d = pJsonParkings {
-            let jsonFile = try? JSONSerialization.jsonObject(with: d, options: [])
-            if let json = jsonFile as? [[String: Any]] {
-                // parser le json et stocker les données dans le tableau
-                for array in json {
-                    if  let id          = array["_id"]         as? String ,
-                        let posX        = array["posX"]        as? Double ,
-                        let posY        = array["posY"]        as? Double ,
-                        let numero      = array["numero"]      as? Int    {
-                        let wParking = Parking(pID: id, pPosX: posX, pPosY: posY, pNumero: numero)
-                        wParkings.append(wParking)
-                    }
-                }
-            }
-        }
-        return wParkings
-    }
-    
-    
-    
-    
-    
-    /***************************************************************
      *************************  USER API   *************************
      ***************************************************************/
     //put
@@ -243,7 +49,7 @@ class DataControler {
         let wRequest =  prepareRequest(pResource: "user", pQuerry: "{\"DA\":\(pDA)}" , pMethod: "GET" )
         let task = session.dataTask(with: wRequest){ data, _, error in
             if let donnee = data {
-                wUsers = self.jsonToUsers(pJsonUsers: donnee)
+                wUsers = JSONUtil.jsonToUsers(pJsonUsers: donnee)
                 if wUsers?.count == 1 {
                     wUser = wUsers![0]
                     completion?(wUser)
@@ -257,10 +63,10 @@ class DataControler {
     func postUser(pUser : User , completion: ( (User?) -> (Void))? ) {
         var wUser:User?
         var wRequest =  prepareRequest(pResource: "user", pMethod: "POST")
-        wRequest.httpBody = userToJson(pUser: pUser);
+        wRequest.httpBody = JSONUtil.userToJson(pUser: pUser);
         let task = session.dataTask(with: wRequest){ data, _, error in
             if let donnee = data {
-                wUser = self.jsonToUser(pJsonUser: donnee)
+                wUser = JSONUtil.jsonToUser(pJsonUser: donnee)
                 completion?(wUser)
             }
         }
@@ -276,11 +82,11 @@ class DataControler {
     func postParking(pParking  : Parking) -> Parking? {
         var wParking:Parking?
         var wRequest =  prepareRequest(pResource: "parking", pMethod: "POST")
-        wRequest.httpBody = parkingToJson(pParking: pParking)
+        wRequest.httpBody = JSONUtil.parkingToJson(pParking: pParking)
         
         let task = session.dataTask(with: wRequest){ data, _, error in
             if let donnee = data {
-                wParking = self.jsonToParking(pJsonParking: donnee)
+                wParking = JSONUtil.jsonToParking(pJsonParking: donnee)
             }
         }
         task.resume()
@@ -293,7 +99,7 @@ class DataControler {
         let task = session.dataTask(with: wRequest){ data, _, error in
             var wParkings:[Parking]
             if let donnee = data {
-                wParkings = self.jsonToParkings(pJsonParkings: donnee)
+                wParkings = JSONUtil.jsonToParkings(pJsonParkings: donnee)
                 completion?(wParkings)
             }
         }
@@ -305,7 +111,7 @@ class DataControler {
         let wRequest =  prepareRequest(pResource: "parking/"+pID, pMethod: "GET")
         let task = session.dataTask(with: wRequest){ data, _, error in
             if let donnee = data {
-                wParking = self.jsonToParking(pJsonParking: donnee)
+                wParking = JSONUtil.jsonToParking(pJsonParking: donnee)
             }
         }
         task.resume()
@@ -339,7 +145,7 @@ class DataControler {
         
         let task = session.dataTask(with: wRequest){ data, _, error in
             if let donnee = data {
-                wRents = self.jsonToRents(pJsonRents: donnee)
+                wRents = JSONUtil.jsonToRents(pJsonRents: donnee)
                 completion?(wRents)
             }
         }
@@ -355,7 +161,7 @@ class DataControler {
         
         let task = session.dataTask(with: wRequest){ data, _, error in
             if let donnee = data {
-                wRents = self.jsonToRents(pJsonRents: donnee)
+                wRents = JSONUtil.jsonToRents(pJsonRents: donnee)
                 completion?(wRents)
             }
             completion?(wRents)
@@ -368,11 +174,11 @@ class DataControler {
     func postRent(pRent : Rent) -> Rent? {
         var wRent:Rent?
         var wRequest =  prepareRequest(pResource: "parking", pMethod: "POST")
-        wRequest.httpBody = rentToJson(pRent: pRent);
+        wRequest.httpBody = JSONUtil.rentToJson(pRent: pRent);
         
         let task = session.dataTask(with: wRequest){ data, _, error in
             if let donnee = data {
-                wRent = self.jsonToRent(pJsonRent: donnee)
+                wRent = JSONUtil.jsonToRent(pJsonRent: donnee)
             }
         }
         task.resume()
