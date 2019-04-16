@@ -203,8 +203,77 @@ class JSONUtil {
         return wParkings
     }
     
+    static func jsonToAgencys(pJsonParkings : Data!) -> [Agency] {
+        
+    }
+    
+    static func jsonToAgency(pJsonParkings : Data!) -> Agency{
+        
+    }
     
     
+    
+    static func jsonToRoutes(pJsonParkings : Data!) -> [Routes] {
+        
+    }
+    
+    static func jsonToRoutes(pJsonParkings : Data!) -> Routes{
+        
+    }
+    
+    
+    
+    static func jsonToCalenders(pJsonParkings : Data!) -> [Calender] {
+        
+    }
+    
+    static func jsonToCalender(pJsonParkings : Data!) -> Calender{
+        
+    }
+    
+    
+    static func jsonToTrips(pJsonParkings : Data!) -> [Trips] {
+        
+    }
+    
+    static func jsonToTrip(pJsonParkings : Data!) -> Trips{
+        
+    }
+    
+    
+    
+    static func jsonToShapes(pJsonParkings : Data!) -> [Shape] {
+        
+    }
+    
+    static func jsonToShape(pJsonParkings : Data!) -> Shape{
+        
+    }
+    
+    
+    static func jsonToStopTimes(pJsonParkings : Data!) -> [StopTimes] {
+        
+    }
+    
+    static func jsonToStopTime(pJsonParkings : Data!) -> StopTimes{
+        
+    }
+    
+    
+    
+    static func jsonToStopStops(pJsonParkings : Data!) -> [Stops] {
+        
+    }
+    
+    static func jsonToStopStop(pJsonParkings : Data!) -> Stops{
+        
+    }
+    
+    
+    
+    /***************************************************************
+     ***********************  GTSF -> INIT   ***********************
+     ***************************************************************/
     
     static func loadGtsfToCoreData()  {
         let context = CoreData.init().context
@@ -234,9 +303,8 @@ class JSONUtil {
             let json = try! String(contentsOf: jsonFileURL, encoding: .utf8)
             print(json)
             
-            
-            
-            if let wAgency = pObject as? Agency { 
+            if let wAgency = pObject as? Agency {
+                
             }
             if let wRoutes = pObject as? Routes {
             }
