@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         self.navigationItem.hidesBackButton = true;
         
         let dc  = DataControler.sharedInstance
-        let user = dc.getLocalUser()
+        let user = DefaultData.sharedInstance.getLocalUser()
         
         if user != nil  {
             print("user logged in as : \( String(user!.DA) )" )

@@ -62,8 +62,8 @@ class ReservationControler: UIViewController , MKMapViewDelegate , UITableViewDa
         
         if parking != nil {
             lblParking.text = "Parking #\(parking!.numero)"
-            let dateStart = dc.dateTimeFromDateHourMin(pDate: Date(), pHour: 7 , pMinute: 00)
-            let dateEnd  =  dc.dateTimeFromDateHourMin(pDate: Date(), pHour: 23, pMinute: 00)
+            let dateStart = Util.dateTimeFromDateHourMin(pDate: Date(), pHour: 7 , pMinute: 00)
+            let dateEnd  =  Util.dateTimeFromDateHourMin(pDate: Date(), pHour: 23, pMinute: 00)
             dc.getRentsForParkingForTimeRange(pParkingID: parking!.id! , pStart: dateStart, pEnd: dateEnd ) { rents in
                 if rents?.count ?? 0 > 0  {
                     print("count = " + String( rents!.count ) )
@@ -123,7 +123,7 @@ class ReservationControler: UIViewController , MKMapViewDelegate , UITableViewDa
     
     
     @IBAction func btnFindToutched(_ sender: Any) {
-        dc.postRent(pRent: Rent( pRenterID: (dc.getLocalUser()?.ID!)! , pParkingID: "TODO", dateFrom: dateFrom, dateTo: dateTo))
+        dc.postRent(pRent: Rent( pRenterID: (DefaultData.sharedInstance.getLocalUser()?.ID!)! , pParkingID: "TODO", dateFrom: dateFrom, dateTo: dateTo))
     }
     
     

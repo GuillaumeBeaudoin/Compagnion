@@ -63,7 +63,7 @@ class LoginViewControler: UIViewController {
             if user != nil {
                 self.setErrText(pText: "Login Succesful" )
                 print("Login Succesful")
-                self.dc.setLocalUser(pUser: user!)
+                DefaultData.sharedInstance.setLocalUser(pUser: user!)
                 //self.performSegue (withIdentifier: "loginToMain", sender: self)
                 self.popMain()
                 
@@ -83,7 +83,7 @@ class LoginViewControler: UIViewController {
                                     }*/
                              }
                             self.setErrText(pText: "User created" )
-                            self.dc.setLocalUser(pUser: user3! )
+                            DefaultData.sharedInstance.setLocalUser(pUser: user3! )
                             self.popMain()     // user4 )
                         //}
                     }
