@@ -202,7 +202,7 @@ class JSONUtil {
         }
         return wParkings
     }
-    
+    /*
     static func jsonToAgencys(pJsonParkings : Data!) -> [Agency] {
         
     }
@@ -268,6 +268,7 @@ class JSONUtil {
     static func jsonToStopStop(pJsonParkings : Data!) -> Stops{
         
     }
+ */
     
     
     
