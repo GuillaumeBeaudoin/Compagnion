@@ -202,5 +202,68 @@ class JSONUtil {
         }
         return wParkings
     }
+    
+    
+    
+    
+    static func loadGtsfToCoreData()  {
+        let context = CoreData.init().context
+        
+        loadJsonFile(pFile: "agency",     pSubdirectory: "SO" , pObject : Agency(context: context)   )
+        loadJsonFile(pFile: "routes",     pSubdirectory: "SO" , pObject : Routes(context: context)   )
+        loadJsonFile(pFile: "calendar",   pSubdirectory: "SO" , pObject : Calender(context: context) )
+        loadJsonFile(pFile: "trips",      pSubdirectory: "SO" , pObject : Trips(context: context)    )
+        loadJsonFile(pFile: "shape",      pSubdirectory: "SO" , pObject : Shape(context: context)    )
+        loadJsonFile(pFile: "stop_times", pSubdirectory: "SO" , pObject : StopTimes(context: context))
+        loadJsonFile(pFile: "stops",      pSubdirectory: "SO" , pObject : Stops(context: context)    )
+        
+        
+        loadJsonFile(pFile: "agency",     pSubdirectory: "PI" , pObject : Agency(context: context)   )
+        loadJsonFile(pFile: "routes",     pSubdirectory: "PI" , pObject : Routes(context: context)   )
+        loadJsonFile(pFile: "calendar",   pSubdirectory: "PI" , pObject : Calender(context: context) )
+        loadJsonFile(pFile: "trips",      pSubdirectory: "PI" , pObject : Trips(context: context)    )
+        loadJsonFile(pFile: "shape",      pSubdirectory: "PI" , pObject : Shape(context: context)    )
+        loadJsonFile(pFile: "stop_times", pSubdirectory: "PI" , pObject : StopTimes(context: context))
+        loadJsonFile(pFile: "stops",      pSubdirectory: "PI" , pObject : Stops(context: context)    )
+    }
+    
+    static func loadJsonFile(pFile: String ,pSubdirectory : String , pObject : Any)  {
+        
+        if let jsonFileURL = Bundle.main.url(forResource: pFile, withExtension: "json", subdirectory: pSubdirectory) {
+            
+            let json = try! String(contentsOf: jsonFileURL, encoding: .utf8)
+            print(json)
+            
+            
+            
+            if let wAgency = pObject as? Agency { 
+            }
+            if let wRoutes = pObject as? Routes {
+            }
+            if let wCalender = pObject as? Calender {
+            }
+            if let wTrips = pObject as? Trips {
+            }
+            if let wShape = pObject as? Shape {
+            }
+            if let wStopTimes = pObject as? StopTimes {
+            }
+            if let wStops = pObject as? Stops {
+            }
+        } else { fatalError("Error : JSONUtil.loadJsonFile("+pFile+" , "+pSubdirectory+")")
+            
+        }
+    }
+    
+    static func insertIntoContext(pFile: String ,pSubdirectory : String , pObject : Any)  {
+        
+        
+    
+    }
+   
+    
+    
+    
+    
 }
 
