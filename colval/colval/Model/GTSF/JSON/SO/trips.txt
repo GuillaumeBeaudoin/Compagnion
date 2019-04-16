@@ -1,0 +1,742 @@
+route_id,service_id,trip_id,trip_headsign,direction_id,shape_id,trip_short_name
+90,SO-H19-SO_GTFS-Semaine-03,3474416-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,900020,2
+90,SO-H19-SO_GTFS-Semaine-03,3474417-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,900020,4
+90,SO-H19-SO_GTFS-Semaine-03,3474418-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,900023,3
+90,SO-H19-SO_GTFS-Semaine-03,3474419-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,900022,1
+1,SO-H19-SO_GTFS-Samedi-01,3539721-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,10109,2
+1,SO-H19-SO_GTFS-Samedi-01,3539722-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,10214,4
+1,SO-H19-SO_GTFS-Samedi-01,3539723-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,10214,6
+1,SO-H19-SO_GTFS-Samedi-01,3539724-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,10214,8
+1,SO-H19-SO_GTFS-Samedi-01,3539725-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,10214,10
+1,SO-H19-SO_GTFS-Samedi-01,3539726-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,10214,12
+1,SO-H19-SO_GTFS-Samedi-01,3539727-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,10214,14
+1,SO-H19-SO_GTFS-Samedi-01,3539728-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,10214,16
+1,SO-H19-SO_GTFS-Samedi-01,3539729-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,10214,18
+1,SO-H19-SO_GTFS-Samedi-01,3539730-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,10214,20
+1,SO-H19-SO_GTFS-Samedi-01,3539731-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,10214,22
+1,SO-H19-SO_GTFS-Samedi-01,3539732-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,10214,24
+1,SO-H19-SO_GTFS-Samedi-01,3539733-SO-H19-SO_GTFS-Samedi-01,Direction Valleyfield,1,10112,1
+1,SO-H19-SO_GTFS-Samedi-01,3539734-SO-H19-SO_GTFS-Samedi-01,Direction Valleyfield,1,10112,3
+1,SO-H19-SO_GTFS-Samedi-01,3539735-SO-H19-SO_GTFS-Samedi-01,Direction Valleyfield,1,10112,5
+1,SO-H19-SO_GTFS-Samedi-01,3539736-SO-H19-SO_GTFS-Samedi-01,Direction Valleyfield,1,10112,7
+1,SO-H19-SO_GTFS-Samedi-01,3539737-SO-H19-SO_GTFS-Samedi-01,Direction Valleyfield,1,10112,9
+1,SO-H19-SO_GTFS-Samedi-01,3539738-SO-H19-SO_GTFS-Samedi-01,Direction Valleyfield,1,10112,11
+1,SO-H19-SO_GTFS-Samedi-01,3539739-SO-H19-SO_GTFS-Samedi-01,Direction Valleyfield,1,10112,13
+1,SO-H19-SO_GTFS-Samedi-01,3539740-SO-H19-SO_GTFS-Samedi-01,Direction Valleyfield,1,10112,15
+1,SO-H19-SO_GTFS-Samedi-01,3539741-SO-H19-SO_GTFS-Samedi-01,Direction Valleyfield,1,10112,17
+1,SO-H19-SO_GTFS-Samedi-01,3539742-SO-H19-SO_GTFS-Samedi-01,Direction Valleyfield,1,10112,19
+1,SO-H19-SO_GTFS-Samedi-01,3539743-SO-H19-SO_GTFS-Samedi-01,Direction Valleyfield,1,10112,21
+1,SO-H19-SO_GTFS-Samedi-01,3539744-SO-H19-SO_GTFS-Samedi-01,Direction Valleyfield,1,10112,23
+1,SO-H19-SO_GTFS-Samedi-01,3539745-SO-H19-SO_GTFS-Samedi-01,Direction Valleyfield,1,10112,25
+1,SO-H19-SO_GTFS-Semaine-03,3539746-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10109,2
+1,SO-H19-SO_GTFS-Semaine-03,3539747-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10109,4
+1,SO-H19-SO_GTFS-Semaine-03,3539748-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10109,6
+1,SO-H19-SO_GTFS-Semaine-03,3539749-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10109,8
+1,SO-H19-SO_GTFS-Semaine-03,3539750-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10111,10
+1,SO-H19-SO_GTFS-Semaine-03,3539751-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10111,30
+1,SO-H19-SO_GTFS-Semaine-03,3539752-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10111,32
+1,SO-H19-SO_GTFS-Semaine-03,3539753-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10111,34
+1,SO-H19-SO_GTFS-Semaine-03,3539754-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10111,36
+1,SO-H19-SO_GTFS-Semaine-03,3539755-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10111,38
+1,SO-H19-SO_GTFS-Semaine-03,3539756-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10111,12
+1,SO-H19-SO_GTFS-Semaine-03,3539757-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10111,14
+1,SO-H19-SO_GTFS-Semaine-03,3539758-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10111,16
+1,SO-H19-SO_GTFS-Semaine-03,3539759-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10111,18
+1,SO-H19-SO_GTFS-Semaine-03,3539760-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10111,20
+1,SO-H19-SO_GTFS-Semaine-03,3539761-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10111,24
+1,SO-H19-SO_GTFS-Semaine-03,3539762-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10111,26
+1,SO-H19-SO_GTFS-Semaine-03,3539763-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10213,28
+1,SO-H19-SO_GTFS-Semaine-03,3539764-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10111,22
+1,SO-H19-SO_GTFS-Semaine-03,3539765-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,10111,40
+1,SO-H19-SO_GTFS-Semaine-03,3539766-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,1
+1,SO-H19-SO_GTFS-Semaine-03,3539767-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,19
+1,SO-H19-SO_GTFS-Semaine-03,3539768-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,21
+1,SO-H19-SO_GTFS-Semaine-03,3539769-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,23
+1,SO-H19-SO_GTFS-Semaine-03,3539770-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,25
+1,SO-H19-SO_GTFS-Semaine-03,3539771-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,27
+1,SO-H19-SO_GTFS-Semaine-03,3539772-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,29
+1,SO-H19-SO_GTFS-Semaine-03,3539773-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,31
+1,SO-H19-SO_GTFS-Semaine-03,3539774-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,33
+1,SO-H19-SO_GTFS-Semaine-03,3539775-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,35
+1,SO-H19-SO_GTFS-Semaine-03,3539776-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,37
+1,SO-H19-SO_GTFS-Semaine-03,3539777-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,3
+1,SO-H19-SO_GTFS-Semaine-03,3539778-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,39
+1,SO-H19-SO_GTFS-Semaine-03,3539779-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,5
+1,SO-H19-SO_GTFS-Semaine-03,3539780-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,7
+1,SO-H19-SO_GTFS-Semaine-03,3539781-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,9
+1,SO-H19-SO_GTFS-Semaine-03,3539782-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,11
+1,SO-H19-SO_GTFS-Semaine-03,3539783-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,13
+1,SO-H19-SO_GTFS-Semaine-03,3539784-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,15
+1,SO-H19-SO_GTFS-Semaine-03,3539785-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,10112,17
+1,SO-H19-SO_GTFS-Semaine-03-0000100,3539786-SO-H19-SO_GTFS-Semaine-03-0000100,Direction Montréal,0,10111,42
+1,SO-H19-SO_GTFS-Semaine-03-0000100,3539787-SO-H19-SO_GTFS-Semaine-03-0000100,Direction Valleyfield,1,10112,41
+1,SO-H19-SO_GTFS-Dimanche-01,3539788-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,10109,2
+1,SO-H19-SO_GTFS-Dimanche-01,3539789-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,10214,4
+1,SO-H19-SO_GTFS-Dimanche-01,3539790-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,10214,6
+1,SO-H19-SO_GTFS-Dimanche-01,3539791-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,10214,8
+1,SO-H19-SO_GTFS-Dimanche-01,3539792-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,10214,10
+1,SO-H19-SO_GTFS-Dimanche-01,3539793-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,10214,12
+1,SO-H19-SO_GTFS-Dimanche-01,3539794-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,10214,14
+1,SO-H19-SO_GTFS-Dimanche-01,3539795-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,10214,16
+1,SO-H19-SO_GTFS-Dimanche-01,3539796-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,10214,18
+1,SO-H19-SO_GTFS-Dimanche-01,3539797-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,10214,20
+1,SO-H19-SO_GTFS-Dimanche-01,3539798-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,10214,22
+1,SO-H19-SO_GTFS-Dimanche-01,3539799-SO-H19-SO_GTFS-Dimanche-01,Direction Valleyfield,1,10112,1
+1,SO-H19-SO_GTFS-Dimanche-01,3539800-SO-H19-SO_GTFS-Dimanche-01,Direction Valleyfield,1,10112,3
+1,SO-H19-SO_GTFS-Dimanche-01,3539801-SO-H19-SO_GTFS-Dimanche-01,Direction Valleyfield,1,10112,5
+1,SO-H19-SO_GTFS-Dimanche-01,3539802-SO-H19-SO_GTFS-Dimanche-01,Direction Valleyfield,1,10112,7
+1,SO-H19-SO_GTFS-Dimanche-01,3539803-SO-H19-SO_GTFS-Dimanche-01,Direction Valleyfield,1,10112,9
+1,SO-H19-SO_GTFS-Dimanche-01,3539804-SO-H19-SO_GTFS-Dimanche-01,Direction Valleyfield,1,10112,11
+1,SO-H19-SO_GTFS-Dimanche-01,3539805-SO-H19-SO_GTFS-Dimanche-01,Direction Valleyfield,1,10112,13
+1,SO-H19-SO_GTFS-Dimanche-01,3539806-SO-H19-SO_GTFS-Dimanche-01,Direction Valleyfield,1,10112,15
+1,SO-H19-SO_GTFS-Dimanche-01,3539807-SO-H19-SO_GTFS-Dimanche-01,Direction Valleyfield,1,10112,17
+1,SO-H19-SO_GTFS-Dimanche-01,3539808-SO-H19-SO_GTFS-Dimanche-01,Direction Valleyfield,1,10112,19
+1,SO-H19-SO_GTFS-Dimanche-01,3539809-SO-H19-SO_GTFS-Dimanche-01,Direction Valleyfield,1,10112,21
+1,SO-H19-SO_GTFS-Dimanche-01,3539810-SO-H19-SO_GTFS-Dimanche-01,Direction Valleyfield,1,10112,23
+20,SO-H19-SO_GTFS-Semaine-03,3539811-SO-H19-SO_GTFS-Semaine-03,Direction Est - rue Francois-Branchaud,0,200047,2
+20,SO-H19-SO_GTFS-Semaine-03,3539812-SO-H19-SO_GTFS-Semaine-03,Direction Est - rue Francois-Branchaud,0,200047,4
+20,SO-H19-SO_GTFS-Semaine-03,3539813-SO-H19-SO_GTFS-Semaine-03,Direction Est - rue Francois-Branchaud,0,200047,6
+20,SO-H19-SO_GTFS-Semaine-03,3539814-SO-H19-SO_GTFS-Semaine-03,Direction Est - rue Francois-Branchaud,0,200047,8
+20,SO-H19-SO_GTFS-Semaine-03,3539815-SO-H19-SO_GTFS-Semaine-03,Direction Est - rue Francois-Branchaud,0,200047,10
+20,SO-H19-SO_GTFS-Semaine-03,3539816-SO-H19-SO_GTFS-Semaine-03,Direction Est - rue Francois-Branchaud,0,200047,12
+20,SO-H19-SO_GTFS-Semaine-03,3539817-SO-H19-SO_GTFS-Semaine-03,Direction Est - rue Francois-Branchaud,0,200047,14
+20,SO-H19-SO_GTFS-Semaine-03,3539818-SO-H19-SO_GTFS-Semaine-03,Direction Est - rue Francois-Branchaud,0,200047,16
+20,SO-H19-SO_GTFS-Semaine-03,3539819-SO-H19-SO_GTFS-Semaine-03,Direction Est - rue Francois-Branchaud,0,200047,18
+20,SO-H19-SO_GTFS-Semaine-03,3539820-SO-H19-SO_GTFS-Semaine-03,Direction Ouest - boul. de Melocheville,1,200048,1
+20,SO-H19-SO_GTFS-Semaine-03,3539821-SO-H19-SO_GTFS-Semaine-03,Direction Ouest - boul. de Melocheville,1,200048,3
+20,SO-H19-SO_GTFS-Semaine-03,3539822-SO-H19-SO_GTFS-Semaine-03,Direction Ouest - boul. de Melocheville,1,200048,5
+20,SO-H19-SO_GTFS-Semaine-03,3539823-SO-H19-SO_GTFS-Semaine-03,Direction Ouest - boul. de Melocheville,1,200048,7
+20,SO-H19-SO_GTFS-Semaine-03,3539824-SO-H19-SO_GTFS-Semaine-03,Direction Ouest - boul. de Melocheville,1,200048,9
+20,SO-H19-SO_GTFS-Semaine-03,3539825-SO-H19-SO_GTFS-Semaine-03,Direction Ouest - boul. de Melocheville,1,200048,11
+20,SO-H19-SO_GTFS-Semaine-03,3539826-SO-H19-SO_GTFS-Semaine-03,Direction Ouest - boul. de Melocheville,1,200048,13
+20,SO-H19-SO_GTFS-Semaine-03,3539827-SO-H19-SO_GTFS-Semaine-03,Direction Ouest - boul. de Melocheville,1,200048,15
+20,SO-H19-SO_GTFS-Semaine-03,3539828-SO-H19-SO_GTFS-Semaine-03,Direction Ouest - boul. de Melocheville,1,200048,17
+20,SO-H19-SO_GTFS-Semaine-03-0001100,3539829-SO-H19-SO_GTFS-Semaine-03-0001100,Direction Est - rue Francois-Branchaud,0,200047,22
+20,SO-H19-SO_GTFS-Semaine-03-0001100,3539830-SO-H19-SO_GTFS-Semaine-03-0001100,Direction Est - rue Francois-Branchaud,0,200047,20
+20,SO-H19-SO_GTFS-Semaine-03-0001100,3539831-SO-H19-SO_GTFS-Semaine-03-0001100,Direction Ouest - boul. de Melocheville,1,200048,21
+20,SO-H19-SO_GTFS-Semaine-03-0001100,3539832-SO-H19-SO_GTFS-Semaine-03-0001100,Direction Ouest - boul. de Melocheville,1,200048,19
+21,SO-H19-SO_GTFS-Semaine-03,3539833-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,210011,2
+21,SO-H19-SO_GTFS-Semaine-03,3539834-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,210011,4
+21,SO-H19-SO_GTFS-Semaine-03,3539835-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,210011,6
+21,SO-H19-SO_GTFS-Semaine-03,3539836-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,210011,8
+21,SO-H19-SO_GTFS-Semaine-03,3539837-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,210011,10
+21,SO-H19-SO_GTFS-Semaine-03,3539838-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,210011,12
+21,SO-H19-SO_GTFS-Semaine-03,3539839-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,210018,1
+21,SO-H19-SO_GTFS-Semaine-03,3539840-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,210018,3
+21,SO-H19-SO_GTFS-Semaine-03,3539841-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,210018,5
+21,SO-H19-SO_GTFS-Semaine-03,3539842-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,210018,7
+21,SO-H19-SO_GTFS-Semaine-03,3539843-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,210018,9
+21,SO-H19-SO_GTFS-Semaine-03,3539844-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,210018,11
+20,SO-H19-SO_GTFS-Samedi-01,3539845-SO-H19-SO_GTFS-Samedi-01,Direction Est - rue Francois-Branchaud,0,200047,2
+20,SO-H19-SO_GTFS-Dimanche-01,3539845-SO-H19-SO_GTFS-Dimanche-01,Direction Est - rue Francois-Branchaud,0,200047,2
+20,SO-H19-SO_GTFS-Samedi-01,3539846-SO-H19-SO_GTFS-Samedi-01,Direction Est - rue Francois-Branchaud,0,200047,4
+20,SO-H19-SO_GTFS-Dimanche-01,3539846-SO-H19-SO_GTFS-Dimanche-01,Direction Est - rue Francois-Branchaud,0,200047,4
+20,SO-H19-SO_GTFS-Samedi-01,3539847-SO-H19-SO_GTFS-Samedi-01,Direction Est - rue Francois-Branchaud,0,200047,6
+20,SO-H19-SO_GTFS-Dimanche-01,3539847-SO-H19-SO_GTFS-Dimanche-01,Direction Est - rue Francois-Branchaud,0,200047,6
+20,SO-H19-SO_GTFS-Samedi-01,3539848-SO-H19-SO_GTFS-Samedi-01,Direction Est - rue Francois-Branchaud,0,200047,8
+20,SO-H19-SO_GTFS-Dimanche-01,3539848-SO-H19-SO_GTFS-Dimanche-01,Direction Est - rue Francois-Branchaud,0,200047,8
+20,SO-H19-SO_GTFS-Samedi-01,3539849-SO-H19-SO_GTFS-Samedi-01,Direction Est - rue Francois-Branchaud,0,200047,10
+20,SO-H19-SO_GTFS-Dimanche-01,3539849-SO-H19-SO_GTFS-Dimanche-01,Direction Est - rue Francois-Branchaud,0,200047,10
+20,SO-H19-SO_GTFS-Samedi-01,3539850-SO-H19-SO_GTFS-Samedi-01,Direction Est - rue Francois-Branchaud,0,200047,12
+20,SO-H19-SO_GTFS-Dimanche-01,3539850-SO-H19-SO_GTFS-Dimanche-01,Direction Est - rue Francois-Branchaud,0,200047,12
+20,SO-H19-SO_GTFS-Samedi-01,3539851-SO-H19-SO_GTFS-Samedi-01,Direction Est - rue Francois-Branchaud,0,200047,14
+20,SO-H19-SO_GTFS-Dimanche-01,3539851-SO-H19-SO_GTFS-Dimanche-01,Direction Est - rue Francois-Branchaud,0,200047,14
+20,SO-H19-SO_GTFS-Samedi-01,3539852-SO-H19-SO_GTFS-Samedi-01,Direction Est - rue Francois-Branchaud,0,200047,16
+20,SO-H19-SO_GTFS-Dimanche-01,3539852-SO-H19-SO_GTFS-Dimanche-01,Direction Est - rue Francois-Branchaud,0,200047,16
+20,SO-H19-SO_GTFS-Samedi-01,3539853-SO-H19-SO_GTFS-Samedi-01,Direction Ouest - boul. de Melocheville,1,200048,1
+20,SO-H19-SO_GTFS-Dimanche-01,3539853-SO-H19-SO_GTFS-Dimanche-01,Direction Ouest - boul. de Melocheville,1,200048,1
+20,SO-H19-SO_GTFS-Samedi-01,3539854-SO-H19-SO_GTFS-Samedi-01,Direction Ouest - boul. de Melocheville,1,200048,3
+20,SO-H19-SO_GTFS-Dimanche-01,3539854-SO-H19-SO_GTFS-Dimanche-01,Direction Ouest - boul. de Melocheville,1,200048,3
+20,SO-H19-SO_GTFS-Samedi-01,3539855-SO-H19-SO_GTFS-Samedi-01,Direction Ouest - boul. de Melocheville,1,200048,5
+20,SO-H19-SO_GTFS-Dimanche-01,3539855-SO-H19-SO_GTFS-Dimanche-01,Direction Ouest - boul. de Melocheville,1,200048,5
+20,SO-H19-SO_GTFS-Samedi-01,3539856-SO-H19-SO_GTFS-Samedi-01,Direction Ouest - boul. de Melocheville,1,200048,7
+20,SO-H19-SO_GTFS-Dimanche-01,3539856-SO-H19-SO_GTFS-Dimanche-01,Direction Ouest - boul. de Melocheville,1,200048,7
+20,SO-H19-SO_GTFS-Samedi-01,3539857-SO-H19-SO_GTFS-Samedi-01,Direction Ouest - boul. de Melocheville,1,200048,9
+20,SO-H19-SO_GTFS-Dimanche-01,3539857-SO-H19-SO_GTFS-Dimanche-01,Direction Ouest - boul. de Melocheville,1,200048,9
+20,SO-H19-SO_GTFS-Samedi-01,3539858-SO-H19-SO_GTFS-Samedi-01,Direction Ouest - boul. de Melocheville,1,200048,11
+20,SO-H19-SO_GTFS-Dimanche-01,3539858-SO-H19-SO_GTFS-Dimanche-01,Direction Ouest - boul. de Melocheville,1,200048,11
+20,SO-H19-SO_GTFS-Samedi-01,3539859-SO-H19-SO_GTFS-Samedi-01,Direction Ouest - boul. de Melocheville,1,200048,13
+20,SO-H19-SO_GTFS-Dimanche-01,3539859-SO-H19-SO_GTFS-Dimanche-01,Direction Ouest - boul. de Melocheville,1,200048,13
+20,SO-H19-SO_GTFS-Samedi-01,3539860-SO-H19-SO_GTFS-Samedi-01,Direction Ouest - boul. de Melocheville,1,200048,15
+20,SO-H19-SO_GTFS-Dimanche-01,3539860-SO-H19-SO_GTFS-Dimanche-01,Direction Ouest - boul. de Melocheville,1,200048,15
+98,SO-H19-SO_GTFS-Semaine-03,3539861-SO-H19-SO_GTFS-Semaine-03,Direction Montréal - Kahnawake,0,980005,4
+98,SO-H19-SO_GTFS-Semaine-03,3539862-SO-H19-SO_GTFS-Semaine-03,Direction Montréal - Kahnawake,0,980005,22
+98,SO-H19-SO_GTFS-Semaine-03,3539863-SO-H19-SO_GTFS-Semaine-03,Direction Montréal - Kahnawake,0,980005,24
+98,SO-H19-SO_GTFS-Semaine-03,3539864-SO-H19-SO_GTFS-Semaine-03,Direction Montréal - Kahnawake,0,980006,26
+98,SO-H19-SO_GTFS-Semaine-03,3539865-SO-H19-SO_GTFS-Semaine-03,Direction Montréal - Kahnawake,0,980005,6
+98,SO-H19-SO_GTFS-Semaine-03,3539866-SO-H19-SO_GTFS-Semaine-03,Direction Montréal - Kahnawake,0,980005,8
+98,SO-H19-SO_GTFS-Semaine-03,3539867-SO-H19-SO_GTFS-Semaine-03,Direction Montréal - Kahnawake,0,980005,10
+98,SO-H19-SO_GTFS-Semaine-03,3539868-SO-H19-SO_GTFS-Semaine-03,Direction Montréal - Kahnawake,0,980005,12
+98,SO-H19-SO_GTFS-Semaine-03,3539869-SO-H19-SO_GTFS-Semaine-03,Direction Montréal - Kahnawake,0,980005,14
+98,SO-H19-SO_GTFS-Semaine-03,3539870-SO-H19-SO_GTFS-Semaine-03,Direction Montréal - Kahnawake,0,980005,16
+98,SO-H19-SO_GTFS-Semaine-03,3539871-SO-H19-SO_GTFS-Semaine-03,Direction Montréal - Kahnawake,0,980005,18
+98,SO-H19-SO_GTFS-Semaine-03,3539872-SO-H19-SO_GTFS-Semaine-03,Direction Montréal - Kahnawake,0,980005,20
+98,SO-H19-SO_GTFS-Semaine-03,3539873-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,980007,2
+22,SO-H19-SO_GTFS-Semaine-03,3539874-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,220088,2
+22,SO-H19-SO_GTFS-Semaine-03,3539875-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,220088,4
+22,SO-H19-SO_GTFS-Semaine-03,3539876-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,220088,6
+22,SO-H19-SO_GTFS-Semaine-03,3539877-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,220088,8
+22,SO-H19-SO_GTFS-Semaine-03,3539878-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,220089,1
+22,SO-H19-SO_GTFS-Semaine-03,3539879-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,220089,3
+22,SO-H19-SO_GTFS-Semaine-03,3539880-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,220089,5
+22,SO-H19-SO_GTFS-Semaine-03,3539881-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,220089,7
+32,SO-H19-SO_GTFS-Semaine-03,3539882-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,4
+32,SO-H19-SO_GTFS-Semaine-03,3539883-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,22
+32,SO-H19-SO_GTFS-Semaine-03,3539884-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,24
+32,SO-H19-SO_GTFS-Semaine-03,3539885-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,26
+32,SO-H19-SO_GTFS-Semaine-03,3539886-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,30
+32,SO-H19-SO_GTFS-Semaine-03,3539887-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,32
+32,SO-H19-SO_GTFS-Semaine-03,3539888-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,34
+32,SO-H19-SO_GTFS-Semaine-03,3539889-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,36
+32,SO-H19-SO_GTFS-Semaine-03,3539890-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,38
+32,SO-H19-SO_GTFS-Semaine-03,3539891-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,40
+32,SO-H19-SO_GTFS-Semaine-03,3539892-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,42
+32,SO-H19-SO_GTFS-Semaine-03,3539893-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,6
+32,SO-H19-SO_GTFS-Semaine-03,3539894-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,44
+32,SO-H19-SO_GTFS-Semaine-03,3539895-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,46
+32,SO-H19-SO_GTFS-Semaine-03,3539896-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,48
+32,SO-H19-SO_GTFS-Semaine-03,3539897-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,50
+32,SO-H19-SO_GTFS-Semaine-03,3539898-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,52
+32,SO-H19-SO_GTFS-Semaine-03,3539899-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,54
+32,SO-H19-SO_GTFS-Semaine-03,3539900-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,56
+32,SO-H19-SO_GTFS-Semaine-03,3539901-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,58
+32,SO-H19-SO_GTFS-Semaine-03,3539902-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,8
+32,SO-H19-SO_GTFS-Semaine-03,3539903-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,10
+32,SO-H19-SO_GTFS-Semaine-03,3539904-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,12
+32,SO-H19-SO_GTFS-Semaine-03,3539905-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,14
+32,SO-H19-SO_GTFS-Semaine-03,3539906-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,16
+32,SO-H19-SO_GTFS-Semaine-03,3539907-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,18
+32,SO-H19-SO_GTFS-Semaine-03,3539908-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,20
+32,SO-H19-SO_GTFS-Semaine-03,3539909-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320018,2
+32,SO-H19-SO_GTFS-Semaine-03,3539910-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,0,320017,60
+32,SO-H19-SO_GTFS-Semaine-03,3539911-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,320016,28
+23,SO-H19-SO_GTFS-Semaine-03,3539912-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,230091,2
+23,SO-H19-SO_GTFS-Semaine-03,3539913-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,230091,4
+23,SO-H19-SO_GTFS-Semaine-03,3539914-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,230091,6
+23,SO-H19-SO_GTFS-Semaine-03,3539915-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,230091,8
+23,SO-H19-SO_GTFS-Semaine-03,3539916-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,230091,10
+23,SO-H19-SO_GTFS-Semaine-03,3539917-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,230091,12
+23,SO-H19-SO_GTFS-Semaine-03,3539918-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,230091,14
+23,SO-H19-SO_GTFS-Semaine-03,3539919-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,230091,16
+23,SO-H19-SO_GTFS-Semaine-03,3539920-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,230018,1
+23,SO-H19-SO_GTFS-Semaine-03,3539921-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,230018,3
+23,SO-H19-SO_GTFS-Semaine-03,3539922-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,230018,5
+23,SO-H19-SO_GTFS-Semaine-03,3539923-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,230018,7
+23,SO-H19-SO_GTFS-Semaine-03,3539924-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,230018,9
+23,SO-H19-SO_GTFS-Semaine-03,3539925-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,230018,11
+23,SO-H19-SO_GTFS-Semaine-03,3539926-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,230018,13
+33,SO-H19-SO_GTFS-Semaine-03,3539927-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330023,2
+33,SO-H19-SO_GTFS-Semaine-03,3539928-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,20
+33,SO-H19-SO_GTFS-Semaine-03,3539929-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,22
+33,SO-H19-SO_GTFS-Semaine-03,3539930-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,24
+33,SO-H19-SO_GTFS-Semaine-03,3539931-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,26
+33,SO-H19-SO_GTFS-Semaine-03,3539932-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330023,28
+33,SO-H19-SO_GTFS-Semaine-03,3539933-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,30
+33,SO-H19-SO_GTFS-Semaine-03,3539934-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,32
+33,SO-H19-SO_GTFS-Semaine-03,3539935-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330023,34
+33,SO-H19-SO_GTFS-Semaine-03,3539936-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,36
+33,SO-H19-SO_GTFS-Semaine-03,3539938-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330023,4
+33,SO-H19-SO_GTFS-Semaine-03,3539939-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,38
+33,SO-H19-SO_GTFS-Semaine-03,3539940-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,40
+33,SO-H19-SO_GTFS-Semaine-03,3539941-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,42
+33,SO-H19-SO_GTFS-Semaine-03,3539942-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,44
+33,SO-H19-SO_GTFS-Semaine-03,3539943-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,46
+33,SO-H19-SO_GTFS-Semaine-03,3539944-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,48
+33,SO-H19-SO_GTFS-Semaine-03,3539945-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,50
+33,SO-H19-SO_GTFS-Semaine-03,3539946-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330023,52
+33,SO-H19-SO_GTFS-Semaine-03,3539947-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,54
+33,SO-H19-SO_GTFS-Semaine-03,3539948-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,56
+33,SO-H19-SO_GTFS-Semaine-03,3539949-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,6
+33,SO-H19-SO_GTFS-Semaine-03,3539950-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,58
+33,SO-H19-SO_GTFS-Semaine-03,3539951-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,60
+33,SO-H19-SO_GTFS-Semaine-03,3539952-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,62
+33,SO-H19-SO_GTFS-Semaine-03,3539953-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,64
+33,SO-H19-SO_GTFS-Semaine-03,3539954-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,8
+33,SO-H19-SO_GTFS-Semaine-03,3539955-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,10
+33,SO-H19-SO_GTFS-Semaine-03,3539956-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,12
+33,SO-H19-SO_GTFS-Semaine-03,3539957-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330023,14
+33,SO-H19-SO_GTFS-Semaine-03,3539958-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,16
+33,SO-H19-SO_GTFS-Semaine-03,3539959-SO-H19-SO_GTFS-Semaine-03,Direction Anjou/St-Joseph,0,330012,18
+33,SO-H19-SO_GTFS-Semaine-03,3539960-SO-H19-SO_GTFS-Semaine-03,Direction Primeau/Principale,0,330013,66
+33,SO-H19-SO_GTFS-Semaine-03,3539961-SO-H19-SO_GTFS-Semaine-03,Direction Primeau/Principale,0,330013,68
+24,SO-H19-SO_GTFS-Semaine-03,3539962-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,240030,2
+24,SO-H19-SO_GTFS-Semaine-03,3539963-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,240030,4
+24,SO-H19-SO_GTFS-Semaine-03,3539964-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,240030,6
+24,SO-H19-SO_GTFS-Semaine-03,3539965-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,240030,8
+24,SO-H19-SO_GTFS-Semaine-03,3539966-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,240031,1
+24,SO-H19-SO_GTFS-Semaine-03,3539967-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,240031,3
+24,SO-H19-SO_GTFS-Semaine-03,3539968-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,240031,5
+24,SO-H19-SO_GTFS-Semaine-03,3539969-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,240031,7
+25,SO-H19-SO_GTFS-Semaine-03,3539970-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,250007,4
+25,SO-H19-SO_GTFS-Semaine-03,3539971-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,250007,8
+25,SO-H19-SO_GTFS-Semaine-03,3539972-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,250007,12
+25,SO-H19-SO_GTFS-Semaine-03,3539973-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,250037,2
+25,SO-H19-SO_GTFS-Semaine-03,3539974-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,250037,6
+25,SO-H19-SO_GTFS-Semaine-03,3539975-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,250037,10
+25,SO-H19-SO_GTFS-Semaine-03,3539976-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,250033,1
+25,SO-H19-SO_GTFS-Semaine-03,3539977-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,250033,3
+25,SO-H19-SO_GTFS-Semaine-03,3539978-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,250033,5
+25,SO-H19-SO_GTFS-Semaine-03,3539979-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,250033,7
+25,SO-H19-SO_GTFS-Semaine-03,3539980-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,250033,9
+25,SO-H19-SO_GTFS-Semaine-03,3539981-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,250033,11
+26,SO-H19-SO_GTFS-Semaine-03,3539982-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,260008,2
+31,SO-H19-SO_GTFS-Dimanche-01,3539983-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,310022,2
+31,SO-H19-SO_GTFS-Dimanche-01,3539984-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,310022,4
+31,SO-H19-SO_GTFS-Dimanche-01,3539985-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,310022,6
+31,SO-H19-SO_GTFS-Dimanche-01,3539986-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,310022,8
+31,SO-H19-SO_GTFS-Dimanche-01,3539987-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,310022,10
+31,SO-H19-SO_GTFS-Dimanche-01,3539988-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,310022,12
+31,SO-H19-SO_GTFS-Dimanche-01,3539989-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,310022,14
+31,SO-H19-SO_GTFS-Dimanche-01,3539990-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,310022,16
+31,SO-H19-SO_GTFS-Dimanche-01,3539991-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,310022,18
+31,SO-H19-SO_GTFS-Dimanche-01,3539992-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,310022,20
+31,SO-H19-SO_GTFS-Dimanche-01,3539993-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,310022,22
+32,SO-H19-SO_GTFS-Dimanche-01,3539994-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,320016,4
+32,SO-H19-SO_GTFS-Dimanche-01,3539995-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,320016,6
+32,SO-H19-SO_GTFS-Dimanche-01,3539996-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,320016,8
+32,SO-H19-SO_GTFS-Dimanche-01,3539997-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,320016,10
+32,SO-H19-SO_GTFS-Dimanche-01,3539998-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,320016,12
+32,SO-H19-SO_GTFS-Dimanche-01,3539999-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,320016,14
+32,SO-H19-SO_GTFS-Dimanche-01,3540000-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,320016,16
+32,SO-H19-SO_GTFS-Dimanche-01,3540001-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,320016,18
+32,SO-H19-SO_GTFS-Dimanche-01,3540002-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,320016,20
+32,SO-H19-SO_GTFS-Dimanche-01,3540003-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,320016,22
+32,SO-H19-SO_GTFS-Dimanche-01,3540004-SO-H19-SO_GTFS-Dimanche-01,Direction Montréal,0,320002,2
+32,SO-H19-SO_GTFS-Dimanche-01,3540005-SO-H19-SO_GTFS-Dimanche-01,Direction Châteauguay,0,320017,24
+33,SO-H19-SO_GTFS-Dimanche-01,3540006-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,68
+33,SO-H19-SO_GTFS-Dimanche-01,3540007-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,2
+33,SO-H19-SO_GTFS-Dimanche-01,3540008-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,4
+33,SO-H19-SO_GTFS-Dimanche-01,3540009-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,6
+33,SO-H19-SO_GTFS-Dimanche-01,3540010-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,8
+33,SO-H19-SO_GTFS-Dimanche-01,3540011-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,10
+33,SO-H19-SO_GTFS-Dimanche-01,3540012-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,12
+33,SO-H19-SO_GTFS-Dimanche-01,3540013-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,14
+33,SO-H19-SO_GTFS-Dimanche-01,3540014-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,16
+33,SO-H19-SO_GTFS-Dimanche-01,3540015-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,18
+33,SO-H19-SO_GTFS-Dimanche-01,3540016-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,20
+33,SO-H19-SO_GTFS-Dimanche-01,3540017-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,22
+33,SO-H19-SO_GTFS-Dimanche-01,3540018-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,24
+33,SO-H19-SO_GTFS-Dimanche-01,3540019-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,26
+33,SO-H19-SO_GTFS-Dimanche-01,3540020-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,28
+33,SO-H19-SO_GTFS-Dimanche-01,3540021-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,30
+33,SO-H19-SO_GTFS-Dimanche-01,3540022-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,32
+33,SO-H19-SO_GTFS-Dimanche-01,3540023-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,34
+33,SO-H19-SO_GTFS-Dimanche-01,3540024-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,36
+33,SO-H19-SO_GTFS-Dimanche-01,3540025-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,38
+33,SO-H19-SO_GTFS-Dimanche-01,3540026-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,40
+33,SO-H19-SO_GTFS-Dimanche-01,3540027-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,42
+33,SO-H19-SO_GTFS-Dimanche-01,3540028-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,44
+33,SO-H19-SO_GTFS-Dimanche-01,3540029-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,46
+33,SO-H19-SO_GTFS-Dimanche-01,3540030-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,48
+33,SO-H19-SO_GTFS-Dimanche-01,3540031-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,50
+33,SO-H19-SO_GTFS-Dimanche-01,3540032-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,52
+33,SO-H19-SO_GTFS-Dimanche-01,3540033-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,54
+33,SO-H19-SO_GTFS-Dimanche-01,3540034-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,56
+33,SO-H19-SO_GTFS-Dimanche-01,3540035-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,58
+33,SO-H19-SO_GTFS-Dimanche-01,3540036-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,60
+33,SO-H19-SO_GTFS-Dimanche-01,3540037-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,62
+33,SO-H19-SO_GTFS-Dimanche-01,3540038-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,64
+33,SO-H19-SO_GTFS-Dimanche-01,3540039-SO-H19-SO_GTFS-Dimanche-01,Direction Anjou/St-Joseph,0,330012,66
+33,SO-H19-SO_GTFS-Dimanche-01,3540040-SO-H19-SO_GTFS-Dimanche-01,Direction Primeau/Principale,0,330013,70
+27,SO-H19-SO_GTFS-Semaine-03,3540041-SO-H19-SO_GTFS-Semaine-03,Direction Stationnement Châteauguay,0,270029,2
+27,SO-H19-SO_GTFS-Semaine-03,3540042-SO-H19-SO_GTFS-Semaine-03,Direction Stationnement Châteauguay,0,270029,4
+27,SO-H19-SO_GTFS-Semaine-03,3540043-SO-H19-SO_GTFS-Semaine-03,Direction Stationnement Châteauguay,0,270029,6
+27,SO-H19-SO_GTFS-Semaine-03,3540044-SO-H19-SO_GTFS-Semaine-03,Direction Stationnement Châteauguay,0,270029,8
+27,SO-H19-SO_GTFS-Semaine-03,3540045-SO-H19-SO_GTFS-Semaine-03,Direction Maple/St-Francis,0,270030,10
+27,SO-H19-SO_GTFS-Semaine-03,3540046-SO-H19-SO_GTFS-Semaine-03,Direction Maple/St-Francis,0,270029,12
+27,SO-H19-SO_GTFS-Semaine-03,3540047-SO-H19-SO_GTFS-Semaine-03,Direction Maple/St-Francis,0,270029,14
+27,SO-H19-SO_GTFS-Semaine-03,3540048-SO-H19-SO_GTFS-Semaine-03,Direction Maple/St-Francis,0,270030,16
+27,SO-H19-SO_GTFS-Semaine-03,3540049-SO-H19-SO_GTFS-Semaine-03,Direction Maple/St-Francis,0,270029,18
+27,SO-H19-SO_GTFS-Semaine-03,3540050-SO-H19-SO_GTFS-Semaine-03,Direction Maple/St-Francis,0,270029,20
+27,SO-H19-SO_GTFS-Semaine-03,3540051-SO-H19-SO_GTFS-Semaine-03,Direction Maple/St-Francis,0,270030,22
+27,SO-H19-SO_GTFS-Semaine-03,3540052-SO-H19-SO_GTFS-Semaine-03,Direction Higgins/Salaberry,1,270027,1
+27,SO-H19-SO_GTFS-Semaine-03,3540053-SO-H19-SO_GTFS-Semaine-03,Direction Higgins/Salaberry,1,270027,3
+27,SO-H19-SO_GTFS-Semaine-03,3540054-SO-H19-SO_GTFS-Semaine-03,Direction Higgins/Salaberry,1,270027,5
+27,SO-H19-SO_GTFS-Semaine-03,3540055-SO-H19-SO_GTFS-Semaine-03,Direction Higgins/Salaberry,1,270027,7
+27,SO-H19-SO_GTFS-Semaine-03,3540056-SO-H19-SO_GTFS-Semaine-03,Direction Higgins/Salaberry,1,270027,11
+27,SO-H19-SO_GTFS-Semaine-03,3540057-SO-H19-SO_GTFS-Semaine-03,Direction Higgins/Salaberry,1,270027,13
+27,SO-H19-SO_GTFS-Semaine-03,3540058-SO-H19-SO_GTFS-Semaine-03,Direction Higgins/Salaberry,1,270027,17
+27,SO-H19-SO_GTFS-Semaine-03,3540059-SO-H19-SO_GTFS-Semaine-03,Direction Higgins/Salaberry,1,270027,19
+27,SO-H19-SO_GTFS-Semaine-03,3540060-SO-H19-SO_GTFS-Semaine-03,Direction Higgins/Salaberry,1,270028,9
+27,SO-H19-SO_GTFS-Semaine-03,3540061-SO-H19-SO_GTFS-Semaine-03,Direction Higgins/Salaberry,1,270028,15
+28,SO-H19-SO_GTFS-Semaine-03,3540062-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280032,14
+28,SO-H19-SO_GTFS-Semaine-03,3540063-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280033,6
+28,SO-H19-SO_GTFS-Semaine-03,3540064-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280033,22
+28,SO-H19-SO_GTFS-Semaine-03,3540065-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280034,4
+28,SO-H19-SO_GTFS-Semaine-03,3540066-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280035,2
+28,SO-H19-SO_GTFS-Semaine-03,3540067-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280035,30
+28,SO-H19-SO_GTFS-Semaine-03,3540068-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280035,32
+28,SO-H19-SO_GTFS-Semaine-03,3540069-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280035,36
+28,SO-H19-SO_GTFS-Semaine-03,3540070-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280035,40
+28,SO-H19-SO_GTFS-Semaine-03,3540071-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280035,44
+28,SO-H19-SO_GTFS-Semaine-03,3540072-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280035,48
+28,SO-H19-SO_GTFS-Semaine-03,3540073-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280035,8
+28,SO-H19-SO_GTFS-Semaine-03,3540074-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280035,10
+28,SO-H19-SO_GTFS-Semaine-03,3540075-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280035,12
+28,SO-H19-SO_GTFS-Semaine-03,3540076-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280035,16
+28,SO-H19-SO_GTFS-Semaine-03,3540077-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280035,18
+28,SO-H19-SO_GTFS-Semaine-03,3540078-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280035,20
+28,SO-H19-SO_GTFS-Semaine-03,3540079-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280035,24
+28,SO-H19-SO_GTFS-Semaine-03,3540080-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280035,26
+28,SO-H19-SO_GTFS-Semaine-03,3540081-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280036,28
+28,SO-H19-SO_GTFS-Semaine-03,3540082-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280036,34
+28,SO-H19-SO_GTFS-Semaine-03,3540083-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280036,38
+28,SO-H19-SO_GTFS-Semaine-03,3540084-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280036,42
+28,SO-H19-SO_GTFS-Semaine-03,3540085-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280036,46
+28,SO-H19-SO_GTFS-Semaine-03,3540086-SO-H19-SO_GTFS-Semaine-03,Direction Valleyfield,1,280037,31
+28,SO-H19-SO_GTFS-Semaine-03,3540087-SO-H19-SO_GTFS-Semaine-03,Direction Beauharnois,1,280038,15
+28,SO-H19-SO_GTFS-Semaine-03,3540088-SO-H19-SO_GTFS-Semaine-03,Direction Beauharnois,1,280038,39
+28,SO-H19-SO_GTFS-Semaine-03,3540089-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,5
+28,SO-H19-SO_GTFS-Semaine-03,3540090-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,25
+28,SO-H19-SO_GTFS-Semaine-03,3540091-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,27
+28,SO-H19-SO_GTFS-Semaine-03,3540092-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,29
+28,SO-H19-SO_GTFS-Semaine-03,3540093-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,33
+28,SO-H19-SO_GTFS-Semaine-03,3540094-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,35
+28,SO-H19-SO_GTFS-Semaine-03,3540095-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,37
+28,SO-H19-SO_GTFS-Semaine-03,3540096-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,41
+28,SO-H19-SO_GTFS-Semaine-03,3540097-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,43
+28,SO-H19-SO_GTFS-Semaine-03,3540098-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,45
+28,SO-H19-SO_GTFS-Semaine-03,3540099-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,7
+28,SO-H19-SO_GTFS-Semaine-03,3540100-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,47
+28,SO-H19-SO_GTFS-Semaine-03,3540101-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,49
+28,SO-H19-SO_GTFS-Semaine-03,3540102-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,51
+28,SO-H19-SO_GTFS-Semaine-03,3540103-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,9
+28,SO-H19-SO_GTFS-Semaine-03,3540104-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,11
+28,SO-H19-SO_GTFS-Semaine-03,3540105-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,13
+28,SO-H19-SO_GTFS-Semaine-03,3540106-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,17
+28,SO-H19-SO_GTFS-Semaine-03,3540107-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,19
+28,SO-H19-SO_GTFS-Semaine-03,3540108-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,21
+28,SO-H19-SO_GTFS-Semaine-03,3540109-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280031,23
+29,SO-H19-SO_GTFS-Semaine-03,3540110-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,290001,2
+29,SO-H19-SO_GTFS-Semaine-03,3540111-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,290001,4
+29,SO-H19-SO_GTFS-Semaine-03,3540112-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,290001,6
+29,SO-H19-SO_GTFS-Semaine-03,3540113-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,290001,8
+29,SO-H19-SO_GTFS-Semaine-03,3540114-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,290003,1
+29,SO-H19-SO_GTFS-Semaine-03,3540115-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,290003,3
+29,SO-H19-SO_GTFS-Semaine-03,3540116-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,290003,5
+29,SO-H19-SO_GTFS-Semaine-03,3540117-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,290003,7
+31,SO-H19-SO_GTFS-Semaine-03,3540118-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,4
+31,SO-H19-SO_GTFS-Semaine-03,3540119-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,22
+31,SO-H19-SO_GTFS-Semaine-03,3540120-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,24
+31,SO-H19-SO_GTFS-Semaine-03,3540121-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,26
+31,SO-H19-SO_GTFS-Semaine-03,3540122-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,28
+31,SO-H19-SO_GTFS-Semaine-03,3540123-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,30
+31,SO-H19-SO_GTFS-Semaine-03,3540124-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,32
+31,SO-H19-SO_GTFS-Semaine-03,3540125-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,34
+31,SO-H19-SO_GTFS-Semaine-03,3540126-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,36
+31,SO-H19-SO_GTFS-Semaine-03,3540127-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,38
+31,SO-H19-SO_GTFS-Semaine-03,3540128-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,40
+31,SO-H19-SO_GTFS-Semaine-03,3540129-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,6
+31,SO-H19-SO_GTFS-Semaine-03,3540130-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,42
+31,SO-H19-SO_GTFS-Semaine-03,3540131-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,44
+31,SO-H19-SO_GTFS-Semaine-03,3540132-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,46
+31,SO-H19-SO_GTFS-Semaine-03,3540133-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,48
+31,SO-H19-SO_GTFS-Semaine-03,3540134-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,50
+31,SO-H19-SO_GTFS-Semaine-03,3540135-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,52
+31,SO-H19-SO_GTFS-Semaine-03,3540136-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,54
+31,SO-H19-SO_GTFS-Semaine-03,3540137-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,56
+31,SO-H19-SO_GTFS-Semaine-03,3540138-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,10
+31,SO-H19-SO_GTFS-Semaine-03,3540139-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,12
+31,SO-H19-SO_GTFS-Semaine-03,3540140-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,14
+31,SO-H19-SO_GTFS-Semaine-03,3540141-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,16
+31,SO-H19-SO_GTFS-Semaine-03,3540142-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,18
+31,SO-H19-SO_GTFS-Semaine-03,3540143-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310022,20
+31,SO-H19-SO_GTFS-Semaine-03,3540144-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310010,2
+31,SO-H19-SO_GTFS-Semaine-03,3540145-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,310010,8
+31,SO-H19-SO_GTFS-Semaine-03,3540146-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,0,310023,58
+31,SO-H19-SO_GTFS-Samedi-01,3540147-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,310022,2
+31,SO-H19-SO_GTFS-Samedi-01,3540148-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,310022,6
+31,SO-H19-SO_GTFS-Samedi-01,3540149-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,310022,8
+31,SO-H19-SO_GTFS-Samedi-01,3540150-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,310022,10
+31,SO-H19-SO_GTFS-Samedi-01,3540151-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,310022,12
+31,SO-H19-SO_GTFS-Samedi-01,3540152-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,310022,14
+31,SO-H19-SO_GTFS-Samedi-01,3540153-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,310022,16
+31,SO-H19-SO_GTFS-Samedi-01,3540154-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,310022,18
+31,SO-H19-SO_GTFS-Samedi-01,3540155-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,310022,20
+31,SO-H19-SO_GTFS-Samedi-01,3540156-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,310022,22
+31,SO-H19-SO_GTFS-Samedi-01,3540157-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,310022,24
+31,SO-H19-SO_GTFS-Samedi-01,3540158-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,310022,26
+31,SO-H19-SO_GTFS-Samedi-01,3540159-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,310022,28
+31,SO-H19-SO_GTFS-Samedi-01,3540160-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,310010,4
+31,SO-H19-SO_GTFS-Samedi-01,3540161-SO-H19-SO_GTFS-Samedi-01,Direction Châteauguay,0,310023,30
+32,SO-H19-SO_GTFS-Samedi-01,3540162-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,320016,4
+32,SO-H19-SO_GTFS-Samedi-01,3540163-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,320016,6
+32,SO-H19-SO_GTFS-Samedi-01,3540164-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,320016,8
+32,SO-H19-SO_GTFS-Samedi-01,3540165-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,320016,10
+32,SO-H19-SO_GTFS-Samedi-01,3540166-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,320016,12
+32,SO-H19-SO_GTFS-Samedi-01,3540167-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,320016,14
+32,SO-H19-SO_GTFS-Samedi-01,3540168-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,320016,16
+32,SO-H19-SO_GTFS-Samedi-01,3540169-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,320016,18
+32,SO-H19-SO_GTFS-Samedi-01,3540170-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,320016,20
+32,SO-H19-SO_GTFS-Samedi-01,3540171-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,320016,22
+32,SO-H19-SO_GTFS-Samedi-01,3540172-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,320016,24
+32,SO-H19-SO_GTFS-Samedi-01,3540173-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,320016,26
+32,SO-H19-SO_GTFS-Samedi-01,3540174-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,320016,28
+32,SO-H19-SO_GTFS-Samedi-01,3540175-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,320016,30
+32,SO-H19-SO_GTFS-Samedi-01,3540176-SO-H19-SO_GTFS-Samedi-01,Direction Montréal,0,320002,2
+33,SO-H19-SO_GTFS-Samedi-01,3540177-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,2
+33,SO-H19-SO_GTFS-Samedi-01,3540178-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,4
+33,SO-H19-SO_GTFS-Samedi-01,3540179-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,6
+33,SO-H19-SO_GTFS-Samedi-01,3540180-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,8
+33,SO-H19-SO_GTFS-Samedi-01,3540181-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,10
+33,SO-H19-SO_GTFS-Samedi-01,3540182-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,12
+33,SO-H19-SO_GTFS-Samedi-01,3540183-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,14
+33,SO-H19-SO_GTFS-Samedi-01,3540184-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,16
+33,SO-H19-SO_GTFS-Samedi-01,3540185-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,18
+33,SO-H19-SO_GTFS-Samedi-01,3540186-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,20
+33,SO-H19-SO_GTFS-Samedi-01,3540187-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,22
+33,SO-H19-SO_GTFS-Samedi-01,3540188-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,24
+33,SO-H19-SO_GTFS-Samedi-01,3540189-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,26
+33,SO-H19-SO_GTFS-Samedi-01,3540190-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,28
+33,SO-H19-SO_GTFS-Samedi-01,3540191-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,30
+33,SO-H19-SO_GTFS-Samedi-01,3540192-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,32
+33,SO-H19-SO_GTFS-Samedi-01,3540193-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,34
+33,SO-H19-SO_GTFS-Samedi-01,3540194-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,36
+33,SO-H19-SO_GTFS-Samedi-01,3540195-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,38
+33,SO-H19-SO_GTFS-Samedi-01,3540196-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,40
+33,SO-H19-SO_GTFS-Samedi-01,3540197-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,42
+33,SO-H19-SO_GTFS-Samedi-01,3540198-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,44
+33,SO-H19-SO_GTFS-Samedi-01,3540199-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,46
+33,SO-H19-SO_GTFS-Samedi-01,3540200-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,48
+33,SO-H19-SO_GTFS-Samedi-01,3540201-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,50
+33,SO-H19-SO_GTFS-Samedi-01,3540202-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,52
+33,SO-H19-SO_GTFS-Samedi-01,3540203-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,54
+33,SO-H19-SO_GTFS-Samedi-01,3540204-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,56
+33,SO-H19-SO_GTFS-Samedi-01,3540205-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,58
+33,SO-H19-SO_GTFS-Samedi-01,3540206-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,60
+33,SO-H19-SO_GTFS-Samedi-01,3540207-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,62
+33,SO-H19-SO_GTFS-Samedi-01,3540208-SO-H19-SO_GTFS-Samedi-01,Direction Anjou/St-Joseph,0,330012,64
+33,SO-H19-SO_GTFS-Samedi-01,3540209-SO-H19-SO_GTFS-Samedi-01,Direction Primeau/Principale,0,330013,66
+1,SO-H19-SO_GTFS-Fête-1-01,3540210-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,10109,2
+1,SO-H19-SO_GTFS-Fête-1-01,3540211-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,10214,4
+1,SO-H19-SO_GTFS-Fête-1-01,3540212-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,10214,6
+1,SO-H19-SO_GTFS-Fête-1-01,3540213-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,10214,8
+1,SO-H19-SO_GTFS-Fête-1-01,3540214-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,10214,10
+1,SO-H19-SO_GTFS-Fête-1-01,3540215-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,10214,12
+1,SO-H19-SO_GTFS-Fête-1-01,3540216-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,10214,14
+1,SO-H19-SO_GTFS-Fête-1-01,3540217-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,10214,16
+1,SO-H19-SO_GTFS-Fête-1-01,3540218-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,10214,18
+1,SO-H19-SO_GTFS-Fête-1-01,3540219-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,10214,20
+1,SO-H19-SO_GTFS-Fête-1-01,3540220-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,10214,22
+1,SO-H19-SO_GTFS-Fête-1-01,3540221-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,10214,24
+1,SO-H19-SO_GTFS-Fête-1-01,3540222-SO-H19-SO_GTFS-Fête-1-01,Direction Valleyfield,1,10112,1
+1,SO-H19-SO_GTFS-Fête-1-01,3540223-SO-H19-SO_GTFS-Fête-1-01,Direction Valleyfield,1,10112,3
+1,SO-H19-SO_GTFS-Fête-1-01,3540224-SO-H19-SO_GTFS-Fête-1-01,Direction Valleyfield,1,10112,5
+1,SO-H19-SO_GTFS-Fête-1-01,3540225-SO-H19-SO_GTFS-Fête-1-01,Direction Valleyfield,1,10112,7
+1,SO-H19-SO_GTFS-Fête-1-01,3540226-SO-H19-SO_GTFS-Fête-1-01,Direction Valleyfield,1,10112,9
+1,SO-H19-SO_GTFS-Fête-1-01,3540227-SO-H19-SO_GTFS-Fête-1-01,Direction Valleyfield,1,10112,11
+1,SO-H19-SO_GTFS-Fête-1-01,3540228-SO-H19-SO_GTFS-Fête-1-01,Direction Valleyfield,1,10112,13
+1,SO-H19-SO_GTFS-Fête-1-01,3540229-SO-H19-SO_GTFS-Fête-1-01,Direction Valleyfield,1,10112,15
+1,SO-H19-SO_GTFS-Fête-1-01,3540230-SO-H19-SO_GTFS-Fête-1-01,Direction Valleyfield,1,10112,17
+1,SO-H19-SO_GTFS-Fête-1-01,3540231-SO-H19-SO_GTFS-Fête-1-01,Direction Valleyfield,1,10112,19
+1,SO-H19-SO_GTFS-Fête-1-01,3540232-SO-H19-SO_GTFS-Fête-1-01,Direction Valleyfield,1,10112,21
+1,SO-H19-SO_GTFS-Fête-1-01,3540233-SO-H19-SO_GTFS-Fête-1-01,Direction Valleyfield,1,10112,23
+1,SO-H19-SO_GTFS-Fête-1-01,3540234-SO-H19-SO_GTFS-Fête-1-01,Direction Valleyfield,1,10112,25
+20,SO-H19-SO_GTFS-Fête-1-01,3540235-SO-H19-SO_GTFS-Fête-1-01,Direction Est - rue Francois-Branchaud,0,200047,2
+20,SO-H19-SO_GTFS-Fête-1-01,3540236-SO-H19-SO_GTFS-Fête-1-01,Direction Est - rue Francois-Branchaud,0,200047,4
+20,SO-H19-SO_GTFS-Fête-1-01,3540237-SO-H19-SO_GTFS-Fête-1-01,Direction Est - rue Francois-Branchaud,0,200047,6
+20,SO-H19-SO_GTFS-Fête-1-01,3540238-SO-H19-SO_GTFS-Fête-1-01,Direction Est - rue Francois-Branchaud,0,200047,8
+20,SO-H19-SO_GTFS-Fête-1-01,3540239-SO-H19-SO_GTFS-Fête-1-01,Direction Est - rue Francois-Branchaud,0,200047,10
+20,SO-H19-SO_GTFS-Fête-1-01,3540240-SO-H19-SO_GTFS-Fête-1-01,Direction Est - rue Francois-Branchaud,0,200047,12
+20,SO-H19-SO_GTFS-Fête-1-01,3540241-SO-H19-SO_GTFS-Fête-1-01,Direction Est - rue Francois-Branchaud,0,200047,14
+20,SO-H19-SO_GTFS-Fête-1-01,3540242-SO-H19-SO_GTFS-Fête-1-01,Direction Est - rue Francois-Branchaud,0,200047,16
+20,SO-H19-SO_GTFS-Fête-1-01,3540243-SO-H19-SO_GTFS-Fête-1-01,Direction Ouest - boul. de Melocheville,1,200048,1
+20,SO-H19-SO_GTFS-Fête-1-01,3540244-SO-H19-SO_GTFS-Fête-1-01,Direction Ouest - boul. de Melocheville,1,200048,3
+20,SO-H19-SO_GTFS-Fête-1-01,3540245-SO-H19-SO_GTFS-Fête-1-01,Direction Ouest - boul. de Melocheville,1,200048,5
+20,SO-H19-SO_GTFS-Fête-1-01,3540246-SO-H19-SO_GTFS-Fête-1-01,Direction Ouest - boul. de Melocheville,1,200048,7
+20,SO-H19-SO_GTFS-Fête-1-01,3540247-SO-H19-SO_GTFS-Fête-1-01,Direction Ouest - boul. de Melocheville,1,200048,9
+20,SO-H19-SO_GTFS-Fête-1-01,3540248-SO-H19-SO_GTFS-Fête-1-01,Direction Ouest - boul. de Melocheville,1,200048,11
+20,SO-H19-SO_GTFS-Fête-1-01,3540249-SO-H19-SO_GTFS-Fête-1-01,Direction Ouest - boul. de Melocheville,1,200048,13
+20,SO-H19-SO_GTFS-Fête-1-01,3540250-SO-H19-SO_GTFS-Fête-1-01,Direction Ouest - boul. de Melocheville,1,200048,15
+31,SO-H19-SO_GTFS-Fête-1-01,3540251-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,310022,2
+31,SO-H19-SO_GTFS-Fête-1-01,3540252-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,310022,6
+31,SO-H19-SO_GTFS-Fête-1-01,3540253-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,310022,8
+31,SO-H19-SO_GTFS-Fête-1-01,3540254-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,310022,10
+31,SO-H19-SO_GTFS-Fête-1-01,3540255-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,310022,12
+31,SO-H19-SO_GTFS-Fête-1-01,3540256-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,310022,14
+31,SO-H19-SO_GTFS-Fête-1-01,3540257-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,310022,16
+31,SO-H19-SO_GTFS-Fête-1-01,3540258-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,310022,18
+31,SO-H19-SO_GTFS-Fête-1-01,3540259-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,310022,20
+31,SO-H19-SO_GTFS-Fête-1-01,3540260-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,310022,22
+31,SO-H19-SO_GTFS-Fête-1-01,3540261-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,310022,24
+31,SO-H19-SO_GTFS-Fête-1-01,3540262-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,310022,26
+31,SO-H19-SO_GTFS-Fête-1-01,3540263-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,310022,28
+31,SO-H19-SO_GTFS-Fête-1-01,3540264-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,310010,4
+31,SO-H19-SO_GTFS-Fête-1-01,3540265-SO-H19-SO_GTFS-Fête-1-01,Direction Châteauguay,0,310023,30
+32,SO-H19-SO_GTFS-Fête-1-01,3540266-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,320016,4
+32,SO-H19-SO_GTFS-Fête-1-01,3540267-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,320016,6
+32,SO-H19-SO_GTFS-Fête-1-01,3540268-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,320016,8
+32,SO-H19-SO_GTFS-Fête-1-01,3540269-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,320016,10
+32,SO-H19-SO_GTFS-Fête-1-01,3540270-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,320016,12
+32,SO-H19-SO_GTFS-Fête-1-01,3540271-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,320016,14
+32,SO-H19-SO_GTFS-Fête-1-01,3540272-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,320016,16
+32,SO-H19-SO_GTFS-Fête-1-01,3540273-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,320016,18
+32,SO-H19-SO_GTFS-Fête-1-01,3540274-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,320016,20
+32,SO-H19-SO_GTFS-Fête-1-01,3540275-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,320016,22
+32,SO-H19-SO_GTFS-Fête-1-01,3540276-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,320016,24
+32,SO-H19-SO_GTFS-Fête-1-01,3540277-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,320016,26
+32,SO-H19-SO_GTFS-Fête-1-01,3540278-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,320016,28
+32,SO-H19-SO_GTFS-Fête-1-01,3540279-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,320016,30
+32,SO-H19-SO_GTFS-Fête-1-01,3540280-SO-H19-SO_GTFS-Fête-1-01,Direction Montréal,0,320002,2
+33,SO-H19-SO_GTFS-Fête-1-01,3540281-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,2
+33,SO-H19-SO_GTFS-Fête-1-01,3540282-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,4
+33,SO-H19-SO_GTFS-Fête-1-01,3540283-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,6
+33,SO-H19-SO_GTFS-Fête-1-01,3540284-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,8
+33,SO-H19-SO_GTFS-Fête-1-01,3540285-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,10
+33,SO-H19-SO_GTFS-Fête-1-01,3540286-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,12
+33,SO-H19-SO_GTFS-Fête-1-01,3540287-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,14
+33,SO-H19-SO_GTFS-Fête-1-01,3540288-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,16
+33,SO-H19-SO_GTFS-Fête-1-01,3540289-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,18
+33,SO-H19-SO_GTFS-Fête-1-01,3540290-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,20
+33,SO-H19-SO_GTFS-Fête-1-01,3540291-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,22
+33,SO-H19-SO_GTFS-Fête-1-01,3540292-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,24
+33,SO-H19-SO_GTFS-Fête-1-01,3540293-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,26
+33,SO-H19-SO_GTFS-Fête-1-01,3540294-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,28
+33,SO-H19-SO_GTFS-Fête-1-01,3540295-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,30
+33,SO-H19-SO_GTFS-Fête-1-01,3540296-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,32
+33,SO-H19-SO_GTFS-Fête-1-01,3540297-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,34
+33,SO-H19-SO_GTFS-Fête-1-01,3540298-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,36
+33,SO-H19-SO_GTFS-Fête-1-01,3540299-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,38
+33,SO-H19-SO_GTFS-Fête-1-01,3540300-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,40
+33,SO-H19-SO_GTFS-Fête-1-01,3540301-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,42
+33,SO-H19-SO_GTFS-Fête-1-01,3540302-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,44
+33,SO-H19-SO_GTFS-Fête-1-01,3540303-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,46
+33,SO-H19-SO_GTFS-Fête-1-01,3540304-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,48
+33,SO-H19-SO_GTFS-Fête-1-01,3540305-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,50
+33,SO-H19-SO_GTFS-Fête-1-01,3540306-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,52
+33,SO-H19-SO_GTFS-Fête-1-01,3540307-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,54
+33,SO-H19-SO_GTFS-Fête-1-01,3540308-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,56
+33,SO-H19-SO_GTFS-Fête-1-01,3540309-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,58
+33,SO-H19-SO_GTFS-Fête-1-01,3540310-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,60
+33,SO-H19-SO_GTFS-Fête-1-01,3540311-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,62
+33,SO-H19-SO_GTFS-Fête-1-01,3540312-SO-H19-SO_GTFS-Fête-1-01,Direction Anjou/St-Joseph,0,330012,64
+33,SO-H19-SO_GTFS-Fête-1-01,3540313-SO-H19-SO_GTFS-Fête-1-01,Direction Primeau/Principale,0,330013,66
+22,SO-H19-SO_GTFS-Semaine-03,3544531-SO-H19-SO_GTFS-Semaine-03,Direction Stationnement incitatif,0,220102,10
+28,SO-H19-SO_GTFS-Semaine-03,3544532-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280036,50
+28,SO-H19-SO_GTFS-Semaine-03,3544533-SO-H19-SO_GTFS-Semaine-03,Direction Montréal,0,280036,52
+28,SO-H19-SO_GTFS-Semaine-03,3544534-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280050,1
+28,SO-H19-SO_GTFS-Semaine-03,3544535-SO-H19-SO_GTFS-Semaine-03,Direction Châteauguay,1,280050,3
+33,SO-H19-SO_GTFS-Fête-2-03,3557007-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,2
+33,SO-H19-SO_GTFS-Fête-2-03,3557008-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,4
+33,SO-H19-SO_GTFS-Fête-2-03,3557009-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,6
+33,SO-H19-SO_GTFS-Fête-2-03,3557010-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,8
+33,SO-H19-SO_GTFS-Fête-2-03,3557011-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,10
+33,SO-H19-SO_GTFS-Fête-2-03,3557012-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,12
+33,SO-H19-SO_GTFS-Fête-2-03,3557013-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,14
+33,SO-H19-SO_GTFS-Fête-2-03,3557014-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,16
+33,SO-H19-SO_GTFS-Fête-2-03,3557015-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,18
+33,SO-H19-SO_GTFS-Fête-2-03,3557016-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,20
+33,SO-H19-SO_GTFS-Fête-2-03,3557017-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,22
+33,SO-H19-SO_GTFS-Fête-2-03,3557018-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,24
+33,SO-H19-SO_GTFS-Fête-2-03,3557019-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,26
+33,SO-H19-SO_GTFS-Fête-2-03,3557020-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,28
+33,SO-H19-SO_GTFS-Fête-2-03,3557021-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,30
+33,SO-H19-SO_GTFS-Fête-2-03,3557022-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,32
+33,SO-H19-SO_GTFS-Fête-2-03,3557023-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,34
+33,SO-H19-SO_GTFS-Fête-2-03,3557024-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,36
+33,SO-H19-SO_GTFS-Fête-2-03,3557025-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,38
+33,SO-H19-SO_GTFS-Fête-2-03,3557026-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,40
+33,SO-H19-SO_GTFS-Fête-2-03,3557027-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,42
+33,SO-H19-SO_GTFS-Fête-2-03,3557028-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,44
+33,SO-H19-SO_GTFS-Fête-2-03,3557029-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,46
+33,SO-H19-SO_GTFS-Fête-2-03,3557030-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,48
+33,SO-H19-SO_GTFS-Fête-2-03,3557031-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,50
+33,SO-H19-SO_GTFS-Fête-2-03,3557032-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,52
+33,SO-H19-SO_GTFS-Fête-2-03,3557033-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,54
+33,SO-H19-SO_GTFS-Fête-2-03,3557034-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,56
+33,SO-H19-SO_GTFS-Fête-2-03,3557035-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,58
+33,SO-H19-SO_GTFS-Fête-2-03,3557036-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,60
+33,SO-H19-SO_GTFS-Fête-2-03,3557037-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,62
+33,SO-H19-SO_GTFS-Fête-2-03,3557038-SO-H19-SO_GTFS-Fête-2-03,Direction Anjou/St-Joseph,0,330012,64
+33,SO-H19-SO_GTFS-Fête-2-03,3557039-SO-H19-SO_GTFS-Fête-2-03,Direction Primeau/Principale,0,330013,66
+32,SO-H19-SO_GTFS-Fête-2-03,3557040-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,320016,4
+32,SO-H19-SO_GTFS-Fête-2-03,3557041-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,320016,6
+32,SO-H19-SO_GTFS-Fête-2-03,3557042-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,320016,8
+32,SO-H19-SO_GTFS-Fête-2-03,3557043-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,320016,10
+32,SO-H19-SO_GTFS-Fête-2-03,3557044-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,320016,12
+32,SO-H19-SO_GTFS-Fête-2-03,3557045-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,320016,14
+32,SO-H19-SO_GTFS-Fête-2-03,3557046-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,320016,16
+32,SO-H19-SO_GTFS-Fête-2-03,3557047-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,320016,18
+32,SO-H19-SO_GTFS-Fête-2-03,3557048-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,320016,20
+32,SO-H19-SO_GTFS-Fête-2-03,3557049-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,320016,22
+32,SO-H19-SO_GTFS-Fête-2-03,3557050-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,320016,24
+32,SO-H19-SO_GTFS-Fête-2-03,3557051-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,320016,26
+32,SO-H19-SO_GTFS-Fête-2-03,3557052-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,320016,28
+32,SO-H19-SO_GTFS-Fête-2-03,3557053-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,320016,30
+32,SO-H19-SO_GTFS-Fête-2-03,3557054-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,320002,2
+31,SO-H19-SO_GTFS-Fête-2-03,3557055-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,310022,2
+31,SO-H19-SO_GTFS-Fête-2-03,3557056-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,310022,6
+31,SO-H19-SO_GTFS-Fête-2-03,3557057-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,310022,8
+31,SO-H19-SO_GTFS-Fête-2-03,3557058-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,310022,10
+31,SO-H19-SO_GTFS-Fête-2-03,3557059-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,310022,12
+31,SO-H19-SO_GTFS-Fête-2-03,3557060-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,310022,14
+31,SO-H19-SO_GTFS-Fête-2-03,3557061-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,310022,16
+31,SO-H19-SO_GTFS-Fête-2-03,3557062-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,310022,18
+31,SO-H19-SO_GTFS-Fête-2-03,3557063-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,310022,20
+31,SO-H19-SO_GTFS-Fête-2-03,3557064-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,310022,22
+31,SO-H19-SO_GTFS-Fête-2-03,3557065-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,310022,24
+31,SO-H19-SO_GTFS-Fête-2-03,3557066-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,310022,26
+31,SO-H19-SO_GTFS-Fête-2-03,3557067-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,310022,28
+31,SO-H19-SO_GTFS-Fête-2-03,3557068-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,310010,4
+31,SO-H19-SO_GTFS-Fête-2-03,3557069-SO-H19-SO_GTFS-Fête-2-03,Direction Châteauguay,0,310023,30
+20,SO-H19-SO_GTFS-Fête-2-03,3557070-SO-H19-SO_GTFS-Fête-2-03,Direction Est - rue Francois-Branchaud,0,200047,2
+20,SO-H19-SO_GTFS-Fête-2-03,3557071-SO-H19-SO_GTFS-Fête-2-03,Direction Est - rue Francois-Branchaud,0,200047,4
+20,SO-H19-SO_GTFS-Fête-2-03,3557072-SO-H19-SO_GTFS-Fête-2-03,Direction Est - rue Francois-Branchaud,0,200047,6
+20,SO-H19-SO_GTFS-Fête-2-03,3557073-SO-H19-SO_GTFS-Fête-2-03,Direction Est - rue Francois-Branchaud,0,200047,8
+20,SO-H19-SO_GTFS-Fête-2-03,3557074-SO-H19-SO_GTFS-Fête-2-03,Direction Est - rue Francois-Branchaud,0,200047,10
+20,SO-H19-SO_GTFS-Fête-2-03,3557075-SO-H19-SO_GTFS-Fête-2-03,Direction Est - rue Francois-Branchaud,0,200047,12
+20,SO-H19-SO_GTFS-Fête-2-03,3557076-SO-H19-SO_GTFS-Fête-2-03,Direction Est - rue Francois-Branchaud,0,200047,14
+20,SO-H19-SO_GTFS-Fête-2-03,3557077-SO-H19-SO_GTFS-Fête-2-03,Direction Est - rue Francois-Branchaud,0,200047,16
+20,SO-H19-SO_GTFS-Fête-2-03,3557078-SO-H19-SO_GTFS-Fête-2-03,Direction Ouest - boul. de Melocheville,1,200048,1
+20,SO-H19-SO_GTFS-Fête-2-03,3557079-SO-H19-SO_GTFS-Fête-2-03,Direction Ouest - boul. de Melocheville,1,200048,3
+20,SO-H19-SO_GTFS-Fête-2-03,3557080-SO-H19-SO_GTFS-Fête-2-03,Direction Ouest - boul. de Melocheville,1,200048,5
+20,SO-H19-SO_GTFS-Fête-2-03,3557081-SO-H19-SO_GTFS-Fête-2-03,Direction Ouest - boul. de Melocheville,1,200048,7
+20,SO-H19-SO_GTFS-Fête-2-03,3557082-SO-H19-SO_GTFS-Fête-2-03,Direction Ouest - boul. de Melocheville,1,200048,9
+20,SO-H19-SO_GTFS-Fête-2-03,3557083-SO-H19-SO_GTFS-Fête-2-03,Direction Ouest - boul. de Melocheville,1,200048,11
+20,SO-H19-SO_GTFS-Fête-2-03,3557084-SO-H19-SO_GTFS-Fête-2-03,Direction Ouest - boul. de Melocheville,1,200048,13
+20,SO-H19-SO_GTFS-Fête-2-03,3557085-SO-H19-SO_GTFS-Fête-2-03,Direction Ouest - boul. de Melocheville,1,200048,15
+1,SO-H19-SO_GTFS-Fête-2-03,3557086-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,10109,2
+1,SO-H19-SO_GTFS-Fête-2-03,3557087-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,10214,4
+1,SO-H19-SO_GTFS-Fête-2-03,3557088-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,10214,6
+1,SO-H19-SO_GTFS-Fête-2-03,3557089-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,10214,8
+1,SO-H19-SO_GTFS-Fête-2-03,3557090-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,10214,10
+1,SO-H19-SO_GTFS-Fête-2-03,3557091-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,10214,12
+1,SO-H19-SO_GTFS-Fête-2-03,3557092-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,10214,14
+1,SO-H19-SO_GTFS-Fête-2-03,3557093-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,10214,16
+1,SO-H19-SO_GTFS-Fête-2-03,3557094-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,10214,18
+1,SO-H19-SO_GTFS-Fête-2-03,3557095-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,10214,20
+1,SO-H19-SO_GTFS-Fête-2-03,3557096-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,10214,22
+1,SO-H19-SO_GTFS-Fête-2-03,3557097-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,10214,24
+1,SO-H19-SO_GTFS-Fête-2-03,3557098-SO-H19-SO_GTFS-Fête-2-03,Direction Valleyfield,1,10112,1
+1,SO-H19-SO_GTFS-Fête-2-03,3557099-SO-H19-SO_GTFS-Fête-2-03,Direction Valleyfield,1,10112,3
+1,SO-H19-SO_GTFS-Fête-2-03,3557100-SO-H19-SO_GTFS-Fête-2-03,Direction Valleyfield,1,10112,5
+1,SO-H19-SO_GTFS-Fête-2-03,3557101-SO-H19-SO_GTFS-Fête-2-03,Direction Valleyfield,1,10112,7
+1,SO-H19-SO_GTFS-Fête-2-03,3557102-SO-H19-SO_GTFS-Fête-2-03,Direction Valleyfield,1,10112,9
+1,SO-H19-SO_GTFS-Fête-2-03,3557103-SO-H19-SO_GTFS-Fête-2-03,Direction Valleyfield,1,10112,11
+1,SO-H19-SO_GTFS-Fête-2-03,3557104-SO-H19-SO_GTFS-Fête-2-03,Direction Valleyfield,1,10112,13
+1,SO-H19-SO_GTFS-Fête-2-03,3557105-SO-H19-SO_GTFS-Fête-2-03,Direction Valleyfield,1,10112,15
+1,SO-H19-SO_GTFS-Fête-2-03,3557106-SO-H19-SO_GTFS-Fête-2-03,Direction Valleyfield,1,10112,17
+1,SO-H19-SO_GTFS-Fête-2-03,3557107-SO-H19-SO_GTFS-Fête-2-03,Direction Valleyfield,1,10112,19
+1,SO-H19-SO_GTFS-Fête-2-03,3557108-SO-H19-SO_GTFS-Fête-2-03,Direction Valleyfield,1,10112,21
+1,SO-H19-SO_GTFS-Fête-2-03,3557109-SO-H19-SO_GTFS-Fête-2-03,Direction Valleyfield,1,10112,23
+1,SO-H19-SO_GTFS-Fête-2-03,3557110-SO-H19-SO_GTFS-Fête-2-03,Direction Valleyfield,1,10112,25
+28,SO-H19-SO_GTFS-Fête-2-03,3557111-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,280033,1
+28,SO-H19-SO_GTFS-Fête-2-03,3557112-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,280033,2
+28,SO-H19-SO_GTFS-Fête-2-03,3557113-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,280035,3
+28,SO-H19-SO_GTFS-Fête-2-03,3557114-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,280035,4
+28,SO-H19-SO_GTFS-Fête-2-03,3557115-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,280035,5
+28,SO-H19-SO_GTFS-Fête-2-03,3557116-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,280035,6
+28,SO-H19-SO_GTFS-Fête-2-03,3557117-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,280035,7
+28,SO-H19-SO_GTFS-Fête-2-03,3557118-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,280035,8
+28,SO-H19-SO_GTFS-Fête-2-03,3557119-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,280056,9
+28,SO-H19-SO_GTFS-Fête-2-03,3557120-SO-H19-SO_GTFS-Fête-2-03,Direction Montréal,0,280035,10
+28,SO-H19-SO_GTFS-Fête-2-03,3557121-SO-H19-SO_GTFS-Fête-2-03,Direction Beauharnois,1,280038,11
+28,SO-H19-SO_GTFS-Fête-2-03,3557122-SO-H19-SO_GTFS-Fête-2-03,Direction Beauharnois,1,280038,12
+28,SO-H19-SO_GTFS-Fête-2-03,3557123-SO-H19-SO_GTFS-Fête-2-03,Direction Châteauguay,1,280031,13
+28,SO-H19-SO_GTFS-Fête-2-03,3557124-SO-H19-SO_GTFS-Fête-2-03,Direction Châteauguay,1,280050,14
+28,SO-H19-SO_GTFS-Fête-2-03,3557125-SO-H19-SO_GTFS-Fête-2-03,Direction Châteauguay,1,280031,15
+28,SO-H19-SO_GTFS-Fête-2-03,3557126-SO-H19-SO_GTFS-Fête-2-03,Direction Châteauguay,1,280031,16
+28,SO-H19-SO_GTFS-Fête-2-03,3557127-SO-H19-SO_GTFS-Fête-2-03,Direction Châteauguay,1,280031,17
+28,SO-H19-SO_GTFS-Fête-2-03,3557128-SO-H19-SO_GTFS-Fête-2-03,Direction Châteauguay,1,280031,18
+28,SO-H19-SO_GTFS-Fête-2-03,3557129-SO-H19-SO_GTFS-Fête-2-03,Direction Châteauguay,1,280031,19
+28,SO-H19-SO_GTFS-Fête-2-03,3557130-SO-H19-SO_GTFS-Fête-2-03,Direction Châteauguay,1,280031,20

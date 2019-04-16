@@ -1,0 +1,17 @@
+route_id,agency_id,route_short_name,route_long_name,route_type,route_color,route_text_color
+1,CITSO,1,Valleyfield - Montréal,3,1F1F1F,FFFFFF
+20,CITSO,20,Beauharnois,3,1F1F1F,FFFFFF
+21,CITSO,21,Châteauguay - Montréal,3,1F1F1F,FFFFFF
+22,CITSO,22,Châteauguay - Montréal,3,1F1F1F,FFFFFF
+23,CITSO,23,Châteauguay - Montréal,3,1F1F1F,FFFFFF
+24,CITSO,24,Châteauguay - Montréal,3,1F1F1F,FFFFFF
+25,CITSO,25,Châteauguay - Montréal,3,1F1F1F,FFFFFF
+26,CITSO,26,Châteauguay - Montréal,3,1F1F1F,FFFFFF
+27,CITSO,27,Châteauguay,3,1F1F1F,FFFFFF
+28,CITSO,28,Châteauguay - Montréal (Centre-Ville),3,1F1F1F,FFFFFF
+29,CITSO,29,Châteauguay - Montréal,3,1F1F1F,FFFFFF
+31,CITSO,31,Châteauguay - Montréal,3,1F1F1F,FFFFFF
+32,CITSO,32,Châteauguay - Montréal,3,1F1F1F,FFFFFF
+33,CITSO,33,Châteauguay,3,1F1F1F,FFFFFF
+90,CITSO,90,Cégep André-Laurendeau,3,1F1F1F,FFFFFF
+98,CITSO,98,Kahnawake - Montréal,3,1F1F1F,FFFFFF

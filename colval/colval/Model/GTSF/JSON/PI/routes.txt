@@ -1,0 +1,28 @@
+route_id,agency_id,route_short_name,route_long_name,route_type,route_color,route_text_color
+1,CITPI,1,Gare Vaudreuil/Parc Industriel/Seigneurie,3,1F1F1F,FFFFFF
+2,CITPI,2,Gare Vaudreuil/Bourget/des Sarcelles,3,1F1F1F,FFFFFF
+3,CITPI,3,Gare Dorion/Valois/Tonnancour,3,1F1F1F,FFFFFF
+4,CITPI,4,Gare Vaudreuil/Ouimet/Floralies,3,1F1F1F,FFFFFF
+5,CITPI,5,Gare Vaudreuil - Gare Dorion,3,1F1F1F,FFFFFF
+6,CITPI,6,Gare Vaudreuil/CSSS/du Ruisselet/Émile-Bouchard,3,1F1F1F,FFFFFF
+7,CITPI,7,Gare Vaudreuil/John Abbott/Pointe-Claire,3,1F1F1F,FFFFFF
+8,CITPI,8,Gare Dorion/Chicoine/St-Antoine,3,1F1F1F,FFFFFF
+9,CITPI,9,Gare Vaudreuil/Gare Dorion/Marier,3,1F1F1F,FFFFFF
+15,CITPI,15,Gare Vaudreuil / Gare Dorion via Valois  P-G-L,3,1F1F1F,FFFFFF
+21,CITPI,21,Gare Vaudreuil/Hudson/St-Charles,3,1F1F1F,FFFFFF
+31,CITPI,31,Gare Pincourt T-V/Cardinal-Léger,3,1F1F1F,FFFFFF
+33,CITPI,33,Gare Pincourt T-V/Forest,3,1F1F1F,FFFFFF
+35,CITPI,35,Dorion / Ste-Anne-de-Bellevue via l'Ile Perrot,3,1F1F1F,FFFFFF
+40,CITPI,40,Express Vaudreuil - Terminus Côte-Vertu,3,1F1F1F,FFFFFF
+41,CITPI,41,Gare Île-Perrot/Boishatel/Perrier/F. Cuillerier,3,1F1F1F,FFFFFF
+42,CITPI,42,Gare Île-Perrot / des Érables / Lucien-Manning,3,1F1F1F,FFFFFF
+43,CITPI,43,Gare Île-Perrot/Perrot/Rivelaine,3,1F1F1F,FFFFFF
+44,CITPI,44,Gares Pincourt/T-V Ile-Perrot / John-Abbott,3,1F1F1F,FFFFFF
+45,CITPI,45,Virginie-Roy / Ste-Anne-De-Bellevue,3,1F1F1F,FFFFFF
+46,CITPI,46,Gare Île-Perrot/Don Quichotte/Pointe-du-Domaine,3,1F1F1F,FFFFFF
+47,CITPI,47,Perrot/Caza/Pointe-du-Domaine,3,1F1F1F,FFFFFF
+51,CITPI,51,Gare Vaudreuil / Saint-Lazare,3,1F1F1F,FFFFFF
+61,CITPI,61,Gare Vaudreuil/Rigaud,3,1F1F1F,FFFFFF
+91,CITPI,91,Gérald-Godin / Pointe-Claire,3,1F1F1F,FFFFFF
+115,CITPI,115,Gare Vaudreuil / Dorion (Av. de la Fabrique),3,1F1F1F,FFFFFF
+335,CITPI,335,Gare Pincourt T-V/Ste-Anne-de-Bellevue,3,1F1F1F,FFFFFF
