@@ -12,10 +12,7 @@
 		720965DE224A790700C4F26E /* LoginViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720965DD224A790700C4F26E /* LoginViewControler.swift */; };
 		721AF4D82255A23300489053 /* GTSFStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 721AF4D62255A23300489053 /* GTSFStore.xcdatamodeld */; };
 		724574A42241492A00C26197 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574A32241492A00C26197 /* AppDelegate.swift */; };
-		724574AB2241492D00C26197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 724574AA2241492D00C26197 /* Assets.xcassets */; };
 		724574B92241492D00C26197 /* colvalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574B82241492D00C26197 /* colvalTests.swift */; };
-		724574C5224149AA00C26197 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 724574C3224149AA00C26197 /* LaunchScreen.storyboard */; };
-		724574C6224149AA00C26197 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 724574C4224149AA00C26197 /* Main.storyboard */; };
 		724574CB224149D100C26197 /* DataControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574C8224149D100C26197 /* DataControler.swift */; };
 		724574CC224149D100C26197 /* ParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574C9224149D100C26197 /* ParkingViewController.swift */; };
 		724574CD224149D100C26197 /* BusControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574CA224149D100C26197 /* BusControler.swift */; };
@@ -37,26 +34,6 @@
 		7285BED722562DEA00B454DE /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285BED622562DEA00B454DE /* CoreData.swift */; };
 		7285BED922562E1E00B454DE /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285BED822562E1E00B454DE /* Util.swift */; };
 		7285BEDB22562F1200B454DE /* DefaultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285BEDA22562F1200B454DE /* DefaultData.swift */; };
-		72E68D40226603E300E84699 /* fare_attributes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D2B226603E300E84699 /* fare_attributes.txt */; };
-		72E68D41226603E300E84699 /* agency.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D2C226603E300E84699 /* agency.txt */; };
-		72E68D42226603E300E84699 /* fare_rules.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D2D226603E300E84699 /* fare_rules.txt */; };
-		72E68D43226603E300E84699 /* calendar_dates.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D2E226603E300E84699 /* calendar_dates.txt */; };
-		72E68D44226603E300E84699 /* stop_times.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D2F226603E300E84699 /* stop_times.txt */; };
-		72E68D45226603E300E84699 /* shapes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D30226603E300E84699 /* shapes.txt */; };
-		72E68D46226603E300E84699 /* trips.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D31226603E300E84699 /* trips.txt */; };
-		72E68D47226603E300E84699 /* stops.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D32226603E300E84699 /* stops.txt */; };
-		72E68D48226603E300E84699 /* calendar.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D33226603E300E84699 /* calendar.txt */; };
-		72E68D49226603E300E84699 /* routes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D34226603E300E84699 /* routes.txt */; };
-		72E68D4A226603E300E84699 /* fare_attributes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D36226603E300E84699 /* fare_attributes.txt */; };
-		72E68D4B226603E300E84699 /* agency.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D37226603E300E84699 /* agency.txt */; };
-		72E68D4C226603E300E84699 /* fare_rules.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D38226603E300E84699 /* fare_rules.txt */; };
-		72E68D4D226603E300E84699 /* calendar_dates.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D39226603E300E84699 /* calendar_dates.txt */; };
-		72E68D4E226603E300E84699 /* stop_times.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D3A226603E300E84699 /* stop_times.txt */; };
-		72E68D4F226603E300E84699 /* shapes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D3B226603E300E84699 /* shapes.txt */; };
-		72E68D50226603E300E84699 /* trips.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D3C226603E300E84699 /* trips.txt */; };
-		72E68D51226603E300E84699 /* stops.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D3D226603E300E84699 /* stops.txt */; };
-		72E68D52226603E300E84699 /* calendar.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D3E226603E300E84699 /* calendar.txt */; };
-		72E68D53226603E300E84699 /* routes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E68D3F226603E300E84699 /* routes.txt */; };
 		E4290BEF225FA0380059F924 /* Stops+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BE1225FA0380059F924 /* Stops+CoreDataClass.swift */; };
 		E4290BF0225FA0380059F924 /* Stops+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BE2225FA0380059F924 /* Stops+CoreDataProperties.swift */; };
 		E4290BF1225FA0380059F924 /* StopTimes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BE3225FA0380059F924 /* StopTimes+CoreDataClass.swift */; };
@@ -71,6 +48,11 @@
 		E4290BFA225FA0380059F924 /* Trips+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BEC225FA0380059F924 /* Trips+CoreDataProperties.swift */; };
 		E4290BFB225FA0380059F924 /* Agency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BED225FA0380059F924 /* Agency+CoreDataClass.swift */; };
 		E4290BFC225FA0380059F924 /* Agency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BEE225FA0380059F924 /* Agency+CoreDataProperties.swift */; };
+		E436753F226613DF00EE2F41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 724574C4224149AA00C26197 /* Main.storyboard */; };
+		E43675402266143A00EE2F41 /* AppDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = 724574A32241492A00C26197 /* AppDelegate.swift */; };
+		E43675412266143A00EE2F41 /* ViewController.swift in Resources */ = {isa = PBXBuildFile; fileRef = 724574EC224149EC00C26197 /* ViewController.swift */; };
+		E43675422266143A00EE2F41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 724574C3224149AA00C26197 /* LaunchScreen.storyboard */; };
+		E43675432266143A00EE2F41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 724574AA2241492D00C26197 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,26 +100,6 @@
 		7285BED622562DEA00B454DE /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		7285BED822562E1E00B454DE /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		7285BEDA22562F1200B454DE /* DefaultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultData.swift; sourceTree = "<group>"; };
-		72E68D2B226603E300E84699 /* fare_attributes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fare_attributes.txt; sourceTree = "<group>"; };
-		72E68D2C226603E300E84699 /* agency.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = agency.txt; sourceTree = "<group>"; };
-		72E68D2D226603E300E84699 /* fare_rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fare_rules.txt; sourceTree = "<group>"; };
-		72E68D2E226603E300E84699 /* calendar_dates.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calendar_dates.txt; sourceTree = "<group>"; };
-		72E68D2F226603E300E84699 /* stop_times.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stop_times.txt; sourceTree = "<group>"; };
-		72E68D30226603E300E84699 /* shapes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shapes.txt; sourceTree = "<group>"; };
-		72E68D31226603E300E84699 /* trips.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trips.txt; sourceTree = "<group>"; };
-		72E68D32226603E300E84699 /* stops.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stops.txt; sourceTree = "<group>"; };
-		72E68D33226603E300E84699 /* calendar.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calendar.txt; sourceTree = "<group>"; };
-		72E68D34226603E300E84699 /* routes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.txt; sourceTree = "<group>"; };
-		72E68D36226603E300E84699 /* fare_attributes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fare_attributes.txt; sourceTree = "<group>"; };
-		72E68D37226603E300E84699 /* agency.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = agency.txt; sourceTree = "<group>"; };
-		72E68D38226603E300E84699 /* fare_rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fare_rules.txt; sourceTree = "<group>"; };
-		72E68D39226603E300E84699 /* calendar_dates.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calendar_dates.txt; sourceTree = "<group>"; };
-		72E68D3A226603E300E84699 /* stop_times.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stop_times.txt; sourceTree = "<group>"; };
-		72E68D3B226603E300E84699 /* shapes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shapes.txt; sourceTree = "<group>"; };
-		72E68D3C226603E300E84699 /* trips.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trips.txt; sourceTree = "<group>"; };
-		72E68D3D226603E300E84699 /* stops.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stops.txt; sourceTree = "<group>"; };
-		72E68D3E226603E300E84699 /* calendar.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calendar.txt; sourceTree = "<group>"; };
-		72E68D3F226603E300E84699 /* routes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.txt; sourceTree = "<group>"; };
 		E4290BE1225FA0380059F924 /* Stops+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stops+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E4290BE2225FA0380059F924 /* Stops+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stops+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E4290BE3225FA0380059F924 /* StopTimes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopTimes+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -152,6 +114,26 @@
 		E4290BEC225FA0380059F924 /* Trips+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trips+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E4290BED225FA0380059F924 /* Agency+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Agency+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E4290BEE225FA0380059F924 /* Agency+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Agency+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E43675162266124F00EE2F41 /* agency.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = agency.txt; sourceTree = "<group>"; };
+		E43675172266124F00EE2F41 /* calendar.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calendar.txt; sourceTree = "<group>"; };
+		E43675182266124F00EE2F41 /* calendar_dates.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calendar_dates.txt; sourceTree = "<group>"; };
+		E43675192266124F00EE2F41 /* fare_attributes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fare_attributes.txt; sourceTree = "<group>"; };
+		E436751A2266124F00EE2F41 /* fare_rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fare_rules.txt; sourceTree = "<group>"; };
+		E436751B2266124F00EE2F41 /* routes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.txt; sourceTree = "<group>"; };
+		E436751C2266124F00EE2F41 /* shapes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shapes.txt; sourceTree = "<group>"; };
+		E436751D2266124F00EE2F41 /* stop_times.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stop_times.txt; sourceTree = "<group>"; };
+		E436751E2266124F00EE2F41 /* stops.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stops.txt; sourceTree = "<group>"; };
+		E436751F2266124F00EE2F41 /* trips.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trips.txt; sourceTree = "<group>"; };
+		E43675212266124F00EE2F41 /* agency.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = agency.txt; sourceTree = "<group>"; };
+		E43675222266124F00EE2F41 /* calendar.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calendar.txt; sourceTree = "<group>"; };
+		E43675232266124F00EE2F41 /* calendar_dates.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calendar_dates.txt; sourceTree = "<group>"; };
+		E43675242266124F00EE2F41 /* fare_attributes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fare_attributes.txt; sourceTree = "<group>"; };
+		E43675252266124F00EE2F41 /* fare_rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fare_rules.txt; sourceTree = "<group>"; };
+		E43675262266124F00EE2F41 /* routes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.txt; sourceTree = "<group>"; };
+		E43675272266124F00EE2F41 /* shapes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shapes.txt; sourceTree = "<group>"; };
+		E43675282266124F00EE2F41 /* stop_times.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stop_times.txt; sourceTree = "<group>"; };
+		E43675292266124F00EE2F41 /* stops.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stops.txt; sourceTree = "<group>"; };
+		E436752A2266124F00EE2F41 /* trips.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trips.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,7 +243,7 @@
 		724574CF224149DE00C26197 /* GTSF */ = {
 			isa = PBXGroup;
 			children = (
-				72E68D29226603E300E84699 /* JSON */,
+				E43675142266124F00EE2F41 /* JSON */,
 				721AF4D52255A1D800489053 /* CoreData */,
 			);
 			path = GTSF;
@@ -315,47 +297,47 @@
 			name = Class;
 			sourceTree = "<group>";
 		};
-		72E68D29226603E300E84699 /* JSON */ = {
+		E43675142266124F00EE2F41 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				72E68D2A226603E300E84699 /* SO */,
-				72E68D35226603E300E84699 /* PI */,
+				E43675152266124F00EE2F41 /* PI */,
+				E43675202266124F00EE2F41 /* SO */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
 		};
-		72E68D2A226603E300E84699 /* SO */ = {
+		E43675152266124F00EE2F41 /* PI */ = {
 			isa = PBXGroup;
 			children = (
-				72E68D2B226603E300E84699 /* fare_attributes.txt */,
-				72E68D2C226603E300E84699 /* agency.txt */,
-				72E68D2D226603E300E84699 /* fare_rules.txt */,
-				72E68D2E226603E300E84699 /* calendar_dates.txt */,
-				72E68D2F226603E300E84699 /* stop_times.txt */,
-				72E68D30226603E300E84699 /* shapes.txt */,
-				72E68D31226603E300E84699 /* trips.txt */,
-				72E68D32226603E300E84699 /* stops.txt */,
-				72E68D33226603E300E84699 /* calendar.txt */,
-				72E68D34226603E300E84699 /* routes.txt */,
-			);
-			path = SO;
-			sourceTree = "<group>";
-		};
-		72E68D35226603E300E84699 /* PI */ = {
-			isa = PBXGroup;
-			children = (
-				72E68D36226603E300E84699 /* fare_attributes.txt */,
-				72E68D37226603E300E84699 /* agency.txt */,
-				72E68D38226603E300E84699 /* fare_rules.txt */,
-				72E68D39226603E300E84699 /* calendar_dates.txt */,
-				72E68D3A226603E300E84699 /* stop_times.txt */,
-				72E68D3B226603E300E84699 /* shapes.txt */,
-				72E68D3C226603E300E84699 /* trips.txt */,
-				72E68D3D226603E300E84699 /* stops.txt */,
-				72E68D3E226603E300E84699 /* calendar.txt */,
-				72E68D3F226603E300E84699 /* routes.txt */,
+				E43675162266124F00EE2F41 /* agency.txt */,
+				E43675172266124F00EE2F41 /* calendar.txt */,
+				E43675182266124F00EE2F41 /* calendar_dates.txt */,
+				E43675192266124F00EE2F41 /* fare_attributes.txt */,
+				E436751A2266124F00EE2F41 /* fare_rules.txt */,
+				E436751B2266124F00EE2F41 /* routes.txt */,
+				E436751C2266124F00EE2F41 /* shapes.txt */,
+				E436751D2266124F00EE2F41 /* stop_times.txt */,
+				E436751E2266124F00EE2F41 /* stops.txt */,
+				E436751F2266124F00EE2F41 /* trips.txt */,
 			);
 			path = PI;
+			sourceTree = "<group>";
+		};
+		E43675202266124F00EE2F41 /* SO */ = {
+			isa = PBXGroup;
+			children = (
+				E43675212266124F00EE2F41 /* agency.txt */,
+				E43675222266124F00EE2F41 /* calendar.txt */,
+				E43675232266124F00EE2F41 /* calendar_dates.txt */,
+				E43675242266124F00EE2F41 /* fare_attributes.txt */,
+				E43675252266124F00EE2F41 /* fare_rules.txt */,
+				E43675262266124F00EE2F41 /* routes.txt */,
+				E43675272266124F00EE2F41 /* shapes.txt */,
+				E43675282266124F00EE2F41 /* stop_times.txt */,
+				E43675292266124F00EE2F41 /* stops.txt */,
+				E436752A2266124F00EE2F41 /* trips.txt */,
+			);
+			path = SO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,29 +421,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72E68D48226603E300E84699 /* calendar.txt in Resources */,
-				72E68D4A226603E300E84699 /* fare_attributes.txt in Resources */,
-				72E68D42226603E300E84699 /* fare_rules.txt in Resources */,
-				724574C6224149AA00C26197 /* Main.storyboard in Resources */,
-				72E68D51226603E300E84699 /* stops.txt in Resources */,
-				72E68D4C226603E300E84699 /* fare_rules.txt in Resources */,
-				72E68D41226603E300E84699 /* agency.txt in Resources */,
-				72E68D46226603E300E84699 /* trips.txt in Resources */,
-				72E68D47226603E300E84699 /* stops.txt in Resources */,
-				72E68D44226603E300E84699 /* stop_times.txt in Resources */,
-				72E68D40226603E300E84699 /* fare_attributes.txt in Resources */,
-				724574C5224149AA00C26197 /* LaunchScreen.storyboard in Resources */,
-				72E68D52226603E300E84699 /* calendar.txt in Resources */,
-				72E68D53226603E300E84699 /* routes.txt in Resources */,
-				724574AB2241492D00C26197 /* Assets.xcassets in Resources */,
-				72E68D4B226603E300E84699 /* agency.txt in Resources */,
-				72E68D50226603E300E84699 /* trips.txt in Resources */,
-				72E68D4D226603E300E84699 /* calendar_dates.txt in Resources */,
-				72E68D45226603E300E84699 /* shapes.txt in Resources */,
-				72E68D49226603E300E84699 /* routes.txt in Resources */,
-				72E68D4F226603E300E84699 /* shapes.txt in Resources */,
-				72E68D43226603E300E84699 /* calendar_dates.txt in Resources */,
-				72E68D4E226603E300E84699 /* stop_times.txt in Resources */,
+				E43675402266143A00EE2F41 /* AppDelegate.swift in Resources */,
+				E43675412266143A00EE2F41 /* ViewController.swift in Resources */,
+				E43675422266143A00EE2F41 /* LaunchScreen.storyboard in Resources */,
+				E43675432266143A00EE2F41 /* Assets.xcassets in Resources */,
+				E436753F226613DF00EE2F41 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
