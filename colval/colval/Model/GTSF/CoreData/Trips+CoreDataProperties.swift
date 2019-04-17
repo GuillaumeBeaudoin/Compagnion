@@ -2,7 +2,7 @@
 //  Trips+CoreDataProperties.swift
 //  colval
 //
-//  Created by user150454 on 4/11/19.
+//  Created by Alexandre Arsenault on 2019-04-16.
 //  Copyright © 2019 Alexandre Arsenault. All rights reserved.
 //
 //
@@ -24,8 +24,8 @@ extension Trips {
     @NSManaged public var trip_headsign: Int16
     @NSManaged public var trip_id: Int16
     @NSManaged public var trip_short_name: String?
-    @NSManaged public var shapes: NSSet?
     @NSManaged public var routes: Routes?
+    @NSManaged public var shapes: NSSet?
     @NSManaged public var stoptimes: NSSet?
 
 }

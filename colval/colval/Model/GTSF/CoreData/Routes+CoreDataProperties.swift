@@ -2,7 +2,7 @@
 //  Routes+CoreDataProperties.swift
 //  colval
 //
-//  Created by user150454 on 4/11/19.
+//  Created by Alexandre Arsenault on 2019-04-16.
 //  Copyright © 2019 Alexandre Arsenault. All rights reserved.
 //
 //
@@ -17,13 +17,13 @@ extension Routes {
         return NSFetchRequest<Routes>(entityName: "Routes")
     }
 
-    @NSManaged public var agency_id: Int16
+    @NSManaged public var agency_id: String
     @NSManaged public var route_id: Int16
     @NSManaged public var route_name: String?
     @NSManaged public var route_type: String?
     @NSManaged public var agency: Agency?
-    @NSManaged public var trips: NSSet?
     @NSManaged public var calendars: Calender?
+    @NSManaged public var trips: NSSet?
 
 }
 

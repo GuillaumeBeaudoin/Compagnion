@@ -16,16 +16,6 @@
 		724574CB224149D100C26197 /* DataControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574C8224149D100C26197 /* DataControler.swift */; };
 		724574CC224149D100C26197 /* ParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574C9224149D100C26197 /* ParkingViewController.swift */; };
 		724574CD224149D100C26197 /* BusControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574CA224149D100C26197 /* BusControler.swift */; };
-		724574DE224149DE00C26197 /* xcalendar_dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574D0224149DE00C26197 /* xcalendar_dates.swift */; };
-		724574DF224149DE00C26197 /* xstops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574D1224149DE00C26197 /* xstops.swift */; };
-		724574E0224149DE00C26197 /* xstop_times.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574D2224149DE00C26197 /* xstop_times.swift */; };
-		724574E1224149DE00C26197 /* xtrips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574D3224149DE00C26197 /* xtrips.swift */; };
-		724574E2224149DE00C26197 /* xcalender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574D4224149DE00C26197 /* xcalender.swift */; };
-		724574E3224149DE00C26197 /* xagency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574D5224149DE00C26197 /* xagency.swift */; };
-		724574E4224149DE00C26197 /* xshapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574D6224149DE00C26197 /* xshapes.swift */; };
-		724574E5224149DE00C26197 /* xfare_attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574D7224149DE00C26197 /* xfare_attributes.swift */; };
-		724574E6224149DE00C26197 /* xroutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574D8224149DE00C26197 /* xroutes.swift */; };
-		724574E7224149DE00C26197 /* xfare_rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574D9224149DE00C26197 /* xfare_rules.swift */; };
 		724574E8224149DE00C26197 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574DA224149DE00C26197 /* User.swift */; };
 		724574E9224149DE00C26197 /* Rent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574DB224149DE00C26197 /* Rent.swift */; };
 		724574EA224149DE00C26197 /* Parking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574DC224149DE00C26197 /* Parking.swift */; };
@@ -34,20 +24,34 @@
 		7285BED722562DEA00B454DE /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285BED622562DEA00B454DE /* CoreData.swift */; };
 		7285BED922562E1E00B454DE /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285BED822562E1E00B454DE /* Util.swift */; };
 		7285BEDB22562F1200B454DE /* DefaultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285BEDA22562F1200B454DE /* DefaultData.swift */; };
-		E4290BEF225FA0380059F924 /* Stops+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BE1225FA0380059F924 /* Stops+CoreDataClass.swift */; };
-		E4290BF0225FA0380059F924 /* Stops+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BE2225FA0380059F924 /* Stops+CoreDataProperties.swift */; };
-		E4290BF1225FA0380059F924 /* StopTimes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BE3225FA0380059F924 /* StopTimes+CoreDataClass.swift */; };
-		E4290BF2225FA0380059F924 /* StopTimes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BE4225FA0380059F924 /* StopTimes+CoreDataProperties.swift */; };
-		E4290BF3225FA0380059F924 /* Calender+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BE5225FA0380059F924 /* Calender+CoreDataClass.swift */; };
-		E4290BF4225FA0380059F924 /* Calender+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BE6225FA0380059F924 /* Calender+CoreDataProperties.swift */; };
-		E4290BF5225FA0380059F924 /* Routes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BE7225FA0380059F924 /* Routes+CoreDataClass.swift */; };
-		E4290BF6225FA0380059F924 /* Routes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BE8225FA0380059F924 /* Routes+CoreDataProperties.swift */; };
-		E4290BF7225FA0380059F924 /* Shape+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BE9225FA0380059F924 /* Shape+CoreDataClass.swift */; };
-		E4290BF8225FA0380059F924 /* Shape+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BEA225FA0380059F924 /* Shape+CoreDataProperties.swift */; };
-		E4290BF9225FA0380059F924 /* Trips+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BEB225FA0380059F924 /* Trips+CoreDataClass.swift */; };
-		E4290BFA225FA0380059F924 /* Trips+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BEC225FA0380059F924 /* Trips+CoreDataProperties.swift */; };
-		E4290BFB225FA0380059F924 /* Agency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BED225FA0380059F924 /* Agency+CoreDataClass.swift */; };
-		E4290BFC225FA0380059F924 /* Agency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4290BEE225FA0380059F924 /* Agency+CoreDataProperties.swift */; };
+		72BB3EB0226699260048D450 /* CSVUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3EAF226699260048D450 /* CSVUtil.swift */; };
+		72BB3EC52266A8DF0048D450 /* pi_agency.txt in Resources */ = {isa = PBXBuildFile; fileRef = E43675162266124F00EE2F41 /* pi_agency.txt */; };
+		72BB3EC62266A8DF0048D450 /* pi_calendar.txt in Resources */ = {isa = PBXBuildFile; fileRef = E43675172266124F00EE2F41 /* pi_calendar.txt */; };
+		72BB3EC72266A8DF0048D450 /* pi_calendar_dates.txt in Resources */ = {isa = PBXBuildFile; fileRef = E43675182266124F00EE2F41 /* pi_calendar_dates.txt */; };
+		72BB3EC82266A8DF0048D450 /* pi_fare_attributes.txt in Resources */ = {isa = PBXBuildFile; fileRef = E43675192266124F00EE2F41 /* pi_fare_attributes.txt */; };
+		72BB3EC92266A8DF0048D450 /* pi_fare_rules.txt in Resources */ = {isa = PBXBuildFile; fileRef = E436751A2266124F00EE2F41 /* pi_fare_rules.txt */; };
+		72BB3ECA2266A8DF0048D450 /* pi_routes.txt in Resources */ = {isa = PBXBuildFile; fileRef = E436751B2266124F00EE2F41 /* pi_routes.txt */; };
+		72BB3ECB2266A8DF0048D450 /* pi_shapes.txt in Resources */ = {isa = PBXBuildFile; fileRef = E436751C2266124F00EE2F41 /* pi_shapes.txt */; };
+		72BB3ECC2266A8DF0048D450 /* pi_stop_times.txt in Resources */ = {isa = PBXBuildFile; fileRef = E436751D2266124F00EE2F41 /* pi_stop_times.txt */; };
+		72BB3ECD2266A8DF0048D450 /* pi_stops.txt in Resources */ = {isa = PBXBuildFile; fileRef = E436751E2266124F00EE2F41 /* pi_stops.txt */; };
+		72BB3ECE2266A8DF0048D450 /* pi_trips.txt in Resources */ = {isa = PBXBuildFile; fileRef = E436751F2266124F00EE2F41 /* pi_trips.txt */; };
+		72BB3ECF2266A8DF0048D450 /* so_agency.txt in Resources */ = {isa = PBXBuildFile; fileRef = E43675212266124F00EE2F41 /* so_agency.txt */; };
+		72BB3ED02266A8DF0048D450 /* so_calendar.txt in Resources */ = {isa = PBXBuildFile; fileRef = E43675222266124F00EE2F41 /* so_calendar.txt */; };
+		72BB3ED12266A8DF0048D450 /* so_calendar_dates.txt in Resources */ = {isa = PBXBuildFile; fileRef = E43675232266124F00EE2F41 /* so_calendar_dates.txt */; };
+		72BB3ED22266A8DF0048D450 /* so_fare_attributes.txt in Resources */ = {isa = PBXBuildFile; fileRef = E43675242266124F00EE2F41 /* so_fare_attributes.txt */; };
+		72BB3ED32266A8DF0048D450 /* so_fare_rules.txt in Resources */ = {isa = PBXBuildFile; fileRef = E43675252266124F00EE2F41 /* so_fare_rules.txt */; };
+		72BB3ED42266A8DF0048D450 /* so_routes.txt in Resources */ = {isa = PBXBuildFile; fileRef = E43675262266124F00EE2F41 /* so_routes.txt */; };
+		72BB3ED52266A8DF0048D450 /* so_shapes.txt in Resources */ = {isa = PBXBuildFile; fileRef = E43675272266124F00EE2F41 /* so_shapes.txt */; };
+		72BB3ED62266A8DF0048D450 /* so_stop_times.txt in Resources */ = {isa = PBXBuildFile; fileRef = E43675282266124F00EE2F41 /* so_stop_times.txt */; };
+		72BB3ED72266A8DF0048D450 /* so_stops.txt in Resources */ = {isa = PBXBuildFile; fileRef = E43675292266124F00EE2F41 /* so_stops.txt */; };
+		72BB3ED82266A8DF0048D450 /* so_trips.txt in Resources */ = {isa = PBXBuildFile; fileRef = E436752A2266124F00EE2F41 /* so_trips.txt */; };
+		72BB3F3B2266B73B0048D450 /* Agency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F2D2266B73B0048D450 /* Agency+CoreDataClass.swift */; };
+		72BB3F3F2266B73B0048D450 /* StopTimes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F312266B73B0048D450 /* StopTimes+CoreDataClass.swift */; };
+		72BB3F412266B73B0048D450 /* Stops+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F332266B73B0048D450 /* Stops+CoreDataClass.swift */; };
+		72BB3F432266B73B0048D450 /* Trips+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F352266B73B0048D450 /* Trips+CoreDataClass.swift */; };
+		72BB3F452266B73B0048D450 /* Routes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F372266B73B0048D450 /* Routes+CoreDataClass.swift */; };
+		72BB3F472266B73B0048D450 /* Shape+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F392266B73B0048D450 /* Shape+CoreDataClass.swift */; };
+		72BB3F4A2266B8C10048D450 /* Calender+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F2F2266B73B0048D450 /* Calender+CoreDataClass.swift */; };
 		E436753F226613DF00EE2F41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 724574C4224149AA00C26197 /* Main.storyboard */; };
 		E43675402266143A00EE2F41 /* AppDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = 724574A32241492A00C26197 /* AppDelegate.swift */; };
 		E43675412266143A00EE2F41 /* ViewController.swift in Resources */ = {isa = PBXBuildFile; fileRef = 724574EC224149EC00C26197 /* ViewController.swift */; };
@@ -82,16 +86,6 @@
 		724574C8224149D100C26197 /* DataControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataControler.swift; sourceTree = "<group>"; };
 		724574C9224149D100C26197 /* ParkingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingViewController.swift; sourceTree = "<group>"; };
 		724574CA224149D100C26197 /* BusControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusControler.swift; sourceTree = "<group>"; };
-		724574D0224149DE00C26197 /* xcalendar_dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xcalendar_dates.swift; sourceTree = "<group>"; };
-		724574D1224149DE00C26197 /* xstops.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xstops.swift; sourceTree = "<group>"; };
-		724574D2224149DE00C26197 /* xstop_times.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xstop_times.swift; sourceTree = "<group>"; };
-		724574D3224149DE00C26197 /* xtrips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xtrips.swift; sourceTree = "<group>"; };
-		724574D4224149DE00C26197 /* xcalender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xcalender.swift; sourceTree = "<group>"; };
-		724574D5224149DE00C26197 /* xagency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xagency.swift; sourceTree = "<group>"; };
-		724574D6224149DE00C26197 /* xshapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xshapes.swift; sourceTree = "<group>"; };
-		724574D7224149DE00C26197 /* xfare_attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xfare_attributes.swift; sourceTree = "<group>"; };
-		724574D8224149DE00C26197 /* xroutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xroutes.swift; sourceTree = "<group>"; };
-		724574D9224149DE00C26197 /* xfare_rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xfare_rules.swift; sourceTree = "<group>"; };
 		724574DA224149DE00C26197 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		724574DB224149DE00C26197 /* Rent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rent.swift; sourceTree = "<group>"; };
 		724574DC224149DE00C26197 /* Parking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parking.swift; sourceTree = "<group>"; };
@@ -100,40 +94,41 @@
 		7285BED622562DEA00B454DE /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		7285BED822562E1E00B454DE /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		7285BEDA22562F1200B454DE /* DefaultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultData.swift; sourceTree = "<group>"; };
-		E4290BE1225FA0380059F924 /* Stops+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stops+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E4290BE2225FA0380059F924 /* Stops+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stops+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E4290BE3225FA0380059F924 /* StopTimes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopTimes+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E4290BE4225FA0380059F924 /* StopTimes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopTimes+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E4290BE5225FA0380059F924 /* Calender+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calender+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E4290BE6225FA0380059F924 /* Calender+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calender+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E4290BE7225FA0380059F924 /* Routes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Routes+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E4290BE8225FA0380059F924 /* Routes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Routes+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E4290BE9225FA0380059F924 /* Shape+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E4290BEA225FA0380059F924 /* Shape+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E4290BEB225FA0380059F924 /* Trips+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trips+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E4290BEC225FA0380059F924 /* Trips+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trips+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E4290BED225FA0380059F924 /* Agency+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Agency+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E4290BEE225FA0380059F924 /* Agency+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Agency+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E43675162266124F00EE2F41 /* agency.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = agency.txt; sourceTree = "<group>"; };
-		E43675172266124F00EE2F41 /* calendar.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calendar.txt; sourceTree = "<group>"; };
-		E43675182266124F00EE2F41 /* calendar_dates.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calendar_dates.txt; sourceTree = "<group>"; };
-		E43675192266124F00EE2F41 /* fare_attributes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fare_attributes.txt; sourceTree = "<group>"; };
-		E436751A2266124F00EE2F41 /* fare_rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fare_rules.txt; sourceTree = "<group>"; };
-		E436751B2266124F00EE2F41 /* routes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.txt; sourceTree = "<group>"; };
-		E436751C2266124F00EE2F41 /* shapes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shapes.txt; sourceTree = "<group>"; };
-		E436751D2266124F00EE2F41 /* stop_times.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stop_times.txt; sourceTree = "<group>"; };
-		E436751E2266124F00EE2F41 /* stops.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stops.txt; sourceTree = "<group>"; };
-		E436751F2266124F00EE2F41 /* trips.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trips.txt; sourceTree = "<group>"; };
-		E43675212266124F00EE2F41 /* agency.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = agency.txt; sourceTree = "<group>"; };
-		E43675222266124F00EE2F41 /* calendar.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calendar.txt; sourceTree = "<group>"; };
-		E43675232266124F00EE2F41 /* calendar_dates.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calendar_dates.txt; sourceTree = "<group>"; };
-		E43675242266124F00EE2F41 /* fare_attributes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fare_attributes.txt; sourceTree = "<group>"; };
-		E43675252266124F00EE2F41 /* fare_rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fare_rules.txt; sourceTree = "<group>"; };
-		E43675262266124F00EE2F41 /* routes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.txt; sourceTree = "<group>"; };
-		E43675272266124F00EE2F41 /* shapes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shapes.txt; sourceTree = "<group>"; };
-		E43675282266124F00EE2F41 /* stop_times.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stop_times.txt; sourceTree = "<group>"; };
-		E43675292266124F00EE2F41 /* stops.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stops.txt; sourceTree = "<group>"; };
-		E436752A2266124F00EE2F41 /* trips.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trips.txt; sourceTree = "<group>"; };
+		72BB3EAF226699260048D450 /* CSVUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVUtil.swift; sourceTree = "<group>"; };
+		72BB3F2D2266B73B0048D450 /* Agency+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Agency+CoreDataClass.swift"; sourceTree = "<group>"; };
+		72BB3F2E2266B73B0048D450 /* Agency+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Agency+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		72BB3F2F2266B73B0048D450 /* Calender+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calender+CoreDataClass.swift"; sourceTree = "<group>"; };
+		72BB3F302266B73B0048D450 /* Calender+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calender+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		72BB3F312266B73B0048D450 /* StopTimes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopTimes+CoreDataClass.swift"; sourceTree = "<group>"; };
+		72BB3F322266B73B0048D450 /* StopTimes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopTimes+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		72BB3F332266B73B0048D450 /* Stops+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stops+CoreDataClass.swift"; sourceTree = "<group>"; };
+		72BB3F342266B73B0048D450 /* Stops+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stops+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		72BB3F352266B73B0048D450 /* Trips+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trips+CoreDataClass.swift"; sourceTree = "<group>"; };
+		72BB3F362266B73B0048D450 /* Trips+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trips+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		72BB3F372266B73B0048D450 /* Routes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Routes+CoreDataClass.swift"; sourceTree = "<group>"; };
+		72BB3F382266B73B0048D450 /* Routes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Routes+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		72BB3F392266B73B0048D450 /* Shape+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+CoreDataClass.swift"; sourceTree = "<group>"; };
+		72BB3F3A2266B73B0048D450 /* Shape+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E43675162266124F00EE2F41 /* pi_agency.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pi_agency.txt; sourceTree = "<group>"; };
+		E43675172266124F00EE2F41 /* pi_calendar.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pi_calendar.txt; sourceTree = "<group>"; };
+		E43675182266124F00EE2F41 /* pi_calendar_dates.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pi_calendar_dates.txt; sourceTree = "<group>"; };
+		E43675192266124F00EE2F41 /* pi_fare_attributes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pi_fare_attributes.txt; sourceTree = "<group>"; };
+		E436751A2266124F00EE2F41 /* pi_fare_rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pi_fare_rules.txt; sourceTree = "<group>"; };
+		E436751B2266124F00EE2F41 /* pi_routes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pi_routes.txt; sourceTree = "<group>"; };
+		E436751C2266124F00EE2F41 /* pi_shapes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pi_shapes.txt; sourceTree = "<group>"; };
+		E436751D2266124F00EE2F41 /* pi_stop_times.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pi_stop_times.txt; sourceTree = "<group>"; };
+		E436751E2266124F00EE2F41 /* pi_stops.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pi_stops.txt; sourceTree = "<group>"; };
+		E436751F2266124F00EE2F41 /* pi_trips.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pi_trips.txt; sourceTree = "<group>"; };
+		E43675212266124F00EE2F41 /* so_agency.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = so_agency.txt; sourceTree = "<group>"; };
+		E43675222266124F00EE2F41 /* so_calendar.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = so_calendar.txt; sourceTree = "<group>"; };
+		E43675232266124F00EE2F41 /* so_calendar_dates.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = so_calendar_dates.txt; sourceTree = "<group>"; };
+		E43675242266124F00EE2F41 /* so_fare_attributes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = so_fare_attributes.txt; sourceTree = "<group>"; };
+		E43675252266124F00EE2F41 /* so_fare_rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = so_fare_rules.txt; sourceTree = "<group>"; };
+		E43675262266124F00EE2F41 /* so_routes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = so_routes.txt; sourceTree = "<group>"; };
+		E43675272266124F00EE2F41 /* so_shapes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = so_shapes.txt; sourceTree = "<group>"; };
+		E43675282266124F00EE2F41 /* so_stop_times.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = so_stop_times.txt; sourceTree = "<group>"; };
+		E43675292266124F00EE2F41 /* so_stops.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = so_stops.txt; sourceTree = "<group>"; };
+		E436752A2266124F00EE2F41 /* so_trips.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = so_trips.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +152,21 @@
 		721AF4D52255A1D800489053 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				72AFD61B225CC925002FFB84 /* Class */,
-				72AFD61A225CC910002FFB84 /* Entity */,
+				72BB3F2D2266B73B0048D450 /* Agency+CoreDataClass.swift */,
+				72BB3F2E2266B73B0048D450 /* Agency+CoreDataProperties.swift */,
+				72BB3F2F2266B73B0048D450 /* Calender+CoreDataClass.swift */,
+				72BB3F302266B73B0048D450 /* Calender+CoreDataProperties.swift */,
+				72BB3F312266B73B0048D450 /* StopTimes+CoreDataClass.swift */,
+				72BB3F322266B73B0048D450 /* StopTimes+CoreDataProperties.swift */,
+				72BB3F332266B73B0048D450 /* Stops+CoreDataClass.swift */,
+				72BB3F342266B73B0048D450 /* Stops+CoreDataProperties.swift */,
+				72BB3F352266B73B0048D450 /* Trips+CoreDataClass.swift */,
+				72BB3F362266B73B0048D450 /* Trips+CoreDataProperties.swift */,
+				72BB3F372266B73B0048D450 /* Routes+CoreDataClass.swift */,
+				72BB3F382266B73B0048D450 /* Routes+CoreDataProperties.swift */,
+				72BB3F392266B73B0048D450 /* Shape+CoreDataClass.swift */,
+				72BB3F3A2266B73B0048D450 /* Shape+CoreDataProperties.swift */,
+				721AF4D62255A23300489053 /* GTSFStore.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -184,25 +192,10 @@
 		724574A22241492A00C26197 /* colval */ = {
 			isa = PBXGroup;
 			children = (
-				E4290BE1225FA0380059F924 /* Stops+CoreDataClass.swift */,
-				E4290BE2225FA0380059F924 /* Stops+CoreDataProperties.swift */,
-				E4290BE3225FA0380059F924 /* StopTimes+CoreDataClass.swift */,
-				E4290BE4225FA0380059F924 /* StopTimes+CoreDataProperties.swift */,
-				E4290BE5225FA0380059F924 /* Calender+CoreDataClass.swift */,
-				E4290BE6225FA0380059F924 /* Calender+CoreDataProperties.swift */,
-				E4290BE7225FA0380059F924 /* Routes+CoreDataClass.swift */,
-				E4290BE8225FA0380059F924 /* Routes+CoreDataProperties.swift */,
-				E4290BE9225FA0380059F924 /* Shape+CoreDataClass.swift */,
-				E4290BEA225FA0380059F924 /* Shape+CoreDataProperties.swift */,
-				E4290BEB225FA0380059F924 /* Trips+CoreDataClass.swift */,
-				E4290BEC225FA0380059F924 /* Trips+CoreDataProperties.swift */,
-				E4290BED225FA0380059F924 /* Agency+CoreDataClass.swift */,
-				E4290BEE225FA0380059F924 /* Agency+CoreDataProperties.swift */,
 				7285BED522562DBF00B454DE /* Data */,
 				724574CE224149DE00C26197 /* Model */,
 				724574C7224149D100C26197 /* Controler */,
 				724574A32241492A00C26197 /* AppDelegate.swift */,
-				724574EC224149EC00C26197 /* ViewController.swift */,
 				724574C3224149AA00C26197 /* LaunchScreen.storyboard */,
 				724574C4224149AA00C26197 /* Main.storyboard */,
 				724574AA2241492D00C26197 /* Assets.xcassets */,
@@ -223,6 +216,7 @@
 		724574C7224149D100C26197 /* Controler */ = {
 			isa = PBXGroup;
 			children = (
+				724574EC224149EC00C26197 /* ViewController.swift */,
 				724574C9224149D100C26197 /* ParkingViewController.swift */,
 				720965DD224A790700C4F26E /* LoginViewControler.swift */,
 				724574ED224149EC00C26197 /* ReservationControler.swift */,
@@ -243,7 +237,7 @@
 		724574CF224149DE00C26197 /* GTSF */ = {
 			isa = PBXGroup;
 			children = (
-				E43675142266124F00EE2F41 /* JSON */,
+				E43675142266124F00EE2F41 /* CSV */,
 				721AF4D52255A1D800489053 /* CoreData */,
 			);
 			path = GTSF;
@@ -268,57 +262,33 @@
 				7285BED822562E1E00B454DE /* Util.swift */,
 				7285BEDA22562F1200B454DE /* DefaultData.swift */,
 				7203F335225D7A3100DD5618 /* JSONUtil.swift */,
+				72BB3EAF226699260048D450 /* CSVUtil.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
 		};
-		72AFD61A225CC910002FFB84 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				721AF4D62255A23300489053 /* GTSFStore.xcdatamodeld */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		72AFD61B225CC925002FFB84 /* Class */ = {
-			isa = PBXGroup;
-			children = (
-				724574D0224149DE00C26197 /* xcalendar_dates.swift */,
-				724574D1224149DE00C26197 /* xstops.swift */,
-				724574D2224149DE00C26197 /* xstop_times.swift */,
-				724574D3224149DE00C26197 /* xtrips.swift */,
-				724574D4224149DE00C26197 /* xcalender.swift */,
-				724574D5224149DE00C26197 /* xagency.swift */,
-				724574D6224149DE00C26197 /* xshapes.swift */,
-				724574D7224149DE00C26197 /* xfare_attributes.swift */,
-				724574D8224149DE00C26197 /* xroutes.swift */,
-				724574D9224149DE00C26197 /* xfare_rules.swift */,
-			);
-			name = Class;
-			sourceTree = "<group>";
-		};
-		E43675142266124F00EE2F41 /* JSON */ = {
+		E43675142266124F00EE2F41 /* CSV */ = {
 			isa = PBXGroup;
 			children = (
 				E43675152266124F00EE2F41 /* PI */,
 				E43675202266124F00EE2F41 /* SO */,
 			);
-			path = JSON;
+			path = CSV;
 			sourceTree = "<group>";
 		};
 		E43675152266124F00EE2F41 /* PI */ = {
 			isa = PBXGroup;
 			children = (
-				E43675162266124F00EE2F41 /* agency.txt */,
-				E43675172266124F00EE2F41 /* calendar.txt */,
-				E43675182266124F00EE2F41 /* calendar_dates.txt */,
-				E43675192266124F00EE2F41 /* fare_attributes.txt */,
-				E436751A2266124F00EE2F41 /* fare_rules.txt */,
-				E436751B2266124F00EE2F41 /* routes.txt */,
-				E436751C2266124F00EE2F41 /* shapes.txt */,
-				E436751D2266124F00EE2F41 /* stop_times.txt */,
-				E436751E2266124F00EE2F41 /* stops.txt */,
-				E436751F2266124F00EE2F41 /* trips.txt */,
+				E43675162266124F00EE2F41 /* pi_agency.txt */,
+				E43675172266124F00EE2F41 /* pi_calendar.txt */,
+				E43675182266124F00EE2F41 /* pi_calendar_dates.txt */,
+				E43675192266124F00EE2F41 /* pi_fare_attributes.txt */,
+				E436751A2266124F00EE2F41 /* pi_fare_rules.txt */,
+				E436751B2266124F00EE2F41 /* pi_routes.txt */,
+				E436751C2266124F00EE2F41 /* pi_shapes.txt */,
+				E436751D2266124F00EE2F41 /* pi_stop_times.txt */,
+				E436751E2266124F00EE2F41 /* pi_stops.txt */,
+				E436751F2266124F00EE2F41 /* pi_trips.txt */,
 			);
 			path = PI;
 			sourceTree = "<group>";
@@ -326,16 +296,16 @@
 		E43675202266124F00EE2F41 /* SO */ = {
 			isa = PBXGroup;
 			children = (
-				E43675212266124F00EE2F41 /* agency.txt */,
-				E43675222266124F00EE2F41 /* calendar.txt */,
-				E43675232266124F00EE2F41 /* calendar_dates.txt */,
-				E43675242266124F00EE2F41 /* fare_attributes.txt */,
-				E43675252266124F00EE2F41 /* fare_rules.txt */,
-				E43675262266124F00EE2F41 /* routes.txt */,
-				E43675272266124F00EE2F41 /* shapes.txt */,
-				E43675282266124F00EE2F41 /* stop_times.txt */,
-				E43675292266124F00EE2F41 /* stops.txt */,
-				E436752A2266124F00EE2F41 /* trips.txt */,
+				E43675212266124F00EE2F41 /* so_agency.txt */,
+				E43675222266124F00EE2F41 /* so_calendar.txt */,
+				E43675232266124F00EE2F41 /* so_calendar_dates.txt */,
+				E43675242266124F00EE2F41 /* so_fare_attributes.txt */,
+				E43675252266124F00EE2F41 /* so_fare_rules.txt */,
+				E43675262266124F00EE2F41 /* so_routes.txt */,
+				E43675272266124F00EE2F41 /* so_shapes.txt */,
+				E43675282266124F00EE2F41 /* so_stop_times.txt */,
+				E43675292266124F00EE2F41 /* so_stops.txt */,
+				E436752A2266124F00EE2F41 /* so_trips.txt */,
 			);
 			path = SO;
 			sourceTree = "<group>";
@@ -421,6 +391,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72BB3EC52266A8DF0048D450 /* pi_agency.txt in Resources */,
+				72BB3EC62266A8DF0048D450 /* pi_calendar.txt in Resources */,
+				72BB3EC72266A8DF0048D450 /* pi_calendar_dates.txt in Resources */,
+				72BB3EC82266A8DF0048D450 /* pi_fare_attributes.txt in Resources */,
+				72BB3EC92266A8DF0048D450 /* pi_fare_rules.txt in Resources */,
+				72BB3ECA2266A8DF0048D450 /* pi_routes.txt in Resources */,
+				72BB3ECB2266A8DF0048D450 /* pi_shapes.txt in Resources */,
+				72BB3ECC2266A8DF0048D450 /* pi_stop_times.txt in Resources */,
+				72BB3ECD2266A8DF0048D450 /* pi_stops.txt in Resources */,
+				72BB3ECE2266A8DF0048D450 /* pi_trips.txt in Resources */,
+				72BB3ECF2266A8DF0048D450 /* so_agency.txt in Resources */,
+				72BB3ED02266A8DF0048D450 /* so_calendar.txt in Resources */,
+				72BB3ED12266A8DF0048D450 /* so_calendar_dates.txt in Resources */,
+				72BB3ED22266A8DF0048D450 /* so_fare_attributes.txt in Resources */,
+				72BB3ED32266A8DF0048D450 /* so_fare_rules.txt in Resources */,
+				72BB3ED42266A8DF0048D450 /* so_routes.txt in Resources */,
+				72BB3ED52266A8DF0048D450 /* so_shapes.txt in Resources */,
+				72BB3ED62266A8DF0048D450 /* so_stop_times.txt in Resources */,
+				72BB3ED72266A8DF0048D450 /* so_stops.txt in Resources */,
+				72BB3ED82266A8DF0048D450 /* so_trips.txt in Resources */,
 				E43675402266143A00EE2F41 /* AppDelegate.swift in Resources */,
 				E43675412266143A00EE2F41 /* ViewController.swift in Resources */,
 				E43675422266143A00EE2F41 /* LaunchScreen.storyboard in Resources */,
@@ -443,46 +433,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4290BF9225FA0380059F924 /* Trips+CoreDataClass.swift in Sources */,
+				72BB3EB0226699260048D450 /* CSVUtil.swift in Sources */,
 				724574EF224149EC00C26197 /* ReservationControler.swift in Sources */,
-				E4290BF5225FA0380059F924 /* Routes+CoreDataClass.swift in Sources */,
-				E4290BF0225FA0380059F924 /* Stops+CoreDataProperties.swift in Sources */,
-				E4290BF7225FA0380059F924 /* Shape+CoreDataClass.swift in Sources */,
-				E4290BF3225FA0380059F924 /* Calender+CoreDataClass.swift in Sources */,
 				724574CC224149D100C26197 /* ParkingViewController.swift in Sources */,
-				724574E5224149DE00C26197 /* xfare_attributes.swift in Sources */,
-				E4290BFA225FA0380059F924 /* Trips+CoreDataProperties.swift in Sources */,
+				72BB3F472266B73B0048D450 /* Shape+CoreDataClass.swift in Sources */,
+				72BB3F3F2266B73B0048D450 /* StopTimes+CoreDataClass.swift in Sources */,
 				7285BEDB22562F1200B454DE /* DefaultData.swift in Sources */,
-				E4290BFB225FA0380059F924 /* Agency+CoreDataClass.swift in Sources */,
+				72BB3F4A2266B8C10048D450 /* Calender+CoreDataClass.swift in Sources */,
+				72BB3F3B2266B73B0048D450 /* Agency+CoreDataClass.swift in Sources */,
 				724574E9224149DE00C26197 /* Rent.swift in Sources */,
+				72BB3F432266B73B0048D450 /* Trips+CoreDataClass.swift in Sources */,
 				7285BED722562DEA00B454DE /* CoreData.swift in Sources */,
-				E4290BF6225FA0380059F924 /* Routes+CoreDataProperties.swift in Sources */,
-				E4290BEF225FA0380059F924 /* Stops+CoreDataClass.swift in Sources */,
+				72BB3F412266B73B0048D450 /* Stops+CoreDataClass.swift in Sources */,
 				721AF4D82255A23300489053 /* GTSFStore.xcdatamodeld in Sources */,
-				E4290BF1225FA0380059F924 /* StopTimes+CoreDataClass.swift in Sources */,
 				724574EA224149DE00C26197 /* Parking.swift in Sources */,
 				7203F334225D76F400DD5618 /* PublicParking.swift in Sources */,
-				724574E0224149DE00C26197 /* xstop_times.swift in Sources */,
-				E4290BFC225FA0380059F924 /* Agency+CoreDataProperties.swift in Sources */,
 				724574E8224149DE00C26197 /* User.swift in Sources */,
-				724574E4224149DE00C26197 /* xshapes.swift in Sources */,
 				720965DE224A790700C4F26E /* LoginViewControler.swift in Sources */,
-				724574E1224149DE00C26197 /* xtrips.swift in Sources */,
-				E4290BF8225FA0380059F924 /* Shape+CoreDataProperties.swift in Sources */,
 				724574CB224149D100C26197 /* DataControler.swift in Sources */,
 				724574EE224149EC00C26197 /* ViewController.swift in Sources */,
 				7285BED922562E1E00B454DE /* Util.swift in Sources */,
 				724574CD224149D100C26197 /* BusControler.swift in Sources */,
-				724574DF224149DE00C26197 /* xstops.swift in Sources */,
-				724574E6224149DE00C26197 /* xroutes.swift in Sources */,
 				724574A42241492A00C26197 /* AppDelegate.swift in Sources */,
-				724574DE224149DE00C26197 /* xcalendar_dates.swift in Sources */,
-				724574E7224149DE00C26197 /* xfare_rules.swift in Sources */,
-				E4290BF2225FA0380059F924 /* StopTimes+CoreDataProperties.swift in Sources */,
 				7203F336225D7A3100DD5618 /* JSONUtil.swift in Sources */,
-				724574E3224149DE00C26197 /* xagency.swift in Sources */,
-				724574E2224149DE00C26197 /* xcalender.swift in Sources */,
-				E4290BF4225FA0380059F924 /* Calender+CoreDataProperties.swift in Sources */,
+				72BB3F452266B73B0048D450 /* Routes+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

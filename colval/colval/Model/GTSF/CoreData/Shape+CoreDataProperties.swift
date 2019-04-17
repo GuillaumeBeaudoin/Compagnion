@@ -2,7 +2,7 @@
 //  Shape+CoreDataProperties.swift
 //  colval
 //
-//  Created by user150454 on 4/11/19.
+//  Created by Alexandre Arsenault on 2019-04-16.
 //  Copyright © 2019 Alexandre Arsenault. All rights reserved.
 //
 //

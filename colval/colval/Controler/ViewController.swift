@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         
         if user != nil  {
             print("user logged in as : \( String(user!.DA) )" )
+            
+            
         } else {
             let sb = UIStoryboard(name: "Main", bundle: Bundle.main )
             
@@ -30,6 +32,18 @@ class ViewController: UIViewController {
         }
         
         
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("viewWillAppear")
+        if CoreData.sharedInstance.isGTSFLoaded() == false {
+            print("GTSF not detected in core data, importing..." )
+            let ok = CSVUtil.loadGtsfToCoreData()
+            print("loadCSVFile has  : \(ok)" )
+            
+        }
     }
 
 

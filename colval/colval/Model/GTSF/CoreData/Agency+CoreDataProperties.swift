@@ -2,7 +2,7 @@
 //  Agency+CoreDataProperties.swift
 //  colval
 //
-//  Created by user150454 on 4/11/19.
+//  Created by Alexandre Arsenault on 2019-04-16.
 //  Copyright © 2019 Alexandre Arsenault. All rights reserved.
 //
 //
@@ -17,8 +17,8 @@ extension Agency {
         return NSFetchRequest<Agency>(entityName: "Agency")
     }
 
-    @NSManaged public var agency_id: Int16
-    @NSManaged public var agency_name: Int16
+    @NSManaged public var agency_id: String?
+    @NSManaged public var agency_name: String?
     @NSManaged public var routes: NSSet?
 
 }

@@ -132,8 +132,6 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
                 self.navigationController?.pushViewController(reservCtrl, animated: true)
                 
             }
-            
-           
         }
     }
 }

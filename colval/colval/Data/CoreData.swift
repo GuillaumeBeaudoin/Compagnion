@@ -1,74 +1,92 @@
 //
-//  CoreData.swift
-//  TD6
+// CoreData.swift
+// ColValCompagnon
 //
-//  Created by Alexandre Arsenault on 2019-04-03.
-//  Copyright © 2019 Alexandre Arsenault. All rights reserved.
+// Created by Alexandre Arsenault on 2019-04-03.
+// Copyright © 2019 Alexandre Arsenault. All rights reserved.
 //
 
 import Foundation
 import CoreData
 import MapKit
 
-class CoreData  {
+class CoreData {
+    
+    static let sharedInstance = CoreData()
+    
+    let context :NSManagedObjectContext
     
     
-    let context  :NSManagedObjectContext
-    
-    init() {
+    private init() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
     }
     
-    
     /*
-    /*
-     * Stop
+     * Tell if the General Transit Specification Feed has been loaded.
      */
-   
-    func getStopsForRoute(pRouteId: Int) -> [Stop]  {
-        do{
-            let request  : NSFetchRequest<Stop> = Stop.fetchRequest()
-            request.predicate = NSPredicate(format: "fullName == %a", pRouteId)
-            /*
-            return try context.fetch(request)
-            */
-            let stops = try context.fetch(request)
-            for stop in stops {
-                print("id= \(stops)" )
-            }
-            return stops
+    func isGTSFLoaded() -> Bool {
+        do {
+            let requestAgency : NSFetchRequest<Agency> = Agency.fetchRequest()
+            let agencys =  try context.fetch(requestAgency)
+            //return agencys.count > 0
+            return false
             
-        } catch let error {
-            print("getStudents() Error: \(error)")
+            
+        } catch  {
+            print("isGTSFLoaded() Error")
+            return false
+            
         }
-        return []
-        
-        
         
     }
     
-    func getStopNear(pLocation:CLLocationCoordinate2D) -> [Stop]  {
-         do{ 
-            let request  : NSFetchRequest<Stop> = Stop.fetchRequest()
-            //request.predicate = NSPredicate(format: "fullName contains %a", pName)
-            return try context.fetch(request)
-            
-         } catch let error {
-            print("getStudents() Error: \(error)")
+    func getAgencyFrom( pAgencyId : String )  -> Agency? {
+    do{
+        let request : NSFetchRequest<Agency> = Agency.fetchRequest()
+        request.predicate = NSPredicate(format: "agency_id =  %@", pAgencyId)
+        let results =  try context.fetch(request)
+        if results.count == 1 {
+            return results[0]
+        } else {
+            return nil
         }
-        return []
+        
+    } catch let error {
+    print("getAgencyFrom() Error: \(error)")
+    }
+    return nil
     }
     
     
-    func deleteStop(pStop : Stop!) {
-        do{
-            context.delete(pStop)
-            try context.save()
-        } catch let error {
-            print("deleteStop() Error: \(error)")
-        }
-     
-    } */
+    /*
+    func getStopsForRoute(pRouteId: Int) -> [Stop] {
+    do{
+        let request : NSFetchRequest<Stop> = Stop.fetchRequest()
+        request.predicate = NSPredicate(format: "fullName == %@", pRouteId)
+        /*
+         return try context.fetch(request)
+         */
+        let stops = try context.fetch(request)
+        for stop in stops {
+        } print("id= \(stops)" )
+        return stops
+    } catch let error {
+      print("getStudents() Error: \(error)")
+    return
     
+    }
+    
+    func getStopNear(pLocation:CLLocationCoordinate2D) —> [Stop] {
+    do{
+        let request : NSFetchRequest<Stop> = Stop.fetchRequest()
+        //request.predicate = NSPredicate(format: "fullName contains %a", pName)
+        return try context.fetch(request)
+    } catch let error {
+        print("getStudents() Error: \(error)")
+    }
+    return []
+    }
+        */
 }
+
