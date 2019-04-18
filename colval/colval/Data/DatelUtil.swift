@@ -19,7 +19,7 @@ class Util {
      *  YYYY-MM-DDTHH:MM:SS.MLSZ  -> DataBase DateTime formated String
      *  2017-12-10T16:45:00.000Z  -> result example
      */
-    static func dateToStr(pDate: Date) -> String {
+    static func dateToStrRest(pDate: Date) -> String {
         let year   = cal.component(.year  , from: pDate)
         let month  = cal.component(.month , from: pDate)
         let day    = cal.component(.day   , from: pDate)
@@ -43,7 +43,7 @@ class Util {
      *  0  0 00 01 11 11 ignorre  -> substring position (10e1)
      *  0  4 67 90 23 45 ignorre  -> substring position (10e0)
      */
-    static func strToDate(pDate: String) -> Date {
+    static func strToDateRest(pDate: String) -> Date {
         var dateComponents = DateComponents()
         dateComponents.timeZone = TimeZone(abbreviation: "EST") // Eastern Standard Time
         dateComponents.year     = Int(pDate[..<pDate.index(pDate.startIndex, offsetBy: 4)]   )
@@ -60,7 +60,7 @@ class Util {
      * from the time ( pHour & pMinute )
      * using the current day
      */
-    static func dateTimeFromDateHourMin(pDate: Date , pHour: Int , pMinute: Int) -> Date {
+    static func dateTimeFromDateHourMinRest(pDate: Date , pHour: Int , pMinute: Int) -> Date {
         
         var dateComponents = DateComponents()
         dateComponents.timeZone = TimeZone(abbreviation: "EST") // Eastern Standard Time
@@ -72,5 +72,52 @@ class Util {
         let dateDate = cal.date(from: dateComponents) ?? Date()
         return  dateDate
     }
+    // YYYYMMDD
+    //20190107,
+    //20190113
     
+    
+    
+    /*
+     * Convert a DT to a DB formated String
+     *  YYYYMMDD  -> GTSG Date formated String
+     *  20180317  -> result example
+     */
+    static func dateToStrGTSF(pDate: Date) -> String {
+        let year   = cal.component(.year  , from: pDate)
+        let month  = cal.component(.month , from: pDate)
+        let day    = cal.component(.day   , from: pDate)
+        
+        let monthStr  = ( month  < 10 ? "0" + String(month)  : String(month) )
+        let dayStr    = ( day    < 10 ? "0" + String(day)    : String(day)   )
+        return   String(year) + "-" + monthStr + "-" + dayStr
+        
+    }
+    
+    /*
+     * Convert a string Date representation to a Date()
+     *
+     *  YYYYMMDD -> input format
+     *  20190317 -> input example
+     *  0  4 678 -> substring position (10e0)
+     */
+    static func strToDateGTSF(pDate: String , pTimeZoneIdentifier: String) -> Date {
+        var dateComponents = DateComponents()
+        dateComponents.timeZone = TimeZone(identifier: pTimeZoneIdentifier)!
+        let wYear  =   Int(pDate[..<pDate.index(pDate.startIndex, offsetBy: 4)]   )
+        dateComponents.year     = wYear
+        let wMonth  = Int(pDate[pDate.index(pDate.startIndex, offsetBy: 4)..<pDate.index(pDate.endIndex, offsetBy: -2)])
+        dateComponents.month    = wMonth
+        let wDay  =  Int(pDate[pDate.index(pDate.startIndex, offsetBy: 6)..<pDate.index(pDate.endIndex, offsetBy: -0)])
+        dateComponents.day      =  wDay
+        dateComponents.hour     = 0
+        dateComponents.minute   = 0
+        let dateDate = cal.date(from: dateComponents) ?? Date()
+        return  dateDate
+    }
+    
+    
+    //TODO hours   06:45:00
 }
+
+

@@ -44,6 +44,8 @@ class ViewController: UIViewController {
             print("loadCSVFile has  : \(ok)" )
             
         }
+        
+        CoreData.sharedInstance.printAllTripFromId()
     }
 
 

@@ -2,7 +2,7 @@
 //  Agency+CoreDataProperties.swift
 //  colval
 //
-//  Created by Alexandre Arsenault on 2019-04-16.
+//  Created by Alexandre Arsenault on 2019-04-17.
 //  Copyright © 2019 Alexandre Arsenault. All rights reserved.
 //
 //
@@ -19,6 +19,10 @@ extension Agency {
 
     @NSManaged public var agency_id: String?
     @NSManaged public var agency_name: String?
+    @NSManaged public var agency_timezone: String?
+    @NSManaged public var agency_lang: String?
+    @NSManaged public var agency_fare_url: String?
+    @NSManaged public var agency_url: String?
     @NSManaged public var routes: NSSet?
 
 }

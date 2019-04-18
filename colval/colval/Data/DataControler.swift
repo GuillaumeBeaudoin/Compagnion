@@ -154,7 +154,7 @@ class DataControler {
     func getRentsForParkingForTimeRange(pParkingID: String , pStart: Date , pEnd: Date , completion: ( ([Rent]?) -> (Void))? ) {
         var wRents:[Rent]?
         // testme
-        let query = "{\"parkingId\":\"\(pParkingID)\",\"dateFrom\":{\"$gt\":{\"$date\":\"\( Util.dateToStr(pDate: pStart) )\"}}}"
+        let query = "{\"parkingId\":\"\(pParkingID)\",\"dateFrom\":{\"$gt\":{\"$date\":\"\( Util.dateToStrRest(pDate: pStart) )\"}}}"
             
         let wRequest =  prepareRequest(pResource: "rent", pQuerry: query , pMethod: "GET" )
         

@@ -19,13 +19,11 @@ extension StopTimes {
 
     @NSManaged public var arrival_time: NSDate?
     @NSManaged public var departure_time: NSDate?
-    @NSManaged public var drop_off_type: Int16
-    @NSManaged public var pickup_type: Int16
-    @NSManaged public var stop_id: Int16
+    @NSManaged public var drop_off_type: Bool
+    @NSManaged public var pickup_type: Bool
     @NSManaged public var stop_sequence: Int16
-    @NSManaged public var timepoint: Bool
-    @NSManaged public var traveled: Double
-    @NSManaged public var trip_id: Int16
+    @NSManaged public var timepoint: Int16
+    @NSManaged public var traveled: Double 
     @NSManaged public var stop: NSSet?
     @NSManaged public var trip: Trips?
 

@@ -48,8 +48,8 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
             }
         }
         
-        let dateStart = Util.strToDate(pDate: "2017-01-01T16:45:00.000Z")
-        let dateEnd  = Util.strToDate(pDate:"2019-12-12T16:45:00.000Z")
+        let dateStart = Util.strToDateRest(pDate: "2017-01-01T16:45:00.000Z")
+        let dateEnd  = Util.strToDateRest(pDate:"2019-12-12T16:45:00.000Z")
         
         dc.getRentsForTimeRange(pStart: dateStart, pEnd: dateEnd) { rents in
             

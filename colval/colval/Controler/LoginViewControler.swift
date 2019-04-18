@@ -37,9 +37,6 @@ class LoginViewControler: UIViewController {
         self.btnLogin.isEnabled = false
         self.txtDA.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         self.txtDA.becomeFirstResponder()
-        //   testing only
-        //txtDA.text = "1247948"
-        //self.okClick((Any).self)
         
     }
     @IBAction func okClick(_ sender: Any) {
@@ -73,19 +70,10 @@ class LoginViewControler: UIViewController {
                 self.dc.postUser(pUser: User(pDA: intDa ) ) { user2 in
                     self.dc.getUserFromDA(pDA:  intDa )  { user3 in
                         if user3 != nil {
-                            /*guard let user4  = User(from: wdscva) else{
-                                self.setErrText( pText: "Error while trying to login , try again later")
-                                DispatchQueue.main.async {
-                                    self.btnLogin.isEnabled = true
-                                    self.lblError.isEnabled = true
-                                    self.txtDA.becomeFirstResponder()
-                                    return
-                                    }*/
-                             }
                             self.setErrText(pText: "User created" )
                             DefaultData.sharedInstance.setLocalUser(pUser: user3! )
-                            self.popMain()     // user4 )
-                        //}
+                            self.popMain()
+                        }
                     }
                 }
             }
@@ -103,8 +91,7 @@ class LoginViewControler: UIViewController {
             self.navigationController?.popViewController(animated: true)
         }
     }
-    
-    
+     
     @objc func textFieldDidChange(_ textField: UITextField) {
         guard let txtCount = textField.text?.count  else { return }
         DispatchQueue.main.async {

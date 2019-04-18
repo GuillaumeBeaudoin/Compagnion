@@ -18,11 +18,9 @@ extension Trips {
     }
 
     @NSManaged public var direction_id: Int16
-    @NSManaged public var route_id: Int16
-    @NSManaged public var service_id: Int16
-    @NSManaged public var shape_id: Int16
-    @NSManaged public var trip_headsign: Int16
-    @NSManaged public var trip_id: Int16
+    @NSManaged public var service_id: String? 
+    @NSManaged public var trip_headsign: String?
+    @NSManaged public var trip_id: String?
     @NSManaged public var trip_short_name: String?
     @NSManaged public var routes: Routes?
     @NSManaged public var shapes: NSSet?

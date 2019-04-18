@@ -12,5 +12,21 @@ import CoreData
 
 @objc(StopTimes)
 public class StopTimes: NSManagedObject {
-
+    public init( pArrivalTime:   Date?  , pDepartureTime : Date? , pStopSequence : Int16 , pPickupType  : Bool , pDropOffType : Bool , pTraveled : Double , pTimepoint : Int16) {
+        super.init(entity: NSEntityDescription.entity(forEntityName: "StopTimes",
+                                                      in:            CoreData.sharedInstance.context)!,
+                   insertInto:    CoreData.sharedInstance.context)
+        self.arrival_time   = pArrivalTime
+        self.departure_time = pDepartureTime
+        self.stop_sequence  = pStopSequence
+        self.pickup_type    = pPickupType
+        self.drop_off_type  = pDropOffType
+        self.traveled       = pTraveled
+        self.timepoint      = pTimepoint
+    }
+    
+    @objc
+    private override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
+        super.init(entity: entity, insertInto: context)
+    }
 }

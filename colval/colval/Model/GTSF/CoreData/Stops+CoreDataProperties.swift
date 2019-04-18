@@ -19,11 +19,11 @@ extension Stops {
 
     @NSManaged public var lat: Double
     @NSManaged public var lon: Double
-    @NSManaged public var stop_code: Int16
-    @NSManaged public var stop_id: Int16
+    @NSManaged public var stop_code: String?
+    @NSManaged public var stop_id: String?
     @NSManaged public var stop_name: String?
     @NSManaged public var wheelchair_boarding: Bool
-    @NSManaged public var zonex: Int16
+    @NSManaged public var zonex: String?
     @NSManaged public var stopTimes: StopTimes?
 
 }
