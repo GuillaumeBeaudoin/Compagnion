@@ -206,26 +206,26 @@ class CSVUtil {
     
     static func loadGtsfToCoreData() -> Bool {
         
-        loadCsvFile(pFile: "so_calendar",   pClass : "Calender" )
-        loadCsvFile(pFile: "so_agency",     pClass : "Agency"   )
-        loadCsvFile(pFile: "so_routes",     pClass : "Routes"   )
-        loadCsvFile(pFile: "so_shapes",     pClass : "Shape"    )
-        loadCsvFile(pFile: "so_trips",      pClass : "Trips"    )
-        loadCsvFile(pFile: "so_stops",      pClass : "Stops"    )
-        loadCsvFile(pFile: "so_stop_times", pClass : "StopTimes")
+        loadCsvFile(pFile: "so_calendar",   pClass : "Calender" , pAgency:"CITSO")
+        loadCsvFile(pFile: "so_agency",     pClass : "Agency"   , pAgency:"CITSO")
+        loadCsvFile(pFile: "so_routes",     pClass : "Routes"   , pAgency:"CITSO")
+        loadCsvFile(pFile: "so_shapes",     pClass : "Shape"    , pAgency:"CITSO")
+        loadCsvFile(pFile: "so_trips",      pClass : "Trips"    , pAgency:"CITSO")
+        loadCsvFile(pFile: "so_stops",      pClass : "Stops"    , pAgency:"CITSO")
+        loadCsvFile(pFile: "so_stop_times", pClass : "StopTimes", pAgency:"CITSO")
         /*
-        loadCsvFile(pFile: "pi_calendar",   pClass : "Calender" )
-        loadCsvFile(pFile: "pi_agency",     pClass : "Agency"   )
-        loadCsvFile(pFile: "pi_routes",     pClass : "Routes"   )
-        loadCsvFile(pFile: "pi_shapes",     pClass : "Shape"    )
-        loadCsvFile(pFile: "pi_trips",      pClass : "Trips"    )
-        loadCsvFile(pFile: "pi_stops",      pClass : "Stops"    )
-        loadCsvFile(pFile: "pi_stop_times", pClass : "StopTimes")
+        loadCsvFile(pFile: "pi_calendar",   pClass : "Calender" , pAgency:"CITPI")
+        loadCsvFile(pFile: "pi_agency",     pClass : "Agency"   , pAgency:"CITPI")
+        loadCsvFile(pFile: "pi_routes",     pClass : "Routes"   , pAgency:"CITPI")
+        loadCsvFile(pFile: "pi_shapes",     pClass : "Shape"    , pAgency:"CITPI")
+        loadCsvFile(pFile: "pi_trips",      pClass : "Trips"    , pAgency:"CITPI")
+        loadCsvFile(pFile: "pi_stops",      pClass : "Stops"    , pAgency:"CITPI")
+        loadCsvFile(pFile: "pi_stop_times", pClass : "StopTimes", pAgency:"CITPI")
         */
         return false
     }
     
-    static func loadCsvFile(pFile: String , pClass : String ) -> Bool {
+    static func loadCsvFile(pFile: String , pClass : String , pAgency:String) -> Bool {
         do {
             print("loadCsvFile : LOADING \(pFile)")
             // read the .csv File
@@ -256,7 +256,7 @@ class CSVUtil {
                 case  "Routes" :
                     let wRoutes =  csvToRoutes(pCsvRoutes: arrayObject)
                 case  "Trips" :
-                    let wTrips =  csvToTrips(pCsvTrips: arrayObject )
+                    let wTrips =  csvToTrips(pCsvTrips: arrayObject  , pAgency : pAgency)
                 default:
                 print("CSVUtil.loadCsvFile ERROR unknown Class \(pClass)")
             }
@@ -270,7 +270,7 @@ class CSVUtil {
         }
     }
 
- static func csvToAgencys(pCsvAgencys  : [[String]]) -> [Agency] {
+ static func csvToAgencys(pCsvAgencys  : [[String]] ) -> [Agency] {
     var wAgencys:[Agency] = []
     for agency in pCsvAgencys {
         if  let wAgency    = csvToAgency(pCsvAgency: agency)  {
@@ -280,7 +280,7 @@ class CSVUtil {
    return wAgencys
  }
  
- static func csvToAgency(pCsvAgency : [String]!) -> Agency?{
+ static func csvToAgency(pCsvAgency : [String]! ) -> Agency?{
     if  pCsvAgency.count == 6     {
         return Agency(pAgencyId: pCsvAgency[0], pAgencyName: pCsvAgency[1], pAgencyTimezone: pCsvAgency[3], pAgencyLang: pCsvAgency[4], pAgencyUrl :  pCsvAgency[2] , pAgencyFareUrl :  pCsvAgency[5] )
     }
@@ -333,21 +333,21 @@ class CSVUtil {
     return nil
  }
   
- static func csvToTrips(pCsvTrips : [[String]]) -> [Trips] {
+ static func csvToTrips(pCsvTrips : [[String]]  , pAgency:String) -> [Trips] {
     var wTrips:[Trips] = []
     for  trip in pCsvTrips {
-        if  let wTrip   = csvToTrip(pCsvTrip: trip) {
+        if  let wTrip   = csvToTrip(pCsvTrip: trip , pAgency: pAgency ) {
             wTrips.append(wTrip)
         }
     }
     return wTrips
  }
     
- static func csvToTrip(pCsvTrip : [String]!) -> Trips?{
+ static func csvToTrip(pCsvTrip : [String]! , pAgency:String) -> Trips?{
     if  pCsvTrip.count == 7 {
         let directionId = Int16(pCsvTrip[4])!
         let trip =  Trips(pId: pCsvTrip[2], pServiceId : pCsvTrip[1] , pHeadsign: pCsvTrip[3], pDirectionId: directionId, pShortName: pCsvTrip[6]  )
-        let route = CoreData.sharedInstance.getRouteFromId(pRouteId: Int16(pCsvTrip[0]) )
+        let route = CoreData.sharedInstance.getRouteFromId(pRouteId: Int16(pCsvTrip[0]) ,  pAgency : pAgency  )
         if route != nil {
             route?.addToTrips(trip)
         }
