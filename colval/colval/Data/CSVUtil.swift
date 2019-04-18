@@ -193,6 +193,8 @@ import Foundation
 class CSVUtil {
     
     static let sharedInstance = CSVUtil()
+   
+   
     
     
     
@@ -205,6 +207,8 @@ class CSVUtil {
      ***************************************************************/
     
     static func loadGtsfToCoreData() -> Bool {
+        
+        
         
         loadCsvFile(pFile: "so_calendar",   pClass : "Calender" )
         loadCsvFile(pFile: "so_agency",     pClass : "Agency"   )
@@ -222,6 +226,7 @@ class CSVUtil {
         loadCsvFile(pFile: "pi_stops",      pClass : "Stops"    )
         loadCsvFile(pFile: "pi_stop_times", pClass : "StopTimes")
         */
+        
         return false
     }
     
