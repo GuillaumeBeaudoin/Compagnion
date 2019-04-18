@@ -25,6 +25,9 @@ class DataControler {
     
     final let colValRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 45.2523979, longitude: -74.1324644), span: MKCoordinateSpan(latitudeDelta: 0.0005, longitudeDelta: 0.0005))
     
+    
+        final let colValLineRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 45.2523979, longitude: -74.1324644), span: MKCoordinateSpan(latitudeDelta: 0.0075, longitudeDelta: 0.0075))
+    
     struct defaultsKeys {
         static let keyID = "userId"
         static let keyDA = "userDA"

@@ -57,6 +57,8 @@
 		E43675412266143A00EE2F41 /* ViewController.swift in Resources */ = {isa = PBXBuildFile; fileRef = 724574EC224149EC00C26197 /* ViewController.swift */; };
 		E43675422266143A00EE2F41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 724574C3224149AA00C26197 /* LaunchScreen.storyboard */; };
 		E43675432266143A00EE2F41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 724574AA2241492D00C26197 /* Assets.xcassets */; };
+		E4B60E732268BAA600DD6C85 /* LineSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B60E712268BAA600DD6C85 /* LineSelectorController.swift */; };
+		E4B60E742268BAA600DD6C85 /* BusMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B60E722268BAA600DD6C85 /* BusMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,8 @@
 		E43675282266124F00EE2F41 /* so_stop_times.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = so_stop_times.txt; sourceTree = "<group>"; };
 		E43675292266124F00EE2F41 /* so_stops.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = so_stops.txt; sourceTree = "<group>"; };
 		E436752A2266124F00EE2F41 /* so_trips.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = so_trips.txt; sourceTree = "<group>"; };
+		E4B60E712268BAA600DD6C85 /* LineSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineSelectorController.swift; sourceTree = "<group>"; };
+		E4B60E722268BAA600DD6C85 /* BusMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,8 @@
 		724574C7224149D100C26197 /* Controler */ = {
 			isa = PBXGroup;
 			children = (
+				E4B60E722268BAA600DD6C85 /* BusMapViewController.swift */,
+				E4B60E712268BAA600DD6C85 /* LineSelectorController.swift */,
 				724574EC224149EC00C26197 /* ViewController.swift */,
 				724574C9224149D100C26197 /* ParkingViewController.swift */,
 				720965DD224A790700C4F26E /* LoginViewControler.swift */,
@@ -435,6 +441,7 @@
 			files = (
 				72BB3EB0226699260048D450 /* CSVUtil.swift in Sources */,
 				724574EF224149EC00C26197 /* ReservationControler.swift in Sources */,
+				E4B60E742268BAA600DD6C85 /* BusMapViewController.swift in Sources */,
 				724574CC224149D100C26197 /* ParkingViewController.swift in Sources */,
 				72BB3F472266B73B0048D450 /* Shape+CoreDataClass.swift in Sources */,
 				72BB3F3F2266B73B0048D450 /* StopTimes+CoreDataClass.swift in Sources */,
@@ -457,6 +464,7 @@
 				724574A42241492A00C26197 /* AppDelegate.swift in Sources */,
 				7203F336225D7A3100DD5618 /* JSONUtil.swift in Sources */,
 				72BB3F452266B73B0048D450 /* Routes+CoreDataClass.swift in Sources */,
+				E4B60E732268BAA600DD6C85 /* LineSelectorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
