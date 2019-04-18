@@ -72,15 +72,19 @@ class CoreData {
         return nil
     }
     
-    func getRouteFromId( pRouteId :  Int16! )  -> Routes? {
+    func getRouteFromId( pRouteId :  Int16! ,  pAgency:String )  -> Routes? {
         do{
             let request : NSFetchRequest<Routes> = Routes.fetchRequest()
-            request.predicate = NSPredicate(format: "route_id == \(pRouteId!)")
+            let pred1 = NSPredicate(format: "route_id == \(pRouteId!)")
+            let pred2 = NSPredicate(format: "agency_id =  %@", pAgency)
+            let and_1_2 = NSCompoundPredicate(andPredicateWithSubpredicates: [pred1,pred2])
+            request.predicate = and_1_2
+            //request.predicate = pred1
             let results =  try context.fetch(request)
             if results.count == 1 {
                 return results[0]
             } else {
-                print("CoreData.getRouteFromId(\(pRouteId))  : NIL \(results.count)")
+                print("CoreData.getRouteFromId(pRouteId : \(pRouteId) , pAgency : \(pAgency)  : NIL")
                 return nil
             }
         } catch let error {
@@ -93,6 +97,7 @@ class CoreData {
         do{
             let request : NSFetchRequest<Trips> = Trips.fetchRequest()
             request.predicate = NSPredicate(format: "trip_id =  %@", pTripId)
+            //request.predicate2 = NSPredicate(format: "trip_id =  %@", pTripId)
             let results =  try context.fetch(request)
             if results.count == 1 {
                 return results[0]
