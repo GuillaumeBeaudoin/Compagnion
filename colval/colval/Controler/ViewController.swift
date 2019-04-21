@@ -36,16 +36,14 @@ class ViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("viewWillAppear")
+        super.viewWillAppear(animated)  
         if CoreData.sharedInstance.isGTSFLoaded() == false {
             print("GTSF not detected in core data, importing..." )
             let ok = CSVUtil.loadGtsfToCoreData()
             print("loadCSVFile has  : \(ok)" )
             
-        }
-        
-        CoreData.sharedInstance.printAllTripFromId()
+        } 
+        //CoreData.sharedInstance.printAllTripFromId()
     }
 
 

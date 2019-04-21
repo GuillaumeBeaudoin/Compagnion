@@ -12,7 +12,7 @@ import CoreData
 
 @objc(StopTimes)
 public class StopTimes: NSManagedObject {
-    public init( pArrivalTime:   Date?  , pDepartureTime : Date? , pStopSequence : Int16 , pPickupType  : Bool , pDropOffType : Bool , pTraveled : Double , pTimepoint : Int16) {
+    public init( pArrivalTime:   Date?  , pDepartureTime : Date? , pStopSequence : Int16 , pPickupType  : Bool , pDropOffType : Bool , pTraveled : Double , pTimepoint : Int16 , pLazyTripId : String , pLazyStopId : String ) {
         super.init(entity: NSEntityDescription.entity(forEntityName: "StopTimes",
                                                       in:            CoreData.sharedInstance.context)!,
                    insertInto:    CoreData.sharedInstance.context)
@@ -23,6 +23,9 @@ public class StopTimes: NSManagedObject {
         self.drop_off_type  = pDropOffType
         self.traveled       = pTraveled
         self.timepoint      = pTimepoint
+        
+        self.lazy_stop_id   =  pLazyStopId
+        self.lazy_trip_id   =  pLazyTripId
     }
     
     @objc

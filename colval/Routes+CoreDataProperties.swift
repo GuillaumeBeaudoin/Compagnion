@@ -24,8 +24,7 @@ extension Routes {
     @NSManaged public var route_long_name: String?
     @NSManaged public var route_color: String?
     @NSManaged public var route_text_color: String?
-    @NSManaged public var agency: Agency?
-    @NSManaged public var calendars: Calender?
+    @NSManaged public var agency: Agency? 
     @NSManaged public var trips: NSSet?
 
 }

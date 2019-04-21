@@ -10,11 +10,18 @@
         <relationship name="routes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Routes" inverseName="agency" inverseEntity="Routes" syncable="YES"/>
     </entity>
     <entity name="Calender" representedClassName="Calender" syncable="YES" codeGenerationType="category">
-        <attribute name="dayInFunction" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="end_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="service_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="friday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lazy_trip_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="monday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="saturday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="service_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="start_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="routes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Routes" inverseName="calendars" inverseEntity="Routes" syncable="YES"/>
+        <attribute name="sunday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="thursday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tuesday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="wednesday" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trips" inverseName="calender" inverseEntity="Trips" syncable="YES"/>
     </entity>
     <entity name="Routes" representedClassName="Routes" syncable="YES" codeGenerationType="category">
         <attribute name="agency_id" optional="YES" attributeType="String" syncable="YES"/>
@@ -25,7 +32,6 @@
         <attribute name="route_text_color" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="route_type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="agency" maxCount="1" deletionRule="Nullify" destinationEntity="Agency" inverseName="routes" inverseEntity="Agency" syncable="YES"/>
-        <relationship name="calendars" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Calender" inverseName="routes" inverseEntity="Calender" syncable="YES"/>
         <relationship name="trips" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trips" inverseName="routes" inverseEntity="Trips" syncable="YES"/>
     </entity>
     <entity name="Shape" representedClassName="Shape" syncable="YES" codeGenerationType="category">
@@ -37,44 +43,46 @@
         <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trips" inverseName="shapes" inverseEntity="Trips" syncable="YES"/>
     </entity>
     <entity name="Stops" representedClassName="Stops" syncable="YES" codeGenerationType="category">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lazy_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="stop_code" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="stop_id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="stop_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wheelchair_boarding" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="zonex" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="stopTimes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StopTimes" inverseName="stop" inverseEntity="StopTimes" syncable="YES"/>
+        <relationship name="stopTimes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StopTimes" inverseName="stop" inverseEntity="StopTimes" syncable="YES"/>
     </entity>
     <entity name="StopTimes" representedClassName="StopTimes" syncable="YES" codeGenerationType="category">
         <attribute name="arrival_time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="departure_time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="drop_off_type" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lazy_stop_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lazy_trip_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pickup_type" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="stop_sequence" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="timepoint" optional="YES" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="traveled" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="trip_id" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="stop" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Stops" inverseName="stopTimes" inverseEntity="Stops" syncable="YES"/>
+        <relationship name="stop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stops" inverseName="stopTimes" inverseEntity="Stops" syncable="YES"/>
         <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trips" inverseName="stoptimes" inverseEntity="Trips" syncable="YES"/>
     </entity>
     <entity name="Trips" representedClassName="Trips" syncable="YES" codeGenerationType="category">
         <attribute name="direction_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="headsign" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lazy_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="service_id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="trip_headsign" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="trip_id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="trip_short_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="short_name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="calender" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Calender" inverseName="trip" inverseEntity="Calender" syncable="YES"/>
         <relationship name="routes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Routes" inverseName="trips" inverseEntity="Routes" syncable="YES"/>
         <relationship name="shapes" toMany="YES" deletionRule="Nullify" destinationEntity="Shape" inverseName="trip" inverseEntity="Shape" syncable="YES"/>
         <relationship name="stoptimes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StopTimes" inverseName="trip" inverseEntity="StopTimes" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Agency" positionX="-269.15234375" positionY="-338.65234375" width="128" height="148"/>
-        <element name="Calender" positionX="-465.4609375" positionY="-49.05859375" width="128" height="118"/>
-        <element name="Routes" positionX="-261.78515625" positionY="-161.359375" width="128" height="193"/>
-        <element name="Shape" positionX="153.1171875" positionY="110.06640625" width="128" height="133"/>
-        <element name="Stops" positionX="-480.6015625" positionY="357.5625" width="128" height="163"/>
-        <element name="StopTimes" positionX="-266.359375" positionY="142.796875" width="128" height="193"/>
-        <element name="Trips" positionX="-47.9375" positionY="-76.55078125" width="128" height="163"/>
+        <element name="Agency" positionX="-416.875" positionY="-476.9765625" width="128" height="148"/>
+        <element name="Calender" positionX="-280.02734375" positionY="201.1328125" width="128" height="223"/>
+        <element name="Routes" positionX="-225.07421875" positionY="-310.55078125" width="128" height="178"/>
+        <element name="Shape" positionX="217.875" positionY="263.90625" width="128" height="133"/>
+        <element name="Stops" positionX="-44.87890625" positionY="486.140625" width="128" height="163"/>
+        <element name="StopTimes" positionX="-50.98046875" positionY="152.0078125" width="128" height="208"/>
+        <element name="Trips" positionX="-47.9375" positionY="-76.55078125" width="128" height="178"/>
     </elements>
 </model>

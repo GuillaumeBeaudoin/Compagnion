@@ -127,7 +127,7 @@ class JSONUtil {
                     let parkingID   = array["parkingID"] as? String ,
                     let dateFrom    = array["dateFrom"]  as? String ,
                     let dateTo      = array["dateTo"]    as? String {
-                    wRent = Rent(pID: id, pRenterID: renterID, pParkingID: parkingID,dateFrom: Util.strToDateRest(pDate: dateFrom), dateTo: Util.strToDateRest(pDate: dateTo) )
+                    wRent = Rent(pID: id, pRenterID: renterID, pParkingID: parkingID,dateFrom: DateUtil.strToDateRest(pDate: dateFrom), dateTo: DateUtil.strToDateRest(pDate: dateTo) )
                 }
             }
         } catch let error {
@@ -150,7 +150,7 @@ class JSONUtil {
                         let parkingID   = array["parkingId"] as? String ,
                         let dateFrom    = array["dateFrom"]  as? String ,
                         let dateTo      = array["dateTo"]    as? String {
-                        let wRent = Rent(pID: id, pRenterID: renterID, pParkingID: parkingID,dateFrom: Util.strToDateRest(pDate: dateFrom), dateTo: Util.strToDateRest(pDate: dateTo) )
+                        let wRent = Rent(pID: id, pRenterID: renterID, pParkingID: parkingID,dateFrom: DateUtil.strToDateRest(pDate: dateFrom), dateTo: DateUtil.strToDateRest(pDate: dateTo) )
                         wRents.append(wRent)
                     }
                 }

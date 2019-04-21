@@ -17,15 +17,18 @@ extension Trips {
         return NSFetchRequest<Trips>(entityName: "Trips")
     }
 
+    @NSManaged public var lazy_id: String?
     @NSManaged public var direction_id: Int16
     @NSManaged public var service_id: String? 
-    @NSManaged public var trip_headsign: String?
-    @NSManaged public var trip_id: String?
-    @NSManaged public var trip_short_name: String?
+    @NSManaged public var trip_headsign: String? 
+    @NSManaged public var short_name: String?
+    
     @NSManaged public var routes: Routes?
-    @NSManaged public var shapes: NSSet?
-    @NSManaged public var stoptimes: NSSet?
+    @NSManaged public var calender: Calender?
 
+    @NSManaged public var shapes: NSSet?
+    @NSManaged public var stoptimes: NSSet? 
+    
 }
 
 // MARK: Generated accessors for shapes
