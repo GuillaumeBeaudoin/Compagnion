@@ -8,8 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController,  RouteTVControlerListener  {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+     private lazy var routeDataSourceProvider = RouteTVControler(pRouteDataManager: RouteDataManager(pRouteType: RouteDataManager.FAVORITE) , pListener: self )
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true;
@@ -20,6 +25,8 @@ class ViewController: UIViewController {
         if user != nil  {
             print("user logged in as : \( String(user!.DA) )" )
             
+            self.tableView.dataSource = routeDataSourceProvider
+            self.tableView.delegate = routeDataSourceProvider
             
         } else {
             let sb = UIStoryboard(name: "Main", bundle: Bundle.main )
@@ -44,6 +51,17 @@ class ViewController: UIViewController {
             
         } 
         //CoreData.sharedInstance.printAllTripFromId()
+        routeDataSourceProvider = RouteTVControler(pRouteDataManager: RouteDataManager(pRouteType: RouteDataManager.FAVORITE) , pListener: self )
+        self.tableView.dataSource = routeDataSourceProvider
+        self.tableView.delegate = routeDataSourceProvider
+    }
+    
+    
+    /*
+     * RouteTableViewListener
+     */
+    func didSelectRoute(pRoute  : Routes!)  {
+        print("TODO : ViewController.didSelectRoute()")
     }
 
 

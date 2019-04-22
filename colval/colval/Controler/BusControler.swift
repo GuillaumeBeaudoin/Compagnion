@@ -29,20 +29,22 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
     @IBOutlet weak var btnDestPrev: UIButton!
     @IBOutlet weak var lblDest:     UILabel!
     @IBOutlet weak var lblDay: UILabel!
+    @IBOutlet weak var lblNearestStopName: UILabel!
+    @IBOutlet weak var lblNearestStopDistance: UILabel!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
-    private lazy var routeDataSourceProvider = RouteTVControler(pRouteDataManager: RouteDataManager() , pListener: self )
     
+    var locationManager = CLLocationManager()
+    
+    private lazy var routeDataSourceProvider = RouteTVControler(pRouteDataManager: RouteDataManager(pRouteType: RouteDataManager.ALL) , pListener: self )
     
     private var  uniqueHeadsign:[String] = Array(Set(["Selectioner une ligne"]))
     private var  headsignPos             = 0
     
-    private var  userLocation    = CLLocation(latitude: DataControler.sharedInstance.colValRegion.center.latitude , longitude: DataControler.sharedInstance.colValRegion.center.longitude)
-    
-    private let greyColor =  UIColor(hex: "7c7c7c")
+    private let greyColor =  UIColor(hex: "7c7c7c")!
     private let blackColor =  UIColor.black
 
-    
-    var myMutableString = NSMutableAttributedString()
+    private var userLocation:CLLocation =  CLLocation(latitude: DataControler.sharedInstance.colValRegion.center.latitude, longitude: DataControler.sharedInstance.colValRegion.center.longitude)
     
     
     override func viewDidLoad() {
@@ -53,7 +55,22 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
         self.tableView.delegate = routeDataSourceProvider
         
         setDirectionButton()
-        setDayInFunction(pCalender: [])
+        
+        self.lblDay.text = ""
+        self.lblNearestStopName.text = ""
+        self.lblNearestStopDistance.text = ""
+        self.loadingIndicator.hidesWhenStopped = true
+        self.loadingIndicator.stopAnimating()
+        
+         self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() { 
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
+        
     }
     /*
      * RouteTableViewListener
@@ -109,9 +126,12 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
     /*
      *  Adjust the day display indicator : ( L M M J V S D )
      *  Put the inactive days in gray
+     *
      *  From :   https://stackoverflow.com/questions/27728466/use-multiple-font-colors-in-a-single-label
      */
     func setDayInFunction(pCalender : [Calender]) {
+        
+        
         if pCalender.count == 0 {
              lblDay.text = " "
         } else {
@@ -144,55 +164,77 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
     }
     
     
+    /*
+     *
+     *  Function mostly is Async as many CoreData.Request are needed to compute
+     *  the nearest stop , and it's distance from the user.
+     *
+     */
     func setNearestStop(pArrayTrips : [Trips] ) {
-        print("setNearestStop")
-        var finalArrayStops:[Stops] = []
         
+        self.lblNearestStopName.text = ""
+        self.lblNearestStopDistance.text = ""
+        self.loadingIndicator.startAnimating()
         
-        for trip in pArrayTrips {
-            let stopTimes : [StopTimes] = trip.stoptimes!.toArray()
-            for stopTime in stopTimes {
-                let arrayStops = CoreData.sharedInstance.getStopFromStopTime(pStopTimes: stopTime )
-                //let stops : [Stops] = stoptimes.stop
-                
-                for stop in arrayStops! {
-                    finalArrayStops.append( stop )
-                   // print("stop.name = \(stop.name!)")
+        DispatchQueue.global(qos: .userInitiated).async {
+            print("setNearestStop")
+            var finalArrayStops:[Stops] = []
+            
+            for trip in pArrayTrips {
+                let stopTimes : [StopTimes] = trip.stoptimes!.toArray()
+                for stopTime in stopTimes {
+                    let arrayStops = CoreData.sharedInstance.getStopFrom(pStopTimes: stopTime )
+                    //let stops : [Stops] = stoptimes.stop
+                    
+                    for stop in arrayStops! {
+                        finalArrayStops.append( stop )
+                        // print("stop.name = \(stop.name!)")
+                    }
                 }
             }
-        }
-        
-        let uniqueStops = Array(Set(finalArrayStops))
-        //print("uniqueStops.count \(uniqueStops.count)")
-        
-        var arrayLocation:[CLLocation] = []
-        for uStop in uniqueStops {
-            arrayLocation.append(CLLocation(latitude: uStop.lat, longitude: uStop.lon))
-        }
-        var closestLocation: CLLocation!
-        var smallestDistance: CLLocationDistance!
-        
-        for location in arrayLocation {
-            let distance = self.userLocation.distance(from :location)
-            if smallestDistance == nil || distance < smallestDistance {
-                closestLocation = location
-                smallestDistance = distance
+            
+            let uniqueStops = Array(Set(finalArrayStops))
+            
+            var arrayLocation:[CLLocation] = []
+            for uStop in uniqueStops {
+                arrayLocation.append(CLLocation(latitude: uStop.lat, longitude: uStop.lon))
+            }
+            var nearestLocation: CLLocation!
+            var smallestDistance: CLLocationDistance!
+            
+            for location in arrayLocation {
+                let distance = self.userLocation.distance(from :location)
+                if smallestDistance == nil || distance < smallestDistance {
+                    nearestLocation = location
+                    smallestDistance = distance
+                }
+            }
+            
+            let nearestStop =  CoreData.sharedInstance.getStopFrom(pCoordinate: nearestLocation.coordinate)
+            let displayDistance =  ( smallestDistance/1000 < 1 ?
+                "\(Int( round( smallestDistance )        ) ) M" :
+                "\(Double(round(smallestDistance / 100) / 1000 ) ) KM" )
+            
+            // Once all result computed , display on main thread
+            DispatchQueue.main.async {
+                self.lblNearestStopName.text = nearestStop?.name!
+                self.lblNearestStopDistance.text = displayDistance
+                self.loadingIndicator.stopAnimating()
             }
         }
-        
-        print("smallestDistance = \(smallestDistance)")
-        print("closestLocation = lat/lon \(closestLocation.coordinate.latitude) / \(closestLocation.coordinate.longitude)  )")
-        
-        
     }
     
     /*
-     * Update the location if user move
      * TO TEST , not sure if working..
+     *
+     *   Manage user location when moving
+     *   https://github.com/GurdevSingh94/SwiftUserLocation
+     *   https://www.youtube.com/watch?v=WDrdtdMYgWc
+     *
+     *  From :  GurdevSingh94/SwiftUserLocation
      */
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        self.userLocation = locations[0] as CLLocation
+        self.userLocation  = locations.last!
     }
-    
     
 }

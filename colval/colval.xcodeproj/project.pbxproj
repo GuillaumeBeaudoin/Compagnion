@@ -55,6 +55,7 @@
 		72BB3F452266B73B0048D450 /* Routes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F372266B73B0048D450 /* Routes+CoreDataClass.swift */; };
 		72BB3F472266B73B0048D450 /* Shape+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F392266B73B0048D450 /* Shape+CoreDataClass.swift */; };
 		72BB3F4A2266B8C10048D450 /* Calender+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F2F2266B73B0048D450 /* Calender+CoreDataClass.swift */; };
+		72D2DE00226CC7B200BE9A73 /* FavRouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2DDFF226CC7B200BE9A73 /* FavRouteTableViewCell.swift */; };
 		72DACFBC226A0AB600E66D24 /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DACFBB226A0AB600E66D24 /* RouteTableViewCell.swift */; };
 		E436753F226613DF00EE2F41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 724574C4224149AA00C26197 /* Main.storyboard */; };
 		E43675402266143A00EE2F41 /* AppDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = 724574A32241492A00C26197 /* AppDelegate.swift */; };
@@ -118,6 +119,7 @@
 		72BB3F372266B73B0048D450 /* Routes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Routes+CoreDataClass.swift"; sourceTree = "<group>"; };
 		72BB3F392266B73B0048D450 /* Shape+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+CoreDataClass.swift"; sourceTree = "<group>"; };
 		72BB3F3A2266B73B0048D450 /* Shape+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		72D2DDFF226CC7B200BE9A73 /* FavRouteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavRouteTableViewCell.swift; sourceTree = "<group>"; };
 		72DACFBB226A0AB600E66D24 /* RouteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
 		E43675162266124F00EE2F41 /* pi_agency.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pi_agency.txt; sourceTree = "<group>"; };
 		E43675172266124F00EE2F41 /* pi_calendar.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pi_calendar.txt; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				72DACFBB226A0AB600E66D24 /* RouteTableViewCell.swift */,
+				72D2DDFF226CC7B200BE9A73 /* FavRouteTableViewCell.swift */,
 				72AA7E15226A2EBD00B6B4CB /* RouteTVControler.swift */,
 				72AA7E17226A394100B6B4CB /* RouteDataManager.swift */,
 				72AA7E19226A412500B6B4CB /* RouteTVControlerListener.swift */,
@@ -483,6 +486,7 @@
 				72AA7E16226A2EBD00B6B4CB /* RouteTVControler.swift in Sources */,
 				72DACFBC226A0AB600E66D24 /* RouteTableViewCell.swift in Sources */,
 				724574CC224149D100C26197 /* ParkingViewController.swift in Sources */,
+				72D2DE00226CC7B200BE9A73 /* FavRouteTableViewCell.swift in Sources */,
 				72AA7E1A226A412500B6B4CB /* RouteTVControlerListener.swift in Sources */,
 				724574A42241492A00C26197 /* AppDelegate.swift in Sources */,
 				7285BED922562E1E00B454DE /* DatelUtil.swift in Sources */,

@@ -77,12 +77,13 @@ class CoreData {
     
     func getRouteFromId( pRouteId :  Int16! ,  pAgency:String )  -> Routes? {
         do{
+            //FIXME make it multi agency
             let request : NSFetchRequest<Routes> = Routes.fetchRequest()
             let pred1 = NSPredicate(format: "route_id == \(pRouteId!)")
-            let pred2 = NSPredicate(format: "agency_id =  %@", pAgency)
-            let and_1_2 = NSCompoundPredicate(andPredicateWithSubpredicates: [pred1,pred2])
-            request.predicate = and_1_2
-            //request.predicate = pred1
+            //let pred2 = NSPredicate(format: "agency_id =  %@", pAgency)
+            //let and_1_2 = NSCompoundPredicate(andPredicateWithSubpredicates: [pred1,pred2])
+            //request.predicate = and_1_2
+            request.predicate = pred1
             let results =  try context.fetch(request)
             if results.count == 1 {
                 return results[0]
@@ -158,7 +159,7 @@ class CoreData {
         return nil 
     }
     
-    func getStopFromId( pStopId : String )  -> Stops? {
+    func getStopFrom( pStopId : String )  -> Stops? {
         do{
             let request : NSFetchRequest<Stops> = Stops.fetchRequest()
             request.predicate = NSPredicate(format: "lazy_id = %@ ", pStopId )
@@ -166,7 +167,7 @@ class CoreData {
             if results.count == 1 {
                 return results[0]
             } else {
-                print("CoreData.getStopFromId(\(pStopId))  : NIL")
+                print("CoreData.getStopFromId(\(pStopId))  : NIL , \(results.count)")
                  return nil
             } 
         } catch let error {
@@ -175,13 +176,33 @@ class CoreData {
         return nil
     }
     
-    func getStopFromStopTime(  pStopTimes : StopTimes )  -> [Stops]? {
+    func getStopFrom( pStopTimes : StopTimes )  -> [Stops]? {
         do{
             let request : NSFetchRequest<Stops> = Stops.fetchRequest()
             request.predicate = NSPredicate(format: "%K CONTAINS %@", "stopTimes", pStopTimes)
              return try context.fetch(request) 
         } catch let error {
-            print("CoreData.getStopFromStopTime() Error: \(error)")
+            print("CoreData.getStopFrom(\(pStopTimes)) : StopTimes) Error: \(error)")
+        }
+        return nil
+    }
+    
+    func getStopFrom( pCoordinate : CLLocationCoordinate2D )  -> Stops? {
+        do{
+            let request : NSFetchRequest<Stops> = Stops.fetchRequest()
+            let pred1 = NSPredicate(format: "lon  == \(pCoordinate.longitude)" )
+            let pred2 = NSPredicate(format: "lat  == \(pCoordinate.latitude)"  )
+            let and_1_2 = NSCompoundPredicate(andPredicateWithSubpredicates: [pred1,pred2])
+            request.predicate = and_1_2
+            let results =  try context.fetch(request)
+            if results.count == 1 {
+                return results[0]
+            } else {
+                print("CoreData.getgetStopFrom(\(pCoordinate): CLLocationCoordinate2D)  : NIL")
+                return nil
+            }
+        } catch let error {
+            print("CoreData.getgetStopFrom(\(pCoordinate): CLLocationCoordinate2D) Error: \(error)")
         }
         return nil
     }

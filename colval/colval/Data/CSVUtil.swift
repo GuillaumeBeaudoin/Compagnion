@@ -424,7 +424,7 @@ class CSVUtil {
         
         let stopTimes =  StopTimes(pArrivalTime: arrivalTime, pDepartureTime: departureTime, pStopSequence: stopSequence, pPickupType: pickupType, pDropOffType: dropOffType, pTraveled: traveled, pTimepoint: timepoint, pLazyTripId :   pCsvStopTime[0] , pLazyStopId : lazyStopId )
         
-        let stop = CoreData.sharedInstance.getStopFromId(pStopId: lazyStopId)
+        let stop = CoreData.sharedInstance.getStopFrom(pStopId: lazyStopId)
         if stop != nil {
             stop?.addToStopTimes(stopTimes)
         }

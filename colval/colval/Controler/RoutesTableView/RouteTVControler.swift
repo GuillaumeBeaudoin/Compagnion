@@ -40,30 +40,46 @@ public class RouteTVControler: NSObject, UITableViewDataSource, UITableViewDeleg
     
      public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {  
         // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "RouteTableViewCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? RouteTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of RouteTableViewCell.")
+        if self.routeDataManager.type == RouteDataManager.ALL {
+            let cellIdentifier = "RouteTableViewCell"
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? RouteTableViewCell  else {
+                fatalError("The dequeued cell is not an instance of RouteTableViewCell.")
+            }
+            cell.route = routeDataManager.item(at: indexPath.row)
+            let isFav = DefaultData.sharedInstance.isLocalFavRoutes(pRouteId: cell.route!.route_id)
+            
+            cell.container.backgroundColor =  UIColor(hex:  cell.route!.route_color! ) //?? UIColor.white )
+            cell.nameLbl.text              =  cell.route!.route_long_name!
+            cell.nameLbl.textColor         =  UIColor(hex: cell.route!.route_text_color!) //?? UIColor.black )
+            cell.numberLbl.text            =  String(cell.route!.route_id)
+            cell.numberLbl.textColor       =  UIColor(hex: cell.route!.route_text_color!) // ?? UIColor.black )
+            cell.setFavImage(pIsFav: isFav)
+            return cell
+        } else if self.routeDataManager.type == RouteDataManager.FAVORITE {
+            let cellIdentifier = "FavRouteTableViewCell"
+            guard let favCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FavRouteTableViewCell  else {
+                fatalError("The dequeued cell is not an instance of FavRouteTableViewCell.")
+            }
+            favCell.route = routeDataManager.item(at: indexPath.row)
+            let isFav = DefaultData.sharedInstance.isLocalFavRoutes(pRouteId: favCell.route!.route_id)
+            
+            favCell.container.backgroundColor =  UIColor(hex:  favCell.route!.route_color! ) //?? UIColor.white )
+            favCell.numberLbl.text            =  String(favCell.route!.route_id)
+            favCell.numberLbl.textColor       =  UIColor(hex: favCell.route!.route_text_color!) // ?? UIColor.black )
+            favCell.setFavImage(pIsFav: isFav)
+            return favCell
+        } else {
+            //TODO handle error
+            return UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "ERROR")
         }
-        cell.route = routeDataManager.item(at: indexPath.row)
-        
-        cell.container.backgroundColor =  UIColor(hex:  cell.route!.route_color! ) //?? UIColor.white )
-        cell.nameLbl.text              =  cell.route!.route_long_name!
-        cell.nameLbl.textColor         =  UIColor(hex: cell.route!.route_text_color!) //?? UIColor.black )
-        cell.numberLbl.text            =  String(cell.route!.route_id)
-        cell.numberLbl.textColor       =  UIColor(hex: cell.route!.route_text_color!) // ?? UIColor.black )
-        return cell
+     
     }
-    
-    
+     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { 
         self.listener.didSelectRoute(pRoute: routeDataManager.item(at: indexPath.row) )
     }
-
-    
 }
-
-
 
 /*
  *  UIColor convenience init  :  Create color from HEX string

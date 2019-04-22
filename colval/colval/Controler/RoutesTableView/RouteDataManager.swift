@@ -13,8 +13,38 @@ import Foundation
 
 
 
-public class RouteDataManager {
-    public var routes: [Routes]    =  CoreData.sharedInstance.getRoutes()
+public class RouteDataManager   {
+    
+    public static let  FAVORITE  = "FAVORITE"
+    public static let  ALL       = "ALL"
+    
+    public var routes: [Routes]
+    
+    public var type : String
+    
+    
+    init(pRouteType: String  ) {
+        
+        self.routes = []
+        self.type = pRouteType
+        if pRouteType == RouteDataManager.FAVORITE {
+            let favRoutesId = DefaultData.sharedInstance.getLocalFavRoutesId()
+            if favRoutesId != nil {
+                for routeId in favRoutesId! {
+                    let wRoute = CoreData.sharedInstance.getRouteFromId(pRouteId: routeId, pAgency: "temp")
+                    if wRoute != nil {
+                        self.routes.append(wRoute!)
+                    }
+                }
+            } 
+        } else if pRouteType == RouteDataManager.ALL {
+            self.routes = CoreData.sharedInstance.getRoutes()
+        } else {
+            print("RouteDataManager.init(\(pRouteType)) : Error invalid type -> no data will be filled")
+        }
+        
+    }
+    
     
     public var itemsCount: Int {
         return routes.count
