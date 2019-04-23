@@ -21,9 +21,13 @@
 		724574EA224149DE00C26197 /* Parking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574DC224149DE00C26197 /* Parking.swift */; };
 		724574EE224149EC00C26197 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574EC224149EC00C26197 /* ViewController.swift */; };
 		724574EF224149EC00C26197 /* ReservationControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724574ED224149EC00C26197 /* ReservationControler.swift */; };
+		725083DD226AB15500EBC75E /* Stops+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725083D9226AB09E00EBC75E /* Stops+CoreDataClass.swift */; };
 		7285BED722562DEA00B454DE /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285BED622562DEA00B454DE /* CoreData.swift */; };
 		7285BED922562E1E00B454DE /* DatelUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285BED822562E1E00B454DE /* DatelUtil.swift */; };
 		7285BEDB22562F1200B454DE /* DefaultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285BEDA22562F1200B454DE /* DefaultData.swift */; };
+		72AA7E16226A2EBD00B6B4CB /* RouteTVControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AA7E15226A2EBD00B6B4CB /* RouteTVControler.swift */; };
+		72AA7E18226A394100B6B4CB /* RouteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AA7E17226A394100B6B4CB /* RouteDataManager.swift */; };
+		72AA7E1A226A412500B6B4CB /* RouteTVControlerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AA7E19226A412500B6B4CB /* RouteTVControlerListener.swift */; };
 		72BB3EB0226699260048D450 /* CSVUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3EAF226699260048D450 /* CSVUtil.swift */; };
 		72BB3EC52266A8DF0048D450 /* pi_agency.txt in Resources */ = {isa = PBXBuildFile; fileRef = E43675162266124F00EE2F41 /* pi_agency.txt */; };
 		72BB3EC62266A8DF0048D450 /* pi_calendar.txt in Resources */ = {isa = PBXBuildFile; fileRef = E43675172266124F00EE2F41 /* pi_calendar.txt */; };
@@ -47,11 +51,12 @@
 		72BB3ED82266A8DF0048D450 /* so_trips.txt in Resources */ = {isa = PBXBuildFile; fileRef = E436752A2266124F00EE2F41 /* so_trips.txt */; };
 		72BB3F3B2266B73B0048D450 /* Agency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F2D2266B73B0048D450 /* Agency+CoreDataClass.swift */; };
 		72BB3F3F2266B73B0048D450 /* StopTimes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F312266B73B0048D450 /* StopTimes+CoreDataClass.swift */; };
-		72BB3F412266B73B0048D450 /* Stops+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F332266B73B0048D450 /* Stops+CoreDataClass.swift */; };
 		72BB3F432266B73B0048D450 /* Trips+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F352266B73B0048D450 /* Trips+CoreDataClass.swift */; };
 		72BB3F452266B73B0048D450 /* Routes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F372266B73B0048D450 /* Routes+CoreDataClass.swift */; };
 		72BB3F472266B73B0048D450 /* Shape+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F392266B73B0048D450 /* Shape+CoreDataClass.swift */; };
 		72BB3F4A2266B8C10048D450 /* Calender+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB3F2F2266B73B0048D450 /* Calender+CoreDataClass.swift */; };
+		72D2DE00226CC7B200BE9A73 /* FavRouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2DDFF226CC7B200BE9A73 /* FavRouteTableViewCell.swift */; };
+		72DACFBC226A0AB600E66D24 /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DACFBB226A0AB600E66D24 /* RouteTableViewCell.swift */; };
 		E436753F226613DF00EE2F41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 724574C4224149AA00C26197 /* Main.storyboard */; };
 		E43675402266143A00EE2F41 /* AppDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = 724574A32241492A00C26197 /* AppDelegate.swift */; };
 		E43675412266143A00EE2F41 /* ViewController.swift in Resources */ = {isa = PBXBuildFile; fileRef = 724574EC224149EC00C26197 /* ViewController.swift */; };
@@ -95,22 +100,27 @@
 		724574ED224149EC00C26197 /* ReservationControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationControler.swift; sourceTree = "<group>"; };
 		724DB7282267FD31008B7B3D /* Agency+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Agency+CoreDataProperties.swift"; path = "../../../../Agency+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		724DB72C22680F32008B7B3D /* Routes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Routes+CoreDataProperties.swift"; path = "../../../../Routes+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		725083D9226AB09E00EBC75E /* Stops+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stops+CoreDataClass.swift"; sourceTree = "<group>"; };
+		725083DA226AB09E00EBC75E /* Stops+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stops+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7285BED622562DEA00B454DE /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		7285BED822562E1E00B454DE /* DatelUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatelUtil.swift; sourceTree = "<group>"; };
 		7285BEDA22562F1200B454DE /* DefaultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultData.swift; sourceTree = "<group>"; };
+		72AA7E15226A2EBD00B6B4CB /* RouteTVControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTVControler.swift; sourceTree = "<group>"; };
+		72AA7E17226A394100B6B4CB /* RouteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDataManager.swift; sourceTree = "<group>"; };
+		72AA7E19226A412500B6B4CB /* RouteTVControlerListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTVControlerListener.swift; sourceTree = "<group>"; };
 		72BB3EAF226699260048D450 /* CSVUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVUtil.swift; sourceTree = "<group>"; };
 		72BB3F2D2266B73B0048D450 /* Agency+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Agency+CoreDataClass.swift"; sourceTree = "<group>"; };
 		72BB3F2F2266B73B0048D450 /* Calender+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calender+CoreDataClass.swift"; sourceTree = "<group>"; };
 		72BB3F302266B73B0048D450 /* Calender+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calender+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		72BB3F312266B73B0048D450 /* StopTimes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopTimes+CoreDataClass.swift"; sourceTree = "<group>"; };
 		72BB3F322266B73B0048D450 /* StopTimes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopTimes+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		72BB3F332266B73B0048D450 /* Stops+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stops+CoreDataClass.swift"; sourceTree = "<group>"; };
-		72BB3F342266B73B0048D450 /* Stops+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stops+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		72BB3F352266B73B0048D450 /* Trips+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trips+CoreDataClass.swift"; sourceTree = "<group>"; };
 		72BB3F362266B73B0048D450 /* Trips+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trips+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		72BB3F372266B73B0048D450 /* Routes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Routes+CoreDataClass.swift"; sourceTree = "<group>"; };
 		72BB3F392266B73B0048D450 /* Shape+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+CoreDataClass.swift"; sourceTree = "<group>"; };
 		72BB3F3A2266B73B0048D450 /* Shape+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		72D2DDFF226CC7B200BE9A73 /* FavRouteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavRouteTableViewCell.swift; sourceTree = "<group>"; };
+		72DACFBB226A0AB600E66D24 /* RouteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
 		E43675162266124F00EE2F41 /* pi_agency.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pi_agency.txt; sourceTree = "<group>"; };
 		E43675172266124F00EE2F41 /* pi_calendar.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pi_calendar.txt; sourceTree = "<group>"; };
 		E43675182266124F00EE2F41 /* pi_calendar_dates.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pi_calendar_dates.txt; sourceTree = "<group>"; };
@@ -160,10 +170,10 @@
 				724DB7282267FD31008B7B3D /* Agency+CoreDataProperties.swift */,
 				72BB3F2F2266B73B0048D450 /* Calender+CoreDataClass.swift */,
 				72BB3F302266B73B0048D450 /* Calender+CoreDataProperties.swift */,
+				725083D9226AB09E00EBC75E /* Stops+CoreDataClass.swift */,
+				725083DA226AB09E00EBC75E /* Stops+CoreDataProperties.swift */,
 				72BB3F312266B73B0048D450 /* StopTimes+CoreDataClass.swift */,
 				72BB3F322266B73B0048D450 /* StopTimes+CoreDataProperties.swift */,
-				72BB3F332266B73B0048D450 /* Stops+CoreDataClass.swift */,
-				72BB3F342266B73B0048D450 /* Stops+CoreDataProperties.swift */,
 				72BB3F352266B73B0048D450 /* Trips+CoreDataClass.swift */,
 				72BB3F362266B73B0048D450 /* Trips+CoreDataProperties.swift */,
 				72BB3F372266B73B0048D450 /* Routes+CoreDataClass.swift */,
@@ -220,6 +230,7 @@
 		724574C7224149D100C26197 /* Controler */ = {
 			isa = PBXGroup;
 			children = (
+				72DACFBA226A0A7100E66D24 /* RoutesTableView */,
 				E4B60E722268BAA600DD6C85 /* BusMapViewController.swift */,
 				E4B60E712268BAA600DD6C85 /* LineSelectorController.swift */,
 				724574EC224149EC00C26197 /* ViewController.swift */,
@@ -271,6 +282,18 @@
 				72BB3EAF226699260048D450 /* CSVUtil.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		72DACFBA226A0A7100E66D24 /* RoutesTableView */ = {
+			isa = PBXGroup;
+			children = (
+				72DACFBB226A0AB600E66D24 /* RouteTableViewCell.swift */,
+				72D2DDFF226CC7B200BE9A73 /* FavRouteTableViewCell.swift */,
+				72AA7E15226A2EBD00B6B4CB /* RouteTVControler.swift */,
+				72AA7E17226A394100B6B4CB /* RouteDataManager.swift */,
+				72AA7E19226A412500B6B4CB /* RouteTVControlerListener.swift */,
+			);
+			path = RoutesTableView;
 			sourceTree = "<group>";
 		};
 		E43675142266124F00EE2F41 /* CSV */ = {
@@ -439,31 +462,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72BB3EB0226699260048D450 /* CSVUtil.swift in Sources */,
+				7285BED722562DEA00B454DE /* CoreData.swift in Sources */,
+				721AF4D82255A23300489053 /* GTSFStore.xcdatamodeld in Sources */,
+				72BB3F3B2266B73B0048D450 /* Agency+CoreDataClass.swift in Sources */,
+				72BB3F4A2266B8C10048D450 /* Calender+CoreDataClass.swift in Sources */,
+				725083DD226AB15500EBC75E /* Stops+CoreDataClass.swift in Sources */,
 				724574EF224149EC00C26197 /* ReservationControler.swift in Sources */,
-				E4B60E742268BAA600DD6C85 /* BusMapViewController.swift in Sources */,
-				724574CC224149D100C26197 /* ParkingViewController.swift in Sources */,
+				72BB3F452266B73B0048D450 /* Routes+CoreDataClass.swift in Sources */,
 				72BB3F472266B73B0048D450 /* Shape+CoreDataClass.swift in Sources */,
+				72BB3F432266B73B0048D450 /* Trips+CoreDataClass.swift in Sources */,
 				72BB3F3F2266B73B0048D450 /* StopTimes+CoreDataClass.swift in Sources */,
 				7285BEDB22562F1200B454DE /* DefaultData.swift in Sources */,
-				72BB3F4A2266B8C10048D450 /* Calender+CoreDataClass.swift in Sources */,
-				72BB3F3B2266B73B0048D450 /* Agency+CoreDataClass.swift in Sources */,
 				724574E9224149DE00C26197 /* Rent.swift in Sources */,
-				72BB3F432266B73B0048D450 /* Trips+CoreDataClass.swift in Sources */,
-				7285BED722562DEA00B454DE /* CoreData.swift in Sources */,
-				72BB3F412266B73B0048D450 /* Stops+CoreDataClass.swift in Sources */,
-				721AF4D82255A23300489053 /* GTSFStore.xcdatamodeld in Sources */,
 				724574EA224149DE00C26197 /* Parking.swift in Sources */,
 				7203F334225D76F400DD5618 /* PublicParking.swift in Sources */,
 				724574E8224149DE00C26197 /* User.swift in Sources */,
-				720965DE224A790700C4F26E /* LoginViewControler.swift in Sources */,
 				724574CB224149D100C26197 /* DataControler.swift in Sources */,
 				724574EE224149EC00C26197 /* ViewController.swift in Sources */,
-				7285BED922562E1E00B454DE /* DatelUtil.swift in Sources */,
+				720965DE224A790700C4F26E /* LoginViewControler.swift in Sources */,
 				724574CD224149D100C26197 /* BusControler.swift in Sources */,
+				E4B60E742268BAA600DD6C85 /* BusMapViewController.swift in Sources */,
+				72AA7E18226A394100B6B4CB /* RouteDataManager.swift in Sources */,
+				72AA7E16226A2EBD00B6B4CB /* RouteTVControler.swift in Sources */,
+				72DACFBC226A0AB600E66D24 /* RouteTableViewCell.swift in Sources */,
+				724574CC224149D100C26197 /* ParkingViewController.swift in Sources */,
+				72D2DE00226CC7B200BE9A73 /* FavRouteTableViewCell.swift in Sources */,
+				72AA7E1A226A412500B6B4CB /* RouteTVControlerListener.swift in Sources */,
 				724574A42241492A00C26197 /* AppDelegate.swift in Sources */,
+				7285BED922562E1E00B454DE /* DatelUtil.swift in Sources */,
 				7203F336225D7A3100DD5618 /* JSONUtil.swift in Sources */,
-				72BB3F452266B73B0048D450 /* Routes+CoreDataClass.swift in Sources */,
+				72BB3EB0226699260048D450 /* CSVUtil.swift in Sources */,
 				E4B60E732268BAA600DD6C85 /* LineSelectorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

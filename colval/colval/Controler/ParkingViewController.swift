@@ -20,8 +20,8 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
     var arrayParking:[Parking]                = []
     var arrayRent: [Rent]                     = []
     var mapRentParking:[String?: [String?]]   = [:]
-    var mapRent:[String:Rent]             = [:]
-    var mapParking:[String:Parking]       = [:]
+    var mapRent:[String:Rent]                 = [:]
+    var mapParking:[String:Parking]           = [:]
     
     var parkingLoaded = false
     var rentLoaded = false
@@ -48,8 +48,8 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
             }
         }
         
-        let dateStart = Util.strToDateRest(pDate: "2017-01-01T16:45:00.000Z")
-        let dateEnd  = Util.strToDateRest(pDate:"2019-12-12T16:45:00.000Z")
+        let dateStart = DateUtil.strToDateRest(pDate: "2017-01-01T16:45:00.000Z")
+        let dateEnd  = DateUtil.strToDateRest(pDate:"2019-12-12T16:45:00.000Z")
         
         dc.getRentsForTimeRange(pStart: dateStart, pEnd: dateEnd) { rents in
             

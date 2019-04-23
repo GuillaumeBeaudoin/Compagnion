@@ -11,8 +11,7 @@ import Foundation
 import CoreData
 
 @objc(Agency)
-public class Agency: NSManagedObject {
-     
+public class Agency: NSManagedObject { 
     public init(pAgencyId : String, pAgencyName:String, pAgencyTimezone: String , pAgencyLang: String? , pAgencyUrl :  String? , pAgencyFareUrl :  String? ) {
         super.init(entity: NSEntityDescription.entity(forEntityName: "Agency", in: CoreData.sharedInstance.context)!, insertInto: CoreData.sharedInstance.context)
         self.agency_id        = pAgencyId
@@ -21,11 +20,9 @@ public class Agency: NSManagedObject {
         self.agency_lang      = pAgencyLang
         self.agency_url       = pAgencyUrl
         self.agency_fare_url  = pAgencyFareUrl 
-    } 
-    
+    }
     @objc
     private override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
         super.init(entity: entity, insertInto: context)
     }
-
 }

@@ -5,6 +5,9 @@
 // Created by Alexandre Arsenault on 2019-04-03.
 // Copyright © 2019 Alexandre Arsenault. All rights reserved.
 //
+//   Complex Querry with relations : 
+//   https://code.tutsplus.com/tutorials/core-data-and-swift-relationships-and-more-fetching--cms-25070
+//
 
 import Foundation
 import CoreData
@@ -74,12 +77,13 @@ class CoreData {
     
     func getRouteFromId( pRouteId :  Int16! ,  pAgency:String )  -> Routes? {
         do{
+            //FIXME make it multi agency
             let request : NSFetchRequest<Routes> = Routes.fetchRequest()
             let pred1 = NSPredicate(format: "route_id == \(pRouteId!)")
-            let pred2 = NSPredicate(format: "agency_id =  %@", pAgency)
-            let and_1_2 = NSCompoundPredicate(andPredicateWithSubpredicates: [pred1,pred2])
-            request.predicate = and_1_2
-            //request.predicate = pred1
+            //let pred2 = NSPredicate(format: "agency_id =  %@", pAgency)
+            //let and_1_2 = NSCompoundPredicate(andPredicateWithSubpredicates: [pred1,pred2])
+            //request.predicate = and_1_2
+            request.predicate = pred1
             let results =  try context.fetch(request)
             if results.count == 1 {
                 return results[0]
@@ -93,11 +97,38 @@ class CoreData {
         return nil
     }
     
+    func getCalenderFromId( pCalenderId :  String ,  pAgency:String )  -> Calender? {
+        do{
+            let request : NSFetchRequest<Calender> = Calender.fetchRequest()
+            request.predicate = NSPredicate(format: "service_id = %@", pCalenderId)
+            let results =  try context.fetch(request)
+            if results.count == 1 {
+                return results[0]
+            } else {
+                print("CoreData.getCalenderFromId(pCalenderId : \(pCalenderId) , pAgency : \(pAgency)  : NIL")
+                return nil
+            }
+        } catch let error {
+            print("CoreData.getCalenderFromId() Error: \(error)")
+        }
+        return nil
+    }
+    
+    
+    func getRoutes()-> [Routes]  {
+        do{
+            let request : NSFetchRequest<Routes> = Routes.fetchRequest()
+            return  try context.fetch(request)
+        } catch let error {
+            print("CoreData.getRoutes() Error: \(error)")
+            return []
+        }
+    }
+    
     func getTripFromId( pTripId : String )  -> Trips? {
         do{
             let request : NSFetchRequest<Trips> = Trips.fetchRequest()
-            request.predicate = NSPredicate(format: "trip_id =  %@", pTripId)
-            //request.predicate2 = NSPredicate(format: "trip_id =  %@", pTripId)
+            request.predicate = NSPredicate(format: "lazy_id =  %@", pTripId)
             let results =  try context.fetch(request)
             if results.count == 1 {
                 return results[0]
@@ -111,15 +142,32 @@ class CoreData {
         return nil
     }
     
-    func getStopFromId( pStopId : String )  -> Stops? {
+    func getTripFromHeadsign(pHeadsign : String)  -> [Trips]? {
+        do {
+            let request : NSFetchRequest<Trips> = Trips.fetchRequest()
+            request.predicate = NSPredicate(format: "headsign = %@ ", pHeadsign )
+            let results =  try context.fetch(request)
+            if results.count > 0  {
+                return results
+            } else {
+                print("CoreData.getTripFromHeadsign(\(pHeadsign))  : NIL")
+                return nil
+            }
+        } catch let error {
+            print("CoreData.getStopFromId() Error: \(error)")
+        }
+        return nil 
+    }
+    
+    func getStopFrom( pStopId : String )  -> Stops? {
         do{
             let request : NSFetchRequest<Stops> = Stops.fetchRequest()
-            request.predicate = NSPredicate(format: "stop_id =  %@", pStopId)
+            request.predicate = NSPredicate(format: "lazy_id = %@ ", pStopId )
             let results =  try context.fetch(request)
             if results.count == 1 {
                 return results[0]
             } else {
-                print("CoreData.getStopFromId(\(pStopId))  : NIL")
+                print("CoreData.getStopFromId(\(pStopId))  : NIL , \(results.count)")
                  return nil
             } 
         } catch let error {
@@ -128,14 +176,63 @@ class CoreData {
         return nil
     }
     
+    func getStopFrom( pStopTimes : StopTimes )  -> [Stops]? {
+        do{
+            let request : NSFetchRequest<Stops> = Stops.fetchRequest()
+            request.predicate = NSPredicate(format: "%K CONTAINS %@", "stopTimes", pStopTimes)
+             return try context.fetch(request) 
+        } catch let error {
+            print("CoreData.getStopFrom(\(pStopTimes)) : StopTimes) Error: \(error)")
+        }
+        return nil
+    }
+    
+    func getStopFrom( pCoordinate : CLLocationCoordinate2D )  -> Stops? {
+        do{
+            let request : NSFetchRequest<Stops> = Stops.fetchRequest()
+            let pred1 = NSPredicate(format: "lon  == \(pCoordinate.longitude)" )
+            let pred2 = NSPredicate(format: "lat  == \(pCoordinate.latitude)"  )
+            let and_1_2 = NSCompoundPredicate(andPredicateWithSubpredicates: [pred1,pred2])
+            request.predicate = and_1_2
+            let results =  try context.fetch(request)
+            if results.count == 1 {
+                return results[0]
+            } else {
+                print("CoreData.getgetStopFrom(\(pCoordinate): CLLocationCoordinate2D)  : NIL")
+                return nil
+            }
+        } catch let error {
+            print("CoreData.getgetStopFrom(\(pCoordinate): CLLocationCoordinate2D) Error: \(error)")
+        }
+        return nil
+    }
+    
+    
+    func getStopTimeForTrip( pCalenderId :  String ,  pAgency:String )  -> StopTimes? {
+        do{
+            let request : NSFetchRequest<StopTimes> = StopTimes.fetchRequest()
+            request.predicate = NSPredicate(format: "service_id = %@", pCalenderId)
+            let results =  try context.fetch(request)
+            if results.count == 1 {
+                return results[0]
+            } else {
+                print("CoreData.getCalenderFromId(pCalenderId : \(pCalenderId) , pAgency : \(pAgency)  : NIL")
+                return nil
+            }
+        } catch let error {
+            print("CoreData.getCalenderFromId() Error: \(error)")
+        }
+        return nil
+    }
+    
     //** test function
-    func printAllTripFromId()  {
+    func printAllTripFromId()  { 
         do{
             let request : NSFetchRequest<Trips> = Trips.fetchRequest()
             let results =  try context.fetch(request)
             if results.count > 0 {
                 for trip in results {
-                    print("\(trip.routes?.route_long_name)/\(trip.trip_headsign) , count : \(results.count)  ")
+                    print("\(trip.routes?.route_long_name)/\(trip.headsign) , count : \(results.count)  ")
                 }
             } else {
                 print("CoreData.printAllRouteFromId()  : no result \(results.count)")
@@ -145,4 +242,14 @@ class CoreData {
         }
     }
         
+}
+
+
+
+
+extension NSSet {
+    func toArray<T>() -> [T] {
+        let array = self.map({ $0 as! T})
+        return array
+    }
 }

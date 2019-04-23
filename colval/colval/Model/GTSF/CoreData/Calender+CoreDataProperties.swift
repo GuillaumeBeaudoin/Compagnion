@@ -21,6 +21,16 @@ extension Calender {
     @NSManaged public var end_date: NSDate?
     @NSManaged public var service_id: Int16
     @NSManaged public var start_date: NSDate?
-    @NSManaged public var routes: Routes?
+    @NSManaged public var lazy_trip_id : String?
+    @NSManaged public var monday : Bool
+    @NSManaged public var tuesday : Bool
+    @NSManaged public var wednesday : Bool
+    @NSManaged public var thursday : Bool
+    @NSManaged public var friday : Bool
+    @NSManaged public var saturday : Bool
+    @NSManaged public var sunday : Bool
+    
+    
+    @NSManaged public var trip: Trips?
 
 }

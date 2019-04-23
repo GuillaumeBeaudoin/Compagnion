@@ -214,6 +214,7 @@ class CSVUtil {
         loadCsvFile(pFile: "so_shapes",     pClass : "Shape"    , pAgency:"CITSO")
         loadCsvFile(pFile: "so_trips",      pClass : "Trips"    , pAgency:"CITSO")
         loadCsvFile(pFile: "so_stops",      pClass : "Stops"    , pAgency:"CITSO")
+ 
         loadCsvFile(pFile: "so_stop_times", pClass : "StopTimes", pAgency:"CITSO")
         /*
         loadCsvFile(pFile: "pi_calendar",   pClass : "Calender" , pAgency:"CITPI")
@@ -300,6 +301,7 @@ class CSVUtil {
     return wRoutes
  }
  
+    
  static func csvToRoute(pCsvRoute : [String]!) -> Routes?{
     if  pCsvRoute.count == 7 ,
         let id   =  Int16(pCsvRoute[0])   {
@@ -316,7 +318,7 @@ class CSVUtil {
  static func csvToCalenders(pCsvCalenders  : [[String]]) -> [Calender] {
     var wCalenders:[Calender] = []
     for  calender in pCsvCalenders {
-        if  let wCalender   = csvToCalender(pCsvCalender: calender) {
+         if  let wCalender   = csvToCalender(pCsvCalender: calender) {
             wCalenders.append(wCalender)
         }
     }
@@ -324,22 +326,30 @@ class CSVUtil {
  }
     
  static func csvToCalender(pCsvCalender : [String]!) -> Calender?{
-    if  pCsvCalender.count == 10 ,
-        let serviceId     = Int16(pCsvCalender[0])   {
-        let dayInFunction = "\(pCsvCalender[1])\(pCsvCalender[2])\(pCsvCalender[3])\(pCsvCalender[4])\(pCsvCalender[5])\(pCsvCalender[6])\(pCsvCalender[7])"
-        let startDate = Util.strToDateGTSF(pDate: pCsvCalender![8], pTimeZoneIdentifier: "America/Montreal")
-        let endDate = Util.strToDateGTSF(pDate: pCsvCalender![9], pTimeZoneIdentifier: "America/Montreal")
+    if  pCsvCalender.count == 10  {
+        let monday    = pCsvCalender[1] == "1"
+        let tuesday   = pCsvCalender[2] == "1"
+        let wednesday = pCsvCalender[3] == "1"
+        let thursday  = pCsvCalender[4] == "1"
+        let friday    = pCsvCalender[5] == "1"
+        let saturday  = pCsvCalender[6] == "1"
+        let sunday    = pCsvCalender[7] == "1"
+        let startDate = DateUtil.strToDateGTSF(pDate: pCsvCalender![8], pTimeZoneIdentifier: "America/Montreal")
+        let endDate = DateUtil.strToDateGTSF(pDate: pCsvCalender![9], pTimeZoneIdentifier: "America/Montreal")
         
+        return  Calender(pServiceId: pCsvCalender[0] , pMonday: monday, pTuesday: tuesday, pWednesday: wednesday, pThursday: thursday, pFriday: friday, pSaturday: saturday, pSunday: sunday, pStartDate: startDate, pEndDate: endDate)
         
-        return  Calender(pServiceId: serviceId, pDayInFunction: dayInFunction, pStartDate: startDate , pEndDate: endDate )
     }
     return nil
  }
   
  static func csvToTrips(pCsvTrips : [[String]]  , pAgency:String) -> [Trips] {
     var wTrips:[Trips] = []
+    var i = 0
     for  trip in pCsvTrips {
+        i = i + 1
         if  let wTrip   = csvToTrip(pCsvTrip: trip , pAgency: pAgency ) {
+            print("Trip #\(i)")
             wTrips.append(wTrip)
         }
     }
@@ -357,6 +367,10 @@ class CSVUtil {
         let shape = CoreData.sharedInstance.getShapeFromId(pShapeId: Int32(pCsvTrip[5]) ) 
         if shape != nil {
             trip.addToShapes(NSSet(array: shape!))
+        }
+        let cal = CoreData.sharedInstance.getCalenderFromId(pCalenderId: pCsvTrip[1] , pAgency: pAgency)
+        if cal != nil {
+            trip.calender = cal
         }
         return trip
     }
@@ -400,22 +414,24 @@ class CSVUtil {
  }
   
  static func csvToStopTime(pCsvStopTime : [String]!) -> StopTimes?{ 
-    if  pCsvStopTime.count == 9 {
-        let arrivalTime   = Date()  //date.....
-        let departureTime = Date() // date.....
+     if  pCsvStopTime.count == 9 {
+        let arrivalTime   = DateUtil.strToTimeGTSF(pDate: pCsvStopTime![1], pTimeZoneIdentifier: "America/Montreal")
+        let departureTime = DateUtil.strToTimeGTSF(pDate: pCsvStopTime![2], pTimeZoneIdentifier: "America/Montreal")
         let pickupType    = pCsvStopTime[5] == "1"
-        let dropOffType   = pCsvStopTime[6] == "1"
-        
+        let dropOffType   = pCsvStopTime[6] == "1" 
         let stopSequence  = Int16(pCsvStopTime[4])!
         let timepoint     = Int16(pCsvStopTime[8])!
         let traveled      = Double(pCsvStopTime[7])!
+        let lazyStopId    = pCsvStopTime[3]
+        let lazyTripId    = pCsvStopTime[0]
         
-        let stopTimes =  StopTimes(pArrivalTime: arrivalTime, pDepartureTime: departureTime, pStopSequence: stopSequence, pPickupType: pickupType, pDropOffType: dropOffType, pTraveled: traveled, pTimepoint: timepoint)
-        let stop = CoreData.sharedInstance.getStopFromId(pStopId: pCsvStopTime[3])
+        let stopTimes =  StopTimes(pArrivalTime: arrivalTime, pDepartureTime: departureTime, pStopSequence: stopSequence, pPickupType: pickupType, pDropOffType: dropOffType, pTraveled: traveled, pTimepoint: timepoint, pLazyTripId :   pCsvStopTime[0] , pLazyStopId : lazyStopId )
+        
+        let stop = CoreData.sharedInstance.getStopFrom(pStopId: lazyStopId)
         if stop != nil {
-            stopTimes.addToStop(stop!)
+            stop?.addToStopTimes(stopTimes)
         }
-        let trip = CoreData.sharedInstance.getTripFromId(pTripId: pCsvStopTime[0])
+        let trip = CoreData.sharedInstance.getTripFromId(pTripId: lazyTripId)
         if trip != nil {
             trip!.addToStoptimes(stopTimes)
         }
@@ -439,7 +455,7 @@ class CSVUtil {
         let lat                 = Double(pCsvStop[2].trimmingCharacters(in: .whitespacesAndNewlines))!
         let lon                 = Double(pCsvStop[3].trimmingCharacters(in: .whitespacesAndNewlines))!
         let wheelchairBoarding  = pCsvStop[6] == "1"
-        return Stops(pId: pCsvStop[0], pStopName: pCsvStop[1], pLat: lat, pLon: lon, pZone: pCsvStop[4], pStopCode: pCsvStop[5], pWheelchairBoarding: wheelchairBoarding)
+        return Stops(pId: pCsvStop[0], pName: pCsvStop[1], pLat: lat, pLon: lon, pZone: pCsvStop[4], pCode: pCsvStop[5], pWheelchairBoarding: wheelchairBoarding)
     }
     return nil
  }

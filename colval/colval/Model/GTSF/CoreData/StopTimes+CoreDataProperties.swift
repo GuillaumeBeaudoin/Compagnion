@@ -23,8 +23,11 @@ extension StopTimes {
     @NSManaged public var pickup_type: Bool
     @NSManaged public var stop_sequence: Int16
     @NSManaged public var timepoint: Int16
-    @NSManaged public var traveled: Double 
+    @NSManaged public var traveled: Double
+    
+    @NSManaged public var lazy_stop_id: String
     @NSManaged public var stop: NSSet?
+    @NSManaged public var lazy_trip_id:Stops?
     @NSManaged public var trip: Trips?
 
 }

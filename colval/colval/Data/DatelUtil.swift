@@ -9,7 +9,7 @@ import Foundation
 /***************************************************************
  ********************* Calander Utils   ************************
  ***************************************************************/
-class Util {
+class DateUtil {
     
     
     private static let cal:Calendar = Calendar.current
@@ -95,29 +95,47 @@ class Util {
     }
     
     /*
-     * Convert a string Date representation to a Date()
+     * Convert a GTSF string Date representation to a Date()
      *
      *  YYYYMMDD -> input format
      *  20190317 -> input example
-     *  0  4 678 -> substring position (10e0)
+     *  0  34567 -> substring position (10e0)
      */
     static func strToDateGTSF(pDate: String , pTimeZoneIdentifier: String) -> Date {
         var dateComponents = DateComponents()
         dateComponents.timeZone = TimeZone(identifier: pTimeZoneIdentifier)!
         let wYear  =   Int(pDate[..<pDate.index(pDate.startIndex, offsetBy: 4)]   )
         dateComponents.year     = wYear
-        let wMonth  = Int(pDate[pDate.index(pDate.startIndex, offsetBy: 4)..<pDate.index(pDate.endIndex, offsetBy: -2)])
-        dateComponents.month    = wMonth
-        let wDay  =  Int(pDate[pDate.index(pDate.startIndex, offsetBy: 6)..<pDate.index(pDate.endIndex, offsetBy: -0)])
-        dateComponents.day      =  wDay
+        dateComponents.month    = Int(pDate[pDate.index(pDate.startIndex, offsetBy: 4)..<pDate.index(pDate.endIndex, offsetBy: -2)])
+        dateComponents.day      = Int(pDate[pDate.index(pDate.startIndex, offsetBy: 6)..<pDate.index(pDate.endIndex, offsetBy: -0)])
         dateComponents.hour     = 0
         dateComponents.minute   = 0
         let dateDate = cal.date(from: dateComponents) ?? Date()
         return  dateDate
     }
     
+     
+    /*
+     * Convert a GTSF string Time representation to a Date()
+     *
+     *  HH:MM:SS -> input format
+     *  10:30:00 -> input example
+     *  0  3  6  -> substring position (10e0)
+     */
+    static func strToTimeGTSF(pDate: String , pTimeZoneIdentifier: String) -> Date {
+        var dateComponents = DateComponents()
+        dateComponents.timeZone = TimeZone(identifier: pTimeZoneIdentifier)!
+        dateComponents.day      = 1
+        dateComponents.month    = 1
+        dateComponents.year     = 2019
+        dateComponents.hour     = Int(pDate[..<pDate.index(pDate.startIndex, offsetBy: 6)]   )
+        dateComponents.minute   = Int(pDate[pDate.index(pDate.startIndex, offsetBy: 3)..<pDate.index(pDate.endIndex, offsetBy: -2)])
+        dateComponents.second   = Int(pDate[pDate.index(pDate.startIndex, offsetBy: 6)..<pDate.index(pDate.endIndex, offsetBy: -0)])
+        
+        let dateDate = cal.date(from: dateComponents) ?? Date()
+        return  dateDate
+    }
     
-    //TODO hours   06:45:00
 }
 
 

@@ -62,8 +62,8 @@ class ReservationControler: UIViewController , MKMapViewDelegate , UITableViewDa
         
         if parking != nil {
             lblParking.text = "Parking #\(parking!.numero)"
-            let dateStart = Util.dateTimeFromDateHourMinRest(pDate: Date(), pHour: 7 , pMinute: 00)
-            let dateEnd  =  Util.dateTimeFromDateHourMinRest(pDate: Date(), pHour: 23, pMinute: 00)
+            let dateStart = DateUtil.dateTimeFromDateHourMinRest(pDate: Date(), pHour: 7 , pMinute: 00)
+            let dateEnd  =  DateUtil.dateTimeFromDateHourMinRest(pDate: Date(), pHour: 23, pMinute: 00)
             dc.getRentsForParkingForTimeRange(pParkingID: parking!.id! , pStart: dateStart, pEnd: dateEnd ) { rents in
                 if rents?.count ?? 0 > 0  {
                     print("count = " + String( rents!.count ) )

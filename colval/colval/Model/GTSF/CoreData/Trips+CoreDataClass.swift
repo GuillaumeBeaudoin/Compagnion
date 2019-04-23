@@ -16,11 +16,11 @@ public class Trips: NSManagedObject {
     
     public init(pId : String , pServiceId : String , pHeadsign : String , pDirectionId: Int16 ,   pShortName :String) {
         super.init(entity: NSEntityDescription.entity(forEntityName: "Trips", in: CoreData.sharedInstance.context)!, insertInto: CoreData.sharedInstance.context)
-        self.trip_id  =   pId
-        self.service_id = pServiceId
-        self.trip_headsign = pHeadsign
-        self.direction_id =  pDirectionId   // Int16 
-        self.trip_short_name =  pShortName //String?
+        self.lazy_id      = pId
+        self.service_id   = pServiceId
+        self.headsign     = pHeadsign
+        self.direction_id = pDirectionId
+        self.short_name   = pShortName
     }
     
   
