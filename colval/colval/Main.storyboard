@@ -272,9 +272,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDs-0R-Tmg">
-                                <rect key="frame" x="133" y="805" width="148" height="46"/>
+                                <rect key="frame" x="144.66666666666666" y="805" width="124.99999999999997" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="See On Map"/>
+                                <state key="normal" title="Voir Arrêts"/>
+                                <connections>
+                                    <action selector="btnSeeStop:" destination="duA-Sg-mcd" eventType="touchUpInside" id="g3S-RT-dqg"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L M  M J V S D" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhT-lf-HCn">
                                 <rect key="frame" x="58" y="644" width="298" height="21"/>
@@ -351,7 +354,7 @@
         <!--Bus Map View Controller-->
         <scene sceneID="H5h-7h-N1x">
             <objects>
-                <viewController id="meK-rX-t8Y" customClass="BusMapViewController" customModule="colval" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="busMap" id="meK-rX-t8Y" customClass="BusMapViewController" customModule="colval" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cLY-Ub-Znm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -374,6 +377,7 @@
                     <navigationItem key="navigationItem" id="rS7-QU-RbR"/>
                     <connections>
                         <outlet property="busMapView" destination="caD-oX-Hc3" id="Aq9-e9-fMv"/>
+                        <outlet property="navBar" destination="d5E-dI-JDC" id="Uh8-wU-tUC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSG-QI-ZFP" userLabel="First Responder" sceneMemberID="firstResponder"/>

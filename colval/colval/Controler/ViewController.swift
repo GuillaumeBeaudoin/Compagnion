@@ -12,6 +12,9 @@ class ViewController: UIViewController,  RouteTVControlerListener  {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private var busMapVC:BusMapViewController? = nil
+     private var selectedRoute:Routes? = nil
+    
      private lazy var routeDataSourceProvider = RouteTVControler(pRouteDataManager: RouteDataManager(pRouteType: RouteDataManager.FAVORITE) , pListener: self )
     
     
@@ -19,7 +22,7 @@ class ViewController: UIViewController,  RouteTVControlerListener  {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true;
         
-        let dc  = DataControler.sharedInstance
+        //let dc  = DataControler.sharedInstance
         let user = DefaultData.sharedInstance.getLocalUser()
         
         if user != nil  {
@@ -61,8 +64,16 @@ class ViewController: UIViewController,  RouteTVControlerListener  {
      * RouteTableViewListener
      */
     func didSelectRoute(pRoute  : Routes!)  {
-        print("TODO : ViewController.didSelectRoute()")
+        if let busMapVC2 = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "busMap")
+            as? BusMapViewController {
+            print("TODO :  inside ")
+            busMapVC2.selectedRoute =  pRoute
+            self.navigationController?.pushViewController(busMapVC2, animated: true)
+        }
     }
+    
+    
 
 
 }

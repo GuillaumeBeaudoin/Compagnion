@@ -94,10 +94,11 @@ extension UIColor {
             
             //  The black"ish" 1F1F1F chosen by the EXO is dreadfull ,
             //  let's override it with the pretty blue from the Transit app. That blue is lit.
-            if hex == "1F1F1F" {
+            /*if hex == "1F1F1F" {
                 self.init(hex: "162170")
                 return
             } else {
+            */
                 let hexColor = hex+"ff"
                 let scanner = Scanner(string: hexColor)
                 var hexNumber: UInt64 = 0
@@ -109,7 +110,7 @@ extension UIColor {
                     self.init(red: r, green: g, blue: b, alpha: a)
                     return
                 }
-            }
+            //}
         }
         return nil
     }

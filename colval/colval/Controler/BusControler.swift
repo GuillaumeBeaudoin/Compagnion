@@ -43,6 +43,11 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
     
     private let greyColor =  UIColor(hex: "7c7c7c")!
     private let blackColor =  UIColor.black
+    
+    
+    private var nearestStop: Stops?   = nil
+    private var selectedTrip: Trips?   = nil
+    private var selectedRoute:Routes? = nil
 
     private var userLocation:CLLocation =  CLLocation(latitude: DataControler.sharedInstance.colValRegion.center.latitude, longitude: DataControler.sharedInstance.colValRegion.center.longitude)
     
@@ -81,6 +86,8 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
         
         var arrayHeadsign:[String] = []
         var arrayCal:[Calender] = []
+        self.selectedRoute = pRoute
+        
         for trip in pRoute.trips! {
             let trip2  = trip as? Trips
             let cal  = CoreData.sharedInstance.getCalenderFromId(pCalenderId: trip2?.service_id! ?? "", pAgency: "CITSO")
@@ -120,6 +127,9 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
         let arrayTrips = CoreData.sharedInstance.getTripFromHeadsign(pHeadsign: uniqueHeadsign[self.headsignPos])
         if (arrayTrips != nil) {
             setNearestStop(pArrayTrips: arrayTrips!)
+            // TODO FINISH
+            //self.selectedTrip = arrayTrips[0]
+            print(" count  \(arrayTrips?.count)")
         }
     }
     
@@ -130,7 +140,6 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
      *  From :   https://stackoverflow.com/questions/27728466/use-multiple-font-colors-in-a-single-label
      */
     func setDayInFunction(pCalender : [Calender]) {
-        
         
         if pCalender.count == 0 {
              lblDay.text = " "
@@ -210,14 +219,14 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
                 }
             }
             
-            let nearestStop =  CoreData.sharedInstance.getStopFrom(pCoordinate: nearestLocation.coordinate)
+            self.nearestStop =  CoreData.sharedInstance.getStopFrom(pCoordinate: nearestLocation.coordinate)
             let displayDistance =  ( smallestDistance/1000 < 1 ?
                 "\(Int( round( smallestDistance )        ) ) M" :
                 "\(Double(round(smallestDistance / 100) / 1000 ) ) KM" )
             
             // Once all result computed , display on main thread
             DispatchQueue.main.async {
-                self.lblNearestStopName.text = nearestStop?.name!
+                self.lblNearestStopName.text = self.nearestStop?.name!
                 self.lblNearestStopDistance.text = displayDistance
                 self.loadingIndicator.stopAnimating()
             }
@@ -225,8 +234,7 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
     }
     
     /*
-     * TO TEST , not sure if working..
-     *
+     *   
      *   Manage user location when moving
      *   https://github.com/GurdevSingh94/SwiftUserLocation
      *   https://www.youtube.com/watch?v=WDrdtdMYgWc
@@ -236,5 +244,18 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.userLocation  = locations.last!
     }
+    
+    @IBAction func btnSeeStop(_ sender: Any) {
+        if let busMapVC = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "busMap")
+            as? BusMapViewController {
+            print("TODO :  inside ")
+            busMapVC.selectedStop  =  self.nearestStop
+            busMapVC.selectedRoute =  self.selectedRoute
+            self.navigationController?.pushViewController(busMapVC, animated: true)
+        }
+    }
+    
+    
     
 }

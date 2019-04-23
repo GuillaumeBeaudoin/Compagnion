@@ -20,8 +20,8 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
     var arrayParking:[Parking]                = []
     var arrayRent: [Rent]                     = []
     var mapRentParking:[String?: [String?]]   = [:]
-    var mapRent:[String:Rent]             = [:]
-    var mapParking:[String:Parking]       = [:]
+    var mapRent:[String:Rent]                 = [:]
+    var mapParking:[String:Parking]           = [:]
     
     var parkingLoaded = false
     var rentLoaded = false
