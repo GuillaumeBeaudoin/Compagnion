@@ -29,10 +29,10 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
     @IBOutlet weak var btnDestPrev: UIButton!
     @IBOutlet weak var lblDest:     UILabel!
     @IBOutlet weak var lblDay: UILabel!
-    @IBOutlet weak var lblNearestStopName: UILabel!
     @IBOutlet weak var lblNearestStopDistance: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var btnArrets: UIButton!
     
     var locationManager = CLLocationManager()
     
@@ -46,7 +46,7 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
     
     
     private var nearestStop: Stops?   = nil
-    private var selectedArrayTrip: [Trips]?   = nil
+    private var selectedArrayTrip: [Trips]?  = nil
     private var selectedRoute:Routes? = nil
 
     private var userLocation:CLLocation =  CLLocation(latitude: DataControler.sharedInstance.colValRegion.center.latitude, longitude: DataControler.sharedInstance.colValRegion.center.longitude)
@@ -62,10 +62,17 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
         setDirectionButton()
         
         self.lblDay.text = ""
-        self.lblNearestStopName.text = ""
         self.lblNearestStopDistance.text = ""
+        self.btnArrets.isEnabled = false
+        
+        self.lblNearestStopDistance.isEnabled = false
+        
         self.loadingIndicator.hidesWhenStopped = true
+        let labelTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(BusControler.tapOnSpecificStop))
+        self.lblNearestStopDistance.addGestureRecognizer(labelTapRecognizer)
         self.loadingIndicator.stopAnimating()
+        
+        
         
          self.locationManager.requestWhenInUseAuthorization()
         
@@ -130,8 +137,9 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
         if (arrayTrips != nil) {
             setNearestStop(pArrayTrips: arrayTrips!)
             // TODO FINISH
-             self.selectedArrayTrip = arrayTrips
-            print(" count  \(arrayTrips?.count)")
+            self.selectedArrayTrip = arrayTrips!
+            self.btnArrets.isEnabled = true
+            self.lblNearestStopDistance.isEnabled = true
         }
     }
     
@@ -183,8 +191,8 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
      */
     func setNearestStop(pArrayTrips : [Trips] ) {
         
-        self.lblNearestStopName.text = ""
         self.lblNearestStopDistance.text = ""
+        self.lblNearestStopDistance.isEnabled = false
         self.loadingIndicator.startAnimating()
         
         DispatchQueue.global(qos: .userInitiated).async {
@@ -224,13 +232,15 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
             self.nearestStop =  CoreData.sharedInstance.getStopFrom(pCoordinate: nearestLocation.coordinate)
             let displayDistance =  ( smallestDistance/1000 < 1 ?
                 "\(Int( round( smallestDistance )        ) ) M" :
-                "\(Double(round(smallestDistance / 100) / 1000 ) ) KM" )
+                "\(Double(round(smallestDistance ) / 1000 ) ) KM" )
             
             // Once all result computed , display on main thread
             DispatchQueue.main.async {
-                self.lblNearestStopName.text = self.nearestStop?.name!
-                self.lblNearestStopDistance.text = displayDistance
+                self.lblNearestStopDistance.text = "\(self.nearestStop?.name!) \n \(displayDistance) "
                 self.loadingIndicator.stopAnimating()
+                self.lblNearestStopDistance.isEnabled = true
+                
+                self.lblNearestStopDistance.isUserInteractionEnabled = true
             }
         }
     }
@@ -258,6 +268,12 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
             
             self.navigationController?.pushViewController(busMapVC, animated: true)
         }
+    }
+    
+    
+    @objc func tapOnSpecificStop(sender:UITapGestureRecognizer) {
+        
+        print("tap working")
     }
     
     
