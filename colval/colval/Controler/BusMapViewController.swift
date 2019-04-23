@@ -22,12 +22,14 @@ class BusMapViewController: UIViewController , MKMapViewDelegate{
     
     var selectedRoute:Routes?
     var selectedStop :Stops?
+    var selectedArrayTrip : [Trips]?
      
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(selectedArrayTrip)
         
         self.busMapView.delegate = self
         self.busMapView.setRegion(dc.colValLineRegion ,animated: false)

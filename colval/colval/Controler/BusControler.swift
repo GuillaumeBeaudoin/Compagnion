@@ -46,7 +46,7 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
     
     
     private var nearestStop: Stops?   = nil
-    private var selectedTrip: Trips?   = nil
+    private var selectedArrayTrip: [Trips]?   = nil
     private var selectedRoute:Routes? = nil
 
     private var userLocation:CLLocation =  CLLocation(latitude: DataControler.sharedInstance.colValRegion.center.latitude, longitude: DataControler.sharedInstance.colValRegion.center.longitude)
@@ -115,6 +115,8 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
      *  Adjust the arrow button according to if the user can switch
      *  between (next , prex ) destination from the "uniqueHeadsign" array.
      */
+    
+    
     func setDirectionButton()  {
         let prevEnabled  =  (     self.headsignPos >    0             )
         let nextEnabled  =  ( uniqueHeadsign.count-1 > self.headsignPos )
@@ -128,7 +130,7 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
         if (arrayTrips != nil) {
             setNearestStop(pArrayTrips: arrayTrips!)
             // TODO FINISH
-            //self.selectedTrip = arrayTrips[0]
+             self.selectedArrayTrip = arrayTrips
             print(" count  \(arrayTrips?.count)")
         }
     }
@@ -250,8 +252,10 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
             .instantiateViewController(withIdentifier: "busMap")
             as? BusMapViewController {
             print("TODO :  inside ")
-            busMapVC.selectedStop  =  self.nearestStop
+         // tap   busMapVC.selectedStop  =  self.nearestStop
             busMapVC.selectedRoute =  self.selectedRoute
+            busMapVC.selectedArrayTrip =  self.selectedArrayTrip
+            
             self.navigationController?.pushViewController(busMapVC, animated: true)
         }
     }
