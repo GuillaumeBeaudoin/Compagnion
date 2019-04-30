@@ -273,7 +273,24 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
     
     @objc func tapOnSpecificStop(sender:UITapGestureRecognizer) {
         
-        print("tap working")
+        
+        if let busMapVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "busMap")
+            as? BusMapViewController {
+            print("TODO :  inside ")
+            // tap   busMapVC.selectedStop  =  self.nearestStop
+          //  busMapVC.selectedRoute =  self.selectedRoute
+           // busMapVC.selectedArrayTrip =  self.selectedArrayTrip//
+            
+            
+            print("tap working nearestStop: " , self.nearestStop)
+            
+            busMapVC.selectedStop  =  self.nearestStop
+            
+            
+            self.navigationController?.pushViewController(busMapVC, animated: true)
+        }
+        
+      
     }
     
     

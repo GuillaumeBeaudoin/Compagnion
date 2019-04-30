@@ -26,7 +26,7 @@ class DataControler {
     final let colValRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 45.2523979, longitude: -74.1324644), span: MKCoordinateSpan(latitudeDelta: 0.0005, longitudeDelta: 0.0005))
     
     
-    final let colValLineRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 45.2523979, longitude: -74.1324644), span: MKCoordinateSpan(latitudeDelta: 0.0075, longitudeDelta: 0.0075))
+    final let colValLineRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 45.2523979, longitude: -74.1324644), span: MKCoordinateSpan(latitudeDelta: 0.08, longitudeDelta: 0.08))
     
     struct defaultsKeys {
         static let keyID = "userId"
@@ -37,6 +37,10 @@ class DataControler {
         baseURL = "https://colval-cbfd.restdb.io/rest/"
         xApiKey = "7b29d3c5d1b96232768b7991fcdfd0b1bd571"
     }
+    
+    
+    
+
     
     
     /***************************************************************

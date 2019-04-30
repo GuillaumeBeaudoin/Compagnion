@@ -92,7 +92,7 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
             }
             
             DispatchQueue.main.async {
-                self.lblAvleSpaces.text = String(self.arrayParking.count-self.mapRentParking.count) + "/" + String(self.arrayParking.count) + "parking available"
+                self.lblAvleSpaces.text = String(self.arrayParking.count-self.mapRentParking.count) + " / " + String(self.arrayParking.count) + " parking available"
                 self.mapView.addAnnotations(self.arrayParking)
                 self.mapView.showAnnotations(self.arrayParking, animated: true)
             }
