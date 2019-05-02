@@ -265,7 +265,7 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
          // tap   busMapVC.selectedStop  =  self.nearestStop
             busMapVC.selectedRoute =  self.selectedRoute
             busMapVC.selectedArrayTrip =  self.selectedArrayTrip
-            
+           // busMapVC.selectedArrayStops = self.selectedArrayTri
             self.navigationController?.pushViewController(busMapVC, animated: true)
         }
     }
