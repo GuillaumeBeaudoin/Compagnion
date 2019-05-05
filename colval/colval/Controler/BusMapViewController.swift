@@ -12,10 +12,12 @@ import MapKit
 
 
 class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationManagerDelegate{
-
+    static let sharedInstance = BusMapViewController()
     @IBOutlet weak var busMapView: MKMapView!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var btnFav: UIButton!
+    
+    //BusMapViewController.sharedInstance
     
     var dc  = DataControler.sharedInstance
     var cd  = CoreData.sharedInstance
@@ -40,8 +42,8 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
             locationManager.startUpdatingLocation()
         }
 
-      //  print("Array Trip: ", selectedArrayTrip)
-        //print("Array stop: ", selectedStop)
+    //print("Array Trip: ", selectedArrayTrip)
+        print("Array stop: ", selectedStop)
         
         self.busMapView.delegate = self
         self.busMapView.setRegion(dc.colValLineRegion ,animated: false)
@@ -51,6 +53,15 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
         
         if let wRoute = self.selectedRoute {
             navigationItem.title =  wRoute.route_long_name
+            print ("array trips : " , wRoute.trips)
+            
+            
+            /*
+           wRoute.trips?.forEach { print("test ? ", $0)
+                selectedArrayTrip!.append( ($0 as? Trips)! )
+            } */
+           // wRoute.trips?.forEach { }
+            selectedArrayTrip?.forEach( {print(" test printing trip : ", $0)})
             
             
             let isFav = DefaultData.sharedInstance.isLocalFavRoutes(pRouteId: wRoute.route_id)
@@ -67,9 +78,11 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
        
             
         }
-        
+        print( "executign exrta method")
+        print ("selecgted stop : " , self.selectedStop)
         drawDirectionToStopOnTHeMap()
         allstop()
+        
 
     }
     
@@ -97,7 +110,7 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
     
     
     func allstop()  {
-      //  print ("all stop ", selectedArrayTrip)
+       print ("all stop ", selectedArrayTrip)
         
         if var wAllStop = selectedArrayTrip{
             for trip in wAllStop {
@@ -146,6 +159,11 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
     
     
     func drawDirectionToStopOnTHeMap() {
+        
+        // set a reset for every time the direction line is called so the new selected pin don't add up to the destination queue
+        let overlays = self.busMapView.overlays
+        self.busMapView.removeOverlays(overlays)
+        
        // print("123456789")
         if let wStop = self.selectedStop , let wLocation = self.userLocation{
            // print("gdfgrgsrthrsthsrth")
@@ -165,7 +183,7 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
             request.requestsAlternateRoutes = true
             request.transportType = .walking
             
-            let directions = MKDirections(request: request)
+            var directions = MKDirections(request: request)
             
             directions.calculate { [unowned self] response, error in
                 guard let unwrappedResponse = response else { return }
@@ -178,7 +196,7 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
             }
             
  
-            print("destination : ", wStop.lat , wStop.lon)
+            print("destination qwe: ", wStop.lat , wStop.lon)
             
         }
     }

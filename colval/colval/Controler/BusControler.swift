@@ -39,7 +39,7 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
     private lazy var routeDataSourceProvider = RouteTVControler(pRouteDataManager: RouteDataManager(pRouteType: RouteDataManager.ALL) , pListener: self )
     
     private var  uniqueHeadsign:[String] = Array(Set(["Selectioner une ligne"]))
-    private var  headsignPos             = 0
+    private var  headsignPos           = 0
     
     private let greyColor =  UIColor(hex: "7c7c7c")!
     private let blackColor =  UIColor.black
@@ -76,13 +76,13 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
         
          self.locationManager.requestWhenInUseAuthorization()
         
-        if CLLocationManager.locationServicesEnabled() { 
+        if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
         
-        
+      
     }
     /*
      * RouteTableViewListener
@@ -245,6 +245,8 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
         }
     }
     
+    
+    
     /*
      *   
      *   Manage user location when moving
@@ -258,10 +260,10 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
     }
     
     @IBAction func btnSeeStop(_ sender: Any) {
-        if let busMapVC = UIStoryboard(name: "Main", bundle: nil)
+        if var busMapVC = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "busMap")
             as? BusMapViewController {
-            print("TODO :  inside ")
+            print("TODO :  inside btnSeeStop")
          // tap   busMapVC.selectedStop  =  self.nearestStop
             busMapVC.selectedRoute =  self.selectedRoute
             busMapVC.selectedArrayTrip =  self.selectedArrayTrip
@@ -274,9 +276,9 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
     @objc func tapOnSpecificStop(sender:UITapGestureRecognizer) {
         
         
-        if let busMapVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "busMap")
+        if var busMapVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "busMap")
             as? BusMapViewController {
-            print("TODO :  inside ")
+            print("TODO :  inside tapOnSpecificStop")
             // tap   busMapVC.selectedStop  =  self.nearestStop
           //  busMapVC.selectedRoute =  self.selectedRoute
            // busMapVC.selectedArrayTrip =  self.selectedArrayTrip//
