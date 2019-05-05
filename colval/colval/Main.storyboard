@@ -820,6 +820,7 @@
         <image name="ic_parjing" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="QGR-EC-GC7"/>
         <segue reference="F9X-0V-dBJ"/>
     </inferredMetricsTieBreakers>
 </document>
