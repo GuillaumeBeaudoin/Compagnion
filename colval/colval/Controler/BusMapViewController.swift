@@ -153,29 +153,6 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
     }
     
     
-    
-    
-    
-    
-    
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        if let annotationTitle = view.annotation?.title
-        {
-            print("User tapped on annotation with title: \(annotationTitle!)")
-        }
-        
-        
-         if   ( view.annotation?.title! != "My Location"){
-        self.selectedStop = finalArrayStops.first(where: {($0.name?.elementsEqual(view.annotation?.title! ?? ""))!})
-        drawDirectionToStopOnTHeMap()
-        }
-        
-        }
-        
-    
- 
-    
-
 
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -198,7 +175,8 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
             
             identifier.annotation = annotation
             vueAnnotation = identifier
-        }
+            
+                    }
         else {
             vueAnnotation = MKPinAnnotationView(annotation: annotation,
                                                 reuseIdentifier: BusMapViewController.identifiantAnnotationMerveille)
@@ -206,9 +184,28 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
         
         
         
+        let directionButton = AnotationButton(frame: CGRect(x: 100, y: 100, width: 150, height: 50))
+        directionButton.backgroundColor = .green
+        directionButton.alpha=0.5
+        directionButton.setTitle("Get Dirrection", for: .normal)
+        directionButton.view = annotation as! MKAnnotation
+        directionButton.addTarget(self, action: #selector(drawTheDirectionViaPinButton), for: .touchUpInside)
         
-        vueAnnotation.rightCalloutAccessoryView = UIButton(type: .detailDisclosure )
-        vueAnnotation.leftCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        
+        
+        let alarmButton = AnotationButton(frame: CGRect(x: 100, y: 100, width: 150, height: 50))
+        alarmButton.backgroundColor = .green
+        alarmButton.alpha=0.5
+        alarmButton.setTitle("Set alarm", for: .normal)
+        alarmButton.view = annotation as! MKAnnotation
+        alarmButton.addTarget(self, action: #selector(alarmButtonButton), for: .touchUpInside)
+        
+        
+       
+        
+    
+        vueAnnotation.rightCalloutAccessoryView = directionButton
+        vueAnnotation.leftCalloutAccessoryView = alarmButton
  
         vueAnnotation.subviews
         vueAnnotation.canShowCallout = true
@@ -225,6 +222,66 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
     
     
     
+    
+    @objc func alarmButtonButton(sender: UIButton, forEvent event: UIEvent) {
+        if let button = sender as? AnotationButton {
+            print(button.view  )
+            
+            
+            
+            if let alarmController = UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewController(withIdentifier: "alarmController")
+                as? AlarmController {
+                print("TODO :  inside alarmController ")
+                
+                /*  getAllHeadSign(pRoute: pRoute)
+                 
+                 
+                 alarmController.selectedRoute =  pRoute
+                 alarmController.selectedStop = self.nearestStop
+                 */
+                print("Button tapped", button.view?.title)
+                self.navigationController?.pushViewController(alarmController, animated: true)
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @objc func drawTheDirectionViaPinButton(sender: UIButton, forEvent event: UIEvent) {
+        if let button = sender as? AnotationButton {
+            print(button.view  )
+        
+        
+            print("Button tapped", button.view?.title)
+        
+        if let annotationTitle = button.view?.title
+        {
+            print("User tapped on annotation with title: \(annotationTitle!)")
+        }
+        
+        
+        if   ( button.view?.title! != "My Location"){
+            self.selectedStop = finalArrayStops.first(where: {($0.name?.elementsEqual(button.view?.title! ?? ""))!})
+            drawDirectionToStopOnTHeMap()
+            }
+            
+            
+        }
+        
+        
+        
+        
+    }
+
     
     
     func drawDirectionToStopOnTHeMap() {

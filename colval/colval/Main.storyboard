@@ -417,10 +417,10 @@
             </objects>
             <point key="canvasLocation" x="2799" y="280"/>
         </scene>
-        <!--View Controller-->
+        <!--Alarm Controller-->
         <scene sceneID="z5A-XT-3iY">
             <objects>
-                <viewController id="FaI-2P-dEl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="alarmController" id="FaI-2P-dEl" customClass="AlarmController" customModule="colval" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VOT-nv-buj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
