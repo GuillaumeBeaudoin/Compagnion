@@ -410,11 +410,12 @@
                     <navigationItem key="navigationItem" id="rS7-QU-RbR"/>
                     <connections>
                         <outlet property="busMapView" destination="caD-oX-Hc3" id="Aq9-e9-fMv"/>
+                        <segue destination="FaI-2P-dEl" kind="show" id="fLB-Ko-TUv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSG-QI-ZFP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2873.913043478261" y="279.91071428571428"/>
+            <point key="canvasLocation" x="2799" y="280"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="z5A-XT-3iY">
@@ -820,7 +821,6 @@
         <image name="ic_parjing" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QGR-EC-GC7"/>
         <segue reference="F9X-0V-dBJ"/>
     </inferredMetricsTieBreakers>
 </document>
