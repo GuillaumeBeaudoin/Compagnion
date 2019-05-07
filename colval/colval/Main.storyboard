@@ -456,20 +456,21 @@
             </objects>
             <point key="canvasLocation" x="3809" y="280"/>
         </scene>
-        <!--View Controller-->
+        <!--Bonus View Controller-->
         <scene sceneID="dP4-LN-NGO">
             <objects>
-                <viewController id="TyH-xg-zlN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lOL-4H-OUe">
+                <viewController id="TyH-xg-zlN" customClass="BonusViewController" customModule="colval" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="center" semanticContentAttribute="spatial" id="lOL-4H-OUe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="myH-NQ-QZo"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIO-iL-Gbb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="91" y="293"/>
+            <point key="canvasLocation" x="13" y="222"/>
         </scene>
         <!--Parking View Controller-->
         <scene sceneID="kEi-9Y-tUx">

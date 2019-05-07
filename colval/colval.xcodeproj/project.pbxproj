@@ -62,6 +62,7 @@
 		E43675412266143A00EE2F41 /* ViewController.swift in Resources */ = {isa = PBXBuildFile; fileRef = 724574EC224149EC00C26197 /* ViewController.swift */; };
 		E43675422266143A00EE2F41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 724574C3224149AA00C26197 /* LaunchScreen.storyboard */; };
 		E43675432266143A00EE2F41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 724574AA2241492D00C26197 /* Assets.xcassets */; };
+		E43F671D2281DAF20049E2E4 /* BonusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F671C2281DAF20049E2E4 /* BonusViewController.swift */; };
 		E4B60E732268BAA600DD6C85 /* LineSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B60E712268BAA600DD6C85 /* LineSelectorController.swift */; };
 		E4B60E742268BAA600DD6C85 /* BusMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B60E722268BAA600DD6C85 /* BusMapViewController.swift */; };
 		E4F2F785227FDDF3008444AF /* AnotationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2F784227FDDF3008444AF /* AnotationButton.swift */; };
@@ -143,6 +144,7 @@
 		E43675282266124F00EE2F41 /* so_stop_times.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = so_stop_times.txt; sourceTree = "<group>"; };
 		E43675292266124F00EE2F41 /* so_stops.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = so_stops.txt; sourceTree = "<group>"; };
 		E436752A2266124F00EE2F41 /* so_trips.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = so_trips.txt; sourceTree = "<group>"; };
+		E43F671C2281DAF20049E2E4 /* BonusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusViewController.swift; sourceTree = "<group>"; };
 		E4B60E712268BAA600DD6C85 /* LineSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineSelectorController.swift; sourceTree = "<group>"; };
 		E4B60E722268BAA600DD6C85 /* BusMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusMapViewController.swift; sourceTree = "<group>"; };
 		E4F2F784227FDDF3008444AF /* AnotationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotationButton.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				724574ED224149EC00C26197 /* ReservationControler.swift */,
 				724574CA224149D100C26197 /* BusControler.swift */,
 				E4F2F786227FE68B008444AF /* AlarmController.swift */,
+				E43F671C2281DAF20049E2E4 /* BonusViewController.swift */,
 			);
 			path = Controler;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				72AA7E16226A2EBD00B6B4CB /* RouteTVControler.swift in Sources */,
 				72DACFBC226A0AB600E66D24 /* RouteTableViewCell.swift in Sources */,
 				724574CC224149D100C26197 /* ParkingViewController.swift in Sources */,
+				E43F671D2281DAF20049E2E4 /* BonusViewController.swift in Sources */,
 				72D2DE00226CC7B200BE9A73 /* FavRouteTableViewCell.swift in Sources */,
 				E4F2F785227FDDF3008444AF /* AnotationButton.swift in Sources */,
 				72AA7E1A226A412500B6B4CB /* RouteTVControlerListener.swift in Sources */,
