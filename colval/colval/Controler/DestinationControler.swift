@@ -8,36 +8,48 @@
 
 import Foundation
 import UIKit
-import Foundation
-import MapKit
+import CoreLocation
 
 
 class DestinationController {
+    
+    
     static let sharedInstance = BusMapViewController()
     
     
-    private let COLOR_GREY  =  UIColor(hex: "7c7c7c")!
-    private let COLOR_BLACK =  UIColor.black
+    private static let COLOR_GREY  =  UIColor(hex: "7c7c7c")!
+    private static let COLOR_BLACK =  UIColor.black
+    private static let TYPE_BUS = "type bus"
+    private static let TYPE_MAP = "type map"
+    
+    
+    private var userLocation:CLLocation =  CLLocation(latitude: DataControler.sharedInstance.colValRegion.center.latitude, longitude: DataControler.sharedInstance.colValRegion.center.longitude)
+    
     
     var btnNext: UIButton!
     var btnPrev: UIButton!
     var lblDest: UILabel!
-    var lblDay: UILabel?
+    
+    var lblDay                 : UILabel?
+    var lblNearestStopDistance : UILabel?
+    var activityIndicator       : UIActivityIndicatorView?
+    
     
     private var  headsignPos           = 0
     private var  uniqueHeadsign:[String] = Array(Set(["Selectioner une ligne"]))
     
     
-    private var selectedArrayTrip: [Trips]?  = nil
-    private var selectedRoute:Routes? = nil
-    private var nearestStop: Stops?   = nil
+    private var selectedArrayTrip: [Trips]?
+    private var selectedRoute:Routes?
+    private var nearestStop: Stops?
+    private var currentLocation:CLLocation?
+    private var type: String
     
     
-    
-    private var selectedRoute : Routes?
      
     
     init(pBtnNext: UIButton , pBtnPrev:UIButton,  pLblDest:UILabel) {
+        self.type = DestinationController.TYPE_BUS
         self.btnNext = pBtnNext
         self.btnPrev = pBtnPrev
         self.lblDest = pLblDest
@@ -45,7 +57,9 @@ class DestinationController {
          init2()
     }
     
-    init(pBtnNext: UIButton , pBtnPrev:UIButton,  pLblDest:UILabel , pLblDay: UILabel) {
+    init( pBtnNext: UIButton , pBtnPrev:UIButton                ,  pLblDest:UILabel                            ,
+          pLblDay: UILabel   , pLblNearestStopDistance: UILabel ,  pActivityIndicator: UIActivityIndicatorView ) {
+        self.type = DestinationController.TYPE_MAP
         self.btnNext = pBtnNext
         self.btnPrev = pBtnPrev
         self.lblDest = pLblDest
@@ -54,18 +68,15 @@ class DestinationController {
         init2()
     }
     
-    func init2() {
     
+    func init2() {
         btnNext.isEnabled = false
         btnNext.addTarget(self, action: "btnNextTapped:", for: .touchUpInside)
-    
         btnPrev.isEnabled = false
         btnPrev.addTarget(self, action: "btnPrevTapped:", for: .touchUpInside)
-    
-        //  TODO setDayInFunction(  ..... ) 
-    
+        
+        
     }
-    
     
     
     @objc func btnNextTapped(_ sender: UIButton) {
@@ -76,6 +87,11 @@ class DestinationController {
     @objc func btnPrevTapped(_ sender: UIButton) {
         self.headsignPos-=1
         setDirectionButton()
+    }
+    
+    func setCurrentLocation(pLocation  : CLLocation!)  {
+        //TODO
+        
     }
     
     func setRoute(pRoute  : Routes!)  {
@@ -95,12 +111,12 @@ class DestinationController {
         self.headsignPos = 0
         self.uniqueHeadsign = Array(Set(arrayHeadsign))
        
-        
-        self.setDayInFunction(pCalender: arrayCal)
+        if self.type == DestinationController.TYPE_MAP {
+            self.setDayInFunction(pCalender: arrayCal)
+        }
         
         setDirectionButton()
     }
-    
     
     
     /*
@@ -119,12 +135,13 @@ class DestinationController {
         lblDest.text = uniqueHeadsign[self.headsignPos]
         
         let arrayTrips = CoreData.sharedInstance.getTripFromHeadsign(pHeadsign: uniqueHeadsign[self.headsignPos])
-        if (arrayTrips != nil) {
+        if (arrayTrips != nil) {/*
             setNearestStop(pArrayTrips: arrayTrips!)
             // TODO FINISH
             self.selectedArrayTrip = arrayTrips!
             self.btnArrets.isEnabled = true
             self.lblNearestStopDistance.isEnabled = true
+            */
         }
     }
     
@@ -162,14 +179,79 @@ class DestinationController {
                 }
                 
                 let textDayMutable = NSMutableAttributedString(string: "L M M J V S D", attributes: [NSAttributedString.Key.font :UIFont(name: "Georgia", size: 18.0)!])
-                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (mondayFinal    ? self.COLOR_BLACK : self.COLOR_GREY ), range: NSRange(location:0 ,length:1))
-                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (tuesdayFinal   ? self.COLOR_BLACK : self.COLOR_GREY ), range: NSRange(location:2 ,length:1))
-                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (wednesdayFinal ? self.COLOR_BLACK : self.COLOR_GREY ), range: NSRange(location:4 ,length:1))
-                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (thursdayFinal  ? self.COLOR_BLACK : self.COLOR_GREY ), range: NSRange(location:6 ,length:1))
-                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (fridayFinal    ? self.COLOR_BLACK : self.COLOR_GREY ), range: NSRange(location:8 ,length:1))
-                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (saturdayFinal  ? self.COLOR_BLACK : self.COLOR_GREY ), range: NSRange(location:10,length:1))
-                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (sundayFinal    ? self.COLOR_BLACK : self.COLOR_GREY ), range: NSRange(location:12,length:1))
+                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (mondayFinal    ? DestinationController.COLOR_BLACK : DestinationController.COLOR_GREY ), range: NSRange(location:0 ,length:1))
+                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (tuesdayFinal   ? DestinationController.COLOR_BLACK : DestinationController.COLOR_GREY ), range: NSRange(location:2 ,length:1))
+                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (wednesdayFinal ? DestinationController.COLOR_BLACK : DestinationController.COLOR_GREY ), range: NSRange(location:4 ,length:1))
+                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (thursdayFinal  ? DestinationController.COLOR_BLACK : DestinationController.COLOR_GREY ), range: NSRange(location:6 ,length:1))
+                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (fridayFinal    ? DestinationController.COLOR_BLACK : DestinationController.COLOR_GREY ), range: NSRange(location:8 ,length:1))
+                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (saturdayFinal  ? DestinationController.COLOR_BLACK : DestinationController.COLOR_GREY ), range: NSRange(location:10,length:1))
+                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (sundayFinal    ? DestinationController.COLOR_BLACK : DestinationController.COLOR_GREY ), range: NSRange(location:12,length:1))
                 wLblDay.attributedText = textDayMutable
+            }
+        }
+    }
+    
+    
+    
+    /*
+     *
+     *  Function mostly is Async as many CoreData.Request are needed to compute
+     *  the nearest stop , and it's distance from the user.
+     *
+     */
+    func setNearestStop(pArrayTrips : [Trips] ) {
+        if self.type == DestinationController.TYPE_MAP {
+            self.lblNearestStopDistance!.text = ""
+            self.lblNearestStopDistance!.isEnabled = false
+            self.activityIndicator!.startAnimating()
+            
+            DispatchQueue.global(qos: .userInitiated).async {
+                print("setNearestStop")
+                var finalArrayStops:[Stops] = []
+                
+                for trip in pArrayTrips {
+                    let stopTimes : [StopTimes] = trip.stoptimes!.toArray()
+                    for stopTime in stopTimes {
+                        let arrayStops = CoreData.sharedInstance.getStopFrom(pStopTimes: stopTime )
+                        //let stops : [Stops] = stoptimes.stop
+                        
+                        for stop in arrayStops! {
+                            finalArrayStops.append( stop )
+                            // print("stop.name = \(stop.name!)")
+                        }
+                    }
+                }
+                
+                let uniqueStops = Array(Set(finalArrayStops))
+                
+                var arrayLocation:[CLLocation] = []
+                for uStop in uniqueStops {
+                    arrayLocation.append(CLLocation(latitude: uStop.lat, longitude: uStop.lon))
+                }
+                var nearestLocation: CLLocation!
+                var smallestDistance: CLLocationDistance!
+                
+                for location in arrayLocation {
+                    let distance = self.userLocation.distance(from :location)
+                    if smallestDistance == nil || distance < smallestDistance {
+                        nearestLocation = location
+                        smallestDistance = distance
+                    }
+                }
+                
+                self.nearestStop =  CoreData.sharedInstance.getStopFrom(pCoordinate: nearestLocation.coordinate)
+                let displayDistance =  ( smallestDistance/1000 < 1 ?
+                    "\(Int( round( smallestDistance )        ) ) M" :
+                    "\(Double(round(smallestDistance ) / 1000 ) ) KM" )
+                
+                // Once all result computed , display on main thread
+                DispatchQueue.main.async {
+                    self.lblNearestStopDistance!.text = "\(self.nearestStop?.name!) \n \(displayDistance) "
+                    self.activityIndicator!.stopAnimating()
+                    self.lblNearestStopDistance!.isEnabled = true
+                    
+                    self.lblNearestStopDistance!.isUserInteractionEnabled = true
+                }
             }
         }
     }

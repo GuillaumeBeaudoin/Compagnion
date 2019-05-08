@@ -13,16 +13,12 @@
 //    https://exo.quebec/xdata/citso/google_transit.zip
 
 import Foundation
-
-
+import CoreLocation
 import UIKit
 import MapKit
-import CoreLocation
 
 
-
-class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationManagerDelegate {
-    
+class BusControler: UIViewController , RouteTVControlerListener, CLLocationManagerDelegate  {
     
     @IBOutlet weak var tableView:   UITableView!
     @IBOutlet weak var btnDestNext: UIButton!
@@ -34,16 +30,16 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
     
     @IBOutlet weak var btnArrets: UIButton!
     
-    var locationManager = CLLocationManager()
+     var locationManager = CLLocationManager()
+    
+    
     
     private lazy var routeDataSourceProvider = RouteTVControler(pRouteDataManager: RouteDataManager(pRouteType: RouteDataManager.ALL) , pListener: self )
     
     
-    
-    
-    private var destCont : DestinationController
+    private var destCont : DestinationController?
 
-    private var userLocation:CLLocation =  CLLocation(latitude: DataControler.sharedInstance.colValRegion.center.latitude, longitude: DataControler.sharedInstance.colValRegion.center.longitude)
+    
     
     
     override func viewDidLoad() {
@@ -54,7 +50,8 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
         self.tableView.delegate = routeDataSourceProvider
         
         
-        destCont = DestinationController(pBtnNext: <#T##UIButton#>, pBtnPrev: <#T##UIButton#>, pLblDest: <#T##UILabel#>, pLblDay: <#T##UILabel#>)
+        destCont = DestinationController(pBtnNext: btnDestNext, pBtnPrev: btnDestPrev, pLblDest: lblDest, pLblDay: lblDay,
+                                         pLblNearestStopDistance: lblNearestStopDistance, pActivityIndicator: loadingIndicator)
         
         self.lblDay.text = ""
         self.lblNearestStopDistance.text = ""
@@ -67,100 +64,22 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
         self.lblNearestStopDistance.addGestureRecognizer(labelTapRecognizer)
         self.loadingIndicator.stopAnimating()
         
-        
-        
-         self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
-        }
-        
+        } 
       
     }
     /*
-     * RouteTableViewListener
+     * RouteTableViewListener -> DestinationControler
      */
     func didSelectRoute(pRoute  : Routes!)  {
-        destCont.setRoute(pRoute: pRoute)
+        destCont!.setRoute(pRoute: pRoute)
     }
-    
-    /*
-     *
-     *  Function mostly is Async as many CoreData.Request are needed to compute
-     *  the nearest stop , and it's distance from the user.
-     *
-     */
-    func setNearestStop(pArrayTrips : [Trips] ) {
-        
-        self.lblNearestStopDistance.text = ""
-        self.lblNearestStopDistance.isEnabled = false
-        self.loadingIndicator.startAnimating()
-        
-        DispatchQueue.global(qos: .userInitiated).async {
-            print("setNearestStop")
-            var finalArrayStops:[Stops] = []
-            
-            for trip in pArrayTrips {
-                let stopTimes : [StopTimes] = trip.stoptimes!.toArray()
-                for stopTime in stopTimes {
-                    let arrayStops = CoreData.sharedInstance.getStopFrom(pStopTimes: stopTime )
-                    //let stops : [Stops] = stoptimes.stop
-                    
-                    for stop in arrayStops! {
-                        finalArrayStops.append( stop )
-                        // print("stop.name = \(stop.name!)")
-                    }
-                }
-            }
-            
-            let uniqueStops = Array(Set(finalArrayStops))
-            
-            var arrayLocation:[CLLocation] = []
-            for uStop in uniqueStops {
-                arrayLocation.append(CLLocation(latitude: uStop.lat, longitude: uStop.lon))
-            }
-            var nearestLocation: CLLocation!
-            var smallestDistance: CLLocationDistance!
-            
-            for location in arrayLocation {
-                let distance = self.userLocation.distance(from :location)
-                if smallestDistance == nil || distance < smallestDistance {
-                    nearestLocation = location
-                    smallestDistance = distance
-                }
-            }
-            
-            self.nearestStop =  CoreData.sharedInstance.getStopFrom(pCoordinate: nearestLocation.coordinate)
-            let displayDistance =  ( smallestDistance/1000 < 1 ?
-                "\(Int( round( smallestDistance )        ) ) M" :
-                "\(Double(round(smallestDistance ) / 1000 ) ) KM" )
-            
-            // Once all result computed , display on main thread
-            DispatchQueue.main.async {
-                self.lblNearestStopDistance.text = "\(self.nearestStop?.name!) \n \(displayDistance) "
-                self.loadingIndicator.stopAnimating()
-                self.lblNearestStopDistance.isEnabled = true
-                
-                self.lblNearestStopDistance.isUserInteractionEnabled = true
-            }
-        }
-    }
-    
-    
-    
-    /*
-     *   
-     *   Manage user location when moving
-     *   https://github.com/GurdevSingh94/SwiftUserLocation
-     *   https://www.youtube.com/watch?v=WDrdtdMYgWc
-     *
-     *  From :  GurdevSingh94/SwiftUserLocation
-     */
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        self.userLocation  = locations.last!
-    }
+   
     
     @IBAction func btnSeeStop(_ sender: Any) {
         if var busMapVC = UIStoryboard(name: "Main", bundle: nil)
@@ -168,8 +87,8 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
             as? BusMapViewController {
             print("TODO :  inside btnSeeStop")
          // tap   busMapVC.selectedStop  =  self.nearestStop
-            busMapVC.selectedRoute =  self.selectedRoute
-            busMapVC.selectedArrayTrip =  self.selectedArrayTrip
+            //busMapVC.selectedRoute =  self.selectedRoute
+            //busMapVC.selectedArrayTrip =  self.selectedArrayTrip
            // busMapVC.selectedArrayStops = self.selectedArrayTri
             self.navigationController?.pushViewController(busMapVC, animated: true)
         }
@@ -177,27 +96,35 @@ class BusControler: UIViewController , RouteTVControlerListener ,  CLLocationMan
     
     
     @objc func tapOnSpecificStop(sender:UITapGestureRecognizer) {
-        
-        
         if var busMapVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "busMap")
             as? BusMapViewController {
             print("TODO :  inside tapOnSpecificStop")
             // tap   busMapVC.selectedStop  =  self.nearestStop
-          //  busMapVC.selectedRoute =  self.selectedRoute
-           // busMapVC.selectedArrayTrip =  self.selectedArrayTrip//
+            //  busMapVC.selectedRoute =  self.selectedRoute
+            // busMapVC.selectedArrayTrip =  self.selectedArrayTrip//
+             
+            // print("tap working nearestStop: " , destCont!.nearestStop)
             
-            
-            print("tap working nearestStop: " , self.nearestStop)
-            
-            busMapVC.selectedStop  =  self.nearestStop
+            //busMapVC.selectedStop  =  self.nearestStop
             
             
             self.navigationController?.pushViewController(busMapVC, animated: true)
         }
-        
       
     }
     
     
+    /*
+     *
+     *   Manage user location when moving
+     *   https://github.com/GurdevSingh94/SwiftUserLocation
+     *   https://www.youtube.com/watch?v=WDrdtdMYgWc
+     *
+     *  From :  GurdevSingh94/SwiftUserLocation
+     */
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.destCont?.setCurrentLocation(pLocation: locations.last! )
+    }
     
 }
+

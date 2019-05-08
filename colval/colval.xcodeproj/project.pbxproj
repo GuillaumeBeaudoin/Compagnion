@@ -246,8 +246,8 @@
 				720965DD224A790700C4F26E /* LoginViewControler.swift */,
 				724574ED224149EC00C26197 /* ReservationControler.swift */,
 				724574CA224149D100C26197 /* BusControler.swift */,
-				E4F2F786227FE68B008444AF /* AlarmController.swift */,
 				72C47B0F2281C4DB006942E7 /* DestinationControler.swift */,
+				E4F2F786227FE68B008444AF /* AlarmController.swift */,
 				E43F671C2281DAF20049E2E4 /* BonusViewController.swift */,
 			);
 			path = Controler;
