@@ -11,7 +11,7 @@ import UIKit
 import CoreLocation
 
 
-class DestinationController {
+class BusDestinationControler {
     
     
     static let sharedInstance = BusMapViewController()
@@ -49,7 +49,7 @@ class DestinationController {
      
     
     init(pBtnNext: UIButton , pBtnPrev:UIButton,  pLblDest:UILabel) {
-        self.type = DestinationController.TYPE_BUS
+        self.type = BusDestinationControler.TYPE_BUS
         self.btnNext = pBtnNext
         self.btnPrev = pBtnPrev
         self.lblDest = pLblDest
@@ -59,7 +59,7 @@ class DestinationController {
     
     init( pBtnNext: UIButton , pBtnPrev:UIButton                ,  pLblDest:UILabel                            ,
           pLblDay: UILabel   , pLblNearestStopDistance: UILabel ,  pActivityIndicator: UIActivityIndicatorView ) {
-        self.type = DestinationController.TYPE_MAP
+        self.type = BusDestinationControler.TYPE_MAP
         self.btnNext = pBtnNext
         self.btnPrev = pBtnPrev
         self.lblDest = pLblDest
@@ -111,7 +111,7 @@ class DestinationController {
         self.headsignPos = 0
         self.uniqueHeadsign = Array(Set(arrayHeadsign))
        
-        if self.type == DestinationController.TYPE_MAP {
+        if self.type == BusDestinationControler.TYPE_MAP {
             self.setDayInFunction(pCalender: arrayCal)
         }
         
@@ -179,13 +179,13 @@ class DestinationController {
                 }
                 
                 let textDayMutable = NSMutableAttributedString(string: "L M M J V S D", attributes: [NSAttributedString.Key.font :UIFont(name: "Georgia", size: 18.0)!])
-                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (mondayFinal    ? DestinationController.COLOR_BLACK : DestinationController.COLOR_GREY ), range: NSRange(location:0 ,length:1))
-                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (tuesdayFinal   ? DestinationController.COLOR_BLACK : DestinationController.COLOR_GREY ), range: NSRange(location:2 ,length:1))
-                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (wednesdayFinal ? DestinationController.COLOR_BLACK : DestinationController.COLOR_GREY ), range: NSRange(location:4 ,length:1))
-                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (thursdayFinal  ? DestinationController.COLOR_BLACK : DestinationController.COLOR_GREY ), range: NSRange(location:6 ,length:1))
-                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (fridayFinal    ? DestinationController.COLOR_BLACK : DestinationController.COLOR_GREY ), range: NSRange(location:8 ,length:1))
-                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (saturdayFinal  ? DestinationController.COLOR_BLACK : DestinationController.COLOR_GREY ), range: NSRange(location:10,length:1))
-                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (sundayFinal    ? DestinationController.COLOR_BLACK : DestinationController.COLOR_GREY ), range: NSRange(location:12,length:1))
+                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (mondayFinal    ? BusDestinationControler.COLOR_BLACK : BusDestinationControler.COLOR_GREY ), range: NSRange(location:0 ,length:1))
+                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (tuesdayFinal   ? BusDestinationControler.COLOR_BLACK : BusDestinationControler.COLOR_GREY ), range: NSRange(location:2 ,length:1))
+                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (wednesdayFinal ? BusDestinationControler.COLOR_BLACK : BusDestinationControler.COLOR_GREY ), range: NSRange(location:4 ,length:1))
+                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (thursdayFinal  ? BusDestinationControler.COLOR_BLACK : BusDestinationControler.COLOR_GREY ), range: NSRange(location:6 ,length:1))
+                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (fridayFinal    ? BusDestinationControler.COLOR_BLACK : BusDestinationControler.COLOR_GREY ), range: NSRange(location:8 ,length:1))
+                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (saturdayFinal  ? BusDestinationControler.COLOR_BLACK : BusDestinationControler.COLOR_GREY ), range: NSRange(location:10,length:1))
+                textDayMutable.addAttribute(NSAttributedString.Key.foregroundColor, value: (sundayFinal    ? BusDestinationControler.COLOR_BLACK : BusDestinationControler.COLOR_GREY ), range: NSRange(location:12,length:1))
                 wLblDay.attributedText = textDayMutable
             }
         }
@@ -200,7 +200,7 @@ class DestinationController {
      *
      */
     func setNearestStop(pArrayTrips : [Trips] ) {
-        if self.type == DestinationController.TYPE_MAP {
+        if self.type == BusDestinationControler.TYPE_MAP {
             self.lblNearestStopDistance!.text = ""
             self.lblNearestStopDistance!.isEnabled = false
             self.activityIndicator!.startAnimating()

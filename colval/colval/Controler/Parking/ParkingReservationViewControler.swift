@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class ReservationControler: UIViewController , MKMapViewDelegate , UITableViewDataSource{
+class ParkingReservationViewControler: UIViewController , MKMapViewDelegate , UITableViewDataSource{
     
     @IBOutlet weak var lblParking: UILabel!
     @IBOutlet weak var lblCurrent: UILabel!
@@ -56,7 +56,7 @@ class ReservationControler: UIViewController , MKMapViewDelegate , UITableViewDa
         self.mapView.delegate = self
         self.mapView.setRegion(dc.colValRegion ,animated: true)
         
-        self.mapView.register(ParkingViewController.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        self.mapView.register(ParkingMapViewController.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         
         tableView.dataSource = self
         
@@ -87,10 +87,10 @@ class ReservationControler: UIViewController , MKMapViewDelegate , UITableViewDa
         
         
         lblFrom.isUserInteractionEnabled = true
-        lblFrom.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ReservationControler.tapLblFrom)))
+        lblFrom.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ParkingReservationViewControler.tapLblFrom)))
         
         lblTo.isUserInteractionEnabled = true
-        lblTo.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ReservationControler.tapLblTo)))
+        lblTo.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ParkingReservationViewControler.tapLblTo)))
         
         
         

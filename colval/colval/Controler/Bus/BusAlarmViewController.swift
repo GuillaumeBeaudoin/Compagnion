@@ -1,36 +1,20 @@
 //
-//  LineSelectorController.swift
+//  AlarmController.swift
 //  colval
 //
-//  Created by user150454 on 4/16/19.
+//  Created by user150454 on 5/5/19.
 //  Copyright © 2019 Alexandre Arsenault. All rights reserved.
 //
 
 import UIKit
 
-class LineSelectorController: UIViewController {
+class BusAlarmViewController: UIViewController {
 
-    
-    
-   
-    @IBOutlet weak var rentBarButton: UIBarButtonItem!
-    @IBOutlet weak var buttonRent: UIButton!
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        rentBarButton.isEnabled = true
-        buttonRent.isEnabled = true
-        navigationItem.rightBarButtonItems = [rentBarButton]
+        // Do any additional setup after loading the view.
     }
-    
-    
-    
-    
-    
     
 
     /*

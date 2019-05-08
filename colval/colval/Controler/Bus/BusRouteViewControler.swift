@@ -18,7 +18,7 @@ import UIKit
 import MapKit
 
 
-class BusControler: UIViewController , RouteTVControlerListener, CLLocationManagerDelegate  {
+class BusRouteViewControler: UIViewController , RouteTVControlerListener, CLLocationManagerDelegate  {
     
     @IBOutlet weak var tableView:   UITableView!
     @IBOutlet weak var btnDestNext: UIButton!
@@ -37,7 +37,7 @@ class BusControler: UIViewController , RouteTVControlerListener, CLLocationManag
     private lazy var routeDataSourceProvider = RouteTVControler(pRouteDataManager: RouteDataManager(pRouteType: RouteDataManager.ALL) , pListener: self )
     
     
-    private var destCont : DestinationController?
+    private var destCont : BusDestinationControler?
 
     
     
@@ -50,7 +50,7 @@ class BusControler: UIViewController , RouteTVControlerListener, CLLocationManag
         self.tableView.delegate = routeDataSourceProvider
         
         
-        destCont = DestinationController(pBtnNext: btnDestNext, pBtnPrev: btnDestPrev, pLblDest: lblDest, pLblDay: lblDay,
+        destCont = BusDestinationControler(pBtnNext: btnDestNext, pBtnPrev: btnDestPrev, pLblDest: lblDest, pLblDay: lblDay,
                                          pLblNearestStopDistance: lblNearestStopDistance, pActivityIndicator: loadingIndicator)
         
         self.lblDay.text = ""
@@ -60,7 +60,7 @@ class BusControler: UIViewController , RouteTVControlerListener, CLLocationManag
         self.lblNearestStopDistance.isEnabled = false
         
         self.loadingIndicator.hidesWhenStopped = true
-        let labelTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(BusControler.tapOnSpecificStop))
+        let labelTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(BusRouteViewControler.tapOnSpecificStop))
         self.lblNearestStopDistance.addGestureRecognizer(labelTapRecognizer)
         self.loadingIndicator.stopAnimating()
         
@@ -73,6 +73,7 @@ class BusControler: UIViewController , RouteTVControlerListener, CLLocationManag
         } 
       
     }
+    
     /*
      * RouteTableViewListener -> DestinationControler
      */

@@ -207,7 +207,7 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
             
             if let alarmController = UIStoryboard(name: "Main", bundle: nil)
                 .instantiateViewController(withIdentifier: "alarmController")
-                as? AlarmController {
+                as? BusAlarmViewController {
                 print("TODO :  inside alarmController ")
                 
                 /*  getAllHeadSign(pRoute: pRoute)

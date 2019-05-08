@@ -7,7 +7,7 @@
 //
 import Foundation
 import MapKit
-class ParkingViewController: UIViewController , MKMapViewDelegate{
+class ParkingMapViewController: UIViewController , MKMapViewDelegate{
     
     
     @IBOutlet weak var mapView: MKMapView!
@@ -35,7 +35,7 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
         
         self.mapView.delegate = self
         self.mapView.setRegion(dc.colValRegion ,animated: false)
-        self.mapView.register(ParkingViewController.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        self.mapView.register(ParkingMapViewController.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         
         
         self.dc.getParkings(){ parkings in
@@ -124,7 +124,7 @@ class ParkingViewController: UIViewController , MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let reservCtrl = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "rsvCtrl")
-            as? ReservationControler {
+            as? ParkingReservationViewControler {
             
             if let parkingPinId = view.annotation?.subtitle! {
                 reservCtrl.parking =  mapParking[parkingPinId]
