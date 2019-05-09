@@ -12,10 +12,17 @@ import MapKit
 
 
 class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationManagerDelegate{
+    
     static let sharedInstance = BusMapViewController()
+    
     @IBOutlet weak var busMapView: MKMapView!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var btnFav: UIButton!
+    
+    @IBOutlet weak var btnPrev: UIButton!
+    @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var lblDest: UILabel!
+    
     
     //BusMapViewController.sharedInstance
     static let ID_STOP = "Stop"
@@ -33,21 +40,26 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
     var locationManager = CLLocationManager()
     var finalArrayStops:[Stops] = []
     
+    private var destCont: BusDestinationControler?
+    
     private var currentLocation:CLLocation?
-    //=  CLLocation(latitude: DataControler.sharedInstance.colValRegion.center.latitude, longitude: DataControler.sharedInstance.colValRegion.center.longitude)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
-
-    //print("Array Trip: ", selectedArrayTrip)
-       // print("Array stop: ", selectedStop)
+        
+        
+        self.destCont = BusDestinationControler(pBtnNext: btnNext, pBtnPrev: btnPrev, pLblDest: lblDest)
+        
+        //print("Array Trip: ", selectedArrayTrip)
+        // print("Array stop: ", selectedStop)
         
         self.busMapView.delegate = self
         self.busMapView.setRegion(dc.colValLineRegion ,animated: false)
@@ -58,16 +70,19 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
         
         
         if let wRoute = self.selectedRoute {
-            navigationItem.title =  wRoute.route_long_name
-           // print ("array trips : " , wRoute.trips)
+            //navigationItem.title =  wRoute.route_long_name
+            
+            // print ("array trips : " , wRoute.trips)
+            
+            self.destCont?.setRoute(pRoute: wRoute)
             
             
             /*
-           wRoute.trips?.forEach { print("test ? ", $0)
-                selectedArrayTrip!.append( ($0 as? Trips)! )
-            } */
-           // wRoute.trips?.forEach { }
-         //   selectedArrayTrip?.forEach( {print(" test printing trip : ", $0)})
+             wRoute.trips?.forEach { print("test ? ", $0)
+             selectedArrayTrip!.append( ($0 as? Trips)! )
+             } */
+            // wRoute.trips?.forEach { }
+            //   selectedArrayTrip?.forEach( {print(" test printing trip : ", $0)})
             
             
             let isFav = DefaultData.sharedInstance.isLocalFavRoutes(pRouteId: wRoute.route_id)
@@ -80,15 +95,15 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
             
             let barButton = UIBarButtonItem(customView: view)
             navigationItem.rightBarButtonItem = barButton
-
-             busMapView.showsUserLocation=true
+            
+            busMapView.showsUserLocation=true
         }
         // print( "executign exrta method")
         // print ("selecgted stop : " , self.selectedStop)
         drawDirectionToStopOnTHeMap()
         allstop()
         
-
+        
     }
     
     
@@ -99,11 +114,7 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
         return renderer
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        self.currentLocation  = locations.last!
-        drawDirectionToStopOnTHeMap()
-        
-    }
+    
     
     
     func drawRouteShape(){
@@ -112,11 +123,11 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
     
     
     func allstop()  {
-    //   print ("all stop ", selectedArrayTrip)
+        //   print ("all stop ", selectedArrayTrip)
         
         if var wAllStop = selectedArrayTrip{
             for trip in wAllStop {
-
+                
                 let stopTimes : [StopTimes] = trip.stoptimes!.toArray()
                 for stopTime in stopTimes {
                     let arrayStops = CoreData.sharedInstance.getStopFrom(pStopTimes: stopTime )
@@ -125,34 +136,34 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
                     
                     for stop in arrayStops! {
                         finalArrayStops.append( stop)
-                       // print("stop.name = \(stop.lat)")
+                        // print("stop.name = \(stop.lat)")
                         var annotation = MKPointAnnotation()
                         annotation.title = stop.name!
-                       
+                        
                         annotation.subtitle = (stop.wheelchair_boarding ? "♿️":"")
                         annotation.coordinate = CLLocationCoordinate2D(latitude: stop.lat, longitude: stop.lon )
-
+                        
                         
                         busMapView.addAnnotation(annotation)
                     }
                     
                 }
             }
-
+            
         }
         
     }
     
     
-
+    
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-
+        
         busMapView.showsUserLocation=true
         
         if annotation is MKUserLocation {
-          /*  let pin = busMapView.view(for: annotation) as? MKPinAnnotationView ?? MKPinAnnotationView(annotation: annotation, reuseIdentifier: nil)
-            pin.pinTintColor = UIColor.purple*/
+            /*  let pin = busMapView.view(for: annotation) as? MKPinAnnotationView ?? MKPinAnnotationView(annotation: annotation, reuseIdentifier: nil)
+             pin.pinTintColor = UIColor.purple*/
             return nil
         }
         
@@ -192,7 +203,7 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
         
         vueAnnotation.rightCalloutAccessoryView = directionButton
         vueAnnotation.leftCalloutAccessoryView = alarmButton
- 
+        
         vueAnnotation.subviews
         vueAnnotation.canShowCallout = true
         
@@ -226,25 +237,25 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
     @objc func drawTheDirectionViaPinButton(sender: UIButton, forEvent event: UIEvent) {
         if let button = sender as? AnotationButton {
             print(button.view  )
-        
-        
+            
+            
             print("Button tapped", button.view?.title)
-        
-        if let annotationTitle = button.view?.title
-        {
-            print("User tapped on annotation with title: \(annotationTitle!)")
-        }
-        
-        
-        if   ( button.view?.title! != "My Location"){
-            self.selectedStop = finalArrayStops.first(where: {($0.name?.elementsEqual(button.view?.title! ?? ""))!})
-            drawDirectionToStopOnTHeMap()
+            
+            if let annotationTitle = button.view?.title
+            {
+                print("User tapped on annotation with title: \(annotationTitle!)")
+            }
+            
+            
+            if   ( button.view?.title! != "My Location"){
+                self.selectedStop = finalArrayStops.first(where: {($0.name?.elementsEqual(button.view?.title! ?? ""))!})
+                drawDirectionToStopOnTHeMap()
             }
         }
         
         
     }
-
+    
     
     
     func drawDirectionToStopOnTHeMap() {
@@ -253,9 +264,9 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
         let overlays = self.busMapView.overlays
         self.busMapView.removeOverlays(overlays)
         
-       // print("123456789")
+        // print("123456789")
         if let wStop = self.selectedStop , let wLocation = self.currentLocation{
-           // print("gdfgrgsrthrsthsrth")
+            // print("gdfgrgsrthrsthsrth")
             let annotation = MKPointAnnotation()  // <-- new instance here
             annotation.coordinate =  CLLocationCoordinate2D(latitude: wStop.lat, longitude: wStop.lon)
             annotation.title = wStop.name
@@ -281,15 +292,19 @@ class BusMapViewController: UIViewController , MKMapViewDelegate, CLLocationMana
                     self.busMapView.addOverlay(route.polyline)
                     self.busMapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
                 }
- 
+                
             }
             
- 
+            
             //print("destination qwe: ", wStop.lat , wStop.lon)
             
         }
     }
     
-   
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.currentLocation  = locations.last!
+        drawDirectionToStopOnTHeMap()
+    }
+    
     
 }

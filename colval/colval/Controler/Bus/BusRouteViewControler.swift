@@ -30,7 +30,7 @@ class BusRouteViewControler: UIViewController , RouteTVControlerListener, CLLoca
     
     @IBOutlet weak var btnArrets: UIButton!
     
-     var locationManager = CLLocationManager()
+    var locationManager = CLLocationManager()
     
     
     
@@ -38,7 +38,7 @@ class BusRouteViewControler: UIViewController , RouteTVControlerListener, CLLoca
     
     
     private var destCont : BusDestinationControler?
-
+    
     
     
     
@@ -51,18 +51,21 @@ class BusRouteViewControler: UIViewController , RouteTVControlerListener, CLLoca
         
         
         destCont = BusDestinationControler(pBtnNext: btnDestNext, pBtnPrev: btnDestPrev, pLblDest: lblDest, pLblDay: lblDay,
-                                         pLblNearestStopDistance: lblNearestStopDistance, pActivityIndicator: loadingIndicator)
+                                           pLblNearestStopDistance: lblNearestStopDistance, pActivityIndicator: loadingIndicator)
         
-        self.lblDay.text = ""
-        self.lblNearestStopDistance.text = ""
-        self.btnArrets.isEnabled = false
-        
-        self.lblNearestStopDistance.isEnabled = false
-        
-        self.loadingIndicator.hidesWhenStopped = true
-        let labelTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(BusRouteViewControler.tapOnSpecificStop))
-        self.lblNearestStopDistance.addGestureRecognizer(labelTapRecognizer)
-        self.loadingIndicator.stopAnimating()
+        /*
+         self.lblDay.text = ""
+         self.lblNearestStopDistance.text = ""
+         self.btnArrets.isEnabled = false
+         
+         self.lblNearestStopDistance.isEnabled = false
+         
+         self.loadingIndicator.hidesWhenStopped = true
+         let labelTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(BusRouteViewControler.tapOnSpecificStop))
+         self.lblNearestStopDistance.addGestureRecognizer(labelTapRecognizer)
+         self.loadingIndicator.stopAnimating()
+         
+         */
         
         self.locationManager.requestWhenInUseAuthorization()
         
@@ -70,29 +73,48 @@ class BusRouteViewControler: UIViewController , RouteTVControlerListener, CLLoca
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
-        } 
-      
+        }
+        
     }
+    
+    
+    
+    @IBAction func btnNextTapped(_ sender: Any) {
+        destCont?.btnNextTapped()
+    }
+    
+    
+    @IBAction func btnPrevTapped(_ sender: Any) {
+        destCont?.btnPrevTapped()
+    }
+    
     
     /*
      * RouteTableViewListener -> DestinationControler
      */
     func didSelectRoute(pRoute  : Routes!)  {
-        destCont!.setRoute(pRoute: pRoute)
+        destCont?.setRoute(pRoute: pRoute)
     }
-   
+    
     
     @IBAction func btnSeeStop(_ sender: Any) {
         if var busMapVC = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "busMap")
             as? BusMapViewController {
             print("TODO :  inside btnSeeStop")
-         // tap   busMapVC.selectedStop  =  self.nearestStop
-            //busMapVC.selectedRoute =  self.selectedRoute
-            //busMapVC.selectedArrayTrip =  self.selectedArrayTrip
-           // busMapVC.selectedArrayStops = self.selectedArrayTri
-            self.navigationController?.pushViewController(busMapVC, animated: true)
+            // tap   busMapVC.selectedStop  =  self.nearestStop
+            busMapVC.selectedRoute =  destCont?.selectedRoute
+            busMapVC.selectedArrayTrip =  destCont?.selectedArrayTrip
+            //busMapVC.selectedArrayStops = self.selectedArrayTrip
+            
+            // FIXME
+            navigationController?.pushViewController(busMapVC, animated: true)
         }
+    }
+    
+    
+    func btnSeeStop() {
+        
     }
     
     
@@ -103,7 +125,7 @@ class BusRouteViewControler: UIViewController , RouteTVControlerListener, CLLoca
             // tap   busMapVC.selectedStop  =  self.nearestStop
             //  busMapVC.selectedRoute =  self.selectedRoute
             // busMapVC.selectedArrayTrip =  self.selectedArrayTrip//
-             
+            
             // print("tap working nearestStop: " , destCont!.nearestStop)
             
             //busMapVC.selectedStop  =  self.nearestStop
@@ -111,8 +133,10 @@ class BusRouteViewControler: UIViewController , RouteTVControlerListener, CLLoca
             
             self.navigationController?.pushViewController(busMapVC, animated: true)
         }
-      
+        
     }
+    
+    
     
     
     /*
