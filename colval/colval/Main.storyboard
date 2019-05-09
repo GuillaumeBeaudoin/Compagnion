@@ -120,7 +120,7 @@
                                 </constraints>
                                 <state key="normal" title="Parking services" image="ic_bus"/>
                                 <connections>
-                                    <segue destination="duA-Sg-mcd" kind="show" identifier="sgBusMain" id="47n-ft-B3z"/>
+                                    <segue destination="duA-Sg-mcd" kind="show" identifier="sgBusMain" id="6iS-5N-lzq"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bus services" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dj5-6t-v8u">
@@ -170,10 +170,10 @@
             </objects>
             <point key="canvasLocation" x="795.6521739130435" y="-458.03571428571428"/>
         </scene>
-        <!--Bus Route View Controller-->
+        <!--Bus Route View Controler-->
         <scene sceneID="AV2-ld-1ub">
             <objects>
-                <viewController id="duA-Sg-mcd" customClass="BusRouteViewController" sceneMemberID="viewController">
+                <viewController id="duA-Sg-mcd" customClass="BusRouteViewControler" customModule="colval" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tjV-xC-CA5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -409,7 +409,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="rS7-QU-RbR"/>
                     <connections>
+                        <outlet property="btnNext" destination="QIv-XM-Exj" id="iqW-jA-0pR"/>
+                        <outlet property="btnPrev" destination="vXq-5i-y3w" id="ayj-1C-Voa"/>
                         <outlet property="busMapView" destination="caD-oX-Hc3" id="Aq9-e9-fMv"/>
+                        <outlet property="lblDest" destination="zf7-SF-HES" id="XxW-mO-FLP"/>
                         <segue destination="FaI-2P-dEl" kind="show" id="fLB-Ko-TUv"/>
                     </connections>
                 </viewController>
@@ -575,10 +578,10 @@
             </objects>
             <point key="canvasLocation" x="1829" y="-458"/>
         </scene>
-        <!--Reservation View Controller-->
+        <!--Parking Reservation View Controler-->
         <scene sceneID="JNS-xK-6fX">
             <objects>
-                <viewController storyboardIdentifier="rsvCtrl" id="ANx-IW-Mej" customClass="ReservationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="rsvCtrl" id="ANx-IW-Mej" customClass="ParkingReservationViewControler" customModule="colval" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ah8-C0-uY5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
