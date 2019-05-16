@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nsu-QE-sLP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nsu-QE-sLP">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -515,10 +515,10 @@
             </objects>
             <point key="canvasLocation" x="11.594202898550726" y="221.65178571428569"/>
         </scene>
-        <!--Parking View Controller-->
+        <!--Parking Map View Controller-->
         <scene sceneID="kEi-9Y-tUx">
             <objects>
-                <viewController id="h1F-OA-lkX" customClass="ParkingViewController" customModule="colval" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h1F-OA-lkX" customClass="ParkingMapViewController" customModule="colval" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6M4-lM-xth">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -865,6 +865,7 @@
         <image name="ic_parjing" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="QGR-EC-GC7"/>
         <segue reference="F9X-0V-dBJ"/>
     </inferredMetricsTieBreakers>
 </document>
